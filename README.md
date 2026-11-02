@@ -1,4 +1,17 @@
-# Hire Ground feed snapshot study
+# Hire Ground
+
+**Live app:** https://robert-e-irv.github.io/hireground-feeds/
+
+Every 6 hours GitHub Actions downloads every job feed, builds `jobs.json` with the app's own parser (only sources whose terms allow republishing), and redeploys the site. Visitors just open the URL. Resumes are read and ranked in the visitor's browser and never uploaded.
+
+| Path | What |
+|---|---|
+| `site/index.html` | The app. Its `// <pure>` block is the shared feed parser |
+| `pipeline/export.mjs` | Builds `site/jobs.json` from the latest snapshot |
+
+---
+
+## Feed snapshot study
 
 A 14-day measurement of every Hire Ground job source, run by GitHub Actions every 6 hours. The results decide the production refresh pipeline (see `DESIGN.md`).
 

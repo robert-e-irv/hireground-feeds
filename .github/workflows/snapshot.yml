@@ -1,4 +1,4 @@
-name: Feed snapshot study
+name: Refresh jobs and publish site
 
 # Every 6 hours (off the hour, so GitHub's top-of-hour queue doesn't delay it).
 # 6-hourly, not daily, on purpose: we can only learn whether daily is fast
@@ -10,6 +10,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: snapshot
@@ -35,6 +37,22 @@ jobs:
           ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
         run: python recorder/record.py --root data
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Build site/jobs.json with the app's own parser (redistributable sources only).
+      # Exits non-zero if over half the feeds failed, so a broken run never replaces a good site.
+      - name: Build jobs.json
+        id: export
+        run: node pipeline/export.mjs --data data --site site
+
+      - name: Upload site for Pages
+        if: steps.export.outcome == 'success'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
       - name: Upload raw bodies (kept 30 days, not committed)
         if: always()
         uses: actions/upload-artifact@v4
@@ -49,7 +67,7 @@ jobs:
         run: |
           git config user.name  "hireground-bot"
           git config user.email "hireground-bot@users.noreply.github.com"
-          git add data/index data/runs.jsonl 2>/dev/null || true
+          git add data/index data/runs.jsonl data/first_seen.json.gz 2>/dev/null || true
           git commit -m "snapshot $(date -u +%Y-%m-%dT%H:%MZ)" || echo "nothing to commit"
           git pull --rebase --autostash
           git push
@@ -63,3 +81,14 @@ jobs:
       - name: Ping dead-man's switch (failure)
         if: failure() && env.HC_URL != ''
         run: curl -fsS -m 10 --retry 3 "$HC_URL/fail" > /dev/null
+
+  deploy:
+    needs: snapshot
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

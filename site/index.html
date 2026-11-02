@@ -1,0 +1,2067 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hire Ground</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2032%2032%22%3E%3Crect%20width=%2232%22%20height=%2232%22%20rx=%227%22%20fill=%22%231f2937%22/%3E%3Cpath%20d=%22M5%2022.5h22%22%20stroke=%22%23f59a3d%22%20stroke-width=%222.6%22%20stroke-linecap=%22round%22/%3E%3Cpath%20d=%22M9%2022.5V12a3%203%200%200%201%203-3h8a3%203%200%200%201%203%203v10.5%22%20fill=%22none%22%20stroke=%22%2322c98a%22%20stroke-width=%222.6%22%20stroke-linejoin=%22round%22/%3E%3Ccircle%20cx=%2216%22%20cy=%2215.5%22%20r=%222.6%22%20fill=%22%233b82f6%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Dark "quest board" theme: charcoal-navy canvas, glass cards, colored accent bars, pill chips. */
+  :root {
+    --bg: #131821; --bg2: #0f131a; --surface: #1b222d; --surface2: #222b38; --ink: #e6ebf2; --mute: #93a0b1; --line: #2c3645;
+    --accent: #3b82f6; --accent-ink: #ffffff; --green: #22c98a; --orange: #f59a3d; --blue: #38a3f5; --violet: #a78bfa;
+    --fresh: #5ee0ac; --fresh-bg: rgba(34,201,138,.16); --tag: rgba(255,255,255,.07);
+    --danger: #ff9b9b; --danger-bg: rgba(255,90,90,.14);
+    --bar-h: 60px;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    color-scheme: dark;
+  }
+  :root[data-theme="light"] {
+    --bg: #eef1f6; --bg2: #e6eaf1; --surface: #ffffff; --surface2: #f3f6fa; --ink: #19212d; --mute: #5b6879; --line: #d5dce6;
+    --accent: #2563eb; --green: #0f9d68; --orange: #c9660a; --blue: #0b7fc7; --violet: #6d4fd6;
+    --fresh: #0d7a52; --fresh-bg: #dff3ea; --tag: rgba(20,30,50,.07); --danger: #9d2a2a; --danger-bg: #fbe9e9; color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: calc(var(--bar-h) + 12px); }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 var(--font-body);
+    background-image: radial-gradient(1200px 500px at 70% -10%, rgba(59,130,246,.10), transparent 60%), radial-gradient(900px 500px at 0% 20%, rgba(34,201,138,.06), transparent 60%);
+    background-attachment: fixed; min-height: 100vh;
+    padding-bottom: 64px;
+  }
+  .topbar {
+    position: sticky; top: 0; z-index: 30; height: var(--bar-h); display: flex; align-items: center; gap: 12px;
+    padding: 0 max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px));
+    background: color-mix(in srgb, var(--bg2) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+  }
+  .brand { display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin: 0; white-space: nowrap; }
+  .brand svg { width: 28px; height: 28px; flex: none; }
+  .brand .g { color: var(--orange); }
+  .topbar .spacer { flex: 1; }
+  .status-pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 12px; font-size: 12.5px; font-weight: 600; color: var(--mute); min-width: 0; max-width: 46vw; }
+  .status-pill > span:not(.dot) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mute); flex: none; }
+  .status-pill.live .dot { background: var(--green); box-shadow: 0 0 0 3px rgba(34,201,138,.2); }
+  .status-pill.busy .dot { background: var(--orange); animation: pulse 1.1s infinite; }
+  @keyframes pulse { 50% { opacity: .35; } }
+  .topbar button { flex: none; }
+  .icon-btn { width: 38px; height: 38px; padding: 0; display: inline-grid; place-items: center; background: var(--surface); border: 1px solid var(--line); color: var(--mute); border-radius: 10px; font-size: 16px; line-height: 1; }
+  .icon-btn:hover { color: var(--ink); border-color: var(--mute); }
+  .how { position: absolute; top: calc(var(--bar-h) + 8px); right: 16px; width: min(360px, calc(100vw - 32px)); background: var(--surface2); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: 13px; color: var(--mute); box-shadow: 0 12px 40px rgba(0,0,0,.4); z-index: 40; }
+  .how[hidden] { display: none; }
+  .how strong { color: var(--ink); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 22px max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); }
+  .layout { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 22px; align-items: start; }
+  @media (max-width: 860px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+  .controls { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  @media (min-width: 861px) { .controls { position: sticky; top: calc(var(--bar-h) + 16px); max-height: calc(100vh - var(--bar-h) - 32px); overflow-y: auto; padding-right: 4px; scrollbar-width: thin; } }
+
+  /* collapsible setup steps */
+  .panel { background: linear-gradient(180deg, var(--surface), color-mix(in srgb, var(--surface) 88%, var(--bg))); border: 1px solid var(--line); border-radius: 14px; min-width: 0; position: relative; overflow: hidden; flex: none; }
+  .panel::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--bar, var(--accent)); }
+  .panel.c-green { --bar: var(--green); } .panel.c-blue { --bar: var(--blue); } .panel.c-orange { --bar: var(--orange); } .panel.c-violet { --bar: var(--violet); }
+  .panel > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 13px 14px 13px 18px; font-size: inherit; font-weight: inherit; color: inherit; }
+  .panel > summary::-webkit-details-marker { display: none; }
+  .panel > summary h2 { margin: 0; flex: none; }
+  .step-sum { flex: 1; min-width: 0; text-align: right; font-size: 12.5px; color: var(--mute); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .chev { flex: none; width: 8px; height: 8px; border-right: 2px solid var(--mute); border-bottom: 2px solid var(--mute); transform: rotate(45deg); transition: transform .15s; margin: 0 4px 3px 2px; }
+  .panel[open] > summary .chev { transform: rotate(225deg); margin-bottom: -2px; }
+  .panel[open] > summary .step-sum { display: none; }
+  .panel[open] > summary h2 { flex: 1; }
+  .step-body { padding: 0 16px 16px 20px; margin: 0; }
+  h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--ink); margin: 0 0 12px; }
+  label { display: block; font-size: 13px; color: var(--mute); }
+  .field + .field { margin-top: 12px; }
+  input[type=text], select, textarea {
+    width: 100%; margin-top: 4px; padding: 9px 11px; font: inherit; font-size: 14px;
+    color: var(--ink); background: var(--bg2); border: 1px solid var(--line); border-radius: 10px;
+  }
+  input::placeholder, textarea::placeholder { color: color-mix(in srgb, var(--mute) 70%, transparent); }
+  textarea { resize: vertical; min-height: 84px; font-family: var(--font-mono); font-size: 12px; line-height: 1.45; }
+  input[type=range] { width: 100%; margin: 6px 0 0; accent-color: var(--accent); }
+  input[type=file] { width: 100%; margin-top: 4px; font: inherit; font-size: 13px; color: var(--mute); }
+  input[type=file]::file-selector-button { font: inherit; font-weight: 600; font-size: 13px; margin-right: 10px; padding: 7px 12px; border-radius: 9px; border: 1px solid var(--line); background: var(--surface2); color: var(--ink); cursor: pointer; }
+  input[type=checkbox] { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+  fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+  legend { font-size: 13px; color: var(--mute); padding: 0; margin-bottom: 6px; }
+  .checks { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  label.check { display: flex; align-items: center; gap: 6px; color: var(--ink); font-size: 14px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  button {
+    font: inherit; font-weight: 600; font-size: 14px; padding: 8px 15px; border-radius: 10px; cursor: pointer;
+    border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink);
+  }
+  button:hover:not(:disabled) { filter: brightness(1.1); }
+  button:disabled { opacity: .5; cursor: default; }
+  button.ghost { background: transparent; color: var(--accent); }
+  button.go { background: var(--green); border-color: var(--green); color: #05261a; }
+  .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .status { font-size: 13px; margin: 8px 0 0; color: var(--mute); min-height: 1.4em; }
+  .status.err { color: var(--danger); background: var(--danger-bg); padding: 6px 10px; border-radius: 8px; }
+  .hint { font-size: 12px; color: var(--mute); margin: 4px 0 0; }
+  .range-head { display: flex; justify-content: space-between; gap: 8px; }
+  .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  details summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--accent); }
+  details > div { margin-top: 12px; }
+  details.panel > div.step-body { margin-top: 0; }
+  details p { margin: 0 0 10px; font-size: 13px; color: var(--mute); }
+  .feeds { display: grid; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; font-size: 13px; }
+  .feeds a { color: var(--accent); overflow-wrap: anywhere; }
+  .feeds a[aria-disabled="true"] { color: var(--mute); pointer-events: none; text-decoration: none; }
+  .feeds.inline { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .hint + .feeds { margin-top: 6px; }
+  .board-status { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 4px; font-size: 13px; color: var(--mute); }
+  .board-status .name { font-weight: 600; color: var(--ink); }
+  .board-status li.err { color: var(--danger); }
+  .meta a { color: inherit; }
+  .feeds .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .feeds input { width: 120px; margin: 0; padding: 4px 8px; font-size: 13px; }
+
+  /* sticky filter bar */
+  .results { min-width: 0; }
+  .filterbar { position: sticky; top: calc(var(--bar-h) + 8px); z-index: 20; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 10px; margin-bottom: 14px; border-radius: 14px; border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(10px); box-shadow: 0 8px 24px rgba(0,0,0,.22); }
+  .chip-set { display: flex; gap: 6px; flex-wrap: wrap; }
+  label.chip { display: inline-flex; margin: 0; cursor: pointer; }
+  label.chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  label.chip span { display: inline-flex; align-items: center; gap: 6px; padding: 6px 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg2); color: var(--mute); font-size: 13px; font-weight: 700; letter-spacing: .02em; transition: all .12s; }
+  label.chip span::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: .45; }
+  label.chip.remote input:checked + span { color: var(--green); border-color: var(--green); background: rgba(34,201,138,.14); }
+  label.chip.hybrid input:checked + span { color: var(--blue); border-color: var(--blue); background: rgba(56,163,245,.14); }
+  label.chip.onsite input:checked + span { color: var(--orange); border-color: var(--orange); background: rgba(245,154,61,.14); }
+  label.chip.evergreen input:checked + span { color: var(--violet); border-color: var(--violet); background: rgba(167,139,250,.14); }
+  label.chip input:checked + span::before { opacity: 1; }
+  label.chip input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .filterbar select, .filterbar input[type=text] { margin: 0; padding: 7px 10px; width: auto; font-size: 13px; border-radius: 999px; }
+  .filterbar select { max-width: 170px; }
+  .filterbar .kw { flex: 1 1 160px; min-width: 130px; }
+  .filterbar .kw input { width: 100%; }
+  .view-toggle { margin-left: auto; padding: 6px 12px; font-size: 12px; }
+  .results-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; margin: 0 2px 12px; }
+  .results-head strong { font-weight: 800; font-size: 22px; letter-spacing: -0.01em; }
+  .results-head span { color: var(--mute); font-size: 13px; }
+
+  /* job cards */
+  .job { --c: var(--orange); position: relative; display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 4px 14px; align-items: start; border: 1px solid color-mix(in srgb, var(--c) 38%, var(--line)); border-radius: 14px; padding: 14px 16px 12px 20px; margin-bottom: 10px; min-width: 0; overflow: hidden;
+    background: linear-gradient(100deg, color-mix(in srgb, var(--c) 20%, var(--surface)) 0%, color-mix(in srgb, var(--c) 6%, var(--surface)) 70%); transition: transform .12s, border-color .12s; }
+  .job::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--c); }
+  .job:hover { transform: translateY(-1px); border-color: var(--c); }
+  .job.remote { --c: var(--green); } .job.hybrid { --c: var(--blue); } .job.onsite { --c: var(--orange); }
+  .avatar { grid-row: 1 / span 2; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-weight: 800; font-size: 18px; color: #fff; background: var(--av, #4b5563); box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); }
+  .job-main { min-width: 0; }
+  .job h3 { font-size: 16px; font-weight: 700; margin: 0; overflow-wrap: anywhere; line-height: 1.3; }
+  .job h3 a { color: var(--ink); text-decoration: none; }
+  .job h3 a:hover { text-decoration: underline; }
+  .meta { color: var(--mute); font-size: 13px; margin: 2px 0 8px; overflow-wrap: anywhere; }
+  .meta a { text-decoration: none; font-weight: 600; color: var(--ink); opacity: .9; }
+  .job-side { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; grid-row: 1 / span 2; grid-column: 3; }
+  .date-chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid color-mix(in srgb, var(--c) 55%, var(--line)); border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 700; color: var(--ink); white-space: nowrap; background: rgba(0,0,0,.14); }
+  .date-chip .new { background: var(--fresh-bg); color: var(--fresh); border-radius: 999px; padding: 0 7px; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; }
+  .match { width: 92px; text-align: right; }
+  .match b { font: 700 18px/1 var(--font-mono); color: var(--ink); }
+  .match small { display: block; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); margin-bottom: 4px; }
+  .bar { height: 6px; border-radius: 99px; background: rgba(255,255,255,.1); overflow: hidden; margin-top: 5px; }
+  .bar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--c), color-mix(in srgb, var(--c) 50%, #fff)); }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+  .pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 700; letter-spacing: .03em; border: 1px solid var(--line); background: rgba(0,0,0,.16); border-radius: 8px; padding: 1px 9px; color: var(--ink); }
+  .pill.arr { color: var(--c); border-color: color-mix(in srgb, var(--c) 55%, transparent); background: color-mix(in srgb, var(--c) 14%, transparent); text-transform: uppercase; letter-spacing: .05em; }
+  .pill.fit { color: var(--green); border-color: color-mix(in srgb, var(--green) 50%, transparent); }
+  .pill.warn { color: var(--mute); border-style: dashed; }
+  .pill.pay { color: #ffd166; border-color: rgba(255,209,102,.45); background: rgba(255,209,102,.1); }
+  .pill.also { color: var(--violet); border-color: color-mix(in srgb, var(--violet) 55%, transparent); background: rgba(167,139,250,.12); }
+  .pill.src { color: var(--mute); font-weight: 600; }
+  .pill.role { color: var(--blue); border-color: color-mix(in srgb, var(--blue) 50%, transparent); background: rgba(56,163,245,.1); }
+  .pill.lvl { color: var(--ink); }
+  .pill.contract { color: var(--orange); border-color: color-mix(in srgb, var(--orange) 55%, transparent); border-style: dashed; }
+  .pill.stale { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 50%, transparent); border-style: dashed; }
+  .fresh { color: var(--fresh); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { background: var(--tag); border-radius: 6px; padding: 1px 8px; font-size: 12px; }
+  .breakdown { margin: 8px 0 0; font-size: 12px; color: var(--mute); }
+  .badge { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid var(--line); border-radius: 6px; padding: 0 5px; }
+  .compact .job { padding: 9px 14px 9px 18px; margin-bottom: 6px; grid-template-columns: 34px minmax(0, 1fr) auto; }
+  .compact .avatar { width: 34px; height: 34px; font-size: 15px; border-radius: 9px; grid-row: 1; }
+  .compact .tags, .compact .breakdown, .compact .pill.src, .compact .pill.lvl, .compact .pill.fit, .compact .pill.warn, .compact .match small { display: none; }
+  .compact .meta { margin-bottom: 4px; } .compact .pills { margin: 0; } .compact .job-side { grid-row: 1; flex-direction: row; align-items: center; } .compact .job { grid-template-rows: auto; }
+  .job { cursor: pointer; }
+  .job:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; }
+  .job-more { grid-column: 2 / -1; display: none; margin-top: 8px; padding-top: 12px; border-top: 1px solid color-mix(in srgb, var(--c) 30%, var(--line)); cursor: default; }
+  .job.open .job-more { display: block; }
+  .job.open .tags, .compact .job.open .tags { display: flex; }
+  .expand-cue { display: inline-block; width: 7px; height: 7px; border-right: 2px solid var(--mute); border-bottom: 2px solid var(--mute); transform: rotate(45deg); margin: 0 2px 3px 6px; transition: transform .15s; vertical-align: middle; }
+  .job.open .expand-cue { transform: rotate(225deg); margin-bottom: -2px; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px 16px; margin: 0 0 12px; }
+  .facts div { min-width: 0; } .facts dt { font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); margin: 0; }
+  .facts dd { margin: 1px 0 0; font-size: 13.5px; overflow-wrap: anywhere; }
+  .desc { font-size: 13.5px; line-height: 1.55; color: color-mix(in srgb, var(--ink) 88%, transparent); white-space: pre-line; margin: 0 0 12px; max-height: 16em; overflow-y: auto; padding-right: 6px; }
+  .desc.none { color: var(--mute); font-style: italic; }
+  a.apply { display: inline-block; text-decoration: none; font-weight: 700; font-size: 13px; padding: 7px 14px; border-radius: 10px; background: var(--c); color: #07140f; }
+  a.apply:hover { filter: brightness(1.1); }
+  .lc-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .lc-stat { min-width: 0; } .lc-stat b { display: block; font-size: 26px; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em; }
+  .lc-stat span { display: block; font-size: 12px; color: var(--mute); }
+  details.sub { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; }
+  details.sub > summary { font-size: 13px; color: var(--mute); font-weight: 600; }
+  details.sub > summary:hover { color: var(--ink); }
+  details.sub[open] > summary { color: var(--ink); }
+  .src-list { max-height: 260px; overflow-y: auto; gap: 0; margin-top: 8px; padding-right: 4px; scrollbar-width: thin; }
+  .src-list li { display: flex; gap: 8px; align-items: baseline; padding: 4px 0; border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent); font-size: 12.5px; }
+  .src-list li .name { flex: none; max-width: 55%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .src-list li { overflow: hidden; }
+  .src-list li > :not(.name) { }
+  .src-list li::after { content: none; }
+  details.sub .btn-row { margin-top: 8px; }
+  #panel-listings .status:empty { display: none; }
+  .foot { max-width: 1180px; margin: 28px auto 0; padding: 0 16px; font-size: 12px; color: var(--mute); text-align: center; }
+  .empty { color: var(--mute); background: var(--surface); border: 1px dashed var(--line); border-radius: 14px; padding: 28px 22px; text-align: center; }
+  .empty p { margin: 0 0 12px; color: var(--ink); } .empty .btn-row { justify-content: center; }
+  @media (max-width: 560px) {
+    .job { grid-template-columns: 38px minmax(0, 1fr); padding: 12px 12px 10px 16px; }
+    .avatar { width: 38px; height: 38px; font-size: 16px; grid-row: 1; }
+    .job-side { grid-column: 1 / -1; grid-row: auto; flex-direction: row; align-items: center; justify-content: space-between; width: 100%; margin-top: 4px; }
+    .match { width: 120px; text-align: left; } .match small { display: none; }
+    .status-pill { max-width: 52vw; } .status-pill .upd { display: none; } .topbar { gap: 8px; } .brand { font-size: 18px; }
+    .brand .g-word { display: inline; }
+    .filterbar { position: static; }
+    .job-more { grid-column: 1 / -1; }
+  }
+</style>
+
+<div class="topbar">
+  <h1 class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f2937"/><path d="M5 22.5h22" stroke="#f59a3d" stroke-width="2.6" stroke-linecap="round"/><path d="M9 22.5V12a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v10.5" fill="none" stroke="#22c98a" stroke-width="2.6" stroke-linejoin="round"/><circle cx="16" cy="15.5" r="2.6" fill="#3b82f6"/></svg><span>Hire<span class="g">Ground</span></span></h1>
+  <span class="spacer"></span>
+  <span class="status-pill" id="top-pill" role="status"><span class="dot"></span><span id="top-status">Loading</span><span id="top-upd" class="upd"></span></span>
+  <button id="top-refresh" type="button" class="go" hidden>Refresh</button>
+  <button id="how-btn" type="button" class="icon-btn" aria-label="How it works" aria-expanded="false" aria-controls="how">?</button>
+</div>
+<div class="how" id="how" hidden>
+  <p style="margin:0 0 8px"><strong>How it works</strong></p>
+  <p style="margin:0 0 6px">Add your resume and where you live. Jobs you can actually take are ranked by how well they match and how recently they were posted.</p>
+  <p style="margin:0">Your resume is saved in this browser only. Only the job titles and the place you search for go to the job boards.</p>
+</div>
+<div class="wrap">
+  <div class="layout">
+    <aside class="controls">
+      <details class="panel c-green" id="step-resume" open>
+        <summary><h2>1 &middot; Resume</h2><span class="step-sum" id="sum-resume"></span><span class="chev"></span></summary>
+        <div class="step-body">
+        <label for="resume-file">Upload PDF, DOCX or TXT
+          <input id="resume-file" type="file" accept=".pdf,.docx,.txt,.md">
+        </label>
+        <textarea id="resume-text" hidden aria-hidden="true" tabindex="-1"></textarea>
+        <p class="status" id="resume-status" role="status"></p>
+        <div class="btn-row"><button id="resume-clear" type="button" class="ghost" hidden>Clear saved resume</button></div>
+        <p class="hint">Saved in this browser only, so it is still here next time. It never goes to the job boards.</p>
+        </div>
+      </details>
+
+      <details class="panel c-blue" id="step-where" open>
+        <summary><h2>2 &middot; Where you work</h2><span class="step-sum" id="sum-where"></span><span class="chev"></span></summary>
+        <div class="step-body">
+        <div class="field">
+          <label for="my-loc">Where do you live?
+            <input id="my-loc" type="text" placeholder="e.g. Austin, TX" autocomplete="off">
+          </label>
+          <p class="hint" id="loc-read"></p>
+        </div>
+        <div class="field">
+          <label for="radius">Hybrid and on-site jobs within
+            <select id="radius">
+              <option value="city">My city and nearby places</option>
+              <option value="region" selected>My state or province</option>
+              <option value="country">My country</option>
+            </select>
+          </label>
+        </div>
+        <div class="field">
+          <label for="nearby">Nearby places you could commute to (optional)
+            <input id="nearby" type="text" placeholder="e.g. Round Rock, Georgetown">
+          </label>
+          <p class="hint">Matching is by place name, not distance. Remote jobs are kept only if they are open to your country or region.</p>
+        </div>
+        <div class="field">
+          <label class="check" for="unspec"><input id="unspec" type="checkbox" checked> Include jobs that don't say where</label>
+        </div>
+        </div>
+      </details>
+
+      <details class="panel c-orange" id="step-rank">
+        <summary><h2>3 &middot; Ranking</h2><span class="step-sum" id="sum-rank"></span><span class="chev"></span></summary>
+        <div class="step-body">
+        <div class="field">
+          <label for="recency"><span class="range-head"><span>Fit vs. freshness</span><span class="mono"><span id="rv">30</span>% freshness</span></span>
+            <input id="recency" type="range" min="0" max="100" value="30">
+          </label>
+        </div>
+        </div>
+      </details>
+
+      <details class="panel c-violet" id="panel-search" open>
+        <summary><h2>Search job boards</h2><span class="step-sum"></span><span class="chev"></span></summary>
+        <div class="step-body">
+        <div class="field">
+          <label for="terms">What to search for (up to 3 titles)
+            <input id="terms" type="text" placeholder="e.g. project manager, product designer" autocomplete="off">
+          </label>
+          <div class="btn-row"><button id="suggest-btn" type="button" class="ghost" hidden>Suggest from my resume</button></div>
+          <p class="status" id="suggest-status" role="status"></p>
+        </div>
+        <fieldset>
+          <legend>Boards</legend>
+          <div class="checks">
+            <label class="check" for="board-indeed"><input id="board-indeed" type="checkbox" checked> Indeed</label>
+            <label class="check" for="board-ziprecruiter"><input id="board-ziprecruiter" type="checkbox" checked> ZipRecruiter</label>
+            <label class="check" for="board-dice"><input id="board-dice" type="checkbox" checked> Dice (tech)</label>
+          </div>
+        </fieldset>
+        <ul class="board-status" id="board-status"></ul>
+        <div class="btn-row">
+          <button id="search-btn" type="button">Search selected boards</button>
+          <button id="stop-btn" type="button" class="ghost" hidden>Stop</button>
+        </div>
+        <p class="status" id="search-status" role="status"></p>
+        <p class="hint">Searches use your location and work style above. These boards share short summaries, so ranking leans on job titles. Listings come from the boards with AI assistance, so check details with the employer before you apply.</p>
+        </div>
+      </details>
+
+      <details class="panel c-blue" id="panel-listings" open>
+        <summary><h2>Job listings</h2><span class="step-sum" id="sum-listings"></span><span class="chev"></span></summary>
+        <div class="step-body">
+        <p class="status" id="feed-summary" style="margin-top:0"></p>
+        <div id="local-box" hidden>
+          <div class="lc-head">
+            <div class="lc-stat"><b id="lc-count">0</b><span id="lc-sub">listings</span></div>
+            <button id="lc-refresh" type="button" class="go">Refresh now</button>
+          </div>
+          <p class="status" id="lc-status" role="status"></p>
+          <details class="sub" id="lc-sources">
+            <summary id="lc-sum">Sources</summary>
+            <ul class="board-status src-list" id="lc-list"></ul>
+          </details>
+        </div>
+        <details id="import-box">
+          <summary>Add listings</summary>
+          <div>
+            <div id="auto-fetch">
+            <p class="hint">Fetch automatically</p>
+            <div class="checks">
+              <label class="check" for="af-rgj"><input id="af-rgj" type="checkbox" checked> Remote Game Jobs</label>
+              <label class="check" for="af-studios"><input id="af-studios" type="checkbox" checked> <span id="af-studios-label">Game studios</span></label>
+            </div>
+            <div class="btn-row">
+              <button id="af-btn" type="button">Fetch game feeds</button>
+              <button id="af-remote-btn" type="button">Fetch remote boards (6)</button>
+              <button id="af-retry" type="button" class="ghost" hidden>Retry failed</button>
+              <button id="af-stop" type="button" class="ghost" hidden>Stop</button>
+            </div>
+            <p class="status" id="af-status" role="status"></p>
+            <ul class="board-status" id="af-list"></ul>
+            <details class="sub"><summary>Notes</summary><div>
+            <p class="hint">Remote boards use the job titles typed under Search job boards, so type them first for smaller, complete results. Remotive allows only a few requests a minute, so avoid running remote boards again right away.</p>
+            <p class="hint">Uses the browser built into the Claude desktop app, so it only works when this page is open there. Claude may ask you to allow each site once. If anything fails, use the manual steps below.</p>
+            </div></details>
+            </div>
+            <details class="sub"><summary>Paste or upload a feed</summary><div>
+            <p class="hint">This page cannot reach job sites itself. Open a feed from the links below, select all, copy, and paste it here. Add as many as you like, one after another.</p>
+            <label for="import-text">Paste feed text (JSON or RSS)
+              <textarea id="import-text" placeholder="Paste the whole feed here"></textarea>
+            </label>
+            <label for="import-file" style="margin-top:10px">Or choose saved feed files
+              <input id="import-file" type="file" accept=".json,.xml,.rss,.txt,application/json,text/xml" multiple>
+            </label>
+            <div class="btn-row">
+              <button id="import-btn" type="button">Add jobs</button>
+              <button id="reset-btn" type="button" class="ghost">Remove added jobs</button>
+            </div>
+            <p class="status" id="import-status" role="status"></p>
+            </div></details>
+            <details class="sub"><summary>Feed links</summary><div>
+            <p class="hint">Remote boards</p>
+            <ul class="feeds inline">
+              <li><a href="https://jobicy.com/api/v2/remote-jobs?count=200&amp;geo=usa" target="_blank" rel="noopener">Jobicy (USA)</a></li>
+              <li><a href="https://jobicy.com/api/v2/remote-jobs?count=200" target="_blank" rel="noopener">Jobicy (all regions)</a></li>
+              <li><a href="https://himalayas.app/jobs/api?limit=20" target="_blank" rel="noopener">Himalayas</a></li>
+              <li><a href="https://himalayas.app/jobs/api?limit=20&amp;offset=20" target="_blank" rel="noopener">Himalayas (next 20)</a></li>
+              <li><a href="https://remoteok.com/api" target="_blank" rel="noopener">RemoteOK</a></li>
+              <li><a href="https://weworkremotely.com/remote-jobs.rss" target="_blank" rel="noopener">We Work Remotely (RSS)</a></li>
+              <li><a href="https://remotive.com/api/remote-jobs" target="_blank" rel="noopener">Remotive</a></li>
+              <li><a href="https://www.arbeitnow.com/api/job-board-api" target="_blank" rel="noopener">Arbeitnow</a></li>
+            </ul>
+            <p class="hint">If the RSS feed shows as a tree or downloads, save the page and choose the saved file below.</p>
+            <p class="hint">Company career pages: type a company name, then open its feed.</p>
+            <ul class="feeds">
+              <li class="row"><input id="gh-token" type="text" placeholder="stripe" aria-label="Greenhouse board name"> <a id="gh-link" href="https://boards-api.greenhouse.io/v1/boards/stripe/jobs?content=true" target="_blank" rel="noopener">Greenhouse feed</a></li>
+              <li class="row"><input id="lv-token" type="text" placeholder="spotify" aria-label="Lever company name"> <a id="lv-link" href="https://api.lever.co/v0/postings/spotify?mode=json" target="_blank" rel="noopener">Lever feed</a></li>
+              <li class="row"><input id="as-token" type="text" placeholder="company" aria-label="Ashby company name"> <a id="as-link" aria-disabled="true" target="_blank" rel="noopener">Ashby feed</a></li>
+            </ul>
+            <p class="hint">Gaming: remote game jobs, then studio career pages (BC studios first).</p>
+            <ul class="feeds inline" id="gaming-feeds">
+              <li><a href="https://remotegamejobs.com/feed.rss" target="_blank" rel="noopener">Remote Game Jobs (RSS)</a></li>
+            </ul>
+            <p class="hint">Tip: save several studio feeds as files and add them together with the file picker below.</p>
+            </div></details>
+          </div>
+        </details>
+        </div>
+      </details>
+    </aside>
+
+    <main class="results">
+      <div class="filterbar" role="group" aria-label="Filters">
+        <div class="chip-set">
+          <label class="chip remote" for="arr-remote"><input id="arr-remote" type="checkbox" checked><span>Remote</span></label>
+          <label class="chip hybrid" for="arr-hybrid"><input id="arr-hybrid" type="checkbox" checked><span>Hybrid</span></label>
+          <label class="chip onsite" for="arr-onsite"><input id="arr-onsite" type="checkbox" checked><span>On-site</span></label>
+        </div>
+        <select id="max-age" aria-label="Posted within">
+          <option value="3">Last 3 days</option>
+          <option value="7">Last 7 days</option>
+          <option value="14">Last 14 days</option>
+          <option value="30" selected>Last 30 days</option>
+          <option value="90">Last 90 days</option>
+          <option value="0">Any time</option>
+        </select>
+        <select id="industry" aria-label="Industry">
+          <option value="">Any industry</option>
+          <option value="games">Games</option>
+          <option value="software">Software and IT</option>
+          <option value="data">Data and AI</option>
+          <option value="design">Design and creative</option>
+          <option value="product">Product and project</option>
+          <option value="marketing">Marketing and content</option>
+          <option value="sales">Sales and business development</option>
+          <option value="support">Customer support</option>
+          <option value="finance">Finance and accounting</option>
+          <option value="people">HR and recruiting</option>
+          <option value="health">Healthcare</option>
+          <option value="education">Education</option>
+          <option value="ops">Operations and admin</option>
+        </select>
+        <select id="role" aria-label="Role type">
+          <option value="">Any role</option>
+          <option value="Design">Design</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Art">Art</option>
+          <option value="Animation">Animation</option>
+          <option value="Technical Art">Technical Art</option>
+          <option value="Audio">Audio</option>
+          <option value="UX/UI">UX/UI</option>
+          <option value="Production">Production</option>
+          <option value="Product">Product</option>
+          <option value="QA">QA</option>
+          <option value="Data &amp; Analytics">Data &amp; Analytics</option>
+          <option value="Marketing &amp; Community">Marketing &amp; Community</option>
+          <option value="Writing &amp; Narrative">Writing &amp; Narrative</option>
+          <option value="Localization">Localization</option>
+          <option value="Player Support">Player Support</option>
+          <option value="Business &amp; Operations">Business &amp; Operations</option>
+        </select>
+        <label class="chip evergreen" for="hide-evergreen" title="Hide talent-pool posts such as General Application or Open Application"><input id="hide-evergreen" type="checkbox" checked><span>Hide general apps</span></label>
+        <div class="kw"><input id="filter" type="text" placeholder="Keywords: unity, live ops" aria-label="Keywords (a comma means or)" autocomplete="off"></div>
+        <button id="view-btn" type="button" class="ghost view-toggle" aria-pressed="false">Compact</button>
+      </div>
+      <div class="results-head">
+        <strong id="results-title">Newest jobs</strong>
+        <span id="results-note"></span>
+      </div>
+      <div id="results"></div>
+    </main>
+  </div>
+</div>
+<footer class="foot">Listings come from public job boards and company career pages. Each one links back to its original posting. Your resume is saved in your browser only.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script>
+// <pure>
+const STOP = new Set(("a about above after again all also am an and any are as at be because been before being below " +
+  "between both but by can could did do does doing down during each few for from further had has have having he her here " +
+  "hers him his how i if in into is it its just me more most my no nor not now of off on once only or other our out over " +
+  "own same she should so some such than that the their them then there these they this those through to too under until " +
+  "up very was we were what when where which while who whom why will with would you your yours work working experience " +
+  "years year responsible including ability strong team company role job position candidate").split(/\s+/));
+const TOKEN_RE = /[a-z][a-z0-9+#.\-]{1,}/g;
+
+function tokenize(text) {
+  const words = (String(text).toLowerCase().match(TOKEN_RE) || [])
+    .map(w => w.replace(/^[.\-]+|[.\-]+$/g, ""))
+    .filter(w => w.length > 1 && !STOP.has(w));
+  const out = words.slice();
+  for (let i = 0; i + 1 < words.length; i++) out.push(words[i] + " " + words[i + 1]);
+  return out;
+}
+function termFreq(tokens) {
+  const counts = new Map();
+  for (const t of tokens) counts.set(t, (counts.get(t) || 0) + 1);
+  const tf = new Map();
+  for (const [t, c] of counts) tf.set(t, 1 + Math.log(c));
+  return tf;
+}
+function recencyScore(postedMs, halfLifeDays, nowMs) {
+  const ageDays = Math.max((nowMs - postedMs) / 86400000, 0);
+  return Math.pow(0.5, ageDays / halfLifeDays);
+}
+// final = relevance * ((1 - w) + w * recency). Freshness boosts a relevant job, never rescues an irrelevant one.
+function rankJobs(resumeText, jobs, opts) {
+  const w = opts.recencyWeight, half = opts.halfLifeDays || 7, now = opts.now || Date.now();
+  const topTerms = opts.topTerms || 6;
+  if (opts.maxAgeDays) jobs = jobs.filter(j => Math.floor((now - j.posted) / 86400000) <= opts.maxAgeDays);
+  if (!jobs.length) return [];
+  const rTf = termFreq(tokenize(resumeText));
+  const jTfs = jobs.map(j => termFreq(tokenize(j.description).concat(tokenize(j.title), tokenize(j.title), tokenize(j.title))));
+  const df = new Map();
+  for (const tf of jTfs) for (const t of tf.keys()) df.set(t, (df.get(t) || 0) + 1);
+  const n = jobs.length;
+  const idf = t => (df.has(t) ? Math.log((n + 1) / (df.get(t) + 1)) + 1 : 1);
+  const rVec = new Map(); let rSq = 0;
+  for (const [t, v] of rTf) { const x = v * idf(t); rVec.set(t, x); rSq += x * x; }
+  const rNorm = Math.sqrt(rSq) || 1;
+  const scored = [];
+  jobs.forEach((j, i) => {
+    let jSq = 0, dot = 0; const shared = [];
+    for (const [t, v] of jTfs[i]) {
+      const x = v * idf(t); jSq += x * x;
+      if (rVec.has(t)) { const p = rVec.get(t) * x; dot += p; shared.push([t, p]); }
+    }
+    const cosine = dot / (rNorm * (Math.sqrt(jSq) || 1));
+    shared.sort((a, b) => b[1] - a[1]);
+    const display = [];
+    for (const [t] of shared) {
+      if (display.some(d => d.includes(t))) continue;
+      display.push(t);
+      if (display.length >= topTerms) break;
+    }
+    scored.push(Object.assign({}, j, { cosine, matched: display }));
+  });
+  const top = Math.max.apply(null, scored.map(s => s.cosine)) || 1;
+  const out = [];
+  for (const s of scored) {
+    if (!(s.cosine > 0)) continue;
+    s.relevance = s.cosine / top;
+    s.recency = recencyScore(s.posted, half, now);
+    s.score = s.relevance * ((1 - w) + w * s.recency);
+    s.ageDays = Math.max(Math.floor((now - s.posted) / 86400000), 0);
+    out.push(s);
+  }
+  out.sort((a, b) => b.score - a.score);
+  return out;
+}
+
+// ---- feed normalizers (same shapes as the Flask version's sources.py)
+const ENT = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " " };
+function decodeEntities(s) {
+  return String(s || "").replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => {
+    if (e[0] === "#") {
+      const code = e[1].toLowerCase() === "x" ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10);
+      try { return String.fromCodePoint(code); } catch (_) { return " "; }
+    }
+    return Object.prototype.hasOwnProperty.call(ENT, e.toLowerCase()) ? ENT[e.toLowerCase()] : m;
+  });
+}
+function stripHtml(s) {
+  let t = decodeEntities(s).replace(/<[^>]+>/g, " ");
+  t = decodeEntities(t).replace(/<[^>]+>/g, " ");
+  return t.replace(/\s+/g, " ").trim().slice(0, 4000);
+}
+function parseDate(v) { const t = Date.parse(v || ""); return isNaN(t) ? null : t; }
+// Unix seconds, unix milliseconds or a date string, all to milliseconds.
+function toMs(v) {
+  if (v == null || v === "") return null;
+  if (typeof v === "number" || /^\d+(\.\d+)?$/.test(String(v))) { const n = Number(v); return n < 1e12 ? n * 1000 : n; }
+  return parseDate(v);
+}
+function fixCase(loc) { return String(loc || "").replace(/\busa\b/gi, "USA").replace(/\buk\b/gi, "UK").replace(/\buae\b/gi, "UAE"); }
+function listText(v) {
+  return Array.isArray(v) ? v.map(x => typeof x === "string" ? x : (x && (x.name || x.location || x.title)) || "").filter(Boolean).join(", ") : String(v == null ? "" : v);
+}
+function absUrl(u, base) { u = String(u || ""); return u.charAt(0) === "/" ? base + u : u; }
+function xmlTag(block, tag) {
+  const m = new RegExp("<" + tag + "(?:\\s[^>]*)?>([\\s\\S]*?)</" + tag + ">", "i").exec(block);
+  return m ? m[1].replace(/^\s*<!\[CDATA\[([\s\S]*?)\]\]>\s*$/, "$1").trim() : "";
+}
+// RSS feeds. We Work Remotely items are "Company: Job title" with a <region> tag.
+// Remote Game Jobs (all remote roles) is detected by its address. Its item layout is not
+// confirmed, so the company is read from author/creator/company tags or "Title at Company".
+function parseRss(text) {
+  const rgj = /remotegamejobs\.com/i.test(text);
+  const jobs = [];
+  for (const it of (text.match(/<item[\s>][\s\S]*?<\/item>/gi) || [])) {
+    const posted = parseDate(xmlTag(it, "pubDate")); if (!posted) continue;
+    const rawTitle = decodeEntities(xmlTag(it, "title"));
+    const cut = rgj ? -1 : rawTitle.indexOf(": ");
+    let title = cut > 0 ? rawTitle.slice(cut + 2) : rawTitle, company = cut > 0 ? rawTitle.slice(0, cut) : "";
+    if (rgj) {
+      const c = decodeEntities(xmlTag(it, "dc:creator") || xmlTag(it, "author") || xmlTag(it, "company"));
+      if (c && c.indexOf("@") < 0) company = c;
+      const at = / at (.+)$/i.exec(title);
+      if (!company && at) { company = at[1]; title = title.slice(0, at.index); }
+    }
+    const regions = (it.match(/<region[\s>][\s\S]*?<\/region>/gi) || []).map(r => decodeEntities(xmlTag(r, "region"))).filter(Boolean);
+    const cats = (it.match(/<category[\s>][\s\S]*?<\/category>/gi) || []).map(c => decodeEntities(xmlTag(c, "category"))).filter(Boolean);
+    const link = xmlTag(it, "link") || xmlTag(it, "guid");
+    jobs.push({ id: (rgj ? "rgj-" : "wwr-") + (xmlTag(it, "guid") || link || rawTitle), title, company,
+      location: fixCase(regions.join(", ")) || "Remote", url: link, posted,
+      description: stripHtml(xmlTag(it, "description")) + " " + cats.join(" ") + " " + xmlTag(it, "type"),
+      source: rgj ? "Remote Game Jobs" : "We Work Remotely", arrangement: "remote" });
+  }
+  return jobs;
+}
+// Game studios whose own career pages sit on Greenhouse, Lever or Ashby. Each board's company was checked
+// against its board name and live postings on 2026-10-28 (BC studios first, game-adjacent companies last).
+// Boards can close or rename at any time. A studio on two boards (Dream Games, HoYoverse) is listed once per board.
+const STUDIOS = [
+  { ats: "gh", slug: "athinkingape", name: "A Thinking Ape (Vancouver)" },
+  { ats: "lv", slug: "blackbirdinteractive", name: "Blackbird Interactive (Vancouver)" },
+  { ats: "lv", slug: "skyboxlabs", name: "SkyBox Labs (Burnaby)" },
+  { ats: "lv", slug: "kabam", name: "Kabam (Vancouver)" },
+  { ats: "gh", slug: "2k", name: "2K" },
+  { ats: "lv", slug: "amanotes", name: "Amanotes" },
+  { ats: "as", slug: "arb-interactive", name: "ARB Interactive" },
+  { ats: "as", slug: "arenanet", name: "ArenaNet" },
+  { ats: "lv", slug: "avalanchestudios", name: "Avalanche Studios Group" },
+  { ats: "gh", slug: "bandainamco", name: "Bandai Namco Entertainment America" },
+  { ats: "lv", slug: "bhvr", name: "Behaviour Interactive" },
+  { ats: "as", slug: "biggergames", name: "Bigger Games" },
+  { ats: "gh", slug: "bitreactor", name: "Bit Reactor" },
+  { ats: "gh", slug: "bonfirestudiosinc", name: "Bonfire Studios" },
+  { ats: "gh", slug: "bungie", name: "Bungie" },
+  { ats: "gh", slug: "crystaldynamics", name: "Crystal Dynamics" },
+  { ats: "lv", slug: "crytek", name: "Crytek" },
+  { ats: "gh", slug: "digitaleclipse", name: "Digital Eclipse" },
+  { ats: "gh", slug: "digitalextremes", name: "Digital Extremes" },
+  { ats: "lv", slug: "dreamgames", name: "Dream Games" },
+  { ats: "gh", slug: "dreamgames", name: "Dream Games" },
+  { ats: "lv", slug: "easybrain", name: "Easybrain" },
+  { ats: "gh", slug: "epicgames", name: "Epic Games" },
+  { ats: "lv", slug: "explodingkittens", name: "Exploding Kittens" },
+  { ats: "gh", slug: "firaxis", name: "Firaxis Games" },
+  { ats: "gh", slug: "firesprite", name: "Firesprite" },
+  { ats: "gh", slug: "fortisgames", name: "Fortis Games" },
+  { ats: "as", slug: "gardens", name: "Gardens" },
+  { ats: "gh", slug: "gearbox", name: "Gearbox" },
+  { ats: "as", slug: "good-job-games", name: "Good Job Games" },
+  { ats: "gh", slug: "hangar13", name: "Hangar 13" },
+  { ats: "gh", slug: "haven", name: "Haven Studios" },
+  { ats: "gh", slug: "housemarque", name: "Housemarque" },
+  { ats: "as", slug: "hoyoverse", name: "HoYoverse" },
+  { ats: "gh", slug: "hoyoverse", name: "HoYoverse" },
+  { ats: "gh", slug: "insomniac", name: "Insomniac Games" },
+  { ats: "lv", slug: "jamcity", name: "Jam City" },
+  { ats: "as", slug: "Joyteractive", name: "Joyteractive" },
+  { ats: "lv", slug: "kolibrigames", name: "Kolibri Games" },
+  { ats: "gh", slug: "krafton", name: "KRAFTON" },
+  { ats: "lv", slug: "larian", name: "Larian Studios" },
+  { ats: "gh", slug: "mediatonic", name: "Mediatonic" },
+  { ats: "gh", slug: "metacore", name: "Metacore" },
+  { ats: "gh", slug: "mobentertainment", name: "Mob Entertainment" },
+  { ats: "gh", slug: "mojangab", name: "Mojang Studios" },
+  { ats: "as", slug: "moonactive", name: "Moon Active" },
+  { ats: "gh", slug: "naughtydog", name: "Naughty Dog" },
+  { ats: "gh", slug: "neteasegames", name: "NetEase Games" },
+  { ats: "gh", slug: "nintendo", name: "Nintendo of America" },
+  { ats: "lv", slug: "peakgames", name: "Peak Games" },
+  { ats: "gh", slug: "sonyinteractiveentertainmentglobal", name: "PlayStation (Sony Interactive Entertainment)" },
+  { ats: "gh", slug: "playtikaltd", name: "Playtika" },
+  { ats: "gh", slug: "pocketgems", name: "Pocket Gems" },
+  { ats: "gh", slug: "psyonix", name: "Psyonix" },
+  { ats: "gh", slug: "riotgames", name: "Riot Games" },
+  { ats: "gh", slug: "roblox", name: "Roblox" },
+  { ats: "gh", slug: "rockstargames", name: "Rockstar Games" },
+  { ats: "gh", slug: "scopely", name: "Scopely" },
+  { ats: "as", slug: "seconddinner", name: "Second Dinner" },
+  { ats: "gh", slug: "singularitysix", name: "Singularity 6" },
+  { ats: "gh", slug: "socialpoint", name: "Socialpoint" },
+  { ats: "lv", slug: "sunstudio", name: "SUN.STUDIO" },
+  { ats: "as", slug: "supercell", name: "Supercell" },
+  { ats: "gh", slug: "taketwo", name: "Take-Two Interactive" },
+  { ats: "as", slug: "thatgamecompany", name: "thatgamecompany" },
+  { ats: "lv", slug: "theorycraftgames", name: "Theorycraft Games" },
+  { ats: "gh", slug: "tripledotstudios", name: "Tripledot Studios" },
+  { ats: "gh", slug: "tripwireinteractive", name: "Tripwire Interactive" },
+  { ats: "gh", slug: "turtlerockstudios", name: "Turtle Rock Studios" },
+  { ats: "gh", slug: "unknownworlds", name: "Unknown Worlds" },
+  { ats: "gh", slug: "visualconcepts", name: "Visual Concepts" },
+  { ats: "as", slug: "voldex", name: "Voldex Games" },
+  { ats: "as", slug: "voodoo", name: "Voodoo" },
+  { ats: "gh", slug: "wooga", name: "Wooga" },
+  { ats: "gh", slug: "discord", name: "Discord", adjacent: true },
+  { ats: "gh", slug: "twitch", name: "Twitch", adjacent: true },
+  { ats: "lv", slug: "immutable", name: "Immutable", adjacent: true },
+  { ats: "gh", slug: "hasbro", name: "Hasbro (incl. Wizards of the Coast)", adjacent: true }
+];
+// ---- role tags: family, discipline, seniority, contract, evergreen (ported from hireground_sources/normalize.py)
+// Checked top to bottom, first match wins, so specific patterns sit above generic ones.
+const ROLE_RULES = [
+  [/\btech(nical)?[ -]?artist|\btech(nical)? art\b|\btechnical animator|\bvfx tech/i, "Technical Art", "Technical Art"],
+  [/\b(sound|audio)\b|\bcomposer\b|\bmusic (supervisor|director)\b|\bvoice ?over\b|\bdialogue (designer|editor)/i, "Audio", "Audio"],
+  [/\bux\b|\bui\b|user experience|user interface|\binteraction designer|\bproduct designer|\bmotion designer|\bhud\b/i, "UX/UI", "UX/UI"],
+  [/\bcopywriter|\bcopy writer/i, "Marketing & Community", "Marketing & Community"],
+  [/\bnarrative\b|\bwriter\b|\bwriting\b|\bscreenwriter|\bquest designer|\blore\b|\bstory\b/i, "Writing & Narrative", "Narrative"],
+  [/\blive ?op(s|erations)? (manager|lead|director|producer|specialist)|\brelease (manager|operations)/i, "Production", "Live Operations"],
+  [/\bgame lead\b|\bgeneral manager\b|\bgame manager\b|\bfranchise (lead|director)/i, "Product", "Game Leadership"],
+  [/\blevel designer|\blevel design|\bworld designer|\benvironment designer|\bmission designer/i, "Design", "Level & Mission Design"],
+  [/\bsystems? designer|\bsystems? design|\bcombat designer|\bgameplay designer|\bmechanics designer/i, "Design", "Systems & Gameplay Design"],
+  [/\beconomy|\bmonetization designer|\binvestment designer|\blive ?ops designer|\bprogression designer|\bbalance designer|\brewards designer/i, "Design", "Economy & Live Ops Design"],
+  [/\bevent designer|\blive ?ops\b.*design|\bcontent designer|\bfeature designer/i, "Design", "Content & Live Ops Design"],
+  [/\btechnical (game )?designer|\bscripter\b/i, "Design", "Technical Design"],
+  [/\bcreative direct(or|ion)|\bgame director|\bdesign director|\bdirector,? (of )?(game )?design|\bhead of design|\bdirect\w*\W+\w*\W*de la conception/i, "Design", "Direction"],
+  [/\bgame design|\bgame designer|\bdesigner\b|\bconcepteur|\bconceptrice|\bconception de jeu/i, "Design", "Game Design"],
+  [/\banimat(or|ion|eur|rice)|\brigger\b|\brigging\b|\bmocap\b|\bmotion capture|\bcg supervisor/i, "Animation", "Animation"],
+  [/\bart director|\bdirect(or|eur).*\bart\b|\bhead of art|\bart lead|\blead artist/i, "Art", "Art Direction"],
+  [/\bconcept art/i, "Art", "Concept Art"],
+  [/\bcharacter (artist|art)/i, "Art", "Character Art"],
+  [/\benvironment (artist|art)|\bprop artist|\bworld artist|\blevel artist|\blighting artist|\blighting\b|\bhard surface/i, "Art", "Environment & Lighting"],
+  [/\bcinematic|\bvfx\b|\bfx artist|\bvisual effects/i, "Art", "Cinematics & VFX"],
+  [/\bartist\b|\bartiste\b|\billustrator\b|\b2d\b|\b3d\b|\bmodeler\b|\bart\b/i, "Art", "Art"],
+  [/\bqa\b|\bquality assurance|\btester\b|\btest(ing)? (analyst|lead|engineer)|\bsdet\b|\bengineer in test|\bcertification|\blqa\b|\bplaytest/i, "QA", "QA"],
+  [/\bdata scien|\bdata analy|\banalytics\b|\banalyst\b|\bdata engineer|\bbusiness intelligence|\bbi developer|\binsights\b|\buser research/i, "Data & Analytics", "Data & Analytics"],
+  [/\bgameplay (engineer|programmer|developer)/i, "Engineering", "Gameplay Engineering"],
+  [/\b(graphics|rendering|engine|physics)\b.*(engineer|programmer|developer)/i, "Engineering", "Engine & Graphics"],
+  [/\b(online|network|multiplayer|backend|back-end|server|platform|services)\b.*(engineer|programmer|developer)/i, "Engineering", "Online & Backend"],
+  [/\b(tools|build|devops|release|infrastructure|sre|site reliability|cloud)\b.*(engineer|programmer|developer)|\bdevops\b/i, "Engineering", "Tools, Build & Infra"],
+  [/\b(ai|machine learning|ml)\b.*(engineer|scientist|programmer)/i, "Engineering", "AI & ML"],
+  [/\bsecurity|\banti-?cheat/i, "Engineering", "Security & Anti-Cheat"],
+  [/\btechnical director|\bengineering (manager|director)|\bhead of engineering|\bcto\b/i, "Engineering", "Engineering Leadership"],
+  [/\bengineer|\bprogrammer|\bprogrammeur|\bdeveloper\b|\bdéveloppeur|\bsoftware\b|\bcoder\b/i, "Engineering", "Software Engineering"],
+  [/\bproduct (manager|owner|lead|director)|\bhead of product|\bgame manager\b|\bpublishing manager/i, "Product", "Product Management"],
+  [/\bproduc(er|teur|trice)|\bdevelopment director|\bproduction|\bproject manager|\bscrum|\bprogram manager/i, "Production", "Production"],
+  [/\bcommunity|\bsocial media|\binfluencer|\bcreator partnership|\bmarketing|\bbrand\b|\bpr\b|\bpublic relations|\bcommunications|\buser acquisition|\besports?\b|\bcontent creator|\bpartnerships?\b|\bgrowth\b|\bperformance marketing|\bgo-to-market|\bgtm\b/i, "Marketing & Community", "Marketing & Community"],
+  [/\blocali[sz]ation|\btranslator|\btranslation/i, "Localization", "Localization"],
+  [/\bplayer (support|experience)|\bcustomer (support|service|experience)|\bsupport specialist/i, "Player Support", "Player Support"],
+  [/\brecruit|\btalent\b|\bpeople\b|\bhr\b|\bhuman resources|\bfinance|\baccount(ant|ing)|\blegal|\bcounsel|\bpayroll|\boffice|\badmin|\bexecutive assistant|\bbusiness development|\bsales\b|\bit\b|\bworkplace|\bfacilities|\bprocurement|\bcompliance|\bpayable|\btax\b|\bcompensation|\bfp&a|\bfinancial|\bchief of staff|\breceptionist|\bcorporate development|\bm&a\b|\btrust (and|&) safety|\bmoderation|\blaw enforcement|\bpolicy\b/i, "Business & Operations", "Business & Operations"],
+];
+const SENIORITY_RULES = [
+  [/\bintern(ship)?\b|\bco-?op\b|\bstagiaire\b|\bwerkstudent|인턴|インターン|end of study/i, "Intern"],
+  [/\b(vp|vice president|head of|chief|director|directeur|directrice)\b/i, "Director+"],
+  [/\bprincipal\b|\bstaff\b|\bdistinguished\b/i, "Principal"],
+  [/\blead\b|\bmanager\b|\bsupervisor\b|\bprincipal·e\b|\bresponsable\b/i, "Lead"],
+  [/\bsenior\b|\bsr\.?\b|\bsénior\b|\biii\b|\bexpert\b/i, "Senior"],
+  [/\bjunior\b|\bjr\.?\b|\bassociate\b|\bentry[- ]level\b|\bearly career\b|\bgraduate\b|\bnew grad\b|\bassistant\b|\bassoci[ée]/i, "Junior"],
+];
+const CONTRACT_RE = /\bcontract(or)?\b|\bcontrat\b|\bcontingent\b|\bftc\b|\bshort term\b|계약직|\btemp(orary)?\b|\bfixed[- ]term\b|\b\d+[- ]months?\b|\bfreelance\b|\bbefristet/i;
+const EVERGREEN_RE = /general application|open application|candidature (libre|spontan)|talent (community|network|pool)|future (opportunit|roles)|join our (team|talent)|don.?t see|spontaneous application|always hiring|^general\b/i;
+const TITLE_NOISE_RE = /\((f|m|w|d|x)\s*\/\s*(f|m|w|d|x)(\s*\/\s*(f|m|w|d|x))?\)|\[[^\]]*\]|\s[-–|]\s.*$/gi;
+const STALE_AFTER_DAYS = 120;
+function fold(s) { return String(s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+function slugText(s) { return String(s || "").replace(/[^a-z0-9]+/g, " ").trim(); }
+function cleanTitle(title) {
+  let t = String(title || "").trim().replace(/^(contract|contrat|temp|freelance|ftc)\s*[-–|:]\s*/i, "");
+  t = t.replace(TITLE_NOISE_RE, "");
+  return t.replace(/\s+/g, " ").replace(/^[\s\-–|,]+|[\s\-–|,]+$/g, "").toLowerCase();
+}
+function classifyRole(title, dept) {
+  const t = cleanTitle(title);
+  for (const r of ROLE_RULES) if (r[0].test(t)) return { family: r[1], discipline: r[2] };
+  const d = String(dept || "").toLowerCase();
+  if (d) for (const r of ROLE_RULES) if (r[0].test(d)) return { family: r[1], discipline: r[2] };
+  return { family: "Other", discipline: "Other" };
+}
+function seniorityOf(title) {
+  for (const r of SENIORITY_RULES) if (r[0].test(String(title || ""))) return r[1];
+  return "Mid";
+}
+// Adds family, discipline, seniority, contract and evergreen to a listing.
+function tagRole(job) {
+  const c = classifyRole(job.title, job.dept);
+  return Object.assign({}, job, c, {
+    seniority: seniorityOf(job.title),
+    contract: CONTRACT_RE.test(String(job.title || "")) || CONTRACT_RE.test(String(job.etype || "")),
+    evergreen: EVERGREEN_RE.test(String(job.title || ""))
+  });
+}
+// Same role = same company + title key + location key. Keeps " - Project X" suffixes so
+// "Software Engineer - Pokemon GO" and "Software Engineer" stay separate jobs.
+const TITLE_SYNONYMS = [[/\bsr\.?\b/g, "senior"], [/\bjr\.?\b/g, "junior"], [/\bassoc\.?\b/g, "associate"], [/\beng\.?\b/g, "engineer"],
+  [/\bmgr\.?\b/g, "manager"], [/\bdev\b/g, "developer"], [/\bprogrammer\b/g, "engineer"], [/\b(contract|temp|temporary|fixed[- ]term)\b/g, ""],
+  [/\b\d+[- ]months?\b/g, ""], [/\bremote\b|\bhybrid\b|\bonsite\b|\bon-site\b/g, ""]];
+function titleKey(title) {
+  let t = String(title || "").trim().replace(/^(contract|contrat|temp|freelance|ftc)\s*[-–|:]\s*/i, "");
+  t = t.split(" | ")[0].replace(/\[[^\]]*\]|\([^)]*\)/g, " ");
+  t = fold(t);
+  for (const s of TITLE_SYNONYMS) t = t.replace(s[0], s[1]);
+  return slugText(t);
+}
+function locationKey(loc) {
+  let l = fold(loc).replace(/\b(united states|usa|us)\b/g, "us").replace(/\b(united kingdom|uk|england)\b/g, "uk");
+  return Array.from(new Set(l.split(/[;,\/|]/).map(slugText).filter(Boolean))).sort().join(" ");
+}
+const CO_SUFFIX = /\b(inc|llc|ltd|limited|gmbh|ab|oy|sa|plc|corp|corporation|co|studios?|games|entertainment|interactive)\b\.?/g;
+function companyKey(job) { return job.studioKey || slugText(fold(job.company).replace(CO_SUFFIX, "")); }
+function dedupeJobs(jobs) {
+  const m = new Map();
+  for (const j of jobs) {
+    const co = companyKey(j);
+    const key = co ? co + "|" + titleKey(j.title) + "|" + locationKey(j.location) : "id|" + j.id;
+    const o = m.get(key);
+    if (!o) { m.set(key, j); continue; }
+    const dl = (j.description || "").length, ol = (o.description || "").length;
+    const better = dl > ol || (dl === ol && j.posted > o.posted);
+    const keep = better ? j : o, drop = better ? o : j;
+    const also = Array.from(new Set((keep.also || []).concat(drop.also || [], [drop.source]).filter(x => x && x !== keep.source)));
+    const alsoUrls = Array.from(new Set((keep.alsoUrls || []).concat(drop.alsoUrls || [], [drop.url]).filter(u => u && u !== keep.url)));
+    m.set(key, Object.assign({}, keep, { also, alsoUrls }));
+  }
+  return Array.from(m.values());
+}
+const STUDIO_BY_BOARD = new Map(STUDIOS.map(s => [s.ats + ":" + s.slug.toLowerCase(), s]));
+// A studio board's listing gets the studio's clean name and a shared key, so the same studio on two boards dedupes.
+const STUDIO_BY_NAME = new Map();
+for (const s of STUDIOS) { const k = slugText(fold(s.name.replace(/\s*\([^)]*\)$/, "")).replace(CO_SUFFIX, "")); if (!STUDIO_BY_NAME.has(k)) STUDIO_BY_NAME.set(k, s); }
+function studioInfo(ats, slug, fallback) {
+  const s = STUDIO_BY_BOARD.get(ats + ":" + String(slug || "").toLowerCase()) || STUDIO_BY_NAME.get(slugText(fold(fallback).replace(CO_SUFFIX, "")));
+  return s ? { company: s.name.replace(/\s*\([^)]*\)$/, ""), studioKey: slugText(fold(s.name.replace(/\s*\([^)]*\)$/, ""))), gameStudio: !s.adjacent } : { company: fallback };
+}
+// Greenhouse custom fields: the real job family and contract status often live here, not in departments.
+function ghMeta(j, names) {
+  const vals = {};
+  for (const m of j.metadata || []) {
+    const n = String(m.name || "").trim().toLowerCase(); let v = m.value;
+    if (Array.isArray(v)) v = v.filter(Boolean).join(", ");
+    if (v && names.indexOf(n) >= 0 && !(n in vals)) vals[n] = String(v);
+  }
+  for (const n of names) if (vals[n]) return vals[n];
+  return "";
+}
+// ---- fetching feeds through the Claude desktop app's built-in browser
+const BROWSER = "host:claude_browser";
+// Remote boards. Typed job titles become server-side searches so each answer is small enough to arrive whole.
+// Limits from each board's docs: Himalayas shows 20 per page; Remotive blocks more than 2 requests a minute.
+const LOOSE_FEEDS = [
+  { name: "RemoteOK", url: "https://remoteok.com/api" },
+  { name: "Arbeitnow", url: "https://www.arbeitnow.com/api/job-board-api" },
+  { name: "We Work Remotely", url: "https://weworkremotely.com/remote-jobs.rss" }
+];
+function remoteFeeds(terms) {
+  const ts = (terms || []).map(t => String(t).trim()).filter(Boolean).slice(0, 3), out = [];
+  if (ts.length) {
+    for (const t of ts) {
+      const q = encodeURIComponent(t);
+      if (t.length >= 3) out.push({ name: "Jobicy: " + t, url: "https://jobicy.com/api/v2/remote-jobs?count=50&tag=" + q });
+      out.push({ name: "Himalayas: " + t, url: "https://himalayas.app/jobs/api/search?q=" + q + "&sort=recent" });
+    }
+    out.push({ name: "Remotive: " + ts[0], url: "https://remotive.com/api/remote-jobs?limit=50&search=" + encodeURIComponent(ts[0]) });
+  } else {
+    out.push({ name: "Jobicy", url: "https://jobicy.com/api/v2/remote-jobs?count=50" });
+    out.push({ name: "Himalayas", url: "https://himalayas.app/jobs/api?limit=20" });
+    out.push({ name: "Remotive", url: "https://remotive.com/api/remote-jobs?limit=50" });
+  }
+  return out.concat(LOOSE_FEEDS);
+}
+const RGJ_FEED = { name: "Remote Game Jobs", url: "https://remotegamejobs.com/feed.rss" };
+function feedPlan(groups) {
+  const out = [];
+  if (groups.remote) out.push(...remoteFeeds(groups.terms));
+  if (groups.rgj) out.push(RGJ_FEED);
+  if (groups.studios) for (const s of STUDIOS) out.push({ name: s.name, url: studioFeedUrl(s.ats, s.slug), ats: s.ats, slug: s.slug });
+  return out;
+}
+// The browser's page text may carry a title or label around the feed: keep the feed itself.
+function extractFeedText(raw) {
+  const t = String(raw == null ? "" : raw);
+  const x = t.search(/<\?xml|<rss[\s>]|<feed[\s>]/i);
+  if (x >= 0) return t.slice(x).trim();
+  let j = t.search(/\{\s*"|\[\s*[\{"]/);
+  if (j < 0) j = t.search(/[\[{]/);
+  if (j < 0) return t.trim();
+  const end = Math.max(t.lastIndexOf("}"), t.lastIndexOf("]"));
+  return (end > j ? t.slice(j, end + 1) : t.slice(j)).trim();
+}
+// Long pages can arrive cut off. Keep every complete listing before the cut.
+function parseLoose(t) {
+  try { return { data: JSON.parse(t), partial: false }; } catch (_) { /* try to repair */ }
+  for (const tail of ["]}", "]"]) { try { return { data: JSON.parse(t + tail), partial: true }; } catch (_) { /* not just missing its end */ } }
+  let end = t.length;
+  for (let i = 0; i < 150; i++) {
+    const k = t.lastIndexOf("},", end - 1); if (k < 0) break;
+    const head = t.slice(0, k + 1);
+    for (const tail of ["]}", "]"]) { try { return { data: JSON.parse(head + tail), partial: true }; } catch (_) { /* keep looking */ } }
+    end = k;
+  }
+  return null;
+}
+function jobsFromBrowserText(raw) {
+  const t = extractFeedText(raw);
+  if (t.charAt(0) === "<") return { jobs: normalizeText(t), partial: false };
+  const r = parseLoose(t);
+  if (!r) throw new Error("The page did not come back as a readable feed. Use its link above and paste it.");
+  if (r.data && Array.isArray(r.data.jobs) && !r.data.jobs.length) return { jobs: [], partial: false, empty: true };
+  return { jobs: normalizeFeed(r.data), partial: r.partial };
+}
+function textOf(res) {
+  if (res && Array.isArray(res.content)) {
+    const s = res.content.filter(b => b && b.type === "text" && typeof b.text === "string").map(b => b.text).join("\n");
+    if (s) return s;
+  }
+  return res && typeof res.payload === "string" ? res.payload : "";
+}
+function findTabId(res) {
+  const p = res && res.payload;
+  if (p && typeof p === "object" && p.tabId != null && !isNaN(Number(p.tabId))) return Number(p.tabId);
+  const m = /tab\s*_?id\W{0,6}(\d+)/i.exec(textOf(res) || JSON.stringify(p || ""));
+  return m ? Number(m[1]) : null;
+}
+// Combine two lists of listings by id, keeping whichever copy has the longer description.
+function mergeJobs(a, b) {
+  const m = new Map();
+  for (const j of a) m.set(j.id, j);
+  for (const j of b) { const o = m.get(j.id); if (!o || (j.description || "").length > (o.description || "").length) m.set(j.id, j); }
+  return Array.from(m.values());
+}
+// short = Greenhouse without descriptions (much smaller, so it arrives whole)
+function studioFeedUrl(ats, slug, short) {
+  const s = encodeURIComponent(slug);
+  if (ats === "gh") return "https://boards-api.greenhouse.io/v1/boards/" + s + "/jobs" + (short ? "" : "?content=true");
+  if (ats === "lv") return "https://api.lever.co/v0/postings/" + s + "?mode=json";
+  return "https://api.ashbyhq.com/posting-api/job-board/" + s;
+}
+// Recruitee dates look like "2026-05-29 14:07:42 UTC".
+function looseDate(v) {
+  const m = /^(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}:\d{2})(?: UTC)?$/.exec(String(v || "").trim());
+  return m ? m[1] + "T" + m[2] + "Z" : v;
+}
+// Personio publishes an XML feed. The local app adds the company name and address as comments at the top.
+function parsePersonio(text) {
+  const company = decodeEntities((/<!--\s*jf-company:([\s\S]*?)\s*-->/.exec(text) || [])[1] || "");
+  const base = ((/<!--\s*jf-base:(\S+)\s*-->/.exec(text) || [])[1] || "").replace(/\/$/, "");
+  const jobs = [];
+  for (const p of (text.match(/<position[\s>][\s\S]*?<\/position>/gi) || [])) {
+    const id = xmlTag(p, "id"), name = decodeEntities(xmlTag(p, "name"));
+    const posted = parseDate(xmlTag(p, "createdAt")); if (!posted || !name) continue;
+    const offices = (p.match(/<office[\s>][\s\S]*?<\/office>/gi) || []).map(o => decodeEntities(xmlTag(o, "office"))).filter(Boolean);
+    const secs = (p.match(/<jobDescription[\s>][\s\S]*?<\/jobDescription>/gi) || []).map(x => stripHtml(xmlTag(x, "name") + " " + xmlTag(x, "value"))).join(" ");
+    const meta = ["department", "recruitingCategory", "employmentType", "seniority", "schedule", "keywords"].map(t => decodeEntities(xmlTag(p, t))).join(" ");
+    jobs.push({ id: "personio-" + (base || company) + "-" + id, title: name, company: company || decodeEntities(xmlTag(p, "subcompany")), location: offices[0] || "",
+      url: base && id ? base + "/job/" + id : "", posted, description: (secs + " " + meta + " " + offices.slice(1).join(" ")).slice(0, 4000), source: "Personio" });
+  }
+  return jobs;
+}
+function normalizeText(text) {
+  const t = String(text || "").trim();
+  if (t.charAt(0) === "<") {
+    const jobs = /<workzag-jobs[\s>]/i.test(t) ? parsePersonio(t) : parseRss(t);
+    if (!jobs.length) throw new Error("No listings found in that RSS or XML text.");
+    return jobs;
+  }
+  return normalizeFeed(JSON.parse(t)); // a SyntaxError here means the text is not valid JSON
+}
+function normalizeFeed(data) {
+  const jobs = [];
+  if (data && Array.isArray(data.jobs) && data.jobs.length && data.jobs[0].publication_date !== undefined) { // Remotive
+    for (const j of data.jobs) {
+      const posted = parseDate(j.publication_date); if (!posted) continue;
+      jobs.push({ id: "remotive-" + j.id, title: j.title || "", company: j.company_name || "", location: j.candidate_required_location || "Remote",
+        url: j.url || "", posted, description: stripHtml(j.description) + " " + (j.tags || []).join(" "), source: "Remotive", arrangement: "remote" });
+    }
+  } else if (data && Array.isArray(data.data) && data.data.length && data.data[0].slug !== undefined) { // Arbeitnow
+    for (const j of data.data) {
+      if (!j.created_at) continue;
+      let loc = j.remote ? "Remote" : (j.location || "");
+      // Arbeitnow lists mostly German jobs; add the country so "My country" matching works.
+      if (loc && !j.remote && !/germany|deutschland|austria|switzerland|netherlands/i.test(loc)) loc += ", Germany";
+      jobs.push({ id: "arbeitnow-" + j.slug, title: j.title || "", company: j.company_name || "", location: loc,
+        url: j.url || "", posted: Number(j.created_at) * 1000, description: stripHtml(j.description) + " " + (j.tags || []).join(" "),
+        source: "Arbeitnow", arrangement: j.remote ? "remote" : undefined });
+    }
+  } else if (data && Array.isArray(data.results) && data.results.length && data.results[0].redirect_url !== undefined) { // Adzuna
+    for (const j of data.results) {
+      const posted = toMs(j.created); if (!posted) continue;
+      const area = (j.location && j.location.area) || [];
+      let loc = (j.location && j.location.display_name) || area.slice(1).reverse().join(", ");
+      if (area[0] && loc.toLowerCase().indexOf(String(area[0]).toLowerCase()) < 0) loc = loc ? loc + ", " + area[0] : String(area[0]);
+      jobs.push({ id: "adzuna-" + j.id, title: stripHtml(j.title), company: stripHtml((j.company && j.company.display_name) || ""), location: loc,
+        url: j.redirect_url || "", posted, description: stripHtml(j.description) + " " + ((j.category && j.category.label) || ""), source: "Adzuna" });
+    }
+  } else if (data && Array.isArray(data.jobs) && data.jobs.length && data.jobs[0].shortcode !== undefined) { // Workable
+    for (const j of data.jobs) {
+      const posted = toMs(j.published_on) || toMs(j.created_at); if (!posted) continue;
+      const place = [j.city, j.state, j.country].filter(Boolean).join(", ")
+        || listText((j.locations || []).map(l => [l.city, l.region, l.country].filter(Boolean).join(", ")));
+      const remote = j.telecommuting === true;
+      jobs.push({ id: "workable-" + (j.shortcode || j.code), title: decodeEntities(j.title || ""), company: data.jfCompany || data.name || "",
+        location: remote ? "Remote" + (j.country ? " (" + j.country + ")" : "") : place, url: j.url || j.shortlink || j.application_url || "", posted,
+        description: stripHtml(j.description) + " " + [j.department, j.function, j.industry, j.employment_type].filter(Boolean).join(" "),
+        source: "Workable", arrangement: remote ? "remote" : undefined });
+    }
+  } else if (data && Array.isArray(data.offers) && data.offers.length && (data.offers[0].careers_url !== undefined || data.offers[0].slug !== undefined)) { // Recruitee
+    for (const j of data.offers) {
+      const posted = toMs(looseDate(j.published_at)) || toMs(looseDate(j.created_at)); if (!posted) continue;
+      const place = j.location || [j.city, j.state_name, j.country].filter(Boolean).join(", ");
+      jobs.push({ id: "recruitee-" + (data.jfSlug || j.company_name || "") + "-" + j.id, title: decodeEntities(j.title || ""), company: data.jfCompany || j.company_name || "",
+        location: j.remote ? "Remote" + (j.country ? " (" + j.country + ")" : "") : place, url: j.careers_url || "", posted,
+        description: stripHtml((j.description || "") + " " + (j.requirements || "")) + " " + [j.department, j.employment_type_code].filter(Boolean).join(" "),
+        source: "Recruitee", arrangement: j.remote ? "remote" : j.hybrid ? "hybrid" : j.on_site ? "onsite" : undefined });
+    }
+  } else if (data && Array.isArray(data.content) && data.content.length && data.content[0].releasedDate !== undefined) { // SmartRecruiters
+    const iso = {}; for (const k in COUNTRY_ISO) iso[COUNTRY_ISO[k]] = k;
+    const lab = o => (o && o.label) || "";
+    for (const j of data.content) {
+      const posted = toMs(j.releasedDate); if (!posted) continue;
+      const l = j.location || {}, code = String(l.country || "").toUpperCase(), country = iso[code] || code;
+      const secs = (j.jobAd && j.jobAd.sections) || {};
+      const body = Object.keys(secs).map(k => stripHtml(secs[k] && secs[k].text)).join(" ");
+      const slug = (j.company && j.company.identifier) || data.jfSlug || "";
+      jobs.push({ id: "sr-" + j.id, title: decodeEntities(j.name || ""), company: data.jfCompany || (j.company && j.company.name) || "",
+        location: l.remote ? "Remote" + (country ? " (" + country + ")" : "") : [l.city, l.region, country].filter(Boolean).join(", "),
+        url: "https://jobs.smartrecruiters.com/" + encodeURIComponent(slug) + "/" + j.id, posted,
+        description: (body + " " + [lab(j.department), lab(j.function), lab(j.industry), lab(j.typeOfEmployment)].join(" ")).slice(0, 4000),
+        source: "SmartRecruiters", arrangement: l.remote ? "remote" : l.hybrid ? "hybrid" : undefined });
+    }
+  } else if (data && Array.isArray(data.jobs) && data.jobs.length && data.jobs[0].absolute_url !== undefined) { // Greenhouse
+    for (const j of data.jobs) {
+      // First published, not updated_at: studios touch old posts often, which made ghost listings look new.
+      const posted = parseDate(j.first_published) || parseDate(j.updated_at); if (!posted) continue;
+      const m = /greenhouse\.io\/([^\/]+)\//i.exec(j.absolute_url || "");
+      const st = studioInfo("gh", m && m[1], j.company_name || (m ? m[1] : "Greenhouse board"));
+      const deptNames = (j.departments || []).map(d => d && d.name).filter(n => n && n.toLowerCase() !== String(st.company).toLowerCase());
+      const dept = ghMeta(j, ["job family", "career page - sub department", "career page - department", "department", "discipline", "team"]) || deptNames.join(", ");
+      let etype = ghMeta(j, ["worker type", "employment type", "job type", "time type"]);
+      if (/^contingent( worker)?$/i.test(etype)) etype = "Contract";
+      jobs.push(Object.assign({ id: "gh-" + j.id, title: j.title || "",
+        location: (j.location && j.location.name) || "", url: j.absolute_url || "", posted, description: (stripHtml(j.content) + " " + dept).trim(),
+        dept, etype, source: "Greenhouse" }, st));
+    }
+  } else if (Array.isArray(data) && data.length && data[0].hostedUrl !== undefined) { // Lever
+    const wt = { "on-site": "onsite", onsite: "onsite", remote: "remote", hybrid: "hybrid" };
+    for (const j of data) {
+      if (!j.createdAt) continue;
+      const m = /jobs\.lever\.co\/([^\/]+)/i.exec(j.hostedUrl || "");
+      const cats = j.categories || {};
+      const loc = cats.allLocations && cats.allLocations.length ? cats.allLocations.join("; ") : (cats.location || "");
+      // Lever splits a posting into an intro, bullet lists and an "additional" part that often holds the salary.
+      const desc = [j.descriptionPlain || stripHtml(j.description)].concat((j.lists || []).map(l => (l.text || "") + " " + stripHtml(l.content)), [j.additionalPlain || stripHtml(j.additional)])
+        .filter(x => x && x.trim()).join("\n\n").slice(0, 6000);
+      const dept = [cats.department, cats.team].filter(Boolean).join(" / ");
+      jobs.push(Object.assign({ id: "lever-" + j.id, title: j.text || "", location: loc,
+        url: j.hostedUrl || "", posted: Number(j.createdAt), description: desc, dept, etype: cats.commitment || "", source: "Lever",
+        arrangement: wt[String(j.workplaceType || "").toLowerCase()] }, studioInfo("lv", m && m[1], m ? m[1] : "Lever company")));
+    }
+  } else if (data && Array.isArray(data.jobs) && data.jobs.length && data.jobs[0].jobTitle !== undefined) { // Jobicy
+    for (const j of data.jobs) {
+      const posted = toMs(j.pubDate); if (!posted) continue;
+      jobs.push({ id: "jobicy-" + j.id, title: decodeEntities(j.jobTitle || ""), company: decodeEntities(j.companyName || ""),
+        location: fixCase(listText(j.jobGeo)) || "Remote", url: j.url || "", posted,
+        description: stripHtml(j.jobDescription || j.jobExcerpt) + " " + [listText(j.jobIndustry), listText(j.jobType), listText(j.jobLevel)].join(" "),
+        source: "Jobicy", arrangement: "remote" });
+    }
+  } else if (data && Array.isArray(data.jobs) && data.jobs.length && data.jobs[0].companyName !== undefined && data.jobs[0].title !== undefined) { // Himalayas
+    for (const j of data.jobs) {
+      const posted = toMs(j.pubDate); if (!posted) continue;
+      jobs.push({ id: "himalayas-" + (j.guid || j.applicationLink || j.title + j.companyName), title: j.title || "", company: j.companyName || "",
+        location: fixCase(listText(j.locationRestrictions)) || "Remote",
+        url: /^https?:\/\//i.test(j.guid || "") ? j.guid : (j.applicationLink || ""), posted,
+        description: stripHtml(j.description || j.excerpt) + " " + [listText(j.categories), listText(j.seniority), listText(j.employmentType)].join(" "),
+        source: "Himalayas", arrangement: "remote" });
+    }
+  } else if (data && Array.isArray(data.jobs) && data.jobs.length && data.jobs[0].jobUrl !== undefined) { // Ashby
+    const wt = { remote: "remote", hybrid: "hybrid", onsite: "onsite", "on-site": "onsite" };
+    for (const j of data.jobs) {
+      if (j.isListed === false) continue;
+      const posted = toMs(j.publishedAt) || toMs(j.publishedDate); if (!posted) continue;
+      const m = /ashbyhq\.com\/([^\/]+)\//i.exec(j.jobUrl || "");
+      let loc = [j.location].concat((j.secondaryLocations || []).map(x => typeof x === "string" ? x : x && x.location)).filter(Boolean).join("; ");
+      const country = j.address && j.address.postalAddress && j.address.postalAddress.addressCountry;
+      if (country && !new RegExp(escRe(country), "i").test(loc)) loc += (loc ? ", " : "") + country;
+      const dept = [j.department, j.team].filter(Boolean).join(" / ");
+      jobs.push(Object.assign({ id: "ashby-" + j.id, title: j.title || "", location: loc, url: j.jobUrl || "", posted,
+        description: (j.descriptionPlain || stripHtml(j.descriptionHtml)) + " " + dept, dept, etype: String(j.employmentType || "").replace(/([a-z])([A-Z])/g, "$1 $2"),
+        source: "Ashby", arrangement: wt[String(j.workplaceType || "").toLowerCase().replace(/\s+/g, "")] || (j.isRemote ? "remote" : undefined) },
+        studioInfo("as", m && m[1], m ? m[1] : "Ashby company")));
+    }
+  } else if (Array.isArray(data) && data.some(x => x && x.position !== undefined && x.company !== undefined)) { // RemoteOK (first item is a legal notice)
+    for (const j of data) {
+      if (!j || j.position === undefined) continue;
+      const posted = toMs(j.epoch) || toMs(j.date); if (!posted) continue;
+      jobs.push({ id: "remoteok-" + (j.id || j.slug), title: decodeEntities(j.position), company: decodeEntities(j.company || ""),
+        location: fixCase(j.location) || "Remote", url: absUrl(j.url || j.apply_url, "https://remoteok.com"), posted,
+        description: stripHtml(j.description) + " " + (j.tags || []).join(" "), source: "RemoteOK", arrangement: "remote" });
+    }
+  } else {
+    throw new Error("That does not look like a Jobicy, Himalayas, RemoteOK, We Work Remotely, Remote Game Jobs, Ashby, Workable, Recruitee, SmartRecruiters, Personio, Adzuna, Remotive, Arbeitnow, Greenhouse or Lever feed.");
+  }
+  return jobs;
+}
+
+// ---- where a job can be done from
+const BAD_ABBR = new Set(["DE", "NL"]);        // also country codes (Germany, Netherlands): only the full state names count
+const NAME_SKIP = new Set(["georgia", "washington"]); // also a country / a city: only the abbreviation (GA, WA) counts
+const REGIONS = [];
+(function () {
+  const add = (str, country) => str.split("|").forEach(s => {
+    const parts = s.split(" "); const abbr = parts.pop();
+    REGIONS.push({ name: parts.join(" ").toLowerCase(), abbr, country });
+  });
+  add("Alabama AL|Alaska AK|Arizona AZ|Arkansas AR|California CA|Colorado CO|Connecticut CT|Delaware DE|Florida FL|Georgia GA|Hawaii HI|Idaho ID|Illinois IL|Indiana IN|Iowa IA|Kansas KS|Kentucky KY|Louisiana LA|Maine ME|Maryland MD|Massachusetts MA|Michigan MI|Minnesota MN|Mississippi MS|Missouri MO|Montana MT|Nebraska NE|Nevada NV|New Hampshire NH|New Jersey NJ|New Mexico NM|New York NY|North Carolina NC|North Dakota ND|Ohio OH|Oklahoma OK|Oregon OR|Pennsylvania PA|Rhode Island RI|South Carolina SC|South Dakota SD|Tennessee TN|Texas TX|Utah UT|Vermont VT|Virginia VA|Washington WA|West Virginia WV|Wisconsin WI|Wyoming WY|District of Columbia DC", "United States");
+  add("Alberta AB|British Columbia BC|Manitoba MB|New Brunswick NB|Newfoundland and Labrador NL|Nova Scotia NS|Ontario ON|Prince Edward Island PE|Quebec QC|Saskatchewan SK|Yukon YT|Northwest Territories NT|Nunavut NU", "Canada");
+})();
+const REGION_BY_NAME = new Map(REGIONS.filter(r => !NAME_SKIP.has(r.name)).map(r => [r.name, r]));
+const REGION_BY_ABBR = new Map(REGIONS.filter(r => !BAD_ABBR.has(r.abbr)).map(r => [r.abbr, r]));
+
+function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+function wordIn(text, term) { return new RegExp("(?:^|[^a-z0-9])" + escRe(term) + "(?![a-z0-9])").test(text); }
+const EU = "europe;emea;eu", EUR = "europe;emea", NA = "north america;americas", LA = "latam;americas", AP = "asia;apac";
+const COUNTRIES = [
+  ["United States", NA, "US;USA;U.S.;U.S.A.;United States;United States of America"],
+  ["Canada", NA, "Canada"],
+  ["United Kingdom", EUR, "UK;U.K.;United Kingdom;Great Britain;England;Scotland;Wales;Northern Ireland"],
+  ["Ireland", EU, "Ireland"], ["Germany", EU, "Germany;Deutschland"], ["France", EU, "France"], ["Spain", EU, "Spain;España"],
+  ["Portugal", EU, "Portugal"], ["Italy", EU, "Italy"], ["Netherlands", EU, "Netherlands;Holland"], ["Belgium", EU, "Belgium"],
+  ["Austria", EU, "Austria"], ["Sweden", EU, "Sweden"], ["Denmark", EU, "Denmark"], ["Finland", EU, "Finland"], ["Poland", EU, "Poland"],
+  ["Czech Republic", EU, "Czech Republic;Czechia"], ["Romania", EU, "Romania"], ["Greece", EU, "Greece"], ["Estonia", EU, "Estonia"],
+  ["Lithuania", EU, "Lithuania"], ["Latvia", EU, "Latvia"], ["Hungary", EU, "Hungary"], ["Bulgaria", EU, "Bulgaria"], ["Croatia", EU, "Croatia"],
+  ["Switzerland", EUR, "Switzerland"], ["Norway", EUR, "Norway"], ["Ukraine", EUR, "Ukraine"], ["Turkey", EUR + ";asia", "Turkey;Türkiye"],
+  ["Israel", "middle east;emea;asia", "Israel"], ["United Arab Emirates", "middle east;emea;asia", "UAE;United Arab Emirates"],
+  ["India", AP, "India"], ["Singapore", AP, "Singapore"], ["Japan", AP, "Japan"], ["South Korea", AP, "South Korea;Korea"], ["China", AP, "China"],
+  ["Philippines", AP, "Philippines"], ["Indonesia", AP, "Indonesia"], ["Vietnam", AP, "Vietnam"], ["Thailand", AP, "Thailand"], ["Malaysia", AP, "Malaysia"],
+  ["Australia", "oceania;apac", "Australia"], ["New Zealand", "oceania;apac", "New Zealand"],
+  ["Brazil", "south america;" + LA, "Brazil"], ["Argentina", "south america;" + LA, "Argentina"], ["Colombia", "south america;" + LA, "Colombia"],
+  ["Chile", "south america;" + LA, "Chile"], ["Mexico", NA + ";latam", "Mexico"],
+  ["South Africa", "africa;emea", "South Africa"], ["Nigeria", "africa;emea", "Nigeria"], ["Kenya", "africa;emea", "Kenya"], ["Egypt", "africa;emea", "Egypt"]
+].map(r => {
+  const aliases = r[2].split(";");
+  return { name: r[0], groups: r[1].split(";"), aliases,
+    res: aliases.map(a => {
+      const caseSensitive = a === a.toUpperCase() && /[A-Z]/.test(a) && a.length <= 6; // US, UK, USA, UAE need capitals
+      return new RegExp("(?:^|[^A-Za-z])" + escRe(a) + "(?![A-Za-z])", caseSensitive ? "" : "i");
+    }) };
+});
+const GROUP_RES = {
+  "europe": /\beurope(an)?\b/i, "emea": /\bemea\b/i, "eu": /\bEU\b/, "north america": /north america/i, "americas": /\bamericas\b/i,
+  "latam": /\blatam\b|latin america/i, "apac": /\bapac\b|asia[- ]pacific/i, "asia": /\basia\b/i, "oceania": /\boceania\b/i,
+  "africa": /\bafrica\b/i, "middle east": /middle east|\bmena\b/i, "south america": /south america/i
+};
+const GROUP_LABEL = { eu: "EU", emea: "EMEA", apac: "APAC", latam: "LATAM" };
+function groupLabel(g) { return GROUP_LABEL[g] || g.replace(/\b\w/g, c => c.toUpperCase()); }
+function titleCase(s) { return String(s).replace(/\b\w/g, c => c.toUpperCase()); }
+
+function parsePlace(loc) {
+  const orig = String(loc || ""), lower = orig.toLowerCase();
+  const countries = new Set(), regions = new Set(), groups = new Set();
+  for (const c of COUNTRIES) if (c.res.some(re => re.test(orig))) countries.add(c.name);
+  for (const r of REGIONS) {
+    if (!NAME_SKIP.has(r.name) && wordIn(lower, r.name)) { regions.add(r.name); countries.add(r.country); }
+  }
+  const abbrRe = /,\s*([A-Z]{2})\b/g; let m;
+  while ((m = abbrRe.exec(orig))) { const r = REGION_BY_ABBR.get(m[1]); if (r) { regions.add(r.name); countries.add(r.country); } }
+  for (const g of Object.keys(GROUP_RES)) if (GROUP_RES[g].test(orig)) groups.add(g);
+  const worldwide = /worldwide|anywhere|\bglobal(ly)?\b|international|any location/i.test(orig);
+  const cleaned = lower.replace(/\b(remote|hybrid|on-?site|in[- ]office|office|work from home|wfh|flexible|only|or|and|based|first|friendly|fully|distributed|locations?|multiple|various|tbd|n\/a)\b/g, " ")
+    .replace(/[^a-z]+/g, " ").trim();
+  return { lower, countries, regions, groups, worldwide, unspecified: cleaned === "" };
+}
+
+function parseUserLocation(raw, nearbyRaw) {
+  const parts = String(raw || "").split(",").map(s => s.trim()).filter(Boolean);
+  if (!parts.length) return null;
+  let region = null, country = null; const cities = [];
+  parts.forEach((p, i) => {
+    const lp = p.toLowerCase();
+    const c = COUNTRIES.find(c => c.aliases.some(a => a.toLowerCase() === lp));
+    if (c) { if (!country) country = c.name; return; }
+    const r = REGION_BY_NAME.get(lp) || (i > 0 && p.length === 2 ? REGION_BY_ABBR.get(p.toUpperCase()) : null);
+    if (r) { if (!region) region = r; return; }
+    cities.push(lp);
+  });
+  if (region && !country) country = region.country;
+  const extra = String(nearbyRaw || "").split(/[,;\n]/).map(s => s.trim().toLowerCase()).filter(s => s.length > 2);
+  const info = country ? COUNTRIES.find(c => c.name === country) : null;
+  return {
+    cities, nearby: extra, region: region ? region.name : null, regionName: region ? titleCase(region.name) : "",
+    regionAbbr: region ? region.abbr : "", cityDisplay: cities[0] ? titleCase(cities[0]) : "",
+    country, groups: info ? info.groups : [],
+    summary: [cities[0] ? titleCase(cities[0]) : "", region ? titleCase(region.name) : "", country || ""].filter(Boolean).join(", ")
+  };
+}
+
+function detectArrangement(job) {
+  if (job.arrangement) return { value: job.arrangement, stated: true };
+  const head = ((job.title || "") + " " + (job.location || "")).toLowerCase();
+  const body = (job.description || "").slice(0, 1500).toLowerCase();
+  if (/\bhybrid\b/.test(head)) return { value: "hybrid", stated: true };
+  if (/\bremote\b|work from home|\bwfh\b|telecommut|anywhere|worldwide/.test(head)) return { value: "remote", stated: true };
+  if (/on-?site|in[- ]office|in[- ]person/.test(head)) return { value: "onsite", stated: true };
+  if (/\bhybrid\b/.test(body)) return { value: "hybrid", stated: true };
+  if (/(fully|100%|completely|entirely)\s+remote|remote[- ]first|remote (position|role|job|opportunity)|work(ing)? remotely|work from (home|anywhere)/.test(body)) return { value: "remote", stated: true };
+  if (/on-?site|in[- ]office|in[- ]person/.test(body)) return { value: "onsite", stated: true };
+  // A bare continent or "worldwide" location (no city, state or country) can only sensibly be remote.
+  const p = parsePlace(job.location);
+  if (p.worldwide || (p.groups.size && !p.countries.size && !p.regions.size)) return { value: "remote", stated: false };
+  return { value: "onsite", stated: false };
+}
+function effectiveLevel(user, radius) {
+  const order = ["city", "region", "country"];
+  const has = { city: user.cities.length + user.nearby.length > 0, region: !!user.region, country: !!user.country };
+  for (let i = order.indexOf(radius); i < 3; i++) if (has[order[i]]) return order[i];
+  return "city";
+}
+// o: { arrangements: {remote, hybrid, onsite}, radius: "city"|"region"|"country", unspecified: bool }
+function evaluateJob(job, user, o) {
+  const arr = detectArrangement(job);
+  const out = { arrangement: arr.value, stated: arr.stated, show: true, fit: "" };
+  if (!o.arrangements[arr.value]) { out.show = false; return out; }
+  if (!user) return out;
+  const p = parsePlace(job.location);
+  let city = user.cities.some(c => wordIn(p.lower, c));
+  if (city && user.country && p.countries.size && !p.countries.has(user.country)) city = false; // "Victoria, Australia"
+  if (city && user.region && p.regions.size && !p.regions.has(user.region)) city = false;        // "Portland, ME"
+  // Places the person lists themselves (a cross-border commute, say) are trusted as written.
+  if (!city && user.nearby.some(c => wordIn(p.lower, c))) city = true;
+  const region = !!user.region && p.regions.has(user.region);
+  const country = !!user.country && p.countries.has(user.country);
+  const group = user.groups.find(g => p.groups.has(g));
+  if (p.unspecified) { out.show = !!o.unspecified; out.fit = "Location not stated"; return out; }
+  if (arr.value === "remote") {
+    const otherRegionOnly = !!user.region && p.regions.size > 0 && !region && !city;
+    if (otherRegionOnly) out.show = false;
+    else if (city) out.fit = "Open to your area";
+    else if (region) out.fit = "Open to " + user.regionName;
+    else if (country) out.fit = "Open to " + user.country;
+    else if (group) out.fit = "Open to " + groupLabel(group);
+    else if (p.worldwide) out.fit = "Open worldwide";
+    else if (!user.country && (p.countries.size || p.regions.size || p.groups.size)) out.fit = "Check where it's open";
+    else out.show = false;
+    return out;
+  }
+  const level = effectiveLevel(user, o.radius);
+  if (city) out.fit = "In your area";
+  else if (level !== "city" && region) out.fit = "In " + user.regionName;
+  else if (level === "country" && country) out.fit = "In " + user.country;
+  else out.show = false;
+  return out;
+}
+
+// ---- job-board connectors (Indeed, ZipRecruiter, Dice): their results, turned into the page's job shape
+const COUNTRY_ISO = { "United States": "US", "Canada": "CA", "United Kingdom": "GB", "Ireland": "IE", "Germany": "DE", "France": "FR",
+  "Spain": "ES", "Italy": "IT", "Netherlands": "NL", "Australia": "AU", "New Zealand": "NZ", "India": "IN", "Mexico": "MX", "Brazil": "BR" };
+const BOARDS = [
+  { id: "indeed", name: "Indeed" },
+  { id: "ziprecruiter", name: "ZipRecruiter", only: ["US", "CA"] },
+  { id: "dice", name: "Dice", only: ["US", "CA"] }
+];
+// Summary text that says a "remote" job is only open in one country.
+function restrictionFromText(text) {
+  const t = String(text || "");
+  if (/\b(continental|contiguous)\s+(usa|us|u\.s\.|united states)\b|\b(us|usa|u\.s\.)\s+(citizens?|residents?|only)\b|\bmust\s+(live|reside|be located|be based)\s+in\s+(the\s+)?(us|usa|u\.s\.|united states)\b/i.test(t)) return "United States";
+  if (/\bcanad(a|ian)\s+(citizens?|residents?|only)\b|\bmust\s+(live|reside|be located|be based)\s+in\s+canada\b/i.test(t)) return "Canada";
+  return "";
+}
+// Boards put a remote job's company base in the location ("Wasilla, Alaska"). The job is open to that country, not that town.
+function connectorJob(b, ctx) {
+  const job = { id: b.id, title: decodeEntities(b.title), company: decodeEntities(b.company || ""), location: String(b.location || ""), url: b.url,
+    posted: b.posted, source: b.source, live: true,
+    description: [b.summary, b.typeText, ctx.term].filter(Boolean).join(" ").slice(0, 800) };
+  if (b.companyUrl) job.companyUrl = b.companyUrl;
+  const d = detectArrangement({ title: job.title, location: job.location, description: "" });
+  let arr = b.arrangement || (/^\s*remote\s*$/i.test(job.location) ? "remote" : (d.stated ? d.value : undefined));
+  if (arr) job.arrangement = arr;
+  if ((arr || d.value) === "remote") {
+    const p = parsePlace(job.location);
+    if (!p.worldwide && p.countries.size <= 1) {
+      const c = Array.from(p.countries)[0] || restrictionFromText(b.summary) || ctx.remoteCountry || "";
+      job.location = c ? "Remote (" + c + ")" : "Remote";
+    }
+  }
+  return job;
+}
+function parseIndeed(text, ctx) {
+  const jobs = [];
+  for (const block of String(text || "").split(/\*\*Job Title:\*\*/).slice(1)) {
+    const f = { title: block.split("\n")[0].trim() };
+    const re = /\*\*([A-Za-z ]+):\*\*\s*([^\n]*)/g; let m;
+    while ((m = re.exec(block))) f[m[1].trim().toLowerCase()] = m[2].trim();
+    const url = f["view job url"], posted = parseDate(f["posted on"]);
+    if (!f.title || !url || !posted) continue;
+    // The "Job Id" in Indeed's results is a per-response counter, so the link is the stable id.
+    jobs.push(connectorJob({ id: "indeed-" + url, title: f.title, company: f.company, location: f.location, url, posted,
+      typeText: f["job type"], source: "Indeed" }, ctx));
+  }
+  return jobs;
+}
+function parseZip(payload, ctx) {
+  const out = [];
+  for (const j of (payload && payload.results) || []) {
+    if (!j.title || !j.job_redirect_url) continue;
+    const jt = String(j.job_type || "");
+    let arrangement;
+    if (/remote optional|hybrid/i.test(jt)) arrangement = "hybrid";
+    else if (/on-?site/i.test(jt)) arrangement = "onsite";
+    else if (/\bremote\b/i.test(jt) || j.is_remote) arrangement = "remote";
+    out.push(connectorJob({ id: "zip-" + j.listing_key, title: j.title, company: j.company, location: j.location, url: j.job_redirect_url,
+      posted: ctx.now - (Number(j.days_ago) || 0) * 86400000, typeText: jt, arrangement, source: "ZipRecruiter" }, ctx));
+  }
+  return out;
+}
+function parseDice(payload, ctx) {
+  const out = [];
+  for (const j of (payload && payload.data) || []) {
+    if (!j.title || !j.detailsPageUrl) continue;
+    const posted = parseDate(j.postedDate); if (!posted) continue;
+    const jl = j.jobLocation;
+    const loc = typeof jl === "string" ? jl : (jl && (jl.displayName || jl.name)) || "";
+    const wt = [].concat(j.workplaceTypes || []).map(x => String(x).toLowerCase());
+    const arrangement = wt.indexOf("hybrid") >= 0 ? "hybrid" : (wt.indexOf("remote") >= 0 || j.isRemote) ? "remote" : wt.length ? "onsite" : undefined;
+    out.push(connectorJob({ id: "dice-" + (j.guid || j.id), title: j.title, company: j.companyName, location: loc, url: j.detailsPageUrl, posted,
+      summary: stripHtml(j.summary), typeText: j.employmentType, arrangement, companyUrl: j.companyPageUrl, source: "Dice" }, ctx));
+  }
+  return out;
+}
+function unwrapPayload(result) {
+  let p = result && result.payload;
+  if (p == null && result && Array.isArray(result.content)) { const b = result.content.find(x => x && x.type === "text"); p = b && b.text; }
+  if (typeof p === "string") { try { p = JSON.parse(p); } catch (_) { /* Indeed text stays text */ } }
+  return p;
+}
+function parseConnectorResult(board, result, ctx) {
+  const p = unwrapPayload(result);
+  if (board === "Indeed") return parseIndeed(typeof p === "string" ? p : (p && p.result) || "", ctx);
+  if (board === "ZipRecruiter") return parseZip(p, ctx);
+  if (board === "Dice") return parseDice(p, ctx);
+  return [];
+}
+function rawCount(board, result) {
+  const p = unwrapPayload(result);
+  return board === "ZipRecruiter" ? ((p && p.results) || []).length : board === "Dice" ? ((p && p.data) || []).length : 0;
+}
+// The searches to run for one board: remote ones use the country, local ones use the city and the radius setting.
+function buildSearchPlan(board, user, o, terms, maxAgeDays) {
+  const iso = COUNTRY_ISO[user.country] || "";
+  if (!iso) return { skip: "Add a country, state or province to your location first." };
+  if (board.only && board.only.indexOf(iso) < 0) return { skip: board.name + " covers the US and Canada only." };
+  const wantRemote = !!o.arrangements.remote, wantLocal = !!(o.arrangements.hybrid || o.arrangements.onsite);
+  const city = user.cityDisplay;
+  const miles = { city: 25, region: 100, country: 200 }[o.radius] || 100;
+  const calls = [];
+  for (const term of terms) {
+    if (board.name === "Indeed") {
+      const loc = city ? [city, user.regionAbbr || user.country].join(", ") : (user.regionName || user.country);
+      if (wantRemote) calls.push({ term, label: term + ", remote", input: { search: term, location: "remote", country_code: iso } });
+      if (wantLocal) calls.push({ term, label: term + ", near you", input: { search: term, location: loc, country_code: iso } });
+    } else if (board.name === "ZipRecruiter") {
+      const loc = city ? [city, user.regionName].filter(Boolean).join(", ") : (user.regionName || user.country);
+      const posted = maxAgeDays ? { max_posted_minutes_ago: Math.max(1440, maxAgeDays * 1440) } : {};
+      if (wantRemote) for (const off of [0, 5]) calls.push({ term, label: term + ", remote", needsFull: off ? 5 : 0,
+        input: Object.assign({ job_role: term, location: user.country, country_admin_code: iso, location_types: ["REMOTE"] }, off ? { offset: off } : {}, posted) });
+      if (wantLocal) for (const off of [0, 5]) calls.push({ term, label: term + ", near you", needsFull: off ? 5 : 0,
+        input: Object.assign({ job_role: term, location: loc, country_admin_code: iso, location_types: ["PHYSICAL", "HYBRID"], radius_miles: miles }, off ? { offset: off } : {}, posted) });
+    } else {
+      const loc = city ? [city, user.regionAbbr].filter(Boolean).join(", ") : (user.regionName || user.country);
+      const posted = maxAgeDays && maxAgeDays <= 7 ? { posted_date: maxAgeDays <= 1 ? "ONE" : maxAgeDays <= 3 ? "THREE" : "SEVEN" } : {};
+      const base = Object.assign({ keyword: term, jobs_per_page: 25, sort: "datePosted" }, posted);
+      if (wantRemote) calls.push({ term, label: term + ", remote", input: Object.assign({ location: user.country, workplace_types: ["Remote"] }, base) });
+      if (wantLocal) {
+        const wt = []; if (o.arrangements.onsite) wt.push("On-Site"); if (o.arrangements.hybrid) wt.push("Hybrid");
+        calls.push({ term, label: term + ", near you", input: Object.assign({ location: loc, radius: miles, radius_unit: "mi", workplace_types: wt }, base) });
+      }
+    }
+  }
+  return { calls };
+}
+// ---- one copy of each job, industry and keyword filters
+const INDUSTRIES = [
+  ["games", "Games", /\b(games?|gaming|gameplay|unity|unreal|esports|live[- ]?ops|level design|narrative|lore)/i],
+  ["software", "Software and IT", /\b(software|developer|engineer|devops|backend|back-end|frontend|front-end|full[- ]?stack|sre\b|cloud|cyber|security|qa\b|sysadmin|it support|mobile|web)/i],
+  ["data", "Data and AI", /\b(data|machine learning|ml\b|ai\b|analytics|analyst|scientist|llm|bi\b)/i],
+  ["design", "Design and creative", /\b(design|ux\b|ui\b|artist|animat|illustrat|creative|brand|video|motion|3d|copywrit|writer)/i],
+  ["product", "Product and project", /\b(product manager|product owner|program manager|project manager|producer|scrum|agile|delivery manager)/i],
+  ["marketing", "Marketing and content", /\b(marketing|seo\b|content|social media|growth|community|communications|pr\b)/i],
+  ["sales", "Sales and business development", /\b(sales|account executive|business development|bdr\b|sdr\b|partnerships|account manager)/i],
+  ["support", "Customer support", /\b(customer (support|success|service)|support (specialist|engineer|agent)|helpdesk|help desk)/i],
+  ["finance", "Finance and accounting", /\b(finance|financial|accountant|accounting|bookkeep|payroll|controller|audit|tax\b)/i],
+  ["people", "HR and recruiting", /\b(recruit|talent|human resources|hr\b|people (ops|partner|operations))/i],
+  ["health", "Healthcare", /\b(nurse|clinical|healthcare|medical|physician|therapist|pharma|patient)/i],
+  ["education", "Education", /\b(teacher|instructor|tutor|curriculum|education|professor|training)/i],
+  ["ops", "Operations and admin", /\b(operations|administrat|assistant|coordinator|logistics|supply chain|office manager)/i]
+];
+function industryMatch(job, key) {
+  const ind = INDUSTRIES.find(x => x[0] === key); if (!ind) return true;
+  if (key === "games" && job.gameStudio) return true; // every role at a game studio counts, accountants included
+  return ind[2].test(String(job.title || "") + " " + String(job.company || "")) || ind[2].test(String(job.description || "").slice(0, 400));
+}
+// Comma means "or": any one of the words is enough.
+function keywordMatch(job, q) {
+  const words = String(q || "").toLowerCase().split(",").map(x => x.trim()).filter(Boolean);
+  if (!words.length) return true;
+  const hay = (String(job.title || "") + " " + String(job.company || "") + " " + String(job.location || "") + " " + String(job.description || "")).toLowerCase();
+  return words.some(w => hay.includes(w));
+}
+function isEmptyFeed(text) {
+  try {
+    const d = JSON.parse(extractFeedText(text));
+    return (Array.isArray(d) && !d.length) || (d && [d.jobs, d.data, d.results, d.offers, d.content].some(a => Array.isArray(a) && !a.length));
+  } catch (_) { return false; }
+}
+// </pure>
+
+// ---- example listings (generic, relative dates) so the page works before any feed is added
+function exampleJobs() {
+  const now = Date.now(), day = 86400000;
+  const rows = [
+    ["Senior Backend Engineer", "Harbor Labs", "Remote (Canada)", 1, "Build and scale Python services with Django, PostgreSQL and REST APIs on AWS. Containerized microservices, docker, CI pipelines, code review and mentoring engineers."],
+    ["Frontend Engineer", "Brightline", "Hybrid - Toronto, ON", 2, "Ship accessible web interfaces with React, TypeScript and CSS. Work with designers on component libraries, testing and performance."],
+    ["Data Analyst", "Kestrel Works", "Remote - US only", 3, "Analyze product and customer data with SQL, Python and dashboards. Report on growth metrics, retention and experiments to leadership."],
+    ["Product Designer", "Lumen Studio", "Vancouver, BC", 2, "On-site role. Own end to end design for a consumer app: user research, wireframes, prototypes, design systems and usability testing in Figma."],
+    ["Game Systems Designer", "Tidewater Games", "Remote (Worldwide)", 4, "Design progression, economy and live events for a multiplayer strategy game. Balance systems with player metrics and write design documentation."],
+    ["Marketing Manager", "Pinecrest", "Austin, TX", 5, "On-site role. Plan campaigns, write marketing copy, manage social channels and email, and report on acquisition and engagement."],
+    ["Content Writer", "Fieldnote", "Remote, Europe", 1, "Write articles, lore, scripts and product copy. Edit for voice and consistency, collaborate with design and marketing."],
+    ["Project Manager", "Ironbridge Systems", "Calgary, AB", 8, "On-site role. Lead cross functional teams, run agile ceremonies, manage roadmaps, budgets, risks and stakeholder communication."],
+    ["DevOps Engineer", "Cobalt Freight", "Remote - US only", 6, "Manage Kubernetes, Terraform and AWS infrastructure. Monitoring, incident response, CI/CD pipelines and security hardening."],
+    ["Machine Learning Engineer", "Quarry AI", "London, UK (Hybrid)", 10, "Train and deploy machine learning models in Python with PyTorch. Feature pipelines, evaluation, MLOps and experimentation."],
+    ["Customer Support Specialist", "Brightline", "Remote", 0, "Help customers by email and chat, document solutions, escalate bugs and improve help center articles."],
+    ["Operations Manager", "Saltmarsh Foods", "Seattle, WA", 14, "On-site role. Run daily operations, scheduling, vendor relationships, inventory and process improvement. Lead a team of coordinators."],
+    ["Financial Analyst", "Northgate Capital", "Hybrid - Denver, CO", 20, "Build financial models in Excel, prepare forecasts and budgets, analyze variance and support quarterly reporting."],
+    ["Account Executive", "Halyard Software", "Berlin, Germany", 7, "On-site role. Own the sales cycle for mid-market accounts: prospecting, demos, negotiation, CRM hygiene and quota attainment."]
+  ];
+  return rows.map((r, i) => ({ id: "example-" + i, title: r[0], company: r[1], location: r[2], url: "", posted: now - r[3] * day - i * 3600000,
+    description: r[4], source: "Example", example: true }));
+}
+
+// ---- state & storage
+const $ = id => document.getElementById(id);
+const state = { jobs: exampleJobs(), resume: "", limit: 100 };
+let dedupeCache = { src: null, out: [] };
+function uniqueJobs() { if (dedupeCache.src !== state.jobs) dedupeCache = { src: state.jobs, out: dedupeJobs(state.jobs).map(tagRole) }; return dedupeCache.out; }
+function loadStore(key) { try { return JSON.parse(localStorage.getItem(key) || "null"); } catch (_) { return null; } }
+function saveStore(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); return true; } catch (_) { return false; } }
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+function safeUrl(u) { return /^https?:\/\//i.test(u || "") ? u : ""; }
+
+const SETTING_FIELDS = [
+  ["recency", "value"], ["max-age", "value"], ["filter", "value"], ["my-loc", "value"], ["nearby", "value"], ["radius", "value"],
+  ["arr-remote", "checked"], ["arr-hybrid", "checked"], ["arr-onsite", "checked"], ["unspec", "checked"], ["terms", "value"], ["industry", "value"], ["role", "value"], ["hide-evergreen", "checked"]
+];
+function restore() {
+  const saved = loadStore("jf-jobs");
+  if (saved && Array.isArray(saved) && saved.length) state.jobs = saved;
+  const s = loadStore("jf-settings");
+  if (s) for (const [id, prop] of SETTING_FIELDS) if (s[id] != null) $(id)[prop] = s[id];
+  $("rv").textContent = $("recency").value;
+  const r = loadStore("jf-resume");
+  if (typeof r === "string" && r.trim()) { state.resume = r; $("resume-text").value = r; }
+}
+function persistSettings() {
+  const s = {}; for (const [id, prop] of SETTING_FIELDS) s[id] = $(id)[prop];
+  saveStore("jf-settings", s);
+  state.limit = 100;
+}
+
+// ---- rendering
+let lastCount = -1, topBusy = false, lastUpdated = "";
+function words30() { return state.resume.split(/\s+/).filter(Boolean).length; }
+function initialOf(n) { const m = String(n || "?").match(/[A-Za-z0-9\u00C0-\uFFFF]/); return m ? m[0].toUpperCase() : "?"; }
+function avatarColor(n) { let h = 0; for (const ch of String(n)) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return "hsl(" + (h % 360) + " 48% 42%)"; }
+const PAY_RE = /[$\u00a3\u20ac]\s?\d{2,3}(?:,\d{3})+(?:\.\d+)?(?:\s?(?:-|\u2013|to)\s?[$\u00a3\u20ac]?\s?\d{2,3}(?:,\d{3})+)?|[$\u00a3\u20ac]\s?\d{2,3}(?:\.\d)?\s?[kK]\b(?:\s?(?:-|\u2013|to)\s?[$\u00a3\u20ac]?\s?\d{2,3}(?:\.\d)?\s?[kK]\b)?/;
+function salaryText(j) { const m = PAY_RE.exec(String(j.title || "") + " " + String(j.description || "")); return m ? m[0].replace(/\s+/g, " ").trim() : ""; }
+const openJobs = new Set();
+function descText(j) {
+  const t = String(j.description || "").replace(/\s+\n/g, "\n").replace(/[ \t]+/g, " ").trim();
+  return t.length > 1800 ? t.slice(0, 1800).replace(/\s+\S*$/, "") + "..." : t;
+}
+function moreHtml(j, e, href, pay, hasResume) {
+  const posted = j.posted ? new Date(j.posted).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Unknown";
+  const d = descText(j);
+  const dupes = (j.alsoUrls || []).length;
+  const also = (j.also && j.also.length ? " (also " + j.also.join(", ") + ")" : "") + (dupes ? ", " + dupes + " duplicate post" + (dupes > 1 ? "s" : "") + " merged" : "");
+  const row = (k, v) => "<div><dt>" + k + "</dt><dd>" + v + "</dd></div>";
+  return '<div class="job-more">' + '<dl class="facts">' +
+    row("Posted", esc(posted) + " (" + esc(ageLabel(j.ageDays)) + ")") +
+    row("Location", esc(j.location || "Not stated")) +
+    (j.family && j.family !== "Other" ? row("Role", esc([j.family, j.discipline !== j.family ? j.discipline : "", j.seniority].filter(Boolean).join(" \u00b7 ") + (j.contract ? ", contract" : ""))) : "") +
+    row("Work style", esc(ARR_LABEL[e.arrangement] + (!e.stated ? " (assumed)" : "")) + (e.fit ? ", " + esc(e.fit) : "")) +
+    row("Source", j.example ? "Example listing" : esc(j.source + also)) +
+    (pay ? row("Pay mentioned", esc(pay)) : "") +
+    (hasResume ? row("Match", "Fit " + Math.round(j.relevance * 100) + " &middot; Fresh " + Math.round(j.recency * 100)) : "") +
+    "</dl>" +
+    (d ? '<p class="desc">' + esc(d) + "</p>" : '<p class="desc none">This board did not share a description. Open the posting for the full details.</p>') +
+    (href ? '<a class="apply" href="' + esc(href) + '" target="_blank" rel="noopener">View posting</a>' : "") + "</div>";
+}
+function setPill(text, mode, extra) { const p = $("top-pill"); $("top-status").textContent = text; $("top-upd").textContent = extra || ""; p.classList.toggle("live", mode === "live"); p.classList.toggle("busy", mode === "busy"); }
+function updatePill() {
+  if (topBusy) return;
+  if (lastCount < 0) setPill("Example jobs only", "");
+  else setPill(lastCount.toLocaleString() + " jobs", "live", lastUpdated ? "\u00b7 updated " + ago(lastUpdated) : "");
+}
+function setRefBusy(b) { $("lc-refresh").disabled = b; $("top-refresh").disabled = b; }
+const ARR_LABEL = { remote: "Remote", hybrid: "Hybrid", onsite: "On-site" };
+function ageLabel(d) { return d <= 0 ? "today" : d === 1 ? "1d ago" : d + "d ago"; }
+function render() {
+  const now = Date.now();
+  const w = Number($("recency").value) / 100;
+  const maxAge = Number($("max-age").value);
+  const q = $("filter").value.trim().toLowerCase();
+
+  const user = parseUserLocation($("my-loc").value, $("nearby").value);
+  const o = {
+    arrangements: { remote: $("arr-remote").checked, hybrid: $("arr-hybrid").checked, onsite: $("arr-onsite").checked },
+    radius: $("radius").value, unspecified: $("unspec").checked
+  };
+  $("loc-read").textContent = !user
+    ? "Add your city to hide jobs you can't take."
+    : "Reading this as " + (user.summary || "your area") + "." + (user.country ? "" : " Add a state, province or country (e.g. Leeds, UK) so remote jobs can be matched.");
+
+  const evals = new Map();
+  const all = uniqueJobs(), industry = $("industry").value;
+  let pool = all.filter(j => { const e = evaluateJob(j, user, o); evals.set(j.id, e); return e.show; });
+  const hiddenByWhere = all.length - pool.length;
+  if (industry) pool = pool.filter(j => industryMatch(j, industry));
+  const role = $("role").value;
+  if (role) pool = pool.filter(j => j.family === role);
+  if ($("hide-evergreen").checked) pool = pool.filter(j => !j.evergreen);
+  if (q) pool = pool.filter(j => keywordMatch(j, q));
+
+  const hasResume = state.resume.split(/\s+/).filter(Boolean).length >= 30;
+  let list;
+  if (hasResume) {
+    list = rankJobs(state.resume, pool, { recencyWeight: w, maxAgeDays: maxAge || null, now });
+    $("results-title").textContent = "Best matches";
+  } else {
+    list = pool.filter(j => !maxAge || Math.floor((now - j.posted) / 86400000) <= maxAge)
+      .sort((a, b) => b.posted - a.posted)
+      .map(j => Object.assign({}, j, { ageDays: Math.max(Math.floor((now - j.posted) / 86400000), 0), matched: [] }));
+    $("results-title").textContent = "Newest jobs";
+  }
+  const shown = list.slice(0, state.limit);
+  const exampleOnly = state.jobs.length > 0 && state.jobs.every(j => j.example);
+  $("results-note").textContent = (hasResume ? "" : "Add a resume to rank by fit. ") + "Showing " + shown.length + " of " + list.length + " matches from " + all.length +
+    (exampleOnly ? " example listings" : " listings") + (hiddenByWhere ? ". " + hiddenByWhere + " hidden by location or work style." : "");
+  $("feed-summary").textContent = exampleOnly
+    ? state.jobs.length + " example listings loaded. Add real ones to search for real."
+    : state.jobs.length + " listings from " + [...new Set(state.jobs.map(j => j.source))].join(", ") + ".";
+  lastCount = exampleOnly ? -1 : all.length;
+  updatePill();
+  $("sum-resume").textContent = hasResume ? words30() + " words read" : "Not added yet";
+  $("sum-where").textContent = (user ? (user.summary || "your area") : "No location yet") + " · " + $("radius").selectedOptions[0].text.replace(/^My /, "").replace(/ and nearby places$/, "");
+  $("sum-rank").textContent = $("recency").value + "% freshness";
+  $("sum-listings").textContent = (exampleOnly ? "examples only" : all.length.toLocaleString() + " listings");
+  if (!shown.length) {
+    const acts = [];
+    if (hiddenByWhere) acts.push(["arr", "Turn on all work styles"], ["unspec", "Include jobs without a location"]);
+    if (maxAge && maxAge < 90) acts.push(["age", "Widen to 90 days"]);
+    if (q || industry || role) acts.push(["clear", "Clear keywords, industry and role"]);
+    $("results").innerHTML = '<div class="empty"><p>' + (hiddenByWhere
+      ? "Nothing matches your location and work style."
+      : "No jobs match these filters.") + '</p><div class="btn-row">' + acts.map(x => '<button type="button" class="ghost" data-act="' + x[0] + '">' + x[1] + "</button>").join("") + "</div></div>";
+    return;
+  }
+  const moreBtn = list.length > shown.length ? '<button id="more-btn" type="button" class="ghost">Show 100 more</button>' : "";
+  $("results").innerHTML = shown.map(j => {
+    const e = evals.get(j.id) || { arrangement: "onsite", stated: true, fit: "" };
+    const href = safeUrl(j.url);
+    const title = href ? '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(j.title) + "</a>" : esc(j.title);
+    const dateChip = '<span class="date-chip" title="Posted">' + (j.ageDays <= 2 ? '<span class="new">New</span>' : "") + ageLabel(j.ageDays) + "</span>";
+    const pct = Math.round(j.score * 100);
+    const match = hasResume ? '<div class="match" title="Overall match score"><small>Match</small><b>' + pct + '</b><div class="bar"><i style="width:' + Math.max(4, Math.min(100, pct)) + '%"></i></div></div>' : "";
+    const tags = (j.matched || []).map(t => '<span class="tag">' + esc(t) + "</span>").join("");
+    const arrText = ARR_LABEL[e.arrangement] + (!e.stated ? " (assumed)" : "");
+    const fitPill = e.fit ? '<span class="pill ' + (e.fit === "Location not stated" || e.fit === "Check where it's open" ? "warn" : "fit") + '">' + esc(e.fit) + "</span>" : "";
+    const pay = salaryText(j), payPill = pay ? '<span class="pill pay" title="Pay mentioned in the listing">' + esc(pay) + "</span>" : "";
+    const alsoPill = j.also && j.also.length ? '<span class="pill also" title="' + esc("Also posted on " + j.also.join(", ")) + '">Also on ' + j.also.length + "</span>" : "";
+    const srcPill = j.example ? '<span class="badge">Example</span>' : '<span class="pill src">' + esc(j.source) + "</span>";
+    const rolePills = (j.family && j.family !== "Other" ? '<span class="pill role" title="' + esc(j.family) + '">' + esc(j.discipline || j.family) + "</span>" : "") +
+      (j.seniority && j.seniority !== "Mid" ? '<span class="pill lvl">' + esc(j.seniority) + "</span>" : "") +
+      (j.contract ? '<span class="pill contract">Contract</span>' : "") +
+      (j.evergreen ? '<span class="pill warn" title="A talent-pool post, not a specific opening">General application</span>' : "") +
+      (j.ageDays > STALE_AFTER_DAYS ? '<span class="pill stale" title="Posted over ' + STALE_AFTER_DAYS + ' days ago. It may already be filled.">Old post</span>' : "");
+    const co = j.company || "?";
+    const company = safeUrl(j.companyUrl) ? '<a href="' + esc(j.companyUrl) + '" target="_blank" rel="noopener">' + esc(co) + "</a>" : "<b>" + esc(co) + "</b>";
+    return '<article class="job ' + esc(e.arrangement) + (openJobs.has(j.id) ? " open" : "") + '" data-id="' + esc(j.id) + '" tabindex="0" role="button" aria-expanded="' + openJobs.has(j.id) + '"><div class="avatar" style="--av:' + avatarColor(co) + '" aria-hidden="true">' + esc(initialOf(co)) + "</div>" +
+      '<div class="job-main"><h3>' + title + '<span class="expand-cue" aria-hidden="true"></span></h3>' +
+      '<p class="meta">' + company + " &middot; " + esc(j.location || "Location n/a") + "</p>" +
+      '<div class="pills"><span class="pill arr">' + esc(arrText) + "</span>" + rolePills + payPill + fitPill + alsoPill + srcPill + "</div>" +
+      (tags ? '<div class="tags">' + tags + "</div>" : "") + "</div>" +
+      '<div class="job-side">' + dateChip + match + "</div>" + moreHtml(j, e, href, pay, hasResume) + "</article>";
+  }).join("") + moreBtn;
+}
+let timer = null;
+function renderSoon() { clearTimeout(timer); timer = setTimeout(render, 200); }
+
+// ---- resume input
+function setStatus(id, msg, isErr) { const el = $(id); el.textContent = msg; el.classList.toggle("err", !!isErr); }
+function setResume(text, label) {
+  state.resume = text;
+  if (text.trim()) { saveStore("jf-resume", text); if (label) saveStore("jf-resume-name", label); } else { try { localStorage.removeItem("jf-resume"); localStorage.removeItem("jf-resume-name"); } catch (_) {} }
+  if (!label) label = loadStore("jf-resume-name") || "";
+  const words = text.split(/\s+/).filter(Boolean).length;
+  if (words === 0) setStatus("resume-status", "");
+  else if (words < 30) setStatus("resume-status", "Only " + words + " words found. This may be a scanned PDF. Try a text-based PDF, a DOCX or a TXT file.", true);
+  else setStatus("resume-status", (label ? label + ": " : "") + words + " words read. Saved on this device.");
+  $("resume-clear").hidden = words === 0;
+  render();
+}
+async function readResumeFile(file) {
+  const name = file.name.toLowerCase();
+  const buf = await file.arrayBuffer();
+  if (name.endsWith(".pdf")) {
+    if (!window.pdfjsLib) throw new Error("The PDF reader did not load. Try a DOCX or TXT file instead.");
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    const pdf = await window.pdfjsLib.getDocument({ data: new Uint8Array(buf) }).promise;
+    const parts = [];
+    for (let p = 1; p <= pdf.numPages; p++) {
+      const content = await (await pdf.getPage(p)).getTextContent();
+      parts.push(content.items.map(i => i.str).join(" "));
+    }
+    return parts.join("\n");
+  }
+  if (name.endsWith(".docx")) {
+    if (!window.mammoth) throw new Error("The DOCX reader did not load. Try a PDF or TXT file instead.");
+    return (await window.mammoth.extractRawText({ arrayBuffer: buf })).value;
+  }
+  if (/\.(txt|md)$/.test(name)) return new TextDecoder().decode(buf);
+  throw new Error("Unsupported file type. Use PDF, DOCX or TXT.");
+}
+$("resume-file").addEventListener("change", async e => {
+  const file = e.target.files[0]; if (!file) return;
+  setStatus("resume-status", "Reading " + file.name + "...");
+  try {
+    const text = await readResumeFile(file);
+    $("resume-text").value = text;
+    setResume(text, file.name);
+    if (words30() >= 30) $("step-resume").open = false;
+  } catch (err) {
+    setStatus("resume-status", "Could not read that file. " + err.message, true);
+  }
+});
+$("resume-clear").addEventListener("click", () => { $("resume-text").value = ""; $("resume-file").value = ""; setResume("", ""); $("step-resume").open = true; });
+$("resume-text").addEventListener("blur", () => { if (words30() >= 30) $("step-resume").open = false; });
+$("resume-text").addEventListener("input", e => { state.resume = e.target.value; clearTimeout(timer); timer = setTimeout(() => setResume(state.resume, ""), 300); });
+
+// ---- settings
+$("recency").addEventListener("input", () => { $("rv").textContent = $("recency").value; persistSettings(); renderSoon(); });
+$("max-age").addEventListener("change", () => { persistSettings(); render(); });
+$("filter").addEventListener("input", () => { persistSettings(); renderSoon(); });
+$("industry").addEventListener("change", () => { persistSettings(); render(); });
+$("role").addEventListener("change", () => { persistSettings(); render(); });
+$("hide-evergreen").addEventListener("change", () => { persistSettings(); render(); });
+$("results").addEventListener("click", e => {
+  const t = e.target; if (!t) return;
+  if (t.id === "more-btn") { state.limit += 100; render(); return; }
+  const card = t.closest && t.closest(".job");
+  if (card && !t.closest("a, button, .job-more")) toggleJob(card);
+  const act = t.dataset && t.dataset.act; if (!act) return;
+  if (act === "arr") for (const id of ["arr-remote", "arr-hybrid", "arr-onsite"]) $(id).checked = true;
+  if (act === "unspec") $("unspec").checked = true;
+  if (act === "age") $("max-age").value = "90";
+  if (act === "clear") { $("filter").value = ""; $("industry").value = ""; $("role").value = ""; }
+  persistSettings(); render();
+});
+function toggleJob(card) {
+  const id = card.dataset.id, on = !card.classList.contains("open");
+  card.classList.toggle("open", on); card.setAttribute("aria-expanded", String(on));
+  if (on) openJobs.add(id); else openJobs.delete(id);
+}
+$("results").addEventListener("keydown", e => {
+  if ((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("job")) { e.preventDefault(); toggleJob(e.target); }
+});
+$("how-btn").addEventListener("click", () => { const h = $("how"); h.hidden = !h.hidden; $("how-btn").setAttribute("aria-expanded", String(!h.hidden)); });
+document.addEventListener("click", e => { const h = $("how"); if (!h.hidden && !h.contains(e.target) && e.target !== $("how-btn")) { h.hidden = true; $("how-btn").setAttribute("aria-expanded", "false"); } });
+$("view-btn").addEventListener("click", () => {
+  const on = !$("results").classList.contains("compact");
+  $("results").classList.toggle("compact", on); $("view-btn").setAttribute("aria-pressed", String(on)); $("view-btn").textContent = on ? "Comfortable" : "Compact";
+  saveStore("jf-compact", on);
+});
+setInterval(updatePill, 60000);
+$("my-loc").addEventListener("input", () => { persistSettings(); renderSoon(); });
+$("nearby").addEventListener("input", () => { persistSettings(); renderSoon(); });
+$("radius").addEventListener("change", () => { persistSettings(); render(); });
+for (const id of ["arr-remote", "arr-hybrid", "arr-onsite", "unspec"]) $(id).addEventListener("change", () => { persistSettings(); render(); });
+
+// ---- feed import
+function updateFeedLinks() {
+  const gh = encodeURIComponent($("gh-token").value.trim() || "stripe");
+  const lv = encodeURIComponent($("lv-token").value.trim() || "spotify");
+  $("gh-link").href = "https://boards-api.greenhouse.io/v1/boards/" + gh + "/jobs?content=true";
+  $("lv-link").href = "https://api.lever.co/v0/postings/" + lv + "?mode=json";
+  const as = $("as-token").value.trim(), link = $("as-link");
+  if (as) { link.href = "https://api.ashbyhq.com/posting-api/job-board/" + encodeURIComponent(as); link.removeAttribute("aria-disabled"); }
+  else { link.removeAttribute("href"); link.setAttribute("aria-disabled", "true"); }
+}
+for (const s of STUDIOS) {
+  const li = document.createElement("li"), a = document.createElement("a");
+  a.href = studioFeedUrl(s.ats, s.slug); a.target = "_blank"; a.rel = "noopener"; a.textContent = s.name;
+  li.appendChild(a); $("gaming-feeds").appendChild(li);
+}
+$("gh-token").addEventListener("input", updateFeedLinks);
+$("lv-token").addEventListener("input", updateFeedLinks);
+$("as-token").addEventListener("input", updateFeedLinks);
+function addJobs(newJobs) {
+  const base = state.jobs.filter(j => !j.example);
+  const byId = new Map(base.map(j => [j.id, j]));
+  for (const j of newJobs) byId.set(j.id, j);
+  state.jobs = [...byId.values()];
+  return saveStore("jf-jobs", state.jobs);
+}
+async function importTexts(texts) {
+  let added = 0; const problems = [];
+  for (const t of texts) {
+    try {
+      const jobs = normalizeText(t);
+      if (!jobs.length) { problems.push("A feed had no usable listings."); continue; }
+      const stored = addJobs(jobs); added += jobs.length;
+      if (!stored) problems.push("Added for this visit only. Browser storage is full or blocked, so they will not be remembered.");
+    } catch (err) {
+      problems.push(err instanceof SyntaxError ? "That text is not a complete feed. Copy the whole page, from the first { or [ to the last, or use the saved file." : err.message);
+    }
+  }
+  if (added) {
+    setStatus("import-status", "Added " + added + " listings." + (problems.length ? " " + problems.join(" ") : ""), false);
+    $("import-text").value = ""; $("import-file").value = "";
+  } else {
+    setStatus("import-status", problems[0] || "Nothing to add.", true);
+  }
+  render();
+}
+$("import-btn").addEventListener("click", () => {
+  const t = $("import-text").value.trim();
+  const files = Array.from($("import-file").files || []);
+  if (!t && !files.length) { setStatus("import-status", "Paste feed text or choose a .json file first.", true); return; }
+  Promise.all(files.map(f => f.text())).then(ft => importTexts((t ? [t] : []).concat(ft)));
+});
+$("reset-btn").addEventListener("click", () => {
+  state.jobs = exampleJobs();
+  try { localStorage.removeItem("jf-jobs"); } catch (_) {}
+  setStatus("import-status", "Removed added jobs. Example listings are back.", false);
+  render();
+});
+
+// ---- search the job boards through Claude's connectors (Indeed, ZipRecruiter, Dice)
+let mcpNs = null, sampleFn = null, searchCtl = null, fetchCtl = null;
+const ASK_AGAIN = { approval_required: 1, not_in_manifest: 1, consent_required: 1 };
+function boardStatus(b, msg, isErr) {
+  const li = $("bs-" + b.id); if (!li) return;
+  li.textContent = "";
+  const name = document.createElement("span"); name.className = "name"; name.textContent = b.name + ": ";
+  li.appendChild(name); li.appendChild(document.createTextNode(msg));
+  li.classList.toggle("err", !!isErr);
+}
+function boardError(b, e) {
+  const code = e && e.code;
+  if (code === "server_not_connected" || code === "selection_required" || code === "server_not_found") return "Not connected. Turn it on in claude.ai Settings, Connectors.";
+  if (code === "needs_reauth") return "Sign-in expired. Reconnect it in claude.ai Settings, Connectors.";
+  if (ASK_AGAIN[code]) return "Not allowed for this page. Search again and choose Allow when asked.";
+  if (code === "blocked_by_policy") return "Your organization blocks this connector.";
+  if (code === "tool_error") return "The board reported an error. " + String((e && e.message) || "").slice(0, 140);
+  if (code === "server_unavailable" || code === "upstream_error" || code === "rate_limited") return "No answer from the board. Try again in a moment.";
+  return "Could not search this board.";
+}
+function parseTerms() {
+  const seen = new Set(), out = [];
+  for (const t of $("terms").value.split(/[,\n;]/).map(s => s.trim()).filter(Boolean)) {
+    const k = t.toLowerCase(); if (!seen.has(k)) { seen.add(k); out.push(t); }
+  }
+  return out.slice(0, 3);
+}
+function currentOptions() {
+  return { arrangements: { remote: $("arr-remote").checked, hybrid: $("arr-hybrid").checked, onsite: $("arr-onsite").checked },
+    radius: $("radius").value, unspecified: $("unspec").checked };
+}
+function setBusy(busy) {
+  $("search-btn").disabled = busy; $("stop-btn").hidden = !busy;
+  for (const b of BOARDS) $("board-" + b.id).disabled = busy || $("board-" + b.id).dataset.missing === "1";
+}
+async function runSearch() {
+  const status = (m, err) => setStatus("search-status", m, err);
+  if (!mcpNs) { status("Board search needs this page to be open in Claude with connectors available.", true); return; }
+  const user = parseUserLocation($("my-loc").value, $("nearby").value);
+  if (!user || !user.country) { status("Add where you live first, with a state, province or country, like Austin, TX.", true); return; }
+  const terms = parseTerms();
+  if (!terms.length) { status("Type at least one job title to search for.", true); return; }
+  const o = currentOptions();
+  if (!o.arrangements.remote && !o.arrangements.hybrid && !o.arrangements.onsite) { status("Turn on at least one work style.", true); return; }
+  const boards = BOARDS.filter(b => $("board-" + b.id).checked);
+  if (!boards.length) { status("Choose at least one board.", true); return; }
+  searchCtl = new AbortController(); setBusy(true); status("Searching...");
+  persistSettings();
+  const maxAge = Number($("max-age").value), now = Date.now();
+  const found = new Map(), counts = {}; let failures = 0;
+  for (const b of boards) {
+    counts[b.name] = 0;
+    const plan = buildSearchPlan(b, user, o, terms, maxAge);
+    if (plan.skip) { boardStatus(b, plan.skip, true); continue; }
+    let prev = 0;
+    for (let i = 0; i < plan.calls.length; i++) {
+      const c = plan.calls[i];
+      if (c.needsFull && prev < c.needsFull) continue;
+      if (searchCtl.signal.aborted) break;
+      boardStatus(b, "searching " + c.label + " (" + (i + 1) + " of " + plan.calls.length + ")", false);
+      try {
+        const res = await mcpNs.callTool(b.name, "search_jobs", c.input, { signal: searchCtl.signal, cache: { staleTime: 600000, gcTime: 1800000 } });
+        const jobs = parseConnectorResult(b.name, res, { now, term: c.term, remoteCountry: b.name === "Dice" ? "" : user.country });
+        prev = rawCount(b.name, res) || jobs.length;
+        for (const j of jobs) if (!found.has(j.id)) { found.set(j.id, j); counts[b.name]++; }
+      } catch (e) {
+        if (e && e.code === "cancelled") break;
+        boardStatus(b, boardError(b, e), true); failures++; counts[b.name] = -1; break;
+      }
+    }
+    if (counts[b.name] >= 0 && !searchCtl.signal.aborted) boardStatus(b, counts[b.name] + " listings found", false);
+    if (searchCtl.signal.aborted) break;
+  }
+  const stopped = searchCtl.signal.aborted;
+  if (found.size) { state.jobs = state.jobs.filter(j => !j.live); addJobs(Array.from(found.values())); }
+  setBusy(false); searchCtl = null; render();
+  const parts = Object.keys(counts).filter(k => counts[k] > 0).map(k => k + " " + counts[k]);
+  status((stopped ? "Stopped. " : "") + (found.size
+    ? "Added " + found.size + " listings (" + parts.join(", ") + "). Filtered by your location and work style below."
+    : failures ? "Nothing came back. Check the board messages above." : "No listings came back. Try other titles or a wider radius."), !found.size && !stopped);
+}
+$("search-btn").addEventListener("click", runSearch);
+$("stop-btn").addEventListener("click", () => { if (searchCtl) searchCtl.abort(); });
+$("terms").addEventListener("input", persistSettings);
+for (const b of BOARDS) {
+  const li = document.createElement("li"); li.id = "bs-" + b.id; $("board-status").appendChild(li);
+}
+
+// ---- fetch feeds through the desktop app's built-in browser
+const FATAL = { server_not_connected: 1, capability_disabled: 1, capability_removed: 1, not_granted: 1, not_in_manifest: 1, approval_required: 1, consent_required: 1, blocked_by_policy: 1, selection_required: 1, rate_limited: 1 };
+function browserNote(e) {
+  const code = e && e.code;
+  if (code === "server_not_connected" || code === "capability_disabled" || code === "capability_removed" || code === "not_granted" || code === "selection_required")
+    return "The built-in browser is not available here. Open this page in the Claude desktop app, or use the manual steps below.";
+  if (code === "not_in_manifest" || code === "approval_required" || code === "consent_required" || code === "blocked_by_policy")
+    return "Browser access was not allowed for this page. Choose Fetch all feeds again and select Allow when asked.";
+  if (code === "cancelled") return "Stopped.";
+  if (code === "rate_limited") return "Too many browser requests at once. Wait a minute, then choose Retry failed.";
+  if (code === "tool_error") return "The browser could not open it. " + String((e && e.message) || "").slice(0, 120);
+  return String((e && e.message) || "Could not fetch this feed.").slice(0, 160);
+}
+function feedLine(id, name, msg, isErr) {
+  const li = $(id); if (!li) return;
+  li.textContent = "";
+  const n = document.createElement("span"); n.className = "name"; n.textContent = name + ": ";
+  li.appendChild(n); li.appendChild(document.createTextNode(msg)); li.classList.toggle("err", !!isErr);
+}
+function sleep(ms, sig) {
+  return new Promise(res => { const t = setTimeout(res, ms); if (sig) sig.addEventListener("abort", () => { clearTimeout(t); res(); }, { once: true }); });
+}
+// One browser call. If the page is going too fast, wait and try again (up to 3 times).
+async function browserCall(tool, input, sig, onWait) {
+  for (let attempt = 0; ; attempt++) {
+    try { return await mcpNs.callTool(BROWSER, tool, input, { signal: sig, cache: false }); }
+    catch (e) {
+      if (!e || e.code !== "rate_limited" || attempt >= 3 || sig.aborted) throw e;
+      const wait = Math.max(Number(e.retryAfterMs) || 0, 15000 * (attempt + 1)) + Math.random() * 1000;
+      if (onWait) onWait(Math.round(wait / 1000));
+      await sleep(wait, sig);
+      if (sig.aborted) throw { code: "cancelled" };
+    }
+  }
+}
+let failedFeeds = [];
+async function runFetchAll(list) {
+  const status = (m, err) => setStatus("af-status", m, err);
+  if (!mcpNs) { status("Fetching needs this page open in the Claude desktop app.", true); return; }
+  const plan = Array.isArray(list) ? list : feedPlan({ rgj: $("af-rgj").checked, studios: $("af-studios").checked });
+  if (!plan.length) { status("Choose at least one group of feeds.", true); return; }
+  const ul = $("af-list"); ul.textContent = "";
+  plan.forEach((f, i) => { const li = document.createElement("li"); li.id = "af-" + i; ul.appendChild(li); feedLine(li.id, f.name, "waiting", false); });
+  fetchCtl = new AbortController(); const sig = fetchCtl.signal;
+  $("af-btn").disabled = true; $("af-remote-btn").disabled = true; $("af-stop").hidden = false; $("af-retry").hidden = true;
+  let tabId = null, total = 0, ok = 0, fatal = null;
+  const all = [], failed = [];
+  for (let i = 0; i < plan.length && !sig.aborted; i++) {
+    const f = plan[i], id = "af-" + i;
+    const wait = s => feedLine(id, f.name, "slowing down, waiting " + s + " seconds", false);
+    status("Fetching " + (i + 1) + " of " + plan.length + ": " + f.name);
+    feedLine(id, f.name, "opening", false);
+    const load = async url => {
+      if (tabId == null) {
+        try { tabId = findTabId(await browserCall("preview_start", { url }, sig, wait)); }
+        catch (e) { if (!e || e.code !== "tool_error") throw e; await browserCall("navigate", { url }, sig, wait); }
+      } else {
+        await browserCall("navigate", { url, tabId }, sig, wait);
+      }
+      const res = await browserCall("get_page_text", tabId != null ? { tabId } : {}, sig, wait);
+      return jobsFromBrowserText(textOf(res));
+    };
+    try {
+      let out = await load(f.url);
+      if (out.partial && f.ats === "gh") {
+        // Cut off: reload without descriptions (small enough to arrive whole), keep the descriptions already read.
+        feedLine(id, f.name, "page was cut off, loading the short version", false);
+        const short = await load(studioFeedUrl("gh", f.slug, true));
+        out = { jobs: mergeJobs(out.jobs, short.jobs), partial: short.partial };
+      } else if (out.partial && f.ats === "lv") {
+        // Cut off: read the rest in small pages.
+        let jobs = out.jobs.slice(), done = false;
+        for (let p = 0; p < 12 && !done && !sig.aborted; p++) {
+          feedLine(id, f.name, "page was cut off, loading more (" + jobs.length + " so far)", false);
+          const page = await load(f.url + "&skip=" + jobs.length + "&limit=10");
+          const before = jobs.length; jobs = mergeJobs(jobs, page.jobs);
+          if (!page.jobs.length || jobs.length === before || (page.jobs.length < 10 && !page.partial)) done = true;
+        }
+        out = { jobs, partial: !done };
+      }
+      if (out.empty) { feedLine(id, f.name, "no matches", false); ok++; continue; }
+      if (!out.jobs.length) { feedLine(id, f.name, "no usable listings", true); failed.push(f); continue; }
+      all.push(...out.jobs); total += out.jobs.length; ok++;
+      feedLine(id, f.name, out.jobs.length + " listings" + (out.partial ? " (the browser cut this feed off and it cannot be made smaller, so this is only the first part. Paste it by hand to get all of it)" : ""), false);
+    } catch (e) {
+      if (e && e.code === "cancelled") break;
+      feedLine(id, f.name, browserNote(e), true); failed.push(f);
+      if (e && FATAL[e.code]) { fatal = e; failed.push(...plan.slice(i + 1)); break; }
+    }
+    await sleep(1500, sig);
+  }
+  const stopped = sig.aborted;
+  if (all.length) { const stored = addJobs(all); if (!stored) status("Added for this visit only. Browser storage is full or blocked.", true); }
+  failedFeeds = failed;
+  $("af-btn").disabled = false; $("af-remote-btn").disabled = false; $("af-stop").hidden = true; fetchCtl = null; render();
+  $("af-retry").hidden = !failed.length || !!(fatal && fatal.code !== "rate_limited");
+  $("af-retry").textContent = "Retry " + failed.length + " failed";
+  if (fatal) status(browserNote(fatal), true);
+  else status((stopped ? "Stopped. " : "") + (ok ? "Added " + total + " listings from " + ok + " feeds." : "Nothing was added.") + (failed.length ? " " + failed.length + " failed. Retry them, or open their links below to paste them." : ""), !ok && !stopped);
+}
+$("af-btn").addEventListener("click", () => runFetchAll());
+$("af-remote-btn").addEventListener("click", () => runFetchAll(feedPlan({ remote: true, terms: parseTerms() })));
+$("af-retry").addEventListener("click", () => runFetchAll(failedFeeds.slice()));
+$("af-stop").addEventListener("click", () => { if (fetchCtl) fetchCtl.abort(); });
+
+async function initBoards() {
+  const status = (m) => setStatus("search-status", m, false);
+  try { mcpNs = window.claude && window.claude.use ? await window.claude.use("mcp") : null; } catch (_) { mcpNs = null; }
+  try { sampleFn = window.claude && window.claude.use ? await window.claude.use("sample") : null; } catch (_) { sampleFn = null; }
+  $("suggest-btn").hidden = !sampleFn;
+  if (!mcpNs) {
+    $("search-btn").disabled = true; $("af-btn").disabled = true; $("af-remote-btn").disabled = true;
+    setStatus("af-status", "Automatic fetching works when this page is open in the Claude desktop app. The manual steps below still work.", false);
+    status("Board search works when this page is open in Claude with connectors turned on. The paste-in feeds below still work.");
+    return;
+  }
+  let servers = null;
+  try { servers = (await mcpNs.listTools()).servers || []; } catch (_) { servers = null; }
+  for (const b of BOARDS) {
+    const cb = $("board-" + b.id);
+    if (!servers) { boardStatus(b, "ready", false); continue; }
+    const s = servers.find(x => x.server === b.name);
+    if (!s || !s.tools || !s.tools.length) {
+      cb.checked = false; cb.disabled = true; cb.dataset.missing = "1";
+      boardStatus(b, "not connected. Turn it on in claude.ai Settings, Connectors.", true);
+    } else if (s.authStatus === "needs_reauth") boardStatus(b, "sign-in expired. Reconnect it in claude.ai Settings, Connectors.", true);
+    else boardStatus(b, "ready", false);
+  }
+}
+let suggestCtl = null;
+$("suggest-btn").addEventListener("click", async () => {
+  const st = (m, err) => setStatus("suggest-status", m, err);
+  if (state.resume.split(/\s+/).filter(Boolean).length < 30) { st("Add your resume first.", true); return; }
+  if (suggestCtl) suggestCtl.abort();
+  suggestCtl = new AbortController();
+  st("Asking Claude to read your resume...");
+  try {
+    const arr = await sampleFn.json("Read this resume. Reply with only a JSON array of 3 or 4 short job titles (1 to 4 words each, lowercase) that this person should search for on job boards, most relevant first. Example: [\"project manager\", \"program coordinator\"]\n\nResume:\n" + state.resume.slice(0, 8000),
+      { modelTier: "quick", signal: suggestCtl.signal });
+    const titles = (Array.isArray(arr) ? arr : []).map(x => String(x).trim()).filter(Boolean).slice(0, 3);
+    if (!titles.length) { st("Claude did not suggest any titles. Type them instead.", true); return; }
+    $("terms").value = titles.join(", "); persistSettings();
+    st("Suggested from your resume. Edit them if you like.");
+  } catch (e) {
+    const code = e && e.code;
+    if (code === "cancelled") return;
+    if (code === "not_granted" || code === "sampling_disabled" || code === "not_declared" || code === "capability_disabled" || code === "capability_removed") { $("suggest-btn").hidden = true; st("", false); }
+    else if (code === "rate_limited") st("Too many requests right now. Try again later or type the titles.", true);
+    else if (code === "invalid_json") st("Could not read Claude's answer. Try again or type the titles.", true);
+    else st("Could not get suggestions right now. Type the titles instead.", true);
+  }
+});
+
+// ---- local mode: the app on this computer downloads every feed in full
+let localStamp = "", localBusy = false, localLoadedOnce = false;
+async function localStatus() {
+  let r = null;
+  try { r = await fetch("/api/status", { cache: "no-store" }); } catch (_) { r = null; }
+  if (!r || !r.ok || !/json/i.test(r.headers.get("content-type") || "")) {
+    // Hosted on GitHub Pages: one pre-built bundle, refreshed by the scheduled workflow
+    r = await fetch("jobs.json", { cache: "no-cache" });
+    if (!r.ok) throw new Error("no local app");
+    const b = await r.json();
+    if (!b || !Array.isArray(b.feeds) || !Array.isArray(b.jobs)) throw new Error("no local app");
+    b.bundle = true; b.canRefresh = false;
+    return b;
+  }
+  const st = await r.json();
+  if (!st || !Array.isArray(st.feeds)) throw new Error("no local app");
+  return st;
+}
+function ago(iso) {
+  const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
+  return isNaN(m) ? "never" : m < 2 ? "just now" : m < 120 ? m + " minutes ago" : m < 2880 ? Math.round(m / 60) + " hours ago" : Math.round(m / 1440) + " days ago";
+}
+async function localLoad(st) {
+  const jobs = [], ul = $("lc-list"); ul.textContent = "";
+  let okFeeds = 0, bad = 0;
+  if (st.bundle) jobs.push(...st.jobs);
+  for (const f of st.feeds) {
+    if (st.bundle) {
+      const li = document.createElement("li"); li.id = "lc-" + f.id; ul.appendChild(li);
+      if (f.ok) okFeeds++; else bad++;
+      feedLine(li.id, f.name, f.ok ? (f.count ? f.count + " listings" : "no open jobs right now") : (f.error || "unavailable this run"), !f.ok);
+      continue;
+    }
+    const li = document.createElement("li"); li.id = "lc-" + f.id; ul.appendChild(li);
+    if (!f.ok) { feedLine(li.id, f.name, f.error || "not downloaded yet", true); if (f.error) bad++; continue; }
+    try {
+      const t = await (await fetch("/api/feed/" + encodeURIComponent(f.id), { cache: "no-store" })).text();
+      const js = isEmptyFeed(t) ? [] : normalizeText(t);
+      jobs.push(...js); okFeeds++;
+      feedLine(li.id, f.name, (js.length ? js.length + " listings" : "no open jobs right now") + ", " + ago(f.fetchedAt) + (f.note ? ". " + f.note : ""), !!f.error);
+      if (f.error) bad++;
+    } catch (e) { feedLine(li.id, f.name, "could not read it. " + String(e.message || e).slice(0, 100), true); bad++; }
+  }
+  if (jobs.length) { state.jobs = jobs; state.limit = 100; }
+  for (const li of Array.from(ul.querySelectorAll("li.err")).reverse()) ul.prepend(li);
+  localStamp = st.updatedAt || ""; lastUpdated = st.updatedAt || "";
+  const nUnique = dedupeJobs(jobs).length;
+  $("lc-count").textContent = nUnique.toLocaleString();
+  $("lc-sub").textContent = "listings from " + okFeeds + " sources \u00b7 updated " + ago(st.updatedAt);
+  $("lc-sum").textContent = "Sources: " + okFeeds + " ok" + (bad ? ", " + bad + " with problems" : "");
+  $("lc-sum").style.color = bad ? "var(--danger)" : "";
+  setStatus("lc-status", jobs.length ? "" : "No feeds downloaded yet. Choose Refresh now.", !jobs.length);
+  render();
+}
+async function localWatch() {
+  let st;
+  try { st = await localStatus(); } catch (_) { return; }
+  const p = st.progress || {};
+  // Show what is already saved right away, even while a download is running.
+  if (!localLoadedOnce && st.feeds.some(f => f.ok)) { localLoadedOnce = true; await localLoad(st); }
+  if (st.busy) {
+    localBusy = true; setRefBusy(true); topBusy = true;
+    setStatus("lc-status", "Downloading " + (p.done || 0) + " of " + (p.total || "?") + (p.current ? ": " + p.current : "") + "...", false);
+    setPill("Downloading " + (p.done || 0) + " of " + (p.total || "?"), "busy");
+    setTimeout(localWatch, 2000); return;
+  }
+  setRefBusy(false); topBusy = false; updatePill();
+  localLoadedOnce = true;
+  if (localBusy || (st.updatedAt || "") !== localStamp) { localBusy = false; await localLoad(st); }
+}
+async function localInit() {
+  let st;
+  try { st = await localStatus(); } catch (_) { return; }
+  $("local-box").hidden = false; $("auto-fetch").hidden = true; $("panel-search").hidden = true;
+  $("import-box").hidden = true; $("feed-summary").hidden = true; $("panel-listings").open = true;
+  const canRefresh = st.canRefresh !== false;  // a public server refreshes itself; visitors only read
+  $("top-refresh").hidden = !canRefresh; $("lc-refresh").hidden = !canRefresh;
+  $("top-refresh").addEventListener("click", () => $("lc-refresh").click());
+  $("lc-refresh").addEventListener("click", async () => {
+    setRefBusy(true); setStatus("lc-status", "Starting...", false);
+    try { await fetch("/api/refresh", { method: "POST" }); localBusy = true; } catch (_) { setStatus("lc-status", "Could not start the refresh.", true); setRefBusy(false); return; }
+    setTimeout(localWatch, 800);
+  });
+  if (st.bundle) {
+    localLoadedOnce = true; await localLoad(st);
+    setInterval(async () => { try { const s = await localStatus(); if ((s.updatedAt || "") !== localStamp) await localLoad(s); } catch (_) {} }, 1800000);
+    return;
+  }
+  setInterval(localWatch, 30000);
+  localWatch();
+}
+
+restore();
+if (loadStore("jf-compact")) { $("results").classList.add("compact"); $("view-btn").setAttribute("aria-pressed", "true"); $("view-btn").textContent = "Comfortable"; }
+$("step-where").open = !$("my-loc").value.trim();
+if (words30() >= 30) { $("step-resume").open = false; setStatus("resume-status", (loadStore("jf-resume-name") ? loadStore("jf-resume-name") + ": " : "") + words30() + " words read. Saved on this device."); $("resume-clear").hidden = false; }
+updateFeedLinks();
+$("af-studios-label").textContent = "Game studios (" + STUDIOS.length + " boards)";
+render();
+initBoards();
+localInit();
+</script>
+
+</body></html>

@@ -2,3 +2,4 @@ data/raw/
 report/
 __pycache__/
 *.pyc
+site/jobs.json
