@@ -137,7 +137,7 @@
   .filterbar .kw input { width: 100%; }
   .view-toggle { margin-left: auto; padding: 6px 12px; font-size: 12px; }
   .results-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; margin: 0 2px 12px; }
-  .results-head strong { font-weight: 800; font-size: 22px; letter-spacing: -0.01em; }
+  .results-head .results-title { margin: 0; text-transform: none; color: var(--ink); font-weight: 800; font-size: 22px; letter-spacing: -0.01em; }
   .results-head span { color: var(--mute); font-size: 13px; }
 
   /* job cards */
@@ -180,7 +180,7 @@
   .badge { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid var(--line); border-radius: 6px; padding: 0 5px; }
   .compact .job { padding: 9px 14px 9px 18px; margin-bottom: 6px; grid-template-columns: 34px minmax(0, 1fr) auto; }
   .compact .avatar { width: 34px; height: 34px; font-size: 15px; border-radius: 9px; grid-row: 1; }
-  .compact .tags, .compact .breakdown, .compact .pill.src, .compact .pill.lvl, .compact .pill.fit, .compact .pill.warn, .compact .match small { display: none; }
+  .compact .tags, .compact .breakdown, .compact .pill.src, .compact .pill.lvl, .compact .pill.fit, .compact .pill.warn, .compact .match small, .compact .verdict small { display: none; }
   .compact .meta { margin-bottom: 4px; } .compact .pills { margin: 0; } .compact .job-side { grid-row: 1; flex-direction: row; align-items: center; } .compact .job { grid-template-rows: auto; }
   .job { cursor: pointer; }
   .job:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; }
@@ -214,11 +214,39 @@
   .foot { max-width: 1180px; margin: 28px auto 0; padding: 0 16px; font-size: 12px; color: var(--mute); text-align: center; }
   .empty { color: var(--mute); background: var(--surface); border: 1px dashed var(--line); border-radius: 14px; padding: 28px 22px; text-align: center; }
   .empty p { margin: 0 0 12px; color: var(--ink); } .empty .btn-row { justify-content: center; }
+
+  /* honest fit verdicts (replace the old relative "Match" number) */
+  .verdict { min-width: 92px; text-align: right; font-weight: 800; font-size: 14px; line-height: 1.2; }
+  .verdict small { display: block; font-weight: 500; font-size: 11.5px; color: var(--mute); margin-top: 3px; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .verdict.t2 { color: var(--green); } .verdict.t1 { color: var(--orange); } .verdict.t0 { color: var(--mute); }
+  .honest { border: 1px solid var(--line); border-left: 4px solid var(--orange); background: var(--surface); border-radius: 12px; padding: 12px 16px; margin-bottom: 12px; }
+  .honest p { margin: 0; font-size: 14px; color: var(--mute); } .honest b { color: var(--ink); }
+  .empty.err { border-color: var(--danger); } .empty.err p { color: var(--danger); }
+  .status-pill.err .dot { background: var(--danger); }
+  button.linkish { background: none; border: 0; padding: 0; color: var(--accent); font-weight: 600; font-size: 13px; text-decoration: underline; text-underline-offset: 2px; }
+  .new-btn { margin-right: auto; padding: 4px 12px; font-size: 13px; border-radius: 999px; background: var(--fresh-bg); border-color: var(--fresh); color: var(--fresh); }
+  .new-btn[aria-pressed="true"] { background: var(--fresh); color: #05261a; }
+  .results-head { align-items: center; }
+  .mobile-only, .setup-toggle { display: none; }
+  /* phone and small tablet: results first; setup collapses into one line that opens the panels */
+  @media (max-width: 860px) {
+    .setup-toggle { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 12px; padding: 12px 14px;
+      background: var(--surface); border: 1px solid var(--line); color: var(--ink); font-weight: 600; font-size: 14px; text-align: left; border-radius: 12px; }
+    .setup-toggle #setup-line { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .setup-act { flex: none; color: var(--blue); }
+    body:not(.setup-open) .controls { display: none; }
+    .mobile-only { display: inline-flex; }
+    .filterbar:not(.more) .mf { display: none; }
+    .filterbar { padding: 8px; gap: 6px; margin-bottom: 10px; }
+    .wrap { padding-top: 12px; }
+    .results-head { margin-bottom: 8px; } .results-head .results-title { font-size: 19px; }
+  }
   @media (max-width: 560px) {
     .job { grid-template-columns: 38px minmax(0, 1fr); padding: 12px 12px 10px 16px; }
     .avatar { width: 38px; height: 38px; font-size: 16px; grid-row: 1; }
     .job-side { grid-column: 1 / -1; grid-row: auto; flex-direction: row; align-items: center; justify-content: space-between; width: 100%; margin-top: 4px; }
     .match { width: 120px; text-align: left; } .match small { display: none; }
+    .verdict { text-align: left; min-width: 0; }
     .status-pill { max-width: 52vw; } .status-pill .upd { display: none; } .topbar { gap: 8px; } .brand { font-size: 18px; }
     .brand .g-word { display: inline; }
     .filterbar { position: static; }
@@ -239,8 +267,9 @@
   <p style="margin:0">Your resume is saved in this browser only. Only the job titles and the place you search for go to the job boards.</p>
 </div>
 <div class="wrap">
+  <button id="setup-toggle" class="setup-toggle" type="button" aria-expanded="false" aria-controls="setup-panels"><span id="setup-line">Add your resume to rank jobs by fit</span><span id="setup-act" class="setup-act">Set up</span></button>
   <div class="layout">
-    <aside class="controls">
+    <aside class="controls" id="setup-panels">
       <details class="panel c-green" id="step-resume" open>
         <summary><h2>1 &middot; Resume</h2><span class="step-sum" id="sum-resume"></span><span class="chev"></span></summary>
         <div class="step-body">
@@ -406,13 +435,14 @@
     </aside>
 
     <main class="results">
-      <div class="filterbar" role="group" aria-label="Filters">
+      <div class="filterbar" id="filterbar" role="group" aria-label="Filters">
         <div class="chip-set">
           <label class="chip remote" for="arr-remote"><input id="arr-remote" type="checkbox" checked><span>Remote</span></label>
           <label class="chip hybrid" for="arr-hybrid"><input id="arr-hybrid" type="checkbox" checked><span>Hybrid</span></label>
           <label class="chip onsite" for="arr-onsite"><input id="arr-onsite" type="checkbox" checked><span>On-site</span></label>
         </div>
-        <select id="max-age" aria-label="Posted within">
+        <button id="more-filters" type="button" class="ghost mobile-only" aria-expanded="false" aria-controls="filterbar">More filters</button>
+        <select id="max-age" class="mf" aria-label="Posted within">
           <option value="3">Last 3 days</option>
           <option value="7">Last 7 days</option>
           <option value="14">Last 14 days</option>
@@ -420,7 +450,7 @@
           <option value="90">Last 90 days</option>
           <option value="0">Any time</option>
         </select>
-        <select id="industry" aria-label="Industry">
+        <select id="industry" class="mf" aria-label="Industry">
           <option value="">Any industry</option>
           <option value="games">Games</option>
           <option value="software">Software and IT</option>
@@ -434,9 +464,11 @@
           <option value="people">HR and recruiting</option>
           <option value="health">Healthcare</option>
           <option value="education">Education</option>
+          <option value="retail">Retail and consumer</option>
+          <option value="nonprofit">Nonprofit and public sector</option>
           <option value="ops">Operations and admin</option>
         </select>
-        <select id="role" aria-label="Role type">
+        <select id="role" class="mf" aria-label="Role type">
           <option value="">Any role</option>
           <option value="Design">Design</option>
           <option value="Engineering">Engineering</option>
@@ -455,12 +487,13 @@
           <option value="Player Support">Player Support</option>
           <option value="Business &amp; Operations">Business &amp; Operations</option>
         </select>
-        <label class="chip evergreen" for="hide-evergreen" title="Hide talent-pool posts such as General Application or Open Application"><input id="hide-evergreen" type="checkbox" checked><span>Hide general apps</span></label>
+        <label class="chip evergreen mf" for="hide-evergreen" title="Hide talent-pool posts such as General Application or Open Application"><input id="hide-evergreen" type="checkbox" checked><span>Hide general apps</span></label>
         <div class="kw"><input id="filter" type="text" placeholder="Keywords: unity, live ops" aria-label="Keywords (a comma means or)" autocomplete="off"></div>
-        <button id="view-btn" type="button" class="ghost view-toggle" aria-pressed="false">Compact</button>
+        <button id="view-btn" type="button" class="ghost view-toggle mf" aria-pressed="false">Compact</button>
       </div>
       <div class="results-head">
-        <strong id="results-title">Newest jobs</strong>
+        <h2 id="results-title" class="results-title">Newest jobs</h2>
+        <button id="new-btn" type="button" class="new-btn" aria-pressed="false" hidden></button>
         <span id="results-note"></span>
       </div>
       <div id="results"></div>
@@ -533,18 +566,52 @@ function rankJobs(resumeText, jobs, opts) {
     scored.push(Object.assign({}, j, { cosine, matched: display }));
   });
   const top = Math.max.apply(null, scored.map(s => s.cosine)) || 1;
+  const vocab = resumeVocab(resumeText);
   const out = [];
   for (const s of scored) {
     if (!(s.cosine > 0)) continue;
-    s.relevance = s.cosine / top;
+    s.relevance = s.cosine / top;   // relative: used for ordering inside a tier only, never shown as a score
     s.recency = recencyScore(s.posted, half, now);
     s.score = s.relevance * ((1 - w) + w * s.recency);
     s.ageDays = Math.max(Math.floor((now - s.posted) / 86400000), 0);
+    const tf = titleFit(s.title, vocab);
+    s.titleFit = tf.fit; s.titleHits = tf.hits; s.tier = fitTier(tf);
     out.push(s);
   }
-  out.sort((a, b) => b.score - a.score);
+  out.sort((a, b) => (b.tier - a.tier) || (b.score - a.score));
   return out;
 }
+// ---- absolute fit: does the job TITLE name what the resume is about?
+// Scale-free on purpose. The cosine above is divided by the best job in the list, so it always
+// produced a high-looking number, even when nothing in the list fit (a nurse saw "Match 86" on a
+// software role). Title coverage is weighted by how often the resume itself uses each word.
+const TITLE_GENERIC = new Set(("senior sr junior jr lead principal staff head chief vp vice president director manager mgr " +
+  "associate assoc assistant specialist coordinator intern internship trainee graduate entry level mid ii iii iv contract " +
+  "contractor temporary temp part full time remote hybrid onsite site global americas emea apac latam north america europe " +
+  "us usa uk canada team group new").split(" "));
+const FIT_LABEL = ["Long shot", "Stretch", "Strong fit"];
+function stemWord(w) { return w.replace(/(ing|ers|er|s)$/, ""); }
+function wordsOf(t) {
+  return [...new Set((String(t).toLowerCase().match(TOKEN_RE) || []).map(w => w.replace(/^[.\-]+|[.\-]+$/g, ""))
+    .filter(w => w.length > 1 && !STOP.has(w) && !TITLE_GENERIC.has(w) && !/^\d/.test(w)))];
+}
+function titleTerms(title) {
+  const t = wordsOf(cleanTitle(title));
+  return t.length ? t : wordsOf(title);   // "Intern - Platform Engineer" cleans down to "intern"
+}
+function resumeVocab(text) {
+  const m = new Map();
+  for (const t of tokenize(text)) if (t.indexOf(" ") < 0) { const k = stemWord(t); m.set(k, (m.get(k) || 0) + 1); }
+  return m;
+}
+// fit = share of the title's own words the resume uses, each counted fully once the resume says it twice.
+function titleFit(title, vocab) {
+  const terms = titleTerms(title); let sum = 0, core = false; const hits = [];
+  for (const w of terms) { const c = vocab.get(stemWord(w)) || 0; if (c) { hits.push(w); sum += Math.min(1, c / 2); if (c >= 2) core = true; } }
+  return { fit: terms.length ? sum / terms.length : 0, hits, terms, core };
+}
+// Strong needs a word the resume leans on (said at least twice): one passing mention ("projects") is a Stretch at most.
+function fitTier(tf) { return tf.fit >= 0.5 && tf.core ? 2 : tf.fit >= 0.34 ? 1 : 0; }
 
 // ---- feed normalizers (same shapes as the Flask version's sources.py)
 const ENT = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " " };
@@ -1368,10 +1435,13 @@ const INDUSTRIES = [
   ["people", "HR and recruiting", /\b(recruit|talent|human resources|hr\b|people (ops|partner|operations))/i],
   ["health", "Healthcare", /\b(nurse|clinical|healthcare|medical|physician|therapist|pharma|patient)/i],
   ["education", "Education", /\b(teacher|instructor|tutor|curriculum|education|professor|training)/i],
+  ["retail", "Retail and consumer", /\b(retail|store (manager|associate|lead)|merchandis|e-?commerce|consumer|hospitality|restaurant)/i],
+  ["nonprofit", "Nonprofit and public sector", /\b(nonprofit|non-profit|foundation|public sector|government|charity)/i],
   ["ops", "Operations and admin", /\b(operations|administrat|assistant|coordinator|logistics|supply chain|office manager)/i]
 ];
 function industryMatch(job, key) {
   const ind = INDUSTRIES.find(x => x[0] === key); if (!ind) return true;
+  if (job.industry === key) return true; // employer boards carry their industry: every role at a clinic counts as healthcare
   if (key === "games" && job.gameStudio) return true; // every role at a game studio counts, accountants included
   return ind[2].test(String(job.title || "") + " " + String(job.company || "")) || ind[2].test(String(job.description || "").slice(0, 400));
 }
@@ -1467,20 +1537,37 @@ function moreHtml(j, e, href, pay, hasResume) {
     row("Work style", esc(ARR_LABEL[e.arrangement] + (!e.stated ? " (assumed)" : "")) + (e.fit ? ", " + esc(e.fit) : "")) +
     row("Source", j.example ? "Example listing" : esc(j.source + also)) +
     (pay ? row("Pay mentioned", esc(pay)) : "") +
-    (hasResume ? row("Match", "Fit " + Math.round(j.relevance * 100) + " &middot; Fresh " + Math.round(j.recency * 100)) : "") +
+    (hasResume ? row("Fit", esc(FIT_LABEL[j.tier] + ". " + VERDICT_WHY[j.tier]) + (j.titleHits && j.titleHits.length ? " Shared: " + esc(j.titleHits.join(", ")) + "." : "")) : "") +
     "</dl>" +
     (d ? '<p class="desc">' + esc(d) + "</p>" : '<p class="desc none">This board did not share a description. Open the posting for the full details.</p>') +
     (href ? '<a class="apply" href="' + esc(href) + '" target="_blank" rel="noopener">View posting</a>' : "") + "</div>";
 }
-function setPill(text, mode, extra) { const p = $("top-pill"); $("top-status").textContent = text; $("top-upd").textContent = extra || ""; p.classList.toggle("live", mode === "live"); p.classList.toggle("busy", mode === "busy"); }
+function setPill(text, mode, extra) { const p = $("top-pill"); $("top-status").textContent = text; $("top-upd").textContent = extra || ""; p.classList.toggle("live", mode === "live"); p.classList.toggle("busy", mode === "busy"); p.classList.toggle("err", mode === "err"); }
 function updatePill() {
   if (topBusy) return;
-  if (lastCount < 0) setPill("Example jobs only", "");
+  if (state.loadError) setPill("Couldn't load jobs", "err");
+  else if (lastCount < 0) setPill("Example jobs only", "");
   else setPill(lastCount.toLocaleString() + " jobs", "live", lastUpdated ? "\u00b7 updated " + ago(lastUpdated) : "");
 }
 function setRefBusy(b) { $("lc-refresh").disabled = b; $("top-refresh").disabled = b; }
 const ARR_LABEL = { remote: "Remote", hybrid: "Hybrid", onsite: "On-site" };
 function ageLabel(d) { return d <= 0 ? "today" : d === 1 ? "1d ago" : d + "d ago"; }
+// ---- "new since your last visit" (DESIGN.md section 11). Saved when the visitor LEAVES, not on load,
+// so a refresh does not wipe the badges before they are seen.
+const visit = { prev: loadStore("hg-last-visit"), newOnly: false };
+function markVisit() { saveStore("hg-last-visit", new Date().toISOString()); }
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") markVisit(); });
+window.addEventListener("pagehide", markVisit);
+function seenMs(j) { return Date.parse(j.firstSeen || "") || j.posted || 0; }
+function dayName(iso) {
+  const d = new Date(iso), days = (Date.now() - d) / 86400000;
+  return days < 1 ? "earlier today" : days < 2 ? "yesterday" : days < 7 ? d.toLocaleDateString(undefined, { weekday: "long" }) : d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+}
+const VERDICT_WHY = [
+  "The title shares no key words with your resume.",
+  "The title shares some words with your resume. Worth a look if you are open to a change.",
+  "The title uses words your resume leans on."
+];
 function render() {
   const now = Date.now();
   const w = Number($("recency").value) / 100;
@@ -1496,6 +1583,13 @@ function render() {
     ? "Add your city to hide jobs you can't take."
     : "Reading this as " + (user.summary || "your area") + "." + (user.country ? "" : " Add a state, province or country (e.g. Leeds, UK) so remote jobs can be matched.");
 
+  const hasResume = state.resume.split(/\s+/).filter(Boolean).length >= 30;
+  const exampleOnly = state.jobs.length > 0 && state.jobs.every(j => j.example);
+  lastCount = exampleOnly ? -1 : uniqueJobs().length;
+  updatePill();
+  updateSummaries(user, hasResume, exampleOnly);
+  if (state.loadError) { renderLoadError(); return; }
+
   const evals = new Map();
   const all = uniqueJobs(), industry = $("industry").value;
   let pool = all.filter(j => { const e = evaluateJob(j, user, o); evals.set(j.id, e); return e.show; });
@@ -1505,49 +1599,71 @@ function render() {
   if (role) pool = pool.filter(j => j.family === role);
   if ($("hide-evergreen").checked) pool = pool.filter(j => !j.evergreen);
   if (q) pool = pool.filter(j => keywordMatch(j, q));
+  const ageOf = j => Math.max(Math.floor((now - j.posted) / 86400000), 0);
+  const hiddenByAge = maxAge ? pool.filter(j => ageOf(j) > maxAge).length : 0;
 
-  const hasResume = state.resume.split(/\s+/).filter(Boolean).length >= 30;
   let list;
   if (hasResume) {
     list = rankJobs(state.resume, pool, { recencyWeight: w, maxAgeDays: maxAge || null, now });
     $("results-title").textContent = "Best matches";
   } else {
-    list = pool.filter(j => !maxAge || Math.floor((now - j.posted) / 86400000) <= maxAge)
+    list = pool.filter(j => !maxAge || ageOf(j) <= maxAge)
       .sort((a, b) => b.posted - a.posted)
-      .map(j => Object.assign({}, j, { ageDays: Math.max(Math.floor((now - j.posted) / 86400000), 0), matched: [] }));
+      .map(j => Object.assign({}, j, { ageDays: ageOf(j), matched: [] }));
     $("results-title").textContent = "Newest jobs";
   }
+
+  // New since last visit: only jobs this visitor could act on (filters applied; with a resume, not Long shots).
+  const prevMs = Date.parse(visit.prev || "");
+  let isNew = j => j.ageDays <= 2;
+  let newCount = 0;
+  if (prevMs && !exampleOnly) {
+    const fresh = list.filter(j => seenMs(j) > prevMs && (!hasResume || j.tier > 0));
+    // The first deploy stamps every job "first seen" at once; don't call the whole feed new.
+    if (fresh.length && fresh.length <= Math.max(20, list.length * 0.5)) { newCount = fresh.length; const ids = new Set(fresh.map(j => j.id)); isNew = j => ids.has(j.id); }
+    else isNew = () => false;
+  }
+  if (!newCount) visit.newOnly = false;
+  if (visit.newOnly) list = list.filter(isNew);
+  const nb = $("new-btn");
+  nb.hidden = !newCount;
+  nb.textContent = visit.newOnly ? "Showing " + newCount + " new. Show all" : newCount + " new since " + dayName(visit.prev);
+  nb.setAttribute("aria-pressed", String(visit.newOnly));
+
   const shown = list.slice(0, state.limit);
-  const exampleOnly = state.jobs.length > 0 && state.jobs.every(j => j.example);
-  $("results-note").textContent = (hasResume ? "" : "Add a resume to rank by fit. ") + "Showing " + shown.length + " of " + list.length + " matches from " + all.length +
-    (exampleOnly ? " example listings" : " listings") + (hiddenByWhere ? ". " + hiddenByWhere + " hidden by location or work style." : "");
+  const note = [];
+  if (!hasResume) note.push("Add a resume to rank by fit.");
+  note.push("Showing " + shown.length.toLocaleString() + " of " + list.length.toLocaleString() + " from " + all.length.toLocaleString() + (exampleOnly ? " example listings." : " listings."));
+  if (hiddenByWhere) note.push(hiddenByWhere.toLocaleString() + " hidden by location or work style.");
+  $("results-note").innerHTML = esc(note.join(" ")) + (hiddenByAge
+    ? ' <button type="button" class="linkish" data-act="age-all">' + esc(hiddenByAge.toLocaleString() + " older than " + maxAge + " days hidden. Show all dates") + "</button>" : "");
   $("feed-summary").textContent = exampleOnly
     ? state.jobs.length + " example listings loaded. Add real ones to search for real."
     : state.jobs.length + " listings from " + [...new Set(state.jobs.map(j => j.source))].join(", ") + ".";
-  lastCount = exampleOnly ? -1 : all.length;
-  updatePill();
-  $("sum-resume").textContent = hasResume ? words30() + " words read" : "Not added yet";
-  $("sum-where").textContent = (user ? (user.summary || "your area") : "No location yet") + " · " + $("radius").selectedOptions[0].text.replace(/^My /, "").replace(/ and nearby places$/, "");
-  $("sum-rank").textContent = $("recency").value + "% freshness";
-  $("sum-listings").textContent = (exampleOnly ? "examples only" : all.length.toLocaleString() + " listings");
   if (!shown.length) {
     const acts = [];
-    if (hiddenByWhere) acts.push(["arr", "Turn on all work styles"], ["unspec", "Include jobs without a location"]);
-    if (maxAge && maxAge < 90) acts.push(["age", "Widen to 90 days"]);
+    if (hiddenByAge) acts.push(["age-all", "Show all dates"]);
     if (q || industry || role) acts.push(["clear", "Clear keywords, industry and role"]);
-    $("results").innerHTML = '<div class="empty"><p>' + (hiddenByWhere
-      ? "Nothing matches your location and work style."
-      : "No jobs match these filters.") + '</p><div class="btn-row">' + acts.map(x => '<button type="button" class="ghost" data-act="' + x[0] + '">' + x[1] + "</button>").join("") + "</div></div>";
+    if (hiddenByWhere) acts.push(["arr", "Turn on all work styles"], ["unspec", "Include jobs without a location"]);
+    const why = (q || industry || role) ? "No jobs match your keywords, industry or role filters."
+      : hiddenByAge ? "No jobs this recent match. Older ones are hidden."
+      : hiddenByWhere ? "Nothing matches your location and work style." : "No jobs match these filters.";
+    $("results").innerHTML = '<div class="empty"><p>' + why + '</p><div class="btn-row">' + acts.map(x => '<button type="button" class="ghost" data-act="' + x[0] + '">' + x[1] + "</button>").join("") + "</div></div>";
     return;
   }
+  // Honest floor: say so when nothing in the list clearly fits, instead of dressing up the least-bad job.
+  const best = hasResume ? Math.max(...list.map(j => j.tier)) : 2;
+  const banner = best === 2 ? "" : '<div class="honest"><p><b>' + (best === 0 ? "We don't have jobs like yours yet." : "No strong matches yet.") + "</b> " +
+    (best === 0 ? "Nothing in today's listings clearly matches your resume. Hire Ground doesn't cover every industry yet. The closest jobs are below, marked Long shot."
+      : "The closest jobs are below, marked Stretch.") + "</p></div>";
   const moreBtn = list.length > shown.length ? '<button id="more-btn" type="button" class="ghost">Show 100 more</button>' : "";
-  $("results").innerHTML = shown.map(j => {
+  $("results").innerHTML = banner + shown.map(j => {
     const e = evals.get(j.id) || { arrangement: "onsite", stated: true, fit: "" };
     const href = safeUrl(j.url);
     const title = href ? '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(j.title) + "</a>" : esc(j.title);
-    const dateChip = '<span class="date-chip" title="Posted">' + (j.ageDays <= 2 ? '<span class="new">New</span>' : "") + ageLabel(j.ageDays) + "</span>";
-    const pct = Math.round(j.score * 100);
-    const match = hasResume ? '<div class="match" title="Overall match score"><small>Match</small><b>' + pct + '</b><div class="bar"><i style="width:' + Math.max(4, Math.min(100, pct)) + '%"></i></div></div>' : "";
+    const dateChip = '<span class="date-chip" title="Posted">' + (isNew(j) ? '<span class="new">New</span>' : "") + ageLabel(j.ageDays) + "</span>";
+    const match = hasResume ? '<div class="verdict t' + j.tier + '" title="' + esc(VERDICT_WHY[j.tier]) + '">' + FIT_LABEL[j.tier] +
+      (j.titleHits && j.titleHits.length ? "<small>" + esc(j.titleHits.slice(0, 3).join(", ")) + "</small>" : "") + "</div>" : "";
     const tags = (j.matched || []).map(t => '<span class="tag">' + esc(t) + "</span>").join("");
     const arrText = ARR_LABEL[e.arrangement] + (!e.stated ? " (assumed)" : "");
     const fitPill = e.fit ? '<span class="pill ' + (e.fit === "Location not stated" || e.fit === "Check where it's open" ? "warn" : "fit") + '">' + esc(e.fit) + "</span>" : "";
@@ -1568,6 +1684,25 @@ function render() {
       (tags ? '<div class="tags">' + tags + "</div>" : "") + "</div>" +
       '<div class="job-side">' + dateChip + match + "</div>" + moreHtml(j, e, href, pay, hasResume) + "</article>";
   }).join("") + moreBtn;
+}
+function updateSummaries(user, hasResume, exampleOnly) {
+  $("sum-resume").textContent = hasResume ? words30() + " words read" : "Not added yet";
+  $("sum-where").textContent = (user ? (user.summary || "your area") : "No location yet") + " · " + $("radius").selectedOptions[0].text.replace(/^My /, "").replace(/ and nearby places$/, "");
+  $("sum-rank").textContent = $("recency").value + "% freshness";
+  $("sum-listings").textContent = state.loadError ? "not loaded" : (exampleOnly ? "examples only" : uniqueJobs().length.toLocaleString() + " listings");
+  // Phone: one line stands in for the setup panels, so results come first.
+  const name = loadStore("jf-resume-name");
+  $("setup-line").textContent = hasResume
+    ? "Ranking for " + (name || "your resume") + (user ? ", " + (user.summary || "your area") : "")
+    : "Add your resume to rank jobs by fit";
+  $("setup-act").textContent = document.body.classList.contains("setup-open") ? "Done" : hasResume ? "Edit" : "Set up";
+}
+function renderLoadError() {
+  $("results-title").textContent = "Jobs didn't load";
+  $("results-note").textContent = "";
+  $("new-btn").hidden = true;
+  $("results").innerHTML = '<div class="empty err"><p>Today\'s job list couldn\'t be downloaded. Check your connection, then try again.</p>' +
+    '<div class="btn-row"><button type="button" data-act="reload">Try again</button></div></div>';
 }
 let timer = null;
 function renderSoon() { clearTimeout(timer); timer = setTimeout(render, 200); }
@@ -1634,12 +1769,31 @@ $("results").addEventListener("click", e => {
   if (t.id === "more-btn") { state.limit += 100; render(); return; }
   const card = t.closest && t.closest(".job");
   if (card && !t.closest("a, button, .job-more")) toggleJob(card);
-  const act = t.dataset && t.dataset.act; if (!act) return;
+  doAct(t.dataset && t.dataset.act);
+});
+$("results-note").addEventListener("click", e => doAct(e.target && e.target.dataset && e.target.dataset.act));
+function doAct(act) {
+  if (!act) return;
+  if (act === "reload") { location.reload(); return; }
   if (act === "arr") for (const id of ["arr-remote", "arr-hybrid", "arr-onsite"]) $(id).checked = true;
   if (act === "unspec") $("unspec").checked = true;
-  if (act === "age") $("max-age").value = "90";
+  if (act === "age-all") $("max-age").value = "0";
   if (act === "clear") { $("filter").value = ""; $("industry").value = ""; $("role").value = ""; }
   persistSettings(); render();
+}
+$("new-btn").addEventListener("click", () => { visit.newOnly = !visit.newOnly; state.limit = 100; render(); window.scrollTo({ top: 0 }); });
+$("setup-toggle").addEventListener("click", () => {
+  const on = !document.body.classList.contains("setup-open");
+  document.body.classList.toggle("setup-open", on);
+  $("setup-toggle").setAttribute("aria-expanded", String(on));
+  render();
+  if (!on) $("results-title").scrollIntoView({ block: "start" });
+});
+$("more-filters").addEventListener("click", () => {
+  const on = !$("filterbar").classList.contains("more");
+  $("filterbar").classList.toggle("more", on);
+  $("more-filters").setAttribute("aria-expanded", String(on));
+  $("more-filters").textContent = on ? "Fewer filters" : "More filters";
 });
 function toggleJob(card) {
   const id = card.dataset.id, on = !card.classList.contains("open");
@@ -2033,7 +2187,16 @@ async function localWatch() {
 }
 async function localInit() {
   let st;
-  try { st = await localStatus(); } catch (_) { return; }
+  try { st = await localStatus(); } catch (_) {
+    // Hosted page (not the Claude artifact, not a file opened from disk): a missing jobs.json is an outage,
+    // so say so instead of quietly showing example jobs and tools that only work inside Claude.
+    if (/^https?:$/.test(location.protocol) && !(window.claude && window.claude.use)) {
+      state.loadError = true; state.jobs = [];
+      $("auto-fetch").hidden = true; $("panel-search").hidden = true; $("import-box").hidden = true;
+      render();
+    }
+    return;
+  }
   $("local-box").hidden = false; $("auto-fetch").hidden = true; $("panel-search").hidden = true;
   $("import-box").hidden = true; $("feed-summary").hidden = true; $("panel-listings").open = true;
   const canRefresh = st.canRefresh !== false;  // a public server refreshes itself; visitors only read

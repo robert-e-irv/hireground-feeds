@@ -8,6 +8,8 @@ Every 6 hours GitHub Actions downloads every job feed, builds `jobs.json` with t
 |---|---|
 | `site/index.html` | The app. Its `// <pure>` block is the shared feed parser |
 | `pipeline/export.mjs` | Builds `site/jobs.json` from the latest snapshot |
+| `recorder/employers.py` | Non-games employers (health, finance, retail, education, nonprofit, tech) on Greenhouse, Lever, Ashby and SmartRecruiters. Candidates only |
+| `recorder/verify_boards.py` | Weekly check in Actions: keeps boards that answer with open jobs and (Greenhouse) whose board name matches. Writes `recorder/employers_verified.json` |
 
 ---
 
@@ -49,4 +51,6 @@ Open `report/report.md`. It includes scheduler reliability, per-source failure r
 ```bash
 python recorder/record.py --root data --only greenhouse:riotgames,lever:skyboxlabs
 python tests/test_pipeline.py
+python tests/test_employers.py
+node tests/test_app_logic.mjs
 ```
