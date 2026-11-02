@@ -7,8 +7,8 @@ import assert from "node:assert/strict";
 const html = fs.readFileSync(new URL("../site/index.html", import.meta.url), "utf8");
 const src = html.match(/\/\/ <pure>([\s\S]*?)\/\/ <\/pure>/)[1];
 const ctx = vm.createContext({});
-vm.runInContext(src + ";globalThis.__c = { rankJobs, titleFit, resumeVocab, industryMatch, FIT_LABEL };", ctx);
-const { rankJobs, titleFit, resumeVocab, industryMatch, FIT_LABEL } = ctx.__c;
+vm.runInContext(src + ";globalThis.__c = { rankJobs, titleFit, resumeVocab, industryMatch, FIT_LABEL, groupRoles, industryCounts };", ctx);
+const { rankJobs, titleFit, resumeVocab, industryMatch, FIT_LABEL, groupRoles, industryCounts } = ctx.__c;
 
 const NOW = Date.parse("2026-11-02T12:00:00Z"), day = 864e5;
 const nurse = "Registered Nurse, BSN. Five years of acute care nursing on a medical surgical unit at a regional hospital, " +
@@ -43,5 +43,18 @@ assert.ok(titleFit("Intern - Senior Accountant", v).fit >= 0.5);
 // 5. Employer boards carry their industry: a clinic's front-desk role counts as Healthcare.
 assert.ok(industryMatch({ title: "Front Desk Coordinator", company: "Good Clinic", industry: "health" }, "health"));
 assert.ok(!industryMatch({ title: "Front Desk Coordinator", company: "Good Clinic", industry: "health" }, "finance"));
+
+// 6. One card per role: same company + title in several cities collapses; the first (best-ranked) copy leads.
+const g = groupRoles([
+  { id: "1", company: "Stripe", title: "Senior Accountant", location: "Toronto" },
+  { id: "2", company: "Acme", title: "Senior Accountant", location: "Toronto" },
+  { id: "3", company: "Stripe", title: "Sr. Accountant", location: "Dublin" },
+  { id: "4", company: "Stripe", title: "Senior Accountant, Tax", location: "Seattle" }]);
+assert.deepEqual(Array.from(g, j => j.id), ["1", "2", "4"], "different companies and different roles stay separate");
+assert.deepEqual(Array.from(g[0].others, j => j.location), ["Dublin"], "Sr. and Senior are the same role");
+
+// 7. Industry counts come from the board's industry, plus title keywords for everyone else.
+const c = industryCounts([{ title: "Staff Accountant", company: "X", industry: "health" }, { title: "Registered Nurse", company: "Y" }, { title: "Game Designer", company: "Z", gameStudio: true }]);
+assert.equal(c.health, 2); assert.equal(c.finance, 1); assert.equal(c.games, 1); assert.equal(c.education, 0);
 
 console.log("ALL PASSED");

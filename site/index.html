@@ -228,6 +228,9 @@
   .new-btn[aria-pressed="true"] { background: var(--fresh); color: #05261a; }
   .results-head { align-items: center; }
   .mobile-only, .setup-toggle { display: none; }
+  .more-locs { margin-left: 4px; padding: 0 7px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; color: var(--ink); white-space: nowrap; }
+  .coverage { margin: -6px 2px 12px; font-size: 12.5px; color: var(--mute); }
+  .facts a { color: var(--blue); }
   /* phone and small tablet: results first; setup collapses into one line that opens the panels */
   @media (max-width: 860px) {
     .setup-toggle { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 12px; padding: 12px 14px;
@@ -496,6 +499,7 @@
         <button id="new-btn" type="button" class="new-btn" aria-pressed="false" hidden></button>
         <span id="results-note"></span>
       </div>
+      <p id="coverage" class="coverage" hidden></p>
       <div id="results"></div>
     </main>
   </div>
@@ -1452,6 +1456,26 @@ function keywordMatch(job, q) {
   const hay = (String(job.title || "") + " " + String(job.company || "") + " " + String(job.location || "") + " " + String(job.description || "")).toLowerCase();
   return words.some(w => hay.includes(w));
 }
+// One card per role: the same company + title posted in several cities becomes one listing that carries the
+// others. Keeps the first (best-ranked or newest) copy, so call it on a list that is already sorted.
+function groupRoles(list) {
+  const m = new Map(), out = [];
+  for (const j of list) {
+    const k = companyKey(j) + "|" + titleKey(j.title);
+    const g = m.get(k);
+    if (g) { g.others.push(j); continue; }
+    const rep = Object.assign({}, j, { others: [] });
+    m.set(k, rep); out.push(rep);
+  }
+  return out;
+}
+// Jobs per industry, for the Industry menu and the coverage line.
+function industryCounts(jobs) {
+  const c = {};
+  for (const ind of INDUSTRIES) c[ind[0]] = 0;
+  for (const j of jobs) for (const ind of INDUSTRIES) if (industryMatch(j, ind[0])) c[ind[0]]++;
+  return c;
+}
 function isEmptyFeed(text) {
   try {
     const d = JSON.parse(extractFeedText(text));
@@ -1533,6 +1557,7 @@ function moreHtml(j, e, href, pay, hasResume) {
   return '<div class="job-more">' + '<dl class="facts">' +
     row("Posted", esc(posted) + " (" + esc(ageLabel(j.ageDays)) + ")") +
     row("Location", esc(j.location || "Not stated")) +
+    (j.others && j.others.length ? row("Also in", j.others.map(x => { const u = safeUrl(x.url); const t = esc(x.location || "Location not stated"); return u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + t + "</a>" : t; }).join("; ")) : "") +
     (j.family && j.family !== "Other" ? row("Role", esc([j.family, j.discipline !== j.family ? j.discipline : "", j.seniority].filter(Boolean).join(" \u00b7 ") + (j.contract ? ", contract" : ""))) : "") +
     row("Work style", esc(ARR_LABEL[e.arrangement] + (!e.stated ? " (assumed)" : "")) + (e.fit ? ", " + esc(e.fit) : "")) +
     row("Source", j.example ? "Example listing" : esc(j.source + also)) +
@@ -1594,6 +1619,7 @@ function render() {
   const all = uniqueJobs(), industry = $("industry").value;
   let pool = all.filter(j => { const e = evaluateJob(j, user, o); evals.set(j.id, e); return e.show; });
   const hiddenByWhere = all.length - pool.length;
+  updateIndustryMenu(pool, all, exampleOnly);
   if (industry) pool = pool.filter(j => industryMatch(j, industry));
   const role = $("role").value;
   if (role) pool = pool.filter(j => j.family === role);
@@ -1612,13 +1638,14 @@ function render() {
       .map(j => Object.assign({}, j, { ageDays: ageOf(j), matched: [] }));
     $("results-title").textContent = "Newest jobs";
   }
+  list = groupRoles(list);
 
   // New since last visit: only jobs this visitor could act on (filters applied; with a resume, not Long shots).
   const prevMs = Date.parse(visit.prev || "");
   let isNew = j => j.ageDays <= 2;
   let newCount = 0;
   if (prevMs && !exampleOnly) {
-    const fresh = list.filter(j => seenMs(j) > prevMs && (!hasResume || j.tier > 0));
+    const fresh = list.filter(j => (seenMs(j) > prevMs || j.others.some(x => seenMs(x) > prevMs)) && (!hasResume || j.tier > 0));
     // The first deploy stamps every job "first seen" at once; don't call the whole feed new.
     if (fresh.length && fresh.length <= Math.max(20, list.length * 0.5)) { newCount = fresh.length; const ids = new Set(fresh.map(j => j.id)); isNew = j => ids.has(j.id); }
     else isNew = () => false;
@@ -1633,7 +1660,7 @@ function render() {
   const shown = list.slice(0, state.limit);
   const note = [];
   if (!hasResume) note.push("Add a resume to rank by fit.");
-  note.push("Showing " + shown.length.toLocaleString() + " of " + list.length.toLocaleString() + " from " + all.length.toLocaleString() + (exampleOnly ? " example listings." : " listings."));
+  note.push("Showing " + shown.length.toLocaleString() + " of " + list.length.toLocaleString() + (list.length === 1 ? " role" : " roles") + " from " + all.length.toLocaleString() + (exampleOnly ? " example listings." : " listings."));
   if (hiddenByWhere) note.push(hiddenByWhere.toLocaleString() + " hidden by location or work style.");
   $("results-note").innerHTML = esc(note.join(" ")) + (hiddenByAge
     ? ' <button type="button" class="linkish" data-act="age-all">' + esc(hiddenByAge.toLocaleString() + " older than " + maxAge + " days hidden. Show all dates") + "</button>" : "");
@@ -1654,7 +1681,7 @@ function render() {
   // Honest floor: say so when nothing in the list clearly fits, instead of dressing up the least-bad job.
   const best = hasResume ? Math.max(...list.map(j => j.tier)) : 2;
   const banner = best === 2 ? "" : '<div class="honest"><p><b>' + (best === 0 ? "We don't have jobs like yours yet." : "No strong matches yet.") + "</b> " +
-    (best === 0 ? "Nothing in today's listings clearly matches your resume. Hire Ground doesn't cover every industry yet. The closest jobs are below, marked Long shot."
+    (best === 0 ? "Nothing in today's listings clearly matches your resume. " + (coverageText ? coverageText + " " : "") + "The closest jobs are below, marked Long shot."
       : "The closest jobs are below, marked Stretch.") + "</p></div>";
   const moreBtn = list.length > shown.length ? '<button id="more-btn" type="button" class="ghost">Show 100 more</button>' : "";
   $("results").innerHTML = banner + shown.map(j => {
@@ -1679,11 +1706,50 @@ function render() {
     const company = safeUrl(j.companyUrl) ? '<a href="' + esc(j.companyUrl) + '" target="_blank" rel="noopener">' + esc(co) + "</a>" : "<b>" + esc(co) + "</b>";
     return '<article class="job ' + esc(e.arrangement) + (openJobs.has(j.id) ? " open" : "") + '" data-id="' + esc(j.id) + '" tabindex="0" role="button" aria-expanded="' + openJobs.has(j.id) + '"><div class="avatar" style="--av:' + avatarColor(co) + '" aria-hidden="true">' + esc(initialOf(co)) + "</div>" +
       '<div class="job-main"><h3>' + title + '<span class="expand-cue" aria-hidden="true"></span></h3>' +
-      '<p class="meta">' + company + " &middot; " + esc(j.location || "Location n/a") + "</p>" +
+      '<p class="meta">' + company + " &middot; " + esc(j.location || "Location n/a") +
+      (j.others.length ? ' <span class="more-locs" title="' + esc("Also in " + j.others.map(x => x.location || "unstated").join("; ")) + '">+' + j.others.length + (j.others.length === 1 ? " location" : " locations") + "</span>" : "") + "</p>" +
       '<div class="pills"><span class="pill arr">' + esc(arrText) + "</span>" + rolePills + payPill + fitPill + alsoPill + srcPill + "</div>" +
       (tags ? '<div class="tags">' + tags + "</div>" : "") + "</div>" +
       '<div class="job-side">' + dateChip + match + "</div>" + moreHtml(j, e, href, pay, hasResume) + "</article>";
   }).join("") + moreBtn;
+}
+// Industry menu shows how many jobs each industry has where you can work; empty ones are greyed out.
+// Counting runs only when the jobs or the location settings change (it tests every job against every industry).
+let industryCache = { key: "", counts: null, allKey: null };
+let coverageText = "";
+// Employer boards' industry -> the sector named in the coverage line (tools for designers, sales or HR count as tech).
+const SECTOR_NAME = { health: "healthcare", finance: "finance", retail: "retail", education: "education", nonprofit: "nonprofit",
+  marketing: "media", software: "tech", data: "tech", design: "tech", sales: "tech", support: "tech", people: "tech", ops: "logistics" };
+function updateIndustryMenu(pool, all, exampleOnly) {
+  const sel = $("industry");
+  const key = [$("my-loc").value, $("nearby").value, $("radius").value, $("unspec").checked, $("arr-remote").checked, $("arr-hybrid").checked, $("arr-onsite").checked, all.length].join("|");
+  if (industryCache.allKey !== all) { industryCache.allKey = all; industryCache.key = ""; }
+  if (industryCache.key !== key) { industryCache.key = key; industryCache.counts = exampleOnly ? null : industryCounts(pool); }
+  const counts = industryCache.counts;
+  for (const opt of sel.options) {
+    if (!opt.dataset.label) opt.dataset.label = opt.textContent;
+    if (!counts) { opt.textContent = opt.dataset.label; opt.disabled = false; continue; }
+    const n = opt.value ? counts[opt.value] || 0 : pool.length;
+    opt.textContent = opt.dataset.label + " (" + n.toLocaleString() + ")";
+    opt.disabled = !!opt.value && n === 0 && opt.value !== sel.value;
+  }
+  // Coverage line: which kinds of EMPLOYER are in today's feed (from each board's industry), not which job
+  // titles exist, so it reads "healthcare companies" rather than "sales". Built from the jobs, never promised.
+  const line = $("coverage");
+  if (exampleOnly) { coverageText = ""; line.hidden = true; return; }
+  const bySector = new Map(), studios = new Set(), others = new Set();
+  for (const j of all) {
+    const co = companyKey(j);
+    if (j.gameStudio) studios.add(co);
+    else if (j.industry) { const k = SECTOR_NAME[j.industry] || "tech"; if (!bySector.has(k)) bySector.set(k, new Set()); bySector.get(k).add(co); }
+    else others.add(co);
+  }
+  const sectors = [...bySector.entries()].sort((a, b) => b[1].size - a[1].size).map(e => e[0]);
+  const total = new Set([...studios, ...others, ...[...bySector.values()].flatMap(x => [...x])]).size;
+  const list = sectors.length > 1 ? sectors.slice(0, -1).join(", ") + " and " + sectors.at(-1) : sectors.join("");
+  coverageText = "Hire Ground covers " + total.toLocaleString() + " employers: " + (studios.size ? "game studios" + (list ? " plus " : "") : "") + (list ? list + " companies" : "") + ".";
+  line.textContent = coverageText;
+  line.hidden = false;
 }
 function updateSummaries(user, hasResume, exampleOnly) {
   $("sum-resume").textContent = hasResume ? words30() + " words read" : "Not added yet";
