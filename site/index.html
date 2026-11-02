@@ -85,10 +85,10 @@
   .how[hidden] { display: none; }
   .how strong { color: var(--ink); }
   .wrap { max-width: 1180px; margin: 0 auto; padding: 22px max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); }
-  .layout { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 22px; align-items: start; }
-  @media (max-width: 860px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+  .layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); align-items: start; }
+  @media (min-width: 1024px) { .layout { grid-template-columns: minmax(0, 1fr) 320px; } }
   .controls { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-  @media (min-width: 861px) { .controls { position: sticky; top: calc(var(--bar-h) + 16px); max-height: calc(100vh - var(--bar-h) - 32px); overflow-y: auto; padding-right: 4px; scrollbar-width: thin; } }
+  @media (min-width: 1024px) { .side { position: sticky; top: calc(var(--bar-h) + 16px); max-height: calc(100vh - var(--bar-h) - 32px); overflow-y: auto; padding-right: 4px; scrollbar-width: thin; } }
 
   /* collapsible setup steps */
   .panel { background: var(--card); border: 1px solid var(--line); border-bottom: var(--ground); border-radius: var(--radius-s); min-width: 0; position: relative; overflow: hidden; flex: none; }
@@ -214,7 +214,7 @@
   .lc-stat { min-width: 0; } .lc-stat b { display: block; font-family: var(--font-display); font-size: var(--step-3); line-height: 1.1; font-weight: 500; }
   .lc-stat span { display: block; font-size: var(--step-n1); color: var(--mute); }
   details.sub { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; }
-  details.sub > summary { font-size: var(--step-n1); color: var(--mute); font-weight: 600; padding: 12px 0; }
+  details.sub > summary { font-size: var(--step-n1); color: var(--mute); font-weight: 600; padding: 12px 0; min-height: var(--tap); }
   details.sub > summary:hover { color: var(--ink); }
   details.sub[open] > summary { color: var(--ink); }
   .src-list { max-height: 260px; overflow-y: auto; gap: 0; margin-top: 8px; padding-right: 4px; scrollbar-width: thin; }
@@ -248,7 +248,6 @@
       background: var(--surface); border: 1px solid var(--line); color: var(--ink); font-weight: 600; font-size: var(--step-0); text-align: left; border-radius: var(--radius-s); }
     .setup-toggle #setup-line { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .setup-act { flex: none; color: var(--blue); }
-    body:not(.setup-open) .controls { display: none; }
     .mobile-only { display: inline-flex; }
     .filterbar:not(.more) .mf { display: none; }
     .filterbar { padding: 8px; gap: 6px; margin-bottom: 10px; }
@@ -261,6 +260,61 @@
     .filterbar { position: static; }
   }
   [lang=ja], [lang|=zh], [lang=ko] { font-family: var(--font-cjk); }
+
+  /* Horizon step 4: one search sentence */
+  .search { background: var(--card); border: 1px solid var(--line); border-bottom: var(--ground); border-radius: var(--radius-s); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-4); }
+  .sentence { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); }
+  .s-field { display: inline-flex; align-items: center; gap: var(--space-2); margin: 0; color: var(--ink-mute); }
+  .s-word { font-family: var(--font-display); font-size: var(--step-1); color: var(--ink-mute); white-space: nowrap; }
+  .s-field input, .s-field select { margin: 0; width: auto; }
+  .s-field input { width: 16ch; }
+  .resume-ctl button.ghost { border-color: transparent; color: var(--ink-mute); padding: 0 var(--space-3); }
+  .resume-ctl { position: relative; display: inline-flex; align-items: center; gap: var(--space-1); margin-left: auto; }
+  .resume-ctl input.sr-only { width: 1px; height: 1px; margin: -1px; padding: 0; }
+  label.btn { display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 var(--space-4); border-radius: var(--radius-s); background: var(--ink); color: var(--card); font-weight: 600; font-size: var(--step-0); cursor: pointer; border: 1px solid var(--ink); }
+  .resume-ctl.has label.btn { background: var(--card); color: var(--ink); border-color: var(--line); }
+  #resume-label { max-width: 26ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .resume-ctl:focus-within label.btn { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .s-hint { margin: var(--space-2) 0 0; font-size: var(--step-n1); color: var(--ink-mute); }
+  .s-hint:empty { display: none; }
+  .s-hint .status { display: inline; margin: 0; min-height: 0; }
+  .more-opts { margin-top: var(--space-1); }
+  .more-opts > summary { display: inline-flex; align-items: center; min-height: var(--tap); font-size: var(--step-n1); color: var(--ink-mute); font-weight: 600; }
+  .more-grid { display: grid; gap: var(--space-4); margin-top: var(--space-2) !important; }
+  @media (min-width: 768px) { .more-grid { grid-template-columns: 1fr 1fr; } .more-grid > .hint { grid-column: 1 / -1; } }
+  .more-grid .check { margin-top: var(--space-3); min-height: var(--tap); }
+  @media (max-width: 560px) { .s-field { flex: 1 1 100%; } .s-field input, .s-field select { flex: 1; min-width: 0; } .resume-ctl { margin-left: 0; } }
+  /* Horizon step 3: views, pipeline, toast */
+  .views { display: flex; gap: var(--space-1); overflow-x: auto; margin: 0 0 var(--space-4); border-bottom: 1px solid var(--line); }
+  .views button { background: transparent; border: 0; border-radius: 0; color: var(--ink-mute); padding: 0 var(--space-3); white-space: nowrap; }
+  .views button[aria-pressed="true"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--ink); }
+  .views button:hover:not(:disabled) { color: var(--ink); text-decoration: none; }
+  .views .count { font-weight: 400; margin-left: 4px; }
+  .views .count:empty { display: none; }
+  button.btn-save { background: var(--card); color: var(--ink); border-color: var(--line); }
+  button.btn-save[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+  .job-actions button.ghost, a.btn.ghost { background: transparent; border-color: transparent; color: var(--ink-mute); padding: 0 var(--space-3); }
+  .job-actions button.ghost:hover, a.btn.ghost:hover { color: var(--ink); }
+  .mark-applied { font-weight: 600; color: var(--accent); }
+  .job.closed .job-title { color: var(--ink-mute); padding: var(--space-1) 0; }
+  .side { display: flex; flex-direction: column; gap: var(--space-3); min-width: 0; }
+  .pipeline { background: var(--card); border: 1px solid var(--line); border-bottom: var(--ground); border-radius: var(--radius-s); padding: var(--space-4); }
+  .pipeline > h2 { font-family: var(--font-display); font-size: var(--step-2); font-weight: 500; text-transform: none; letter-spacing: 0; margin: 0 0 var(--space-1); }
+  .pipeline h3 { font-size: var(--step-n1); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-mute); margin: var(--space-4) 0 var(--space-1); }
+  .pipeline ul { list-style: none; margin: 0; padding: 0; }
+  .p-item { display: grid; gap: 2px; padding: var(--space-2) 0; border-bottom: 1px solid var(--line); }
+  .p-item:last-child { border-bottom: 0; }
+  .p-title { display: block; color: var(--ink); font-weight: 600; text-decoration: none; min-height: var(--tap); padding: 10px 0; }
+  .p-title .clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  a.p-title:hover { text-decoration: underline; }
+  .p-item.gone .p-title { color: var(--ink-mute); }
+  .p-co, .p-status, .p-note { font-size: var(--step-n1); color: var(--ink-mute); }
+  .p-note { margin: var(--space-3) 0 0; }
+  .p-more { margin-left: calc(-1 * var(--space-3)); font-size: var(--step-n1); }
+  @media (max-width: 1023px) { .pipeline { display: none; } }
+  .toast { position: fixed; left: 50%; bottom: max(16px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 50; display: flex; align-items: center; gap: var(--space-3); background: var(--ink); color: var(--card); border-radius: var(--radius-s); padding: var(--space-1) var(--space-1) var(--space-1) var(--space-4); font-weight: 600; box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 25%, transparent); max-width: calc(100vw - 32px); }
+  .toast button.ghost { color: var(--card); border-color: color-mix(in srgb, var(--card) 40%, transparent); }
+  .toast button[hidden] { display: none; }
 </style>
 
 <header class="topbar">
@@ -276,93 +330,117 @@
   <p style="margin:0">Your resume is saved in this browser only. Only the job titles and the place you search for go to the job boards.</p>
 </div>
 <div class="wrap">
-  <button id="setup-toggle" class="setup-toggle" type="button" aria-expanded="false" aria-controls="setup-panels"><span id="setup-line">Add your resume to rank jobs by fit</span><span id="setup-act" class="setup-act">Set up</span></button>
-  <div class="layout">
-    <aside class="controls" id="setup-panels">
-      <details class="panel c-green" id="step-resume" open>
-        <summary><h2>1 &middot; Resume</h2><span class="step-sum" id="sum-resume"></span><span class="chev"></span></summary>
-        <div class="step-body">
-        <label for="resume-file">Upload PDF, DOCX or TXT
-          <input id="resume-file" type="file" accept=".pdf,.docx,.txt,.md">
-        </label>
-        <textarea id="resume-text" hidden aria-hidden="true" tabindex="-1"></textarea>
-        <p class="status" id="resume-status" role="status"></p>
-        <div class="btn-row"><button id="resume-clear" type="button" class="ghost" hidden>Clear saved resume</button></div>
-        <p class="hint">Saved in this browser only, so it is still here next time. It never goes to the job boards.</p>
-        </div>
-      </details>
-
-      <details class="panel c-blue" id="step-where" open>
-        <summary><h2>2 &middot; Where you work</h2><span class="step-sum" id="sum-where"></span><span class="chev"></span></summary>
-        <div class="step-body">
+  <section class="search" aria-label="Your search">
+    <div class="sentence">
+      <label class="s-field" for="my-loc"><span class="s-word">Jobs near</span><input id="my-loc" type="text" placeholder="e.g. Austin, TX" autocomplete="off"></label>
+      <label class="s-field" for="radius"><span class="s-word">within</span><select id="radius">
+        <option value="city">my city and nearby</option>
+        <option value="region" selected>my state or province</option>
+        <option value="country">my country</option>
+      </select></label>
+      <label class="s-field" for="max-age"><span class="s-word">posted</span><select id="max-age" aria-label="Posted within">
+          <option value="3">in the last 3 days</option>
+          <option value="7">in the last 7 days</option>
+          <option value="14">in the last 14 days</option>
+          <option value="30" selected>in the last 30 days</option>
+          <option value="90">in the last 90 days</option>
+          <option value="0">any time</option>
+        </select></label>
+      <div class="resume-ctl" id="resume-ctl">
+        <label class="btn resume-btn" for="resume-file"><span id="resume-label">Add your resume</span></label>
+        <input id="resume-file" class="sr-only" type="file" accept=".pdf,.docx,.txt,.md">
+        <button id="resume-clear" type="button" class="ghost" hidden>Remove</button>
+      </div>
+    </div>
+    <p class="s-hint"><span id="loc-read"></span> <span class="status" id="resume-status" role="status"></span></p>
+    <textarea id="resume-text" hidden aria-hidden="true" tabindex="-1"></textarea>
+    <details class="more-opts" id="more-opts">
+      <summary>More options</summary>
+      <div class="more-grid">
         <div class="field">
-          <label for="my-loc">Where do you live?
-            <input id="my-loc" type="text" placeholder="e.g. Austin, TX" autocomplete="off">
-          </label>
-          <p class="hint" id="loc-read"></p>
-        </div>
-        <div class="field">
-          <label for="radius">Hybrid and on-site jobs within
-            <select id="radius">
-              <option value="city">My city and nearby places</option>
-              <option value="region" selected>My state or province</option>
-              <option value="country">My country</option>
-            </select>
-          </label>
-        </div>
-        <div class="field">
-          <label for="nearby">Nearby places you could commute to (optional)
+          <label for="nearby">Nearby places you could commute to
             <input id="nearby" type="text" placeholder="e.g. Round Rock, Georgetown">
           </label>
-          <p class="hint">Matching is by place name, not distance. Remote jobs are kept only if they are open to your country or region.</p>
+          <p class="hint">Matching is by place name, not distance. Remote jobs are kept only if they're open to your country or region.</p>
         </div>
-        <div class="field">
-          <label class="check" for="unspec"><input id="unspec" type="checkbox" checked> Include jobs that don't say where</label>
-        </div>
-        </div>
-      </details>
-
-      <details class="panel c-orange" id="step-rank">
-        <summary><h2>3 &middot; Ranking</h2><span class="step-sum" id="sum-rank"></span><span class="chev"></span></summary>
-        <div class="step-body">
         <div class="field">
           <label for="recency"><span class="range-head"><span>Fit vs. freshness</span><span class="mono"><span id="rv">30</span>% freshness</span></span>
             <input id="recency" type="range" min="0" max="100" value="30">
           </label>
+          <label class="check" for="unspec"><input id="unspec" type="checkbox" checked> Include jobs that don't say where</label>
         </div>
+        <p class="hint">Your resume, saved jobs and settings stay in this browser. Nothing goes to the job boards.</p>
+      </div>
+    </details>
+  </section>
+  <nav class="views" id="views" aria-label="Your jobs">
+    <button type="button" data-view="foryou" aria-pressed="true">For you</button>
+    <button type="button" data-view="saved" aria-pressed="false">Saved <span class="count" id="n-saved"></span></button>
+    <button type="button" data-view="applied" aria-pressed="false">Applied <span class="count" id="n-applied"></span></button>
+    <button type="button" data-view="hidden" aria-pressed="false">Hidden <span class="count" id="n-hidden"></span></button>
+  </nav>
+  <div class="layout">
+    <main class="results">
+      <div class="filterbar" id="filterbar" role="group" aria-label="Filters">
+        <div class="chip-set">
+          <label class="chip remote" for="arr-remote"><input id="arr-remote" type="checkbox" checked><span>Remote</span></label>
+          <label class="chip hybrid" for="arr-hybrid"><input id="arr-hybrid" type="checkbox" checked><span>Hybrid</span></label>
+          <label class="chip onsite" for="arr-onsite"><input id="arr-onsite" type="checkbox" checked><span>On-site</span></label>
         </div>
-      </details>
-
-      <details class="panel c-violet" id="panel-search" open>
-        <summary><h2>Search job boards</h2><span class="step-sum"></span><span class="chev"></span></summary>
-        <div class="step-body">
-        <div class="field">
-          <label for="terms">What to search for (up to 3 titles)
-            <input id="terms" type="text" placeholder="e.g. project manager, product designer" autocomplete="off">
-          </label>
-          <div class="btn-row"><button id="suggest-btn" type="button" class="ghost" hidden>Suggest from my resume</button></div>
-          <p class="status" id="suggest-status" role="status"></p>
-        </div>
-        <fieldset>
-          <legend>Boards</legend>
-          <div class="checks">
-            <label class="check" for="board-indeed"><input id="board-indeed" type="checkbox" checked> Indeed</label>
-            <label class="check" for="board-ziprecruiter"><input id="board-ziprecruiter" type="checkbox" checked> ZipRecruiter</label>
-            <label class="check" for="board-dice"><input id="board-dice" type="checkbox" checked> Dice (tech)</label>
-          </div>
-        </fieldset>
-        <ul class="board-status" id="board-status"></ul>
-        <div class="btn-row">
-          <button id="search-btn" type="button">Search selected boards</button>
-          <button id="stop-btn" type="button" class="ghost" hidden>Stop</button>
-        </div>
-        <p class="status" id="search-status" role="status"></p>
-        <p class="hint">Searches use your location and work style above. These boards share short summaries, so ranking leans on job titles. Listings come from the boards with AI assistance, so check details with the employer before you apply.</p>
-        </div>
-      </details>
-
-      <details class="panel c-blue" id="panel-listings" open>
-        <summary><h2>Job listings</h2><span class="step-sum" id="sum-listings"></span><span class="chev"></span></summary>
+        <button id="more-filters" type="button" class="ghost mobile-only" aria-expanded="false" aria-controls="filterbar">More filters</button>
+        <select id="industry" class="mf" aria-label="Industry">
+          <option value="">Any industry</option>
+          <option value="games">Games</option>
+          <option value="software">Software and IT</option>
+          <option value="data">Data and AI</option>
+          <option value="design">Design and creative</option>
+          <option value="product">Product and project</option>
+          <option value="marketing">Marketing and content</option>
+          <option value="sales">Sales and business development</option>
+          <option value="support">Customer support</option>
+          <option value="finance">Finance and accounting</option>
+          <option value="people">HR and recruiting</option>
+          <option value="health">Healthcare</option>
+          <option value="education">Education</option>
+          <option value="retail">Retail and consumer</option>
+          <option value="nonprofit">Nonprofit and public sector</option>
+          <option value="ops">Operations and admin</option>
+        </select>
+        <select id="role" class="mf" aria-label="Role type">
+          <option value="">Any role</option>
+          <option value="Design">Design</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Art">Art</option>
+          <option value="Animation">Animation</option>
+          <option value="Technical Art">Technical Art</option>
+          <option value="Audio">Audio</option>
+          <option value="UX/UI">UX/UI</option>
+          <option value="Production">Production</option>
+          <option value="Product">Product</option>
+          <option value="QA">QA</option>
+          <option value="Data &amp; Analytics">Data &amp; Analytics</option>
+          <option value="Marketing &amp; Community">Marketing &amp; Community</option>
+          <option value="Writing &amp; Narrative">Writing &amp; Narrative</option>
+          <option value="Localization">Localization</option>
+          <option value="Player Support">Player Support</option>
+          <option value="Business &amp; Operations">Business &amp; Operations</option>
+        </select>
+        <label class="chip evergreen mf" for="hide-evergreen" title="Hide talent-pool posts such as General Application or Open Application"><input id="hide-evergreen" type="checkbox" checked><span>Hide general apps</span></label>
+        <div class="kw"><input id="filter" type="text" placeholder="Keywords: unity, live ops" aria-label="Keywords (a comma means or)" autocomplete="off"></div>
+        <button id="view-btn" type="button" class="ghost view-toggle mf" aria-pressed="false">Compact</button>
+      </div>
+      <div class="results-head">
+        <h2 id="results-title" class="results-title" tabindex="-1">Newest jobs</h2>
+        <button id="new-btn" type="button" class="new-btn" aria-pressed="false" hidden></button>
+        <span id="results-note"></span>
+      </div>
+      <p id="coverage" class="coverage" hidden></p>
+      <div id="results"></div>
+    </main>
+    <aside class="side">
+      <section class="pipeline" id="pipeline" aria-labelledby="pipe-h"><h2 id="pipe-h">Your pipeline</h2><div id="pipe-body"></div></section>
+      <details class="panel" id="panel-listings">
+        <summary><h2>Listings and sources</h2><span class="step-sum" id="sum-listings"></span><span class="chev"></span></summary>
         <div class="step-body">
         <p class="status" id="feed-summary" style="margin-top:0"></p>
         <div id="local-box" hidden>
@@ -441,75 +519,38 @@
         </details>
         </div>
       </details>
-    </aside>
-
-    <main class="results">
-      <div class="filterbar" id="filterbar" role="group" aria-label="Filters">
-        <div class="chip-set">
-          <label class="chip remote" for="arr-remote"><input id="arr-remote" type="checkbox" checked><span>Remote</span></label>
-          <label class="chip hybrid" for="arr-hybrid"><input id="arr-hybrid" type="checkbox" checked><span>Hybrid</span></label>
-          <label class="chip onsite" for="arr-onsite"><input id="arr-onsite" type="checkbox" checked><span>On-site</span></label>
+      <details class="panel" id="panel-search">
+        <summary><h2>Search job boards</h2><span class="step-sum"></span><span class="chev"></span></summary>
+        <div class="step-body">
+        <div class="field">
+          <label for="terms">What to search for (up to 3 titles)
+            <input id="terms" type="text" placeholder="e.g. project manager, product designer" autocomplete="off">
+          </label>
+          <div class="btn-row"><button id="suggest-btn" type="button" class="ghost" hidden>Suggest from my resume</button></div>
+          <p class="status" id="suggest-status" role="status"></p>
         </div>
-        <button id="more-filters" type="button" class="ghost mobile-only" aria-expanded="false" aria-controls="filterbar">More filters</button>
-        <select id="max-age" class="mf" aria-label="Posted within">
-          <option value="3">Last 3 days</option>
-          <option value="7">Last 7 days</option>
-          <option value="14">Last 14 days</option>
-          <option value="30" selected>Last 30 days</option>
-          <option value="90">Last 90 days</option>
-          <option value="0">Any time</option>
-        </select>
-        <select id="industry" class="mf" aria-label="Industry">
-          <option value="">Any industry</option>
-          <option value="games">Games</option>
-          <option value="software">Software and IT</option>
-          <option value="data">Data and AI</option>
-          <option value="design">Design and creative</option>
-          <option value="product">Product and project</option>
-          <option value="marketing">Marketing and content</option>
-          <option value="sales">Sales and business development</option>
-          <option value="support">Customer support</option>
-          <option value="finance">Finance and accounting</option>
-          <option value="people">HR and recruiting</option>
-          <option value="health">Healthcare</option>
-          <option value="education">Education</option>
-          <option value="retail">Retail and consumer</option>
-          <option value="nonprofit">Nonprofit and public sector</option>
-          <option value="ops">Operations and admin</option>
-        </select>
-        <select id="role" class="mf" aria-label="Role type">
-          <option value="">Any role</option>
-          <option value="Design">Design</option>
-          <option value="Engineering">Engineering</option>
-          <option value="Art">Art</option>
-          <option value="Animation">Animation</option>
-          <option value="Technical Art">Technical Art</option>
-          <option value="Audio">Audio</option>
-          <option value="UX/UI">UX/UI</option>
-          <option value="Production">Production</option>
-          <option value="Product">Product</option>
-          <option value="QA">QA</option>
-          <option value="Data &amp; Analytics">Data &amp; Analytics</option>
-          <option value="Marketing &amp; Community">Marketing &amp; Community</option>
-          <option value="Writing &amp; Narrative">Writing &amp; Narrative</option>
-          <option value="Localization">Localization</option>
-          <option value="Player Support">Player Support</option>
-          <option value="Business &amp; Operations">Business &amp; Operations</option>
-        </select>
-        <label class="chip evergreen mf" for="hide-evergreen" title="Hide talent-pool posts such as General Application or Open Application"><input id="hide-evergreen" type="checkbox" checked><span>Hide general apps</span></label>
-        <div class="kw"><input id="filter" type="text" placeholder="Keywords: unity, live ops" aria-label="Keywords (a comma means or)" autocomplete="off"></div>
-        <button id="view-btn" type="button" class="ghost view-toggle mf" aria-pressed="false">Compact</button>
-      </div>
-      <div class="results-head">
-        <h2 id="results-title" class="results-title">Newest jobs</h2>
-        <button id="new-btn" type="button" class="new-btn" aria-pressed="false" hidden></button>
-        <span id="results-note"></span>
-      </div>
-      <p id="coverage" class="coverage" hidden></p>
-      <div id="results"></div>
-    </main>
+        <fieldset>
+          <legend>Boards</legend>
+          <div class="checks">
+            <label class="check" for="board-indeed"><input id="board-indeed" type="checkbox" checked> Indeed</label>
+            <label class="check" for="board-ziprecruiter"><input id="board-ziprecruiter" type="checkbox" checked> ZipRecruiter</label>
+            <label class="check" for="board-dice"><input id="board-dice" type="checkbox" checked> Dice (tech)</label>
+          </div>
+        </fieldset>
+        <ul class="board-status" id="board-status"></ul>
+        <div class="btn-row">
+          <button id="search-btn" type="button">Search selected boards</button>
+          <button id="stop-btn" type="button" class="ghost" hidden>Stop</button>
+        </div>
+        <p class="status" id="search-status" role="status"></p>
+        <p class="hint">Searches use your location and work style above. These boards share short summaries, so ranking leans on job titles. Listings come from the boards with AI assistance, so check details with the employer before you apply.</p>
+        </div>
+      </details>
+
+    </aside>
   </div>
 </div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden><span></span><button type="button" class="ghost">Undo</button></div>
 <footer class="foot">Listings come from public job boards and company career pages. Each one links back to its original posting. Your resume is saved in your browser only.</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -1611,6 +1652,148 @@ function locationRows(j, row) {
   const rem = own.filter(l => /^remote\s*-\s*/i.test(l)).map(l => l.replace(/^remote\s*-\s*/i, "")), site = own.filter(l => !/^remote\s*-\s*/i.test(l));
   return rem.length ? row("Remote in (" + rem.length + ")", esc(rem.join("; "))) + (site.length ? row("On-site (" + site.length + ")", esc(site.join("; "))) : "") : row("Locations (" + own.length + ")", esc(own.join("; ")));
 }
+// ---- Your pipeline: Saved / Applied / Hidden (Horizon step 3). Stored on this device only, never uploaded.
+const PIPE_KEY = "hg-pipeline", VIEWS = ["foryou", "saved", "applied", "hidden"];
+const pipe = (() => { const p = loadStore(PIPE_KEY) || {}; return { saved: p.saved || {}, applied: p.applied || {}, hidden: p.hidden || {} }; })();
+let view = VIEWS.includes(loadStore("hg-view")) ? loadStore("hg-view") : "foryou";
+const jobIndex = new Map();
+let toastTimer = 0, pendingFocus = null;
+function snapOf(j) { return { id: j.id, title: j.title || "", company: j.company || "", url: safeUrl(j.url) || "", location: String(j.location || "") }; }
+function daysSince(iso) { return Math.max(0, Math.floor((Date.now() - Date.parse(iso || "")) / 86400000)) || 0; }
+function sinceText(verb, iso) { const d = daysSince(iso); return verb + " " + (d === 0 ? "today" : d === 1 ? "yesterday" : d < 14 ? d + " days ago" : d < 60 ? Math.round(d / 7) + " weeks ago" : Math.round(d / 30) + " months ago"); }
+function pipeAct(act, id, card) {
+  const j = jobIndex.get(id), base = j ? snapOf(j) : (pipe.saved[id] || pipe.applied[id] || pipe.hidden[id]);
+  if (!base) return;
+  const at = new Date().toISOString(), put = k => { pipe[k][id] = Object.assign({}, base, { at }); };
+  let msg = "", undo = "";
+  if (act === "save") { put("saved"); delete pipe.hidden[id]; msg = "Saved"; undo = "unsave"; }
+  else if (act === "unsave") { delete pipe.saved[id]; msg = "Removed from Saved"; }
+  else if (act === "applied") { put("applied"); delete pipe.saved[id]; msg = "Marked as applied"; undo = "back"; }
+  else if (act === "back") { put("saved"); delete pipe.applied[id]; msg = "Moved back to Saved"; }
+  else if (act === "hide") { put("hidden"); delete pipe.saved[id]; msg = "Hidden. Find it under Hidden"; undo = "unhide"; }
+  else if (act === "unhide") { delete pipe.hidden[id]; msg = "Back in your feed"; }
+  else if (act === "remove") { delete pipe.saved[id]; delete pipe.applied[id]; delete pipe.hidden[id]; msg = "Removed"; }
+  else return;
+  saveStore(PIPE_KEY, pipe);
+  const cards = [...document.querySelectorAll("#results .job")];
+  pendingFocus = { id, index: card ? cards.indexOf(card) : -1 };
+  render();
+  showToast(msg, undo, id);
+}
+function showToast(msg, undo, id) {
+  const t = $("toast"), u = t.querySelector("button");
+  t.querySelector("span").textContent = msg; u.hidden = !undo;
+  u.onclick = () => { t.hidden = true; pipeAct(undo, id, null); };
+  t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 6000);
+}
+function restoreFocus() {
+  if (!pendingFocus) return;
+  const { id, index } = pendingFocus; pendingFocus = null;
+  const cards = [...document.querySelectorAll("#results .job")];
+  const same = cards.find(c => c.dataset.id === id);
+  const target = same ? same.querySelector("[data-pipe]") : cards.length ? cards[Math.min(Math.max(index, 0), cards.length - 1)].querySelector(".job-toggle, [data-pipe]") : $("results-title");
+  if (target) target.focus({ preventScroll: false });
+}
+function setView(v) {
+  if (!VIEWS.includes(v)) return;
+  view = v; saveStore("hg-view", v); state.limit = 100; render();
+  $("results-title").scrollIntoView({ block: "nearest" });
+}
+function updateViews() {
+  const n = k => Object.keys(pipe[k]).length;
+  $("n-saved").textContent = n("saved") || ""; $("n-applied").textContent = n("applied") || ""; $("n-hidden").textContent = n("hidden") || "";
+  for (const b of document.querySelectorAll("#views [data-view]")) b.setAttribute("aria-pressed", String(b.dataset.view === view));
+  $("filterbar").hidden = view !== "foryou";
+}
+function entriesOf(k) { return Object.values(pipe[k]).sort((a, b) => String(b.at).localeCompare(String(a.at))); }
+function renderAside() {
+  const item = en => { const live = jobIndex.has(en.id); const u = safeUrl(en.url);
+    const title = live && u ? '<a class="p-title" href="' + esc(u) + '" target="_blank" rel="noopener"><span class="clamp">' + esc(en.title) + '</span><span class="sr-only"> (opens the employer\'s site)</span></a>' : '<span class="p-title"><span class="clamp">' + esc(en.title) + "</span></span>";
+    return '<li class="p-item' + (live ? "" : " gone") + '">' + title + '<span class="p-co">' + esc(en.company) + '</span><span class="p-status">' + esc((live ? "" : "No longer listed · ") + sinceText(pipe.applied[en.id] ? "Applied" : "Saved", en.at)) + "</span></li>"; };
+  const block = (k, label) => { const all = entriesOf(k); if (!all.length) return "";
+    return "<h3>" + label + "</h3><ul>" + all.slice(0, 5).map(item).join("") + "</ul>" + (all.length > 5 ? '<button type="button" class="ghost p-more" data-view="' + k + '">See all ' + all.length + "</button>" : ""); };
+  const body = block("saved", "Saved") + block("applied", "Applied");
+  const hid = Object.keys(pipe.hidden).length;
+  $("pipe-body").innerHTML = (body || '<p class="p-note" style="margin-top:0">Save jobs to build a shortlist. When you apply, mark it here so you know when to follow up.</p>') +
+    (hid ? '<p class="p-note">' + hid + ' hidden · <button type="button" class="linkish" data-view="hidden">Show</button></p>' : "") +
+    '<p class="p-note">Dates and statuses only. No streaks, no counters. Stored on this device.</p>';
+}
+function actionsHtml(j, view, href, co) {
+  const b = (act, label, cls, extra) => '<button type="button" class="' + cls + '" data-pipe="' + act + '"' + (extra || "") + ">" + label + "</button>";
+  const open = href ? '<a class="btn ghost" href="' + esc(href) + '" target="_blank" rel="noopener">Open posting<span class="sr-only"> at ' + esc(co) + " (opens the employer's site)</span><span aria-hidden=\"true\"> ↗</span></a>" : "";
+  let acts = "";
+  if (view === "foryou") acts = pipe.applied[j.id] ? "" : pipe.saved[j.id] ? b("unsave", "Saved", "btn-save", ' aria-pressed="true"') + b("hide", "Hide", "ghost") : b("save", "Save", "btn-save", ' aria-pressed="false"') + b("hide", "Hide", "ghost");
+  else if (view === "saved") acts = b("applied", "Mark as applied", "btn-save") + b("unsave", "Remove", "ghost");
+  else if (view === "applied") acts = b("back", "Move back to Saved", "btn-save") + b("remove", "Remove", "ghost");
+  else if (view === "hidden") acts = b("unhide", "Unhide", "btn-save");
+  return '<div class="job-actions">' + acts + open + "</div>";
+}
+function cardHtml(j, e, hasResume, isNew, view) {
+  e = e || { arrangement: "onsite", stated: false, fit: "" };
+  const href = safeUrl(j.url);
+  const id = "more-" + String(j.id).replace(/[^A-Za-z0-9_-]/g, "_");
+  const open = openJobs.has(j.id);
+  const co = j.company || "?";
+  const company = safeUrl(j.companyUrl) ? '<a href="' + esc(j.companyUrl) + '" target="_blank" rel="noopener">' + esc(co) + "</a>" : esc(co);
+  const pay = salaryText(j);
+  const warnFit = e.fit === "Location not stated" || e.fit === "Check where it's open";
+  const status = view === "saved" && pipe.saved[j.id] ? sinceText("Saved", pipe.saved[j.id].at)
+    : view === "applied" && pipe.applied[j.id] ? sinceText("Applied", pipe.applied[j.id].at)
+    : view === "hidden" && pipe.hidden[j.id] ? sinceText("Hidden", pipe.hidden[j.id].at) : "";
+  const top = [
+    hasResume && j.tier != null ? '<span class="verdict t' + j.tier + '" title="' + esc(VERDICT_WHY[j.tier]) + '">' + stepsSvg(j.tier + 1) + "<span>" + FIT_LABEL[j.tier] + "</span></span>" : "",
+    view === "foryou" && pipe.applied[j.id] ? '<span class="mark-applied">' + esc(sinceText("Applied", pipe.applied[j.id].at)) + "</span>" : "",
+    status ? '<span class="mark-applied">' + esc(status) + "</span>" : "",
+    isNew(j) ? '<span class="mark-new">New</span>' : "",
+    j.contract ? "<span>Contract</span>" : "",
+    j.evergreen ? '<span title="A talent-pool post, not a specific opening">General application</span>' : "",
+    j.ageDays > STALE_AFTER_DAYS ? '<span title="Posted over ' + STALE_AFTER_DAYS + ' days ago. It may already be filled.">Open a long time</span>' : "",
+    warnFit ? "<span>" + esc(e.fit) + "</span>" : "",
+    j.example ? '<span class="badge">Example</span>' : ""
+  ].filter(Boolean).join("");
+  const meta = ['<span class="co">' + company + "</span>", "<span>" + esc(locSummary(j)) + "</span>",
+    e.stated ? "<span>" + esc(ARR_LABEL[e.arrangement]) + "</span>" : "",
+    pay ? '<span title="Pay mentioned in the listing">' + esc(pay) + "</span>" : "",
+    "<span>" + esc(agePhrase(j.ageDays)) + "</span>"].filter(Boolean).join("");
+  const why = [hasResume && j.tier > 0 && j.titleHits && j.titleHits.length ? "Matches: " + j.titleHits.slice(0, 3).join(", ") : "",
+    e.fit && !warnFit ? e.fit : ""].filter(Boolean).join(" · ");
+  const ja = /[぀-ヿ一-鿿]/.test(j.title) ? ' lang="ja"' : "";
+  return '<article class="job' + (open ? " open" : "") + '" data-id="' + esc(j.id) + '">' +
+    '<div class="job-top">' + top + "</div>" +
+    '<h3 class="job-title"' + ja + '><button type="button" class="job-toggle" aria-expanded="' + open + '" aria-controls="' + id + '"><span class="clamp">' + esc(j.title) + "</span></button></h3>" +
+    '<p class="job-meta">' + meta + "</p>" +
+    (why ? '<p class="job-why">' + esc(why) + "</p>" : "") +
+    moreHtml(j, e, href, pay, hasResume, id) +
+    actionsHtml(j, view, href, co) +
+    "</article>";
+}
+function closedHtml(en, view) {
+  const verb = view === "applied" ? "Applied" : view === "hidden" ? "Hidden" : "Saved";
+  return '<article class="job closed" data-id="' + esc(en.id) + '"><div class="job-top"><span>No longer listed</span><span>' + esc(sinceText(verb, en.at)) + "</span></div>" +
+    '<h3 class="job-title">' + esc(en.title) + "</h3>" +
+    '<p class="job-meta"><span class="co">' + esc(en.company) + "</span>" + (en.location ? "<span>" + esc(locSummary({ location: en.location, others: [] })) + "</span>" : "") + "</p>" +
+    '<p class="job-why">The employer took this posting down, or its board didn\'t answer today.</p>' +
+    '<div class="job-actions"><button type="button" class="btn-save" data-pipe="remove">Remove</button></div></article>';
+}
+function renderPipelineView(evals, hasResume, w, now) {
+  const LABEL = { saved: "Saved", applied: "Applied", hidden: "Hidden" };
+  const EMPTY = { saved: ["Nothing saved yet", "Choose Save on any job to keep it here. Saved jobs stay on this device."],
+    applied: ["Nothing marked as applied", "When you apply, open Saved and choose Mark as applied. The date is kept so you know when to follow up."],
+    hidden: ["Nothing hidden", "Hide jobs you don't want to see again. They wait here in case you change your mind."] };
+  $("results-title").textContent = LABEL[view];
+  $("new-btn").hidden = true; $("coverage").hidden = true;
+  const entries = entriesOf(view);
+  const live = entries.filter(en => jobIndex.has(en.id)), gone = entries.filter(en => !jobIndex.has(en.id));
+  let jobs = live.map(en => jobIndex.get(en.id));
+  const ranked = new Map();
+  if (hasResume && jobs.length) for (const r of rankJobs(state.resume, jobs, { recencyWeight: w, maxAgeDays: null, now })) ranked.set(r.id, r);
+  const ageOf = j => Math.max(Math.floor((now - j.posted) / 86400000), 0);
+  $("results-note").textContent = entries.length ? entries.length + (entries.length === 1 ? " job" : " jobs") + (gone.length ? ", " + gone.length + " no longer listed" : "") + ". Stored on this device." : "";
+  if (!entries.length) { $("results").innerHTML = '<div class="empty"><p>' + EMPTY[view][0] + "</p><p style=\"color:var(--mute)\">" + EMPTY[view][1] + '</p><div class="btn-row"><button type="button" class="ghost" data-view="foryou">Back to For you</button></div></div>'; return; }
+  $("results").innerHTML = live.map(en => { const j = jobIndex.get(en.id); const r = ranked.get(en.id);
+      return cardHtml(Object.assign({}, j, r ? { tier: r.tier, titleHits: r.titleHits, matched: r.matched } : { tier: null, matched: [] }, { ageDays: ageOf(j), others: [] }), evals.get(en.id), hasResume, () => false, view); }).join("") +
+    gone.map(en => closedHtml(en, view)).join("");
+}
 function render() {
   const now = Date.now();
   const w = Number($("recency").value) / 100;
@@ -1635,6 +1818,8 @@ function render() {
 
   const evals = new Map();
   const all = uniqueJobs(), industry = $("industry").value;
+  jobIndex.clear(); for (const j of all) jobIndex.set(j.id, j);
+  updateViews(); renderAside();
   let pool = all.filter(j => { const e = evaluateJob(j, user, o); evals.set(j.id, e); return e.show; });
   const hiddenByWhere = all.length - pool.length;
   updateIndustryMenu(pool, all, exampleOnly);
@@ -1657,6 +1842,10 @@ function render() {
     $("results-title").textContent = "Newest jobs";
   }
   list = groupRoles(list);
+  if (view !== "foryou") { renderPipelineView(evals, hasResume, w, now); restoreFocus(); return; }
+  const beforeHide = list.length;
+  list = list.filter(j => !pipe.hidden[j.id]);
+  const hiddenByUser = beforeHide - list.length;
 
   // New since last visit: only jobs this visitor could act on (filters applied; with a resume, not Long shots).
   const prevMs = Date.parse(visit.prev || "");
@@ -1680,6 +1869,7 @@ function render() {
   if (!hasResume) note.push("Add a resume to rank by fit.");
   note.push("Showing " + shown.length.toLocaleString() + " of " + list.length.toLocaleString() + (list.length === 1 ? " role" : " roles") + " from " + all.length.toLocaleString() + (exampleOnly ? " example listings." : " listings."));
   if (hiddenByWhere) note.push(hiddenByWhere.toLocaleString() + " hidden by location or work style.");
+  if (hiddenByUser) note.push(hiddenByUser.toLocaleString() + " you hid.");
   $("results-note").innerHTML = esc(note.join(" ")) + (hiddenByAge
     ? ' <button type="button" class="linkish" data-act="age-all">' + esc(hiddenByAge.toLocaleString() + " older than " + maxAge + " days hidden. Show all dates") + "</button>" : "");
   $("feed-summary").textContent = exampleOnly
@@ -1702,40 +1892,8 @@ function render() {
     (best === 0 ? "Nothing in today's listings clearly matches your resume. " + (coverageText ? coverageText + " " : "") + "The closest jobs are below, marked Long shot."
       : "The closest jobs are below, marked Stretch.") + "</p></div>";
   const moreBtn = list.length > shown.length ? '<button id="more-btn" type="button" class="ghost">Show 100 more</button>' : "";
-  $("results").innerHTML = banner + shown.map(j => {
-    const e = evals.get(j.id) || { arrangement: "onsite", stated: true, fit: "" };
-    const href = safeUrl(j.url);
-    const id = "more-" + String(j.id).replace(/[^A-Za-z0-9_-]/g, "_");
-    const open = openJobs.has(j.id);
-    const co = j.company || "?";
-    const company = safeUrl(j.companyUrl) ? '<a href="' + esc(j.companyUrl) + '" target="_blank" rel="noopener">' + esc(co) + "</a>" : esc(co);
-    const pay = salaryText(j);
-    const warnFit = e.fit === "Location not stated" || e.fit === "Check where it's open";
-    const top = [
-      hasResume ? '<span class="verdict t' + j.tier + '" title="' + esc(VERDICT_WHY[j.tier]) + '">' + stepsSvg(j.tier + 1) + "<span>" + FIT_LABEL[j.tier] + "</span></span>" : "",
-      isNew(j) ? '<span class="mark-new">New</span>' : "",
-      j.contract ? "<span>Contract</span>" : "",
-      j.evergreen ? '<span title="A talent-pool post, not a specific opening">General application</span>' : "",
-      j.ageDays > STALE_AFTER_DAYS ? '<span title="Posted over ' + STALE_AFTER_DAYS + ' days ago. It may already be filled.">Open a long time</span>' : "",
-      warnFit ? "<span>" + esc(e.fit) + "</span>" : "",
-      j.example ? '<span class="badge">Example</span>' : ""
-    ].filter(Boolean).join("");
-    const meta = ['<span class="co">' + company + "</span>", "<span>" + esc(locSummary(j)) + "</span>",
-      e.stated ? "<span>" + esc(ARR_LABEL[e.arrangement]) + "</span>" : "",
-      pay ? '<span title="Pay mentioned in the listing">' + esc(pay) + "</span>" : "",
-      "<span>" + esc(agePhrase(j.ageDays)) + "</span>"].filter(Boolean).join("");
-    const why = [hasResume && j.tier > 0 && j.titleHits && j.titleHits.length ? "Matches: " + j.titleHits.slice(0, 3).join(", ") : "",
-      e.fit && !warnFit ? e.fit : ""].filter(Boolean).join(" · ");
-    const ja = /[぀-ヿ一-鿿]/.test(j.title) ? ' lang="ja"' : "";
-    return '<article class="job' + (open ? " open" : "") + '" data-id="' + esc(j.id) + '">' +
-      '<div class="job-top">' + top + "</div>" +
-      '<h3 class="job-title"' + ja + '><button type="button" class="job-toggle" aria-expanded="' + open + '" aria-controls="' + id + '"><span class="clamp">' + esc(j.title) + "</span></button></h3>" +
-      '<p class="job-meta">' + meta + "</p>" +
-      (why ? '<p class="job-why">' + esc(why) + "</p>" : "") +
-      moreHtml(j, e, href, pay, hasResume, id) +
-      (href ? '<div class="job-actions"><a class="btn" href="' + esc(href) + '" target="_blank" rel="noopener">Open posting<span class="sr-only"> at ' + esc(co) + " (opens the employer's site)</span><span aria-hidden=\"true\"> ↗</span></a></div>" : "") +
-      "</article>";
-  }).join("") + moreBtn;
+  $("results").innerHTML = banner + shown.map(j => cardHtml(j, evals.get(j.id), hasResume, isNew, "foryou")).join("") + moreBtn;
+  restoreFocus();
 }
 // Industry menu shows how many jobs each industry has where you can work; empty ones are greyed out.
 // Counting runs only when the jobs or the location settings change (it tests every job against every industry).
@@ -1776,16 +1934,10 @@ function updateIndustryMenu(pool, all, exampleOnly) {
   line.hidden = false;
 }
 function updateSummaries(user, hasResume, exampleOnly) {
-  $("sum-resume").textContent = hasResume ? words30() + " words read" : "Not added yet";
-  $("sum-where").textContent = (user ? (user.summary || "your area") : "No location yet") + " · " + $("radius").selectedOptions[0].text.replace(/^My /, "").replace(/ and nearby places$/, "");
-  $("sum-rank").textContent = $("recency").value + "% freshness";
   $("sum-listings").textContent = state.loadError ? "not loaded" : (exampleOnly ? "examples only" : uniqueJobs().length.toLocaleString() + " listings");
-  // Phone: one line stands in for the setup panels, so results come first.
   const name = loadStore("jf-resume-name");
-  $("setup-line").textContent = hasResume
-    ? "Ranking for " + (name || "your resume") + (user ? ", " + (user.summary || "your area") : "")
-    : "Add your resume to rank jobs by fit";
-  $("setup-act").textContent = document.body.classList.contains("setup-open") ? "Done" : hasResume ? "Edit" : "Set up";
+  $("resume-label").textContent = hasResume ? "Resume: " + (name || "added") : "Add your resume";
+  $("resume-ctl").classList.toggle("has", hasResume);
 }
 function renderLoadError() {
   $("results-title").textContent = "Jobs didn't load";
@@ -1838,13 +1990,11 @@ $("resume-file").addEventListener("change", async e => {
     const text = await readResumeFile(file);
     $("resume-text").value = text;
     setResume(text, file.name);
-    if (words30() >= 30) $("step-resume").open = false;
   } catch (err) {
     setStatus("resume-status", "Could not read that file. " + err.message, true);
   }
 });
-$("resume-clear").addEventListener("click", () => { $("resume-text").value = ""; $("resume-file").value = ""; setResume("", ""); $("step-resume").open = true; });
-$("resume-text").addEventListener("blur", () => { if (words30() >= 30) $("step-resume").open = false; });
+$("resume-clear").addEventListener("click", () => { $("resume-text").value = ""; $("resume-file").value = ""; setResume("", ""); });
 $("resume-text").addEventListener("input", e => { state.resume = e.target.value; clearTimeout(timer); timer = setTimeout(() => setResume(state.resume, ""), 300); });
 
 // ---- settings
@@ -1857,6 +2007,10 @@ $("hide-evergreen").addEventListener("change", () => { persistSettings(); render
 $("results").addEventListener("click", e => {
   const t = e.target; if (!t) return;
   if (t.id === "more-btn") { state.limit += 100; render(); return; }
+  const pb = t.closest && t.closest("[data-pipe]");
+  if (pb) { const c = pb.closest("[data-id]"); if (c) pipeAct(pb.dataset.pipe, c.dataset.id, c); return; }
+  const vb = t.closest && t.closest("[data-view]");
+  if (vb) { setView(vb.dataset.view); return; }
   const card = t.closest && t.closest(".job");
   if (card && (t.closest(".job-toggle") || !t.closest("a, button, .job-more"))) toggleJob(card);
   doAct(t.dataset && t.dataset.act);
@@ -1871,14 +2025,9 @@ function doAct(act) {
   if (act === "clear") { $("filter").value = ""; $("industry").value = ""; $("role").value = ""; }
   persistSettings(); render();
 }
+$("views").addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-view]"); if (b) setView(b.dataset.view); });
+$("pipeline").addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-view]"); if (b) setView(b.dataset.view); });
 $("new-btn").addEventListener("click", () => { visit.newOnly = !visit.newOnly; state.limit = 100; render(); window.scrollTo({ top: 0 }); });
-$("setup-toggle").addEventListener("click", () => {
-  const on = !document.body.classList.contains("setup-open");
-  document.body.classList.toggle("setup-open", on);
-  $("setup-toggle").setAttribute("aria-expanded", String(on));
-  render();
-  if (!on) $("results-title").scrollIntoView({ block: "start" });
-});
 $("more-filters").addEventListener("click", () => {
   const on = !$("filterbar").classList.contains("more");
   $("filterbar").classList.toggle("more", on);
@@ -2305,8 +2454,7 @@ async function localInit() {
 
 restore();
 if (loadStore("jf-compact")) { $("results").classList.add("compact"); $("view-btn").setAttribute("aria-pressed", "true"); $("view-btn").textContent = "Comfortable"; }
-$("step-where").open = !$("my-loc").value.trim();
-if (words30() >= 30) { $("step-resume").open = false; setStatus("resume-status", (loadStore("jf-resume-name") ? loadStore("jf-resume-name") + ": " : "") + words30() + " words read. Saved on this device."); $("resume-clear").hidden = false; }
+if (words30() >= 30) { setStatus("resume-status", (loadStore("jf-resume-name") ? loadStore("jf-resume-name") + ": " : "") + words30() + " words read. Saved on this device."); $("resume-clear").hidden = false; }
 updateFeedLinks();
 $("af-studios-label").textContent = "Game studios (" + STUDIOS.length + " boards)";
 render();
