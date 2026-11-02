@@ -88,7 +88,6 @@
   .layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); align-items: start; }
   @media (min-width: 1024px) { .layout { grid-template-columns: minmax(0, 1fr) 320px; } }
   .controls { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-  @media (min-width: 1024px) { .side { position: sticky; top: calc(var(--bar-h) + 16px); max-height: calc(100vh - var(--bar-h) - 32px); overflow-y: auto; padding-right: 4px; scrollbar-width: thin; } }
 
   /* collapsible setup steps */
   .panel { background: var(--card); border: 1px solid var(--line); border-bottom: var(--ground); border-radius: var(--radius-s); min-width: 0; position: relative; overflow: hidden; flex: none; }
@@ -271,21 +270,28 @@
   .s-field input, .s-field select { margin: 0; width: auto; }
   .s-field input { width: 16ch; }
   .resume-ctl button.ghost { border-color: transparent; color: var(--ink-mute); padding: 0 var(--space-3); }
-  .resume-ctl { position: relative; display: inline-flex; align-items: center; gap: var(--space-1); margin-left: auto; }
+  .search-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4); margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--line); }
+  .resume-ctl { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); min-width: 0; }
+  .resume-btn .doc { width: 18px; height: 18px; margin-right: var(--space-2); flex: none; }
+  .resume-ctl .status { margin: 0; min-height: 0; font-size: var(--step-n1); color: var(--ink-mute); }
+  .resume-ctl .status:empty { display: none; }
+  button.more-btn { color: var(--ink-mute); border-color: transparent; background: transparent; padding: 0 var(--space-2); font-size: var(--step-n1); }
+  .more-btn .chev { display: inline-block; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); margin: 0 0 3px var(--space-2); transition: transform .15s; }
+  .more-btn[aria-expanded="true"] .chev { transform: rotate(225deg); margin-bottom: -2px; }
   .resume-ctl input.sr-only { width: 1px; height: 1px; margin: -1px; padding: 0; }
   label.btn { display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 var(--space-4); border-radius: var(--radius-s); background: var(--ink); color: var(--card); font-weight: 600; font-size: var(--step-0); cursor: pointer; border: 1px solid var(--ink); }
-  .resume-ctl.has label.btn { background: var(--card); color: var(--ink); border-color: var(--line); }
-  #resume-label { max-width: 26ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .resume-ctl.has label.btn { background: var(--card); color: var(--ink); border-color: var(--line); font-weight: 600; }
+  .resume-btn { max-width: 100%; min-width: 0; }
+  #resume-label { min-width: 0; max-width: 32ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .resume-ctl:focus-within label.btn { outline: 3px solid var(--accent); outline-offset: 2px; }
   .s-hint { margin: var(--space-2) 0 0; font-size: var(--step-n1); color: var(--ink-mute); }
   .s-hint:empty { display: none; }
-  .s-hint .status { display: inline; margin: 0; min-height: 0; }
-  .more-opts { margin-top: var(--space-1); }
-  .more-opts > summary { display: inline-flex; align-items: center; min-height: var(--tap); font-size: var(--step-n1); color: var(--ink-mute); font-weight: 600; }
-  .more-grid { display: grid; gap: var(--space-4); margin-top: var(--space-2) !important; }
+  .more-opts { margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--line); }
+  .more-grid { display: grid; gap: var(--space-4); }
   @media (min-width: 768px) { .more-grid { grid-template-columns: 1fr 1fr; } .more-grid > .hint { grid-column: 1 / -1; } }
   .more-grid .check { margin-top: var(--space-3); min-height: var(--tap); }
-  @media (max-width: 560px) { .s-field { flex: 1 1 100%; } .s-field input, .s-field select { flex: 1; min-width: 0; } .resume-ctl { margin-left: 0; } }
+  .s-word { min-width: 0; }
+  @media (max-width: 560px) { .s-field { flex: 1 1 100%; } .s-word { width: 5.2em; } .s-field input, .s-field select { flex: 1; min-width: 0; } .search-foot { align-items: flex-start; } }
 
   /* Horizon step 5: polish */
   .job-meta { margin-left: -1.25em; clip-path: inset(-4px -4px -4px 1.25em); }
@@ -309,7 +315,8 @@
   .theme-btn .ti { width: 20px; height: 20px; display: none; }
   .theme-btn[data-mode=auto] .ti-auto, .theme-btn[data-mode=light] .ti-light, .theme-btn[data-mode=dark] .ti-dark { display: block; }
   /* Horizon step 3: views, pipeline, toast */
-  .views { display: flex; gap: var(--space-1); overflow-x: auto; margin: 0 0 var(--space-4); border-bottom: 1px solid var(--line); }
+  .views { display: flex; gap: var(--space-1); overflow-x: auto; margin: 0 0 var(--space-4); padding: 4px 4px 0; border-bottom: 1px solid var(--line); }
+  .views button:focus-visible { outline-offset: -3px; }
   .views button { background: transparent; border: 0; border-radius: 0; color: var(--ink-mute); padding: 0 var(--space-3); white-space: nowrap; }
   .views button[aria-pressed="true"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--ink); }
   .views button:hover:not(:disabled) { color: var(--ink); text-decoration: none; }
@@ -371,16 +378,19 @@
           <option value="90">in the last 90 days</option>
           <option value="0">any time</option>
         </select></label>
+    </div>
+    <p class="s-hint" id="loc-read"></p>
+    <div class="search-foot">
       <div class="resume-ctl" id="resume-ctl">
-        <label class="btn resume-btn" for="resume-file"><span id="resume-label">Add your resume</span></label>
+        <label class="btn resume-btn" for="resume-file"><svg class="doc" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span id="resume-label">Add your resume</span></label>
         <input id="resume-file" class="sr-only" type="file" accept=".pdf,.docx,.txt,.md">
+        <span class="status" id="resume-status" role="status"></span>
         <button id="resume-clear" type="button" class="ghost" hidden>Remove</button>
       </div>
+      <button type="button" class="ghost more-btn" id="more-btn-opts" aria-expanded="false" aria-controls="more-opts">More options<span class="chev" aria-hidden="true"></span></button>
     </div>
-    <p class="s-hint"><span id="loc-read"></span> <span class="status" id="resume-status" role="status"></span></p>
     <textarea id="resume-text" hidden aria-hidden="true" tabindex="-1"></textarea>
-    <details class="more-opts" id="more-opts">
-      <summary>More options</summary>
+    <div class="more-opts" id="more-opts" hidden>
       <div class="more-grid">
         <div class="field">
           <label for="nearby">Nearby places you could commute to
@@ -396,7 +406,7 @@
         </div>
         <p class="hint">Your resume, saved jobs and settings stay in this browser. Nothing goes to the job boards.</p>
       </div>
-    </details>
+    </div>
   </section>
   <nav class="views" id="views" aria-label="Your jobs">
     <button type="button" data-view="foryou" aria-pressed="true">For you</button>
@@ -1972,7 +1982,8 @@ function updateIndustryMenu(pool, all, exampleOnly) {
 function updateSummaries(user, hasResume, exampleOnly) {
   $("sum-listings").textContent = state.loadError ? "not loaded" : (exampleOnly ? "examples only" : uniqueJobs().length.toLocaleString() + " listings");
   const name = loadStore("jf-resume-name");
-  $("resume-label").textContent = hasResume ? "Resume: " + (name || "added") : "Add your resume";
+  $("resume-label").textContent = hasResume ? (name || "Your resume") : "Add your resume";
+  $("resume-label").parentElement.title = hasResume ? (name || "Your resume") + ". Choose to replace it." : "";
   $("resume-ctl").classList.toggle("has", hasResume);
 }
 function renderLoading() {
@@ -2004,7 +2015,7 @@ function setResume(text, label) {
   const words = text.split(/\s+/).filter(Boolean).length;
   if (words === 0) setStatus("resume-status", "");
   else if (words < 30) setStatus("resume-status", "Only " + words + " words found. This may be a scanned PDF. Try a text-based PDF, a DOCX or a TXT file.", true);
-  else setStatus("resume-status", (label ? label + ": " : "") + words + " words read. Saved on this device.");
+  else setStatus("resume-status", words + " words read");
   $("resume-clear").hidden = words === 0;
   render();
 }
@@ -2105,6 +2116,7 @@ function toggleJob(card) {
   });
   apply();
 })();
+$("more-btn-opts").addEventListener("click", () => { const b = $("more-btn-opts"), on = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(on)); $("more-opts").hidden = !on; });
 $("how-btn").addEventListener("click", () => { const h = $("how"); h.hidden = !h.hidden; $("how-btn").setAttribute("aria-expanded", String(!h.hidden)); });
 document.addEventListener("click", e => { const h = $("how"); if (!h.hidden && !h.contains(e.target) && e.target !== $("how-btn")) { h.hidden = true; $("how-btn").setAttribute("aria-expanded", "false"); } });
 $("view-btn").addEventListener("click", () => {
@@ -2522,7 +2534,7 @@ async function localInit() {
 
 restore();
 if (loadStore("jf-compact")) { $("results").classList.add("compact"); $("view-btn").setAttribute("aria-pressed", "true"); $("view-btn").textContent = "Comfortable"; }
-if (words30() >= 30) { setStatus("resume-status", (loadStore("jf-resume-name") ? loadStore("jf-resume-name") + ": " : "") + words30() + " words read. Saved on this device."); $("resume-clear").hidden = false; }
+if (words30() >= 30) { setStatus("resume-status", words30() + " words read"); $("resume-clear").hidden = false; }
 updateFeedLinks();
 $("af-studios-label").textContent = "Game studios (" + STUDIOS.length + " boards)";
 render();
