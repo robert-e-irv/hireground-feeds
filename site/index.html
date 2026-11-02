@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="Hire Ground pulls open jobs from employer career pages and ranks them by how well they fit your resume. Free, no ads, and your resume stays in your browser."></head><body>
 <title>Hire Ground</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2032%2032%22%3E%3Crect%20width=%2232%22%20height=%2232%22%20rx=%226%22%20fill=%22%23F7F3EC%22/%3E%3Cpath%20d=%22M10%2024V12.5a3.5%203.5%200%200%201%203.5-3.5h5a3.5%203.5%200%200%201%203.5%203.5V24%22%20fill=%22none%22%20stroke=%22%23304C8E%22%20stroke-width=%222.6%22/%3E%3Cpath%20d=%22M5%2024h22%22%20stroke=%22%231A202E%22%20stroke-width=%222.6%22%20stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -171,67 +171,50 @@
   .results-head .results-title { margin: 0; text-transform: none; color: var(--ink); font-family: var(--font-display); font-weight: 500; font-size: var(--step-3); letter-spacing: 0; }
   .results-head span { color: var(--mute); font-size: var(--step-n1); }
 
-  /* job cards */
-  .job { --c: var(--orange); position: relative; display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 4px 14px; align-items: start; border: 1px solid color-mix(in srgb, var(--c) 38%, var(--line)); border-radius: var(--radius-s); padding: 14px 16px 12px 20px; margin-bottom: 10px; min-width: 0; overflow: hidden;
-    background: linear-gradient(100deg, color-mix(in srgb, var(--c) 20%, var(--surface)) 0%, color-mix(in srgb, var(--c) 6%, var(--surface)) 70%); transition: transform .12s, border-color .12s; }
-  .job::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--c); }
-  .job:hover { transform: translateY(-1px); border-color: var(--c); }
-  .job.remote { --c: var(--green); } .job.hybrid { --c: var(--blue); } .job.onsite { --c: var(--orange); }
-  .avatar { grid-row: 1 / span 2; width: 44px; height: 44px; border-radius: var(--radius-s); display: grid; place-items: center; font-weight: 800; font-size: var(--step-2); color: #fff; background: var(--av, #4b5563); box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); }
-  .job-main { min-width: 0; }
-  .job h3 { font-size: var(--step-1); font-weight: 700; margin: 0; overflow-wrap: anywhere; line-height: 1.3; }
-  .job h3 a { color: var(--ink); text-decoration: none; }
-  .job h3 a:hover { text-decoration: underline; }
-  .meta { color: var(--mute); font-size: var(--step-n1); margin: 2px 0 8px; overflow-wrap: anywhere; }
-  .meta a { text-decoration: none; font-weight: 600; color: var(--ink); opacity: .9; }
-  .job-side { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; grid-row: 1 / span 2; grid-column: 3; }
-  .date-chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid color-mix(in srgb, var(--c) 55%, var(--line)); border-radius: var(--radius-pill); padding: 2px 10px; font-size: var(--step-n1); font-weight: 700; color: var(--ink); white-space: nowrap; background: rgba(0,0,0,.14); }
-  .date-chip .new { background: var(--fresh-bg); color: var(--fresh); border-radius: var(--radius-pill); padding: 0 7px; font-size: var(--step-n1); letter-spacing: .06em; text-transform: uppercase; }
-  .match { width: 92px; text-align: right; }
-  .match b { font: 700 var(--step-2)/1 var(--font-mono); color: var(--ink); }
-  .match small { display: block; font-size: var(--step-n1); letter-spacing: .08em; text-transform: uppercase; color: var(--mute); margin-bottom: 4px; }
-  .bar { height: 6px; border-radius: var(--radius-pill); background: rgba(255,255,255,.1); overflow: hidden; margin-top: 5px; }
-  .bar i { display: block; height: 100%; border-radius: var(--radius-pill); background: linear-gradient(90deg, var(--c), color-mix(in srgb, var(--c) 50%, #fff)); }
-  .pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
-  .pill { display: inline-flex; align-items: center; gap: 5px; font-size: var(--step-n1); font-weight: 700; letter-spacing: .03em; border: 1px solid var(--line); background: rgba(0,0,0,.16); border-radius: var(--radius-s); padding: 1px 9px; color: var(--ink); }
-  .pill.arr { color: var(--c); border-color: color-mix(in srgb, var(--c) 55%, transparent); background: color-mix(in srgb, var(--c) 14%, transparent); text-transform: uppercase; letter-spacing: .05em; }
-  .pill.fit { color: var(--green); border-color: color-mix(in srgb, var(--green) 50%, transparent); }
-  .pill.warn { color: var(--mute); border-style: dashed; }
-  .pill.pay { color: #ffd166; border-color: rgba(255,209,102,.45); background: rgba(255,209,102,.1); }
-  .pill.also { color: var(--violet); border-color: color-mix(in srgb, var(--violet) 55%, transparent); background: rgba(167,139,250,.12); }
-  .pill.src { color: var(--mute); font-weight: 600; }
-  .pill.role { color: var(--blue); border-color: color-mix(in srgb, var(--blue) 50%, transparent); background: rgba(56,163,245,.1); }
-  .pill.lvl { color: var(--ink); }
-  .pill.contract { color: var(--orange); border-color: color-mix(in srgb, var(--orange) 55%, transparent); border-style: dashed; }
-  .pill.stale { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 50%, transparent); border-style: dashed; }
-  .fresh { color: var(--fresh); }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag { background: var(--tag); border-radius: var(--radius-s); padding: 1px 8px; font-size: var(--step-n1); }
-  .breakdown { margin: 8px 0 0; font-size: var(--step-n1); color: var(--mute); }
-  .badge { font-size: var(--step-n1); text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid var(--line); border-radius: var(--radius-s); padding: 0 5px; }
-  .compact .job { padding: 9px 14px 9px 18px; margin-bottom: 6px; grid-template-columns: 34px minmax(0, 1fr) auto; }
-  .compact .avatar { width: 34px; height: 34px; font-size: var(--step-0); border-radius: var(--radius-s); grid-row: 1; }
-  .compact .tags, .compact .breakdown, .compact .pill.src, .compact .pill.lvl, .compact .pill.fit, .compact .pill.warn, .compact .match small, .compact .verdict small { display: none; }
-  .compact .meta { margin-bottom: 4px; } .compact .pills { margin: 0; } .compact .job-side { grid-row: 1; flex-direction: row; align-items: center; } .compact .job { grid-template-rows: auto; }
-  .job { cursor: pointer; }
-  .job:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; }
-  .job-more { grid-column: 2 / -1; display: none; margin-top: 8px; padding-top: 12px; border-top: 1px solid color-mix(in srgb, var(--c) 30%, var(--line)); cursor: default; }
+  /* job cards (Horizon): verdict + markers, title button, one meta line, one reason, actions. 2 px ground line under each card. */
+  .job { position: relative; background: var(--card); border: 1px solid var(--line); border-bottom: var(--ground); border-radius: var(--radius-s); padding: var(--space-4) var(--space-4) var(--space-2); margin-bottom: var(--space-3); min-width: 0; }
+  @media (min-width: 768px) { .job { padding: var(--space-4) var(--space-5) var(--space-2); } }
+  .job-top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-4); font-size: var(--step-n1); color: var(--ink-mute); }
+  .job-top:empty { display: none; }
+  .verdict { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: 700; color: var(--ink); }
+  .verdict.t2 { color: var(--fit); }
+  .steps rect { fill: var(--line); } .steps rect.on { fill: var(--fit); }
+  .mark-new { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--ink); }
+  .mark-new::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--sun); }
+  .job-title { font-family: var(--font-display); font-size: var(--step-1); font-weight: 500; line-height: 1.3; margin: var(--space-1) 0 0; }
+  .job-toggle { all: unset; box-sizing: border-box; display: block; width: 100%; min-height: var(--tap); padding: var(--space-1) 0; cursor: pointer; overflow-wrap: anywhere; color: var(--ink); }
+  .job-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: var(--radius-s); }
+  .job-toggle:hover .clamp { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .job.open .clamp { -webkit-line-clamp: unset; display: block; }
+  [lang=ja] .clamp { word-break: auto-phrase; }
+  .job-meta { display: flex; flex-wrap: wrap; margin: 0; color: var(--ink-mute); font-size: var(--step-n1); overflow-wrap: anywhere; }
+  .job-meta > span:not(:last-child)::after { content: "\00b7"; margin: 0 var(--space-2); opacity: .7; }
+  .job-meta .co { color: var(--ink); font-weight: 600; }
+  .job-meta a { color: inherit; text-decoration: none; } .job-meta a:hover { text-decoration: underline; }
+  .job-why { margin: var(--space-2) 0 0; font-size: var(--step-0); }
+  .job-actions { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: var(--space-2) 0 0 calc(-1 * var(--space-1)); }
+  a.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1); min-height: var(--tap); padding: 0 var(--space-4); border: 1px solid var(--line); border-radius: var(--radius-s); background: var(--card); color: var(--ink); font-weight: 600; font-size: var(--step-0); text-decoration: none; }
+  a.btn:hover { border-color: var(--ink-mute); text-decoration: underline; text-underline-offset: 3px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 var(--space-3); }
+  .tag { background: var(--page); border: 1px solid var(--line); border-radius: var(--radius-pill); padding: 0 10px; font-size: var(--step-n1); }
+  .badge { font-size: var(--step-n1); border: 1px dashed var(--line); border-radius: var(--radius-pill); padding: 0 8px; }
+  .compact .job { padding-top: var(--space-3); padding-bottom: var(--space-1); margin-bottom: var(--space-2); }
+  .compact .job-why { display: none; }
+  .compact .job:not(.open) .job-actions { display: none; }
+  .job-more { display: none; margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--line); }
   .job.open .job-more { display: block; }
-  .job.open .tags, .compact .job.open .tags { display: flex; }
-  .expand-cue { display: inline-block; width: 7px; height: 7px; border-right: 2px solid var(--mute); border-bottom: 2px solid var(--mute); transform: rotate(45deg); margin: 0 2px 3px 6px; transition: transform .15s; vertical-align: middle; }
-  .job.open .expand-cue { transform: rotate(225deg); margin-bottom: -2px; }
   .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px 16px; margin: 0 0 12px; }
-  .facts div { min-width: 0; } .facts dt { font-size: var(--step-n1); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); margin: 0; }
+  .facts div { min-width: 0; } .facts dt { font-size: var(--step-n1); font-weight: 600; color: var(--mute); margin: 0; }
   .facts dd { margin: 1px 0 0; font-size: var(--step-n1); overflow-wrap: anywhere; }
   .desc { font-size: var(--step-n1); line-height: 1.55; color: color-mix(in srgb, var(--ink) 88%, transparent); white-space: pre-line; margin: 0 0 12px; max-height: 16em; overflow-y: auto; padding-right: 6px; }
   .desc.none { color: var(--mute); font-style: italic; }
-  a.apply { display: inline-block; text-decoration: none; font-weight: 700; font-size: var(--step-n1); padding: 7px 14px; border-radius: var(--radius-s); background: var(--c); color: #07140f; }
-  a.apply:hover { filter: brightness(1.1); }
   .lc-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .lc-stat { min-width: 0; } .lc-stat b { display: block; font-family: var(--font-display); font-size: var(--step-3); line-height: 1.1; font-weight: 500; }
   .lc-stat span { display: block; font-size: var(--step-n1); color: var(--mute); }
   details.sub { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; }
-  details.sub > summary { font-size: var(--step-n1); color: var(--mute); font-weight: 600; }
+  details.sub > summary { font-size: var(--step-n1); color: var(--mute); font-weight: 600; padding: 12px 0; }
   details.sub > summary:hover { color: var(--ink); }
   details.sub[open] > summary { color: var(--ink); }
   .src-list { max-height: 260px; overflow-y: auto; gap: 0; margin-top: 8px; padding-right: 4px; scrollbar-width: thin; }
@@ -247,9 +230,6 @@
   .empty p { margin: 0 0 12px; color: var(--ink); } .empty .btn-row { justify-content: center; }
 
   /* honest fit verdicts (replace the old relative "Match" number) */
-  .verdict { min-width: 92px; text-align: right; font-weight: 800; font-size: var(--step-0); line-height: 1.2; }
-  .verdict small { display: block; font-weight: 500; font-size: var(--step-n1); color: var(--mute); margin-top: 3px; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .verdict.t2 { color: var(--green); } .verdict.t1 { color: var(--orange); } .verdict.t0 { color: var(--mute); }
   .honest { border: 1px solid var(--line); border-bottom: var(--ground); background: var(--surface); border-radius: var(--radius-s); padding: 12px 16px; margin-bottom: 12px; }
   .honest p { margin: 0; font-size: var(--step-0); color: var(--mute); } .honest b { color: var(--ink); }
   .empty.err { border-color: var(--danger); } .empty.err p { color: var(--danger); }
@@ -260,9 +240,8 @@
   .new-btn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
   .results-head { align-items: center; }
   .mobile-only, .setup-toggle { display: none; }
-  .more-locs { margin-left: 4px; padding: 0 7px; border: 1px solid var(--line); border-radius: var(--radius-pill); font-size: var(--step-n1); color: var(--ink); white-space: nowrap; }
   .coverage { margin: -6px 2px 12px; font-size: var(--step-n1); color: var(--mute); }
-  .facts a { color: var(--blue); }
+  .facts a { color: var(--accent); }
   /* phone and small tablet: results first; setup collapses into one line that opens the panels */
   @media (max-width: 860px) {
     .setup-toggle { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 12px; padding: 12px 14px;
@@ -277,26 +256,20 @@
     .results-head { margin-bottom: 8px; } .results-head .results-title { font-size: var(--step-2); }
   }
   @media (max-width: 560px) {
-    .job { grid-template-columns: 38px minmax(0, 1fr); padding: 12px 12px 10px 16px; }
-    .avatar { width: 38px; height: 38px; font-size: var(--step-1); grid-row: 1; }
-    .job-side { grid-column: 1 / -1; grid-row: auto; flex-direction: row; align-items: center; justify-content: space-between; width: 100%; margin-top: 4px; }
-    .match { width: 120px; text-align: left; } .match small { display: none; }
-    .verdict { text-align: left; min-width: 0; }
     .status-pill { max-width: 52vw; } .status-pill .upd { display: none; } .topbar { gap: 8px; } .brand { font-size: var(--step-2); }
     .brand .g-word { display: inline; }
     .filterbar { position: static; }
-    .job-more { grid-column: 1 / -1; }
   }
   [lang=ja], [lang|=zh], [lang=ko] { font-family: var(--font-cjk); }
 </style>
 
-<div class="topbar">
+<header class="topbar">
   <h1 class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M10 24V12.5a3.5 3.5 0 0 1 3.5-3.5h5a3.5 3.5 0 0 1 3.5 3.5V24" fill="none" stroke="var(--accent)" stroke-width="2.6" stroke-linejoin="round"/><path d="M5 24h22" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round"/></svg><span>Hire<span class="g">Ground</span></span></h1>
   <span class="spacer"></span>
   <span class="status-pill" id="top-pill" role="status"><span class="dot"></span><span id="top-status">Loading</span><span id="top-upd" class="upd"></span></span>
   <button id="top-refresh" type="button" class="go" hidden>Refresh</button>
   <button id="how-btn" type="button" class="icon-btn" aria-label="How it works" aria-expanded="false" aria-controls="how">?</button>
-</div>
+</header>
 <div class="how" id="how" hidden>
   <p style="margin:0 0 8px"><strong>How it works</strong></p>
   <p style="margin:0 0 6px">Add your resume and where you live. Jobs you can actually take are ranked by how well they match and how recently they were posted.</p>
@@ -1572,8 +1545,6 @@ function persistSettings() {
 // ---- rendering
 let lastCount = -1, topBusy = false, lastUpdated = "";
 function words30() { return state.resume.split(/\s+/).filter(Boolean).length; }
-function initialOf(n) { const m = String(n || "?").match(/[A-Za-z0-9\u00C0-\uFFFF]/); return m ? m[0].toUpperCase() : "?"; }
-function avatarColor(n) { let h = 0; for (const ch of String(n)) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return "hsl(" + (h % 360) + " 48% 42%)"; }
 const PAY_RE = /[$\u00a3\u20ac]\s?\d{2,3}(?:,\d{3})+(?:\.\d+)?(?:\s?(?:-|\u2013|to)\s?[$\u00a3\u20ac]?\s?\d{2,3}(?:,\d{3})+)?|[$\u00a3\u20ac]\s?\d{2,3}(?:\.\d)?\s?[kK]\b(?:\s?(?:-|\u2013|to)\s?[$\u00a3\u20ac]?\s?\d{2,3}(?:\.\d)?\s?[kK]\b)?/;
 function salaryText(j) { const m = PAY_RE.exec(String(j.title || "") + " " + String(j.description || "")); return m ? m[0].replace(/\s+/g, " ").trim() : ""; }
 const openJobs = new Set();
@@ -1581,24 +1552,25 @@ function descText(j) {
   const t = String(j.description || "").replace(/\s+\n/g, "\n").replace(/[ \t]+/g, " ").trim();
   return t.length > 1800 ? t.slice(0, 1800).replace(/\s+\S*$/, "") + "..." : t;
 }
-function moreHtml(j, e, href, pay, hasResume) {
+function moreHtml(j, e, href, pay, hasResume, id) {
   const posted = j.posted ? new Date(j.posted).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Unknown";
   const d = descText(j);
   const dupes = (j.alsoUrls || []).length;
   const also = (j.also && j.also.length ? " (also " + j.also.join(", ") + ")" : "") + (dupes ? ", " + dupes + " duplicate post" + (dupes > 1 ? "s" : "") + " merged" : "");
   const row = (k, v) => "<div><dt>" + k + "</dt><dd>" + v + "</dd></div>";
-  return '<div class="job-more">' + '<dl class="facts">' +
+  return '<div class="job-more" id="' + (id || "") + '">' + '<dl class="facts">' +
     row("Posted", esc(posted) + " (" + esc(ageLabel(j.ageDays)) + ")") +
-    row("Location", esc(j.location || "Not stated")) +
+    locationRows(j, row) +
     (j.others && j.others.length ? row("Also in", j.others.map(x => { const u = safeUrl(x.url); const t = esc(x.location || "Location not stated"); return u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + t + "</a>" : t; }).join("; ")) : "") +
     (j.family && j.family !== "Other" ? row("Role", esc([j.family, j.discipline !== j.family ? j.discipline : "", j.seniority].filter(Boolean).join(" \u00b7 ") + (j.contract ? ", contract" : ""))) : "") +
-    row("Work style", esc(ARR_LABEL[e.arrangement] + (!e.stated ? " (assumed)" : "")) + (e.fit ? ", " + esc(e.fit) : "")) +
+    row("Work style", esc(e.stated ? ARR_LABEL[e.arrangement] : "Not stated in the posting") + (e.fit ? ", " + esc(e.fit) : "")) +
     row("Source", j.example ? "Example listing" : esc(j.source + also)) +
     (pay ? row("Pay mentioned", esc(pay)) : "") +
     (hasResume ? row("Fit", esc(FIT_LABEL[j.tier] + ". " + VERDICT_WHY[j.tier]) + (j.titleHits && j.titleHits.length ? " Shared: " + esc(j.titleHits.join(", ")) + "." : "")) : "") +
     "</dl>" +
+    ((j.matched || []).length ? '<div class="tags">' + j.matched.map(t => '<span class="tag">' + esc(t) + "</span>").join("") + "</div>" : "") +
     (d ? '<p class="desc">' + esc(d) + "</p>" : '<p class="desc none">This board did not share a description. Open the posting for the full details.</p>') +
-    (href ? '<a class="apply" href="' + esc(href) + '" target="_blank" rel="noopener">View posting</a>' : "") + "</div>";
+    "</div>";
 }
 function setPill(text, mode, extra) { const p = $("top-pill"); $("top-status").textContent = text; $("top-upd").textContent = extra || ""; p.classList.toggle("live", mode === "live"); p.classList.toggle("busy", mode === "busy"); p.classList.toggle("err", mode === "err"); }
 function updatePill() {
@@ -1626,6 +1598,19 @@ const VERDICT_WHY = [
   "The title shares some words with your resume. Worth a look if you are open to a change.",
   "The title uses words your resume leans on."
 ];
+// Horizon card helpers
+function stepsSvg(v) { const r = (x, y, h, on) => '<rect x="' + x + '" y="' + y + '" width="5" height="' + h + '" rx="1"' + (on ? ' class="on"' : "") + "/>";
+  return '<svg class="steps" width="20" height="16" viewBox="0 0 20 16" aria-hidden="true">' + r(0, 10, 6, v >= 1) + r(7, 6, 10, v >= 2) + r(14, 2, 14, v >= 3) + "</svg>"; }
+function placesOf(j) { const own = String(j.location || "").split(";").map(s => s.trim()).filter(Boolean); return own.concat((j.others || []).map(x => x.location || "").filter(Boolean)); }
+function locSummary(j) { const p = placesOf(j); if (!p.length) return "Location not stated"; if (p.length <= 2) return p.join(" or ");
+  return p.length + " locations" + (p.some(s => /remote/i.test(s)) ? ", incl. remote" : ""); }
+function agePhrase(d) { return d <= 0 ? "Today" : d === 1 ? "Yesterday" : d < 14 ? d + " days ago" : d < 60 ? Math.round(d / 7) + " weeks ago" : Math.round(d / 30) + " months ago"; }
+function locationRows(j, row) {
+  const own = String(j.location || "").split(";").map(s => s.trim()).filter(Boolean);
+  if (own.length < 4) return row(own.length > 1 ? "Locations" : "Location", esc(own.join("; ") || "Not stated"));
+  const rem = own.filter(l => /^remote\s*-\s*/i.test(l)).map(l => l.replace(/^remote\s*-\s*/i, "")), site = own.filter(l => !/^remote\s*-\s*/i.test(l));
+  return rem.length ? row("Remote in (" + rem.length + ")", esc(rem.join("; "))) + (site.length ? row("On-site (" + site.length + ")", esc(site.join("; "))) : "") : row("Locations (" + own.length + ")", esc(own.join("; ")));
+}
 function render() {
   const now = Date.now();
   const w = Number($("recency").value) / 100;
@@ -1720,30 +1705,36 @@ function render() {
   $("results").innerHTML = banner + shown.map(j => {
     const e = evals.get(j.id) || { arrangement: "onsite", stated: true, fit: "" };
     const href = safeUrl(j.url);
-    const title = href ? '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(j.title) + "</a>" : esc(j.title);
-    const dateChip = '<span class="date-chip" title="Posted">' + (isNew(j) ? '<span class="new">New</span>' : "") + ageLabel(j.ageDays) + "</span>";
-    const match = hasResume ? '<div class="verdict t' + j.tier + '" title="' + esc(VERDICT_WHY[j.tier]) + '">' + FIT_LABEL[j.tier] +
-      (j.titleHits && j.titleHits.length ? "<small>" + esc(j.titleHits.slice(0, 3).join(", ")) + "</small>" : "") + "</div>" : "";
-    const tags = (j.matched || []).map(t => '<span class="tag">' + esc(t) + "</span>").join("");
-    const arrText = ARR_LABEL[e.arrangement] + (!e.stated ? " (assumed)" : "");
-    const fitPill = e.fit ? '<span class="pill ' + (e.fit === "Location not stated" || e.fit === "Check where it's open" ? "warn" : "fit") + '">' + esc(e.fit) + "</span>" : "";
-    const pay = salaryText(j), payPill = pay ? '<span class="pill pay" title="Pay mentioned in the listing">' + esc(pay) + "</span>" : "";
-    const alsoPill = j.also && j.also.length ? '<span class="pill also" title="' + esc("Also posted on " + j.also.join(", ")) + '">Also on ' + j.also.length + "</span>" : "";
-    const srcPill = j.example ? '<span class="badge">Example</span>' : '<span class="pill src">' + esc(j.source) + "</span>";
-    const rolePills = (j.family && j.family !== "Other" ? '<span class="pill role" title="' + esc(j.family) + '">' + esc(j.discipline || j.family) + "</span>" : "") +
-      (j.seniority && j.seniority !== "Mid" ? '<span class="pill lvl">' + esc(j.seniority) + "</span>" : "") +
-      (j.contract ? '<span class="pill contract">Contract</span>' : "") +
-      (j.evergreen ? '<span class="pill warn" title="A talent-pool post, not a specific opening">General application</span>' : "") +
-      (j.ageDays > STALE_AFTER_DAYS ? '<span class="pill stale" title="Posted over ' + STALE_AFTER_DAYS + ' days ago. It may already be filled.">Old post</span>' : "");
+    const id = "more-" + String(j.id).replace(/[^A-Za-z0-9_-]/g, "_");
+    const open = openJobs.has(j.id);
     const co = j.company || "?";
-    const company = safeUrl(j.companyUrl) ? '<a href="' + esc(j.companyUrl) + '" target="_blank" rel="noopener">' + esc(co) + "</a>" : "<b>" + esc(co) + "</b>";
-    return '<article class="job ' + esc(e.arrangement) + (openJobs.has(j.id) ? " open" : "") + '" data-id="' + esc(j.id) + '" tabindex="0" role="button" aria-expanded="' + openJobs.has(j.id) + '"><div class="avatar" style="--av:' + avatarColor(co) + '" aria-hidden="true">' + esc(initialOf(co)) + "</div>" +
-      '<div class="job-main"><h3>' + title + '<span class="expand-cue" aria-hidden="true"></span></h3>' +
-      '<p class="meta">' + company + " &middot; " + esc(j.location || "Location n/a") +
-      (j.others.length ? ' <span class="more-locs" title="' + esc("Also in " + j.others.map(x => x.location || "unstated").join("; ")) + '">+' + j.others.length + (j.others.length === 1 ? " location" : " locations") + "</span>" : "") + "</p>" +
-      '<div class="pills"><span class="pill arr">' + esc(arrText) + "</span>" + rolePills + payPill + fitPill + alsoPill + srcPill + "</div>" +
-      (tags ? '<div class="tags">' + tags + "</div>" : "") + "</div>" +
-      '<div class="job-side">' + dateChip + match + "</div>" + moreHtml(j, e, href, pay, hasResume) + "</article>";
+    const company = safeUrl(j.companyUrl) ? '<a href="' + esc(j.companyUrl) + '" target="_blank" rel="noopener">' + esc(co) + "</a>" : esc(co);
+    const pay = salaryText(j);
+    const warnFit = e.fit === "Location not stated" || e.fit === "Check where it's open";
+    const top = [
+      hasResume ? '<span class="verdict t' + j.tier + '" title="' + esc(VERDICT_WHY[j.tier]) + '">' + stepsSvg(j.tier + 1) + "<span>" + FIT_LABEL[j.tier] + "</span></span>" : "",
+      isNew(j) ? '<span class="mark-new">New</span>' : "",
+      j.contract ? "<span>Contract</span>" : "",
+      j.evergreen ? '<span title="A talent-pool post, not a specific opening">General application</span>' : "",
+      j.ageDays > STALE_AFTER_DAYS ? '<span title="Posted over ' + STALE_AFTER_DAYS + ' days ago. It may already be filled.">Open a long time</span>' : "",
+      warnFit ? "<span>" + esc(e.fit) + "</span>" : "",
+      j.example ? '<span class="badge">Example</span>' : ""
+    ].filter(Boolean).join("");
+    const meta = ['<span class="co">' + company + "</span>", "<span>" + esc(locSummary(j)) + "</span>",
+      e.stated ? "<span>" + esc(ARR_LABEL[e.arrangement]) + "</span>" : "",
+      pay ? '<span title="Pay mentioned in the listing">' + esc(pay) + "</span>" : "",
+      "<span>" + esc(agePhrase(j.ageDays)) + "</span>"].filter(Boolean).join("");
+    const why = [hasResume && j.tier > 0 && j.titleHits && j.titleHits.length ? "Matches: " + j.titleHits.slice(0, 3).join(", ") : "",
+      e.fit && !warnFit ? e.fit : ""].filter(Boolean).join(" · ");
+    const ja = /[぀-ヿ一-鿿]/.test(j.title) ? ' lang="ja"' : "";
+    return '<article class="job' + (open ? " open" : "") + '" data-id="' + esc(j.id) + '">' +
+      '<div class="job-top">' + top + "</div>" +
+      '<h3 class="job-title"' + ja + '><button type="button" class="job-toggle" aria-expanded="' + open + '" aria-controls="' + id + '"><span class="clamp">' + esc(j.title) + "</span></button></h3>" +
+      '<p class="job-meta">' + meta + "</p>" +
+      (why ? '<p class="job-why">' + esc(why) + "</p>" : "") +
+      moreHtml(j, e, href, pay, hasResume, id) +
+      (href ? '<div class="job-actions"><a class="btn" href="' + esc(href) + '" target="_blank" rel="noopener">Open posting<span class="sr-only"> at ' + esc(co) + " (opens the employer's site)</span><span aria-hidden=\"true\"> ↗</span></a></div>" : "") +
+      "</article>";
   }).join("") + moreBtn;
 }
 // Industry menu shows how many jobs each industry has where you can work; empty ones are greyed out.
@@ -1867,7 +1858,7 @@ $("results").addEventListener("click", e => {
   const t = e.target; if (!t) return;
   if (t.id === "more-btn") { state.limit += 100; render(); return; }
   const card = t.closest && t.closest(".job");
-  if (card && !t.closest("a, button, .job-more")) toggleJob(card);
+  if (card && (t.closest(".job-toggle") || !t.closest("a, button, .job-more"))) toggleJob(card);
   doAct(t.dataset && t.dataset.act);
 });
 $("results-note").addEventListener("click", e => doAct(e.target && e.target.dataset && e.target.dataset.act));
@@ -1896,12 +1887,9 @@ $("more-filters").addEventListener("click", () => {
 });
 function toggleJob(card) {
   const id = card.dataset.id, on = !card.classList.contains("open");
-  card.classList.toggle("open", on); card.setAttribute("aria-expanded", String(on));
+  card.classList.toggle("open", on); const b = card.querySelector(".job-toggle"); if (b) b.setAttribute("aria-expanded", String(on));
   if (on) openJobs.add(id); else openJobs.delete(id);
 }
-$("results").addEventListener("keydown", e => {
-  if ((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("job")) { e.preventDefault(); toggleJob(e.target); }
-});
 $("how-btn").addEventListener("click", () => { const h = $("how"); h.hidden = !h.hidden; $("how-btn").setAttribute("aria-expanded", String(!h.hidden)); });
 document.addEventListener("click", e => { const h = $("how"); if (!h.hidden && !h.contains(e.target) && e.target !== $("how-btn")) { h.hidden = true; $("how-btn").setAttribute("aria-expanded", "false"); } });
 $("view-btn").addEventListener("click", () => {
