@@ -1,0 +1,65 @@
+name: Feed snapshot study
+
+# Every 6 hours (off the hour, so GitHub's top-of-hour queue doesn't delay it).
+# 6-hourly, not daily, on purpose: we can only learn whether daily is fast
+# enough by sampling faster than daily.
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      HC_URL: ${{ secrets.HEALTHCHECK_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Record snapshot
+        id: rec
+        env:
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+        run: python recorder/record.py --root data
+
+      - name: Upload raw bodies (kept 30 days, not committed)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-${{ github.run_id }}
+          path: data/raw/
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Commit index + run log
+        if: always()
+        run: |
+          git config user.name  "hireground-bot"
+          git config user.email "hireground-bot@users.noreply.github.com"
+          git add data/index data/runs.jsonl 2>/dev/null || true
+          git commit -m "snapshot $(date -u +%Y-%m-%dT%H:%MZ)" || echo "nothing to commit"
+          git pull --rebase --autostash
+          git push
+
+      # Dead-man's switch: Healthchecks.io (free) alerts you when this
+      # ping stops arriving, or when the run reports failure.
+      - name: Ping dead-man's switch (success)
+        if: success() && env.HC_URL != ''
+        run: curl -fsS -m 10 --retry 3 "$HC_URL" > /dev/null
+
+      - name: Ping dead-man's switch (failure)
+        if: failure() && env.HC_URL != ''
+        run: curl -fsS -m 10 --retry 3 "$HC_URL/fail" > /dev/null
