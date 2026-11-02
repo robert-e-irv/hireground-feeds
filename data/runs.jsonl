@@ -1,3 +1,4 @@
 {"run": "20261102T200801Z", "at": "2026-11-02T20:09:34+00:00", "wall_s": 93.2, "sources": 76, "attempted": 75, "ok": 75, "schema_errors": 0, "jobs": 4950, "bytes": 50274840}
 {"run": "20261102T201543Z", "at": "2026-11-02T20:17:16+00:00", "wall_s": 93.2, "sources": 76, "attempted": 75, "ok": 75, "schema_errors": 0, "jobs": 4950, "bytes": 50277803}
 {"run": "20261102T201912Z", "at": "2026-11-02T20:20:45+00:00", "wall_s": 93.2, "sources": 76, "attempted": 75, "ok": 75, "schema_errors": 0, "jobs": 4950, "bytes": 50251526}
+{"run": "20261102T211137Z", "at": "2026-11-02T21:15:48+00:00", "wall_s": 251.5, "sources": 172, "attempted": 171, "ok": 171, "schema_errors": 0, "jobs": 18311, "bytes": 236621446}

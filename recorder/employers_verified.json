@@ -1,0 +1,1567 @@
+{
+ "verified_at": "2026-11-02T21:11:37+00:00",
+ "kept": [
+  {
+   "ats": "greenhouse",
+   "slug": "oscar",
+   "status": 200,
+   "jobs": 207,
+   "board_name": "Oscar Health",
+   "name": "Oscar Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "zocdoc",
+   "status": 200,
+   "jobs": 62,
+   "board_name": "Zocdoc",
+   "name": "Zocdoc",
+   "industry": "health"
+  },
+  {
+   "ats": "ashby",
+   "slug": "hims-and-hers",
+   "status": 200,
+   "jobs": 151,
+   "name": "Hims & Hers",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "flatironhealth",
+   "status": 200,
+   "jobs": 26,
+   "board_name": "Flatiron Health",
+   "name": "Flatiron Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "mavenclinic",
+   "status": 200,
+   "jobs": 30,
+   "board_name": "Maven Clinic",
+   "name": "Maven Clinic",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "komodohealth",
+   "status": 200,
+   "jobs": 23,
+   "board_name": "Komodo Health",
+   "name": "Komodo Health",
+   "industry": "health"
+  },
+  {
+   "ats": "lever",
+   "slug": "lyrahealth",
+   "status": 200,
+   "jobs": 476,
+   "name": "Lyra Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "talkspace",
+   "status": 200,
+   "jobs": 22,
+   "board_name": "Talkspace",
+   "name": "Talkspace",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "swordhealth",
+   "status": 200,
+   "jobs": 63,
+   "board_name": "Sword",
+   "name": "Sword Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "garnerhealth",
+   "status": 200,
+   "jobs": 68,
+   "board_name": "Garner Health",
+   "name": "Garner Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "honor",
+   "status": 200,
+   "jobs": 15,
+   "board_name": "Honor",
+   "name": "Honor",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "papa",
+   "status": 200,
+   "jobs": 2,
+   "board_name": "Papa",
+   "name": "Papa",
+   "industry": "health"
+  },
+  {
+   "ats": "lever",
+   "slug": "getmaple",
+   "status": 200,
+   "jobs": 12,
+   "name": "Maple",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "affirm",
+   "status": 200,
+   "jobs": 236,
+   "board_name": "Affirm",
+   "name": "Affirm",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "chime",
+   "status": 200,
+   "jobs": 74,
+   "board_name": "Chime Financial, Inc",
+   "name": "Chime",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "brex",
+   "status": 200,
+   "jobs": 263,
+   "board_name": "Brex",
+   "name": "Brex",
+   "industry": "finance"
+  },
+  {
+   "ats": "ashby",
+   "slug": "ramp",
+   "status": 200,
+   "jobs": 171,
+   "name": "Ramp",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "mercury",
+   "status": 200,
+   "jobs": 76,
+   "board_name": "Mercury",
+   "name": "Mercury",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "betterment",
+   "status": 200,
+   "jobs": 27,
+   "board_name": "Betterment",
+   "name": "Betterment",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "carta",
+   "status": 200,
+   "jobs": 77,
+   "board_name": "Carta",
+   "name": "Carta",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "robinhood",
+   "status": 200,
+   "jobs": 160,
+   "board_name": "Robinhood",
+   "name": "Robinhood",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "coinbase",
+   "status": 200,
+   "jobs": 268,
+   "board_name": "Coinbase",
+   "name": "Coinbase",
+   "industry": "finance"
+  },
+  {
+   "ats": "ashby",
+   "slug": "kraken.com",
+   "status": 200,
+   "jobs": 88,
+   "name": "Kraken",
+   "industry": "finance"
+  },
+  {
+   "ats": "ashby",
+   "slug": "wealthsimple",
+   "status": 200,
+   "jobs": 41,
+   "name": "Wealthsimple",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "monzo",
+   "status": 200,
+   "jobs": 62,
+   "board_name": "Monzo",
+   "name": "Monzo",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "stripe",
+   "status": 200,
+   "jobs": 743,
+   "board_name": "Stripe",
+   "name": "Stripe",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "gusto",
+   "status": 200,
+   "jobs": 83,
+   "board_name": "Gusto, Inc.",
+   "name": "Gusto",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "toast",
+   "status": 200,
+   "jobs": 341,
+   "board_name": "Toast",
+   "name": "Toast",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "sofi",
+   "status": 200,
+   "jobs": 63,
+   "board_name": "SoFi",
+   "name": "SoFi",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "tripactions",
+   "status": 200,
+   "jobs": 221,
+   "board_name": "Navan",
+   "name": "Navan",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "glossier",
+   "status": 200,
+   "jobs": 21,
+   "board_name": "Glossier",
+   "name": "Glossier",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "everlane",
+   "status": 200,
+   "jobs": 31,
+   "board_name": "Everlane",
+   "name": "Everlane",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "sweetgreen",
+   "status": 200,
+   "jobs": 67,
+   "board_name": " sweetgreen",
+   "name": "Sweetgreen",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "bombas",
+   "status": 200,
+   "jobs": 6,
+   "board_name": "Bombas",
+   "name": "Bombas",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "peloton",
+   "status": 200,
+   "jobs": 56,
+   "board_name": "Peloton",
+   "name": "Peloton",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "instacart",
+   "status": 200,
+   "jobs": 92,
+   "board_name": "Instacart",
+   "name": "Instacart",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "faire",
+   "status": 200,
+   "jobs": 64,
+   "board_name": "Faire",
+   "name": "Faire",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "parachutehome",
+   "status": 200,
+   "jobs": 3,
+   "board_name": "Parachute Home",
+   "name": "Parachute Home",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "mejuri",
+   "status": 200,
+   "jobs": 185,
+   "board_name": "Mejuri",
+   "name": "Mejuri",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "quince",
+   "status": 200,
+   "jobs": 147,
+   "board_name": "Quince",
+   "name": "Quince",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "thrivemarket",
+   "status": 200,
+   "jobs": 19,
+   "board_name": "Thrive Market",
+   "name": "Thrive Market",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "grovecollaborative",
+   "status": 200,
+   "jobs": 6,
+   "board_name": "Grove Collaborative",
+   "name": "Grove Collaborative",
+   "industry": "retail"
+  },
+  {
+   "ats": "ashby",
+   "slug": "hopper",
+   "status": 200,
+   "jobs": 18,
+   "name": "Hopper",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "airbnb",
+   "status": 200,
+   "jobs": 209,
+   "board_name": "Airbnb",
+   "name": "Airbnb",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "doordashusa",
+   "status": 200,
+   "jobs": 437,
+   "board_name": "DoorDash USA",
+   "name": "DoorDash",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "lyft",
+   "status": 200,
+   "jobs": 172,
+   "board_name": "Lyft",
+   "name": "Lyft",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "coursera",
+   "status": 200,
+   "jobs": 32,
+   "board_name": "Coursera",
+   "name": "Coursera",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "khanacademy",
+   "status": 200,
+   "jobs": 4,
+   "board_name": "Khan Academy",
+   "name": "Khan Academy",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "duolingo",
+   "status": 200,
+   "jobs": 54,
+   "board_name": "Duolingo",
+   "name": "Duolingo",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "masterclass",
+   "status": 200,
+   "jobs": 6,
+   "board_name": "MasterClass",
+   "name": "MasterClass",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "newsela",
+   "status": 200,
+   "jobs": 9,
+   "board_name": "Newsela",
+   "name": "Newsela",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "clever",
+   "status": 200,
+   "jobs": 2,
+   "board_name": "Clever",
+   "name": "Clever",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "guild",
+   "status": 200,
+   "jobs": 4,
+   "board_name": "Guild",
+   "name": "Guild",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "springboard",
+   "status": 200,
+   "jobs": 4,
+   "board_name": "Springboard Roles",
+   "name": "Springboard",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "wikimedia",
+   "status": 200,
+   "jobs": 14,
+   "board_name": "Wikimedia Foundation",
+   "name": "Wikimedia Foundation",
+   "industry": "nonprofit"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "mozilla",
+   "status": 200,
+   "jobs": 113,
+   "board_name": "Mozilla",
+   "name": "Mozilla",
+   "industry": "nonprofit"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "codeforamerica",
+   "status": 200,
+   "jobs": 10,
+   "board_name": "Code for America",
+   "name": "Code for America",
+   "industry": "nonprofit"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "propublica",
+   "status": 200,
+   "jobs": 4,
+   "board_name": "ProPublica",
+   "name": "ProPublica",
+   "industry": "nonprofit"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "givedirectly",
+   "status": 200,
+   "jobs": 36,
+   "board_name": "GiveDirectly",
+   "name": "GiveDirectly",
+   "industry": "nonprofit"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "thenewyorktimes",
+   "status": 200,
+   "jobs": 156,
+   "board_name": "The New York Times",
+   "name": "The New York Times",
+   "industry": "marketing"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "voxmedia",
+   "status": 200,
+   "jobs": 21,
+   "board_name": "Vox Media Group",
+   "name": "Vox Media",
+   "industry": "marketing"
+  },
+  {
+   "ats": "lever",
+   "slug": "spotify",
+   "status": 200,
+   "jobs": 85,
+   "name": "Spotify",
+   "industry": "marketing"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "figma",
+   "status": 200,
+   "jobs": 141,
+   "board_name": "Figma",
+   "name": "Figma",
+   "industry": "design"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "squarespace",
+   "status": 200,
+   "jobs": 26,
+   "board_name": "Squarespace",
+   "name": "Squarespace",
+   "industry": "design"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "gitlab",
+   "status": 200,
+   "jobs": 234,
+   "board_name": "GitLab",
+   "name": "GitLab",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "databricks",
+   "status": 200,
+   "jobs": 914,
+   "board_name": "Databricks",
+   "name": "Databricks",
+   "industry": "data"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "dropbox",
+   "status": 200,
+   "jobs": 26,
+   "board_name": "Dropbox",
+   "name": "Dropbox",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "pinterest",
+   "status": 200,
+   "jobs": 168,
+   "board_name": "Pinterest",
+   "name": "Pinterest",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "reddit",
+   "status": 200,
+   "jobs": 161,
+   "board_name": "Reddit",
+   "name": "Reddit",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "cloudflare",
+   "status": 200,
+   "jobs": 471,
+   "board_name": "Cloudflare",
+   "name": "Cloudflare",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "datadog",
+   "status": 200,
+   "jobs": 405,
+   "board_name": "Datadog",
+   "name": "Datadog",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "elastic",
+   "status": 200,
+   "jobs": 418,
+   "board_name": "Elastic",
+   "name": "Elastic",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "mongodb",
+   "status": 200,
+   "jobs": 358,
+   "board_name": "MongoDB",
+   "name": "MongoDB",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "okta",
+   "status": 200,
+   "jobs": 394,
+   "board_name": "Okta",
+   "name": "Okta",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "asana",
+   "status": 200,
+   "jobs": 108,
+   "board_name": "Asana",
+   "name": "Asana",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "twilio",
+   "status": 200,
+   "jobs": 134,
+   "board_name": "Twilio",
+   "name": "Twilio",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "samsara",
+   "status": 200,
+   "jobs": 330,
+   "board_name": "Samsara",
+   "name": "Samsara",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "airtable",
+   "status": 200,
+   "jobs": 5,
+   "board_name": "Airtable",
+   "name": "Airtable",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "vercel",
+   "status": 200,
+   "jobs": 90,
+   "board_name": "Vercel",
+   "name": "Vercel",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "anthropic",
+   "status": 200,
+   "jobs": 677,
+   "board_name": "Anthropic",
+   "name": "Anthropic",
+   "industry": "data"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "scaleai",
+   "status": 200,
+   "jobs": 169,
+   "board_name": "Scale AI",
+   "name": "Scale AI",
+   "industry": "data"
+  },
+  {
+   "ats": "ashby",
+   "slug": "openai",
+   "status": 200,
+   "jobs": 805,
+   "name": "OpenAI",
+   "industry": "data"
+  },
+  {
+   "ats": "ashby",
+   "slug": "notion",
+   "status": 200,
+   "jobs": 146,
+   "name": "Notion",
+   "industry": "software"
+  },
+  {
+   "ats": "ashby",
+   "slug": "linear",
+   "status": 200,
+   "jobs": 31,
+   "name": "Linear",
+   "industry": "software"
+  },
+  {
+   "ats": "ashby",
+   "slug": "vanta",
+   "status": 200,
+   "jobs": 78,
+   "name": "Vanta",
+   "industry": "software"
+  },
+  {
+   "ats": "ashby",
+   "slug": "zapier",
+   "status": 200,
+   "jobs": 11,
+   "name": "Zapier",
+   "industry": "software"
+  },
+  {
+   "ats": "ashby",
+   "slug": "posthog",
+   "status": 200,
+   "jobs": 10,
+   "name": "PostHog",
+   "industry": "software"
+  },
+  {
+   "ats": "lever",
+   "slug": "palantir",
+   "status": 200,
+   "jobs": 302,
+   "name": "Palantir",
+   "industry": "data"
+  },
+  {
+   "ats": "ashby",
+   "slug": "1password",
+   "status": 200,
+   "jobs": 77,
+   "name": "1Password",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "hootsuite",
+   "status": 200,
+   "jobs": 4,
+   "board_name": "Hootsuite",
+   "name": "Hootsuite",
+   "industry": "marketing"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "hubspotjobs",
+   "status": 200,
+   "jobs": 82,
+   "board_name": "HubSpot",
+   "name": "HubSpot",
+   "industry": "marketing"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "gongio",
+   "status": 200,
+   "jobs": 90,
+   "board_name": "Gong.io",
+   "name": "Gong",
+   "industry": "sales"
+  },
+  {
+   "ats": "lever",
+   "slug": "outreach",
+   "status": 200,
+   "jobs": 20,
+   "name": "Outreach",
+   "industry": "sales"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "attentive",
+   "status": 200,
+   "jobs": 31,
+   "board_name": "Attentive",
+   "name": "Attentive",
+   "industry": "marketing"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "lattice",
+   "status": 200,
+   "jobs": 8,
+   "board_name": "Lattice",
+   "name": "Lattice",
+   "industry": "people"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "flexport",
+   "status": 200,
+   "jobs": 193,
+   "board_name": "Flexport",
+   "name": "Flexport",
+   "industry": "ops"
+  }
+ ],
+ "rejected": [
+  {
+   "ats": "greenhouse",
+   "slug": "headway",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Headway",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "ro",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Ro",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "hims",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Hims & Hers",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "tempus",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Tempus",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "color",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Color Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "includedhealth",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Included Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "devotedhealth",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Devoted Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "carbonhealth",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Carbon Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "cityblockhealth",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Cityblock Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "noom",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Noom",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "nomadhealth",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Nomad Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "incrediblehealth",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Incredible Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "trustedhealth",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Trusted Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "aledade",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Aledade",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "dispatchhealth",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "DispatchHealth",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "brightline",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Brightline",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "springhealth",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Spring Health",
+   "industry": "health"
+  },
+  {
+   "ats": "lever",
+   "slug": "springhealth",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Spring Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "lyrahealth",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Lyra Health",
+   "industry": "health"
+  },
+  {
+   "ats": "lever",
+   "slug": "swordhealth",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Sword Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "goforward",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Forward",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "league",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "League",
+   "industry": "health"
+  },
+  {
+   "ats": "lever",
+   "slug": "dialogue",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Dialogue Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "dialogue",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Dialogue Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "getmaple",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Maple",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "medly",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Medly Pharmacy",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "thirtymadison",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Thirty Madison",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "pager",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Pager Health",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "wealthfront",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Wealthfront",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "nerdwallet",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "NerdWallet",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "marqeta",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Marqeta",
+   "industry": "finance"
+  },
+  {
+   "ats": "lever",
+   "slug": "plaid",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Plaid",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "plaid",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Plaid",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "pilot",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Pilot",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "klarna",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Klarna",
+   "industry": "finance"
+  },
+  {
+   "ats": "lever",
+   "slug": "klarna",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Klarna",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "tipalti",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Tipalti",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "clio",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Clio",
+   "industry": "finance"
+  },
+  {
+   "ats": "lever",
+   "slug": "clio",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Clio",
+   "industry": "finance"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "warbyparker",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Warby Parker",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "allbirds",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Allbirds",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "away",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Away",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "gopuff",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Gopuff",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "rothys",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Rothy's",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "outdoorvoices",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Outdoor Voices",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "casper",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Casper",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "brooklinen",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Brooklinen",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "article",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Article",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "shakeshack",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Shake Shack",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "cava",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Cava",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "bluebottlecoffee",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Blue Bottle Coffee",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "outschool",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Outschool",
+   "industry": "education"
+  },
+  {
+   "ats": "lever",
+   "slug": "outschool",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Outschool",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "codecademy",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Codecademy",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "brightwheel",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Brightwheel",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "quizlet",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Quizlet",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "teachforamerica",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Teach For America",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "amplify",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Amplify",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "thinkific",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Thinkific",
+   "industry": "education"
+  },
+  {
+   "ats": "lever",
+   "slug": "thinkific",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Thinkific",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "kajabi",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Kajabi",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "betterup",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "BetterUp",
+   "industry": "education"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "charitywater",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "charity: water",
+   "industry": "nonprofit"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "benevity",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Benevity",
+   "industry": "nonprofit"
+  },
+  {
+   "ats": "lever",
+   "slug": "benevity",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Benevity",
+   "industry": "nonprofit"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "eff",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Electronic Frontier Foundation",
+   "industry": "nonprofit"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "kiva",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Kiva",
+   "industry": "nonprofit"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "buzzfeed",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "BuzzFeed",
+   "industry": "marketing"
+  },
+  {
+   "ats": "lever",
+   "slug": "canva",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Canva",
+   "industry": "design"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "canva",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Canva",
+   "industry": "design"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "webflow",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Webflow",
+   "industry": "design"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "grammarly",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Grammarly",
+   "industry": "software"
+  },
+  {
+   "ats": "ashby",
+   "slug": "retool",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Retool",
+   "industry": "software"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "janeapp",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Jane App",
+   "industry": "health"
+  },
+  {
+   "ats": "lever",
+   "slug": "janeapp",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Jane App",
+   "industry": "health"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "visier",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Visier",
+   "industry": "data"
+  },
+  {
+   "ats": "lever",
+   "slug": "visier",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Visier",
+   "industry": "data"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "coveo",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Coveo",
+   "industry": "software"
+  },
+  {
+   "ats": "lever",
+   "slug": "coveo",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Coveo",
+   "industry": "software"
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "LightspeedHQ",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Lightspeed Commerce",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "hubspot",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "HubSpot",
+   "industry": "marketing"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "intercom",
+   "status": 200,
+   "jobs": 109,
+   "board_name": "Fin",
+   "reason": "board name 'Fin' doesn't match 'Intercom'",
+   "name": "Intercom",
+   "industry": "support"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "zendesk",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Zendesk",
+   "industry": "support"
+  },
+  {
+   "ats": "ashby",
+   "slug": "rippling",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Rippling",
+   "industry": "people"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "rippling",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Rippling",
+   "industry": "people"
+  },
+  {
+   "ats": "ashby",
+   "slug": "deel",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Deel",
+   "industry": "people"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "deel",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Deel",
+   "industry": "people"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "remotecom",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Remote",
+   "industry": "people"
+  }
+ ]
+}
