@@ -15,7 +15,9 @@ import vm from "node:vm";
 
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
 const DATA = arg("--data", "data"), SITE = arg("--site", "site");
-const DESC_MAX = 2500;           // enough for resume matching, keeps the bundle small
+// 1,500 chars is plenty for resume matching. Non-games employer boards roughly triple the job count,
+// so this keeps jobs.json light enough for phones.
+const DESC_MAX = 1500;
 const FIRST_SEEN_KEEP_DAYS = 120;
 
 // ---- load the app's pure logic
@@ -49,6 +51,8 @@ let skippedTerms = 0;
 for (const r of recs) {
   if (r.redistributable !== true) { skippedTerms++; continue; }
   const feed = { id: r.source, name: r.name, ok: false, count: 0, fetchedAt: r.at };
+  if (r.industry) feed.industry = r.industry;
+  const employer = r.category === "employer";
   feeds.push(feed);
   if (!r.ok) { feed.error = r.error || ("HTTP " + r.status); continue; }
   if (r.schema_error) { feed.error = "feed format changed: " + r.schema_error; continue; }
@@ -68,6 +72,8 @@ for (const r of recs) {
       for (const j of js) {
         if (j.description && j.description.length > DESC_MAX) j.description = j.description.slice(0, DESC_MAX);
         j.firstSeen = firstSeen[j.id] || (firstSeen[j.id] = now);
+        // Employer boards: the verified company name (Lever and Ashby feeds only carry the slug) + its industry.
+        if (employer) { j.company = r.name; j.industry = r.industry; }
         jobs.push(j);
       }
       feed.count += js.length;
@@ -91,4 +97,5 @@ fs.writeFileSync(prevPath, JSON.stringify(bundle));
 fs.writeFileSync(fsPath, zlib.gzipSync(JSON.stringify(firstSeen)));
 const mb = (fs.statSync(prevPath).size / 1048576).toFixed(1);
 console.log(JSON.stringify({ run: runId, feeds: feeds.length, ok: okCount, jobs: jobs.length, mb, skippedTerms }));
+if (Number(mb) > 15) console.warn("::warning::jobs.json is " + mb + " MB. Phones will feel it; consider a lower DESC_MAX.");
 if (feeds.length && okCount / feeds.length < 0.5) { console.error("Over half the feeds failed; refusing to publish."); process.exit(3); }

@@ -111,13 +111,35 @@ ATS_URL = {
 }
 
 
+def verified_employers(path=None):
+    """Non-games employer boards that passed verify_boards.py (see employers.py). Empty until verified."""
+    import json
+    from pathlib import Path
+    p = Path(path) if path else Path(__file__).with_name("employers_verified.json")
+    try:
+        return json.loads(p.read_text())["kept"]
+    except (OSError, ValueError, KeyError):
+        return []
+
+
 def all_sources():
-    """Yield dicts: id, name, kind, url, redistributable, notes."""
+    """Yield dicts: id, name, kind, url, redistributable, notes (+ industry for employer boards)."""
+    seen = set()
     for name, cat, boards, _ in STUDIOS + EXTRA_BOARDS:
+        for ats, slug in boards:
+            seen.add(f"{ats}:{slug}".lower())
         for ats, slug in boards:
             yield {"id": f"{ats}:{slug}", "name": name, "category": cat, "kind": ats,
                    "url": ATS_URL[ats].format(slug=slug),
                    "redistributable": ATS_REDISTRIBUTABLE[ats], "notes": ""}
+    for e in verified_employers():
+        sid = f"{e['ats']}:{e['slug']}"
+        if sid.lower() in seen:
+            continue
+        seen.add(sid.lower())
+        yield {"id": sid, "name": e["name"], "category": "employer", "industry": e["industry"],
+               "kind": e["ats"], "url": ATS_URL[e["ats"]].format(slug=e["slug"]),
+               "redistributable": ATS_REDISTRIBUTABLE[e["ats"]], "notes": ""}
     for kind, name, url, redis, notes in AGGREGATORS:
         yield {"id": kind, "name": name, "category": "aggregator", "kind": kind,
                "url": url, "redistributable": redis, "notes": notes}

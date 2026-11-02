@@ -140,6 +140,8 @@ def record_source(src, run_id, root, pacer):
     rec = {"run": run_id, "source": src["id"], "name": src["name"], "kind": src["kind"],
            "category": src["category"], "redistributable": src["redistributable"],
            "url": redact(src["url"]), "at": now_iso()}
+    if src.get("industry"):
+        rec["industry"] = src["industry"]
     if url is None:
         rec.update(skipped="missing credentials")
         return rec

@@ -20,7 +20,7 @@ concurrency:
 jobs:
   snapshot:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       HC_URL: ${{ secrets.HEALTHCHECK_URL }}
     steps:
@@ -29,6 +29,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      # Weekly: re-check the non-games employer boards (recorder/employers.py) and keep only live,
+      # correctly named ones. Skips itself when the list is under 7 days old.
+      - name: Verify employer boards
+        run: python recorder/verify_boards.py --max-age-days 7
 
       - name: Record snapshot
         id: rec
@@ -67,7 +72,7 @@ jobs:
         run: |
           git config user.name  "hireground-bot"
           git config user.email "hireground-bot@users.noreply.github.com"
-          git add data/index data/runs.jsonl data/first_seen.json.gz 2>/dev/null || true
+          git add data/index data/runs.jsonl data/first_seen.json.gz recorder/employers_verified.json 2>/dev/null || true
           git commit -m "snapshot $(date -u +%Y-%m-%dT%H:%MZ)" || echo "nothing to commit"
           git pull --rebase --autostash
           git push
