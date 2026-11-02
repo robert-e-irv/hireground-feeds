@@ -1,0 +1,2 @@
+# Every workflow run appends a line to the run log; on a rebase keep both sides instead of failing.
+data/runs.jsonl merge=union

@@ -74,7 +74,9 @@ jobs:
           git config user.email "hireground-bot@users.noreply.github.com"
           git add data/index data/runs.jsonl data/first_seen.json.gz recorder/employers_verified.json 2>/dev/null || true
           git commit -m "snapshot $(date -u +%Y-%m-%dT%H:%MZ)" || echo "nothing to commit"
-          git pull --rebase --autostash
+          # runs.jsonl merges as a union (.gitattributes); for anything else this run's newer data wins,
+          # so a commit that landed on main mid-run can't fail the publish.
+          git pull --rebase --autostash -X theirs
           git push
 
       # Dead-man's switch: Healthchecks.io (free) alerts you when this
