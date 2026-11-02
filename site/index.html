@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="Hire Ground pulls open jobs from employer career pages and ranks them by how well they fit your resume. Free, no ads, and your resume stays in your browser."></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><script>try{var t=JSON.parse(localStorage.getItem("hg-theme")||"null");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#F7F3EC" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0F141B" media="(prefers-color-scheme: dark)"><style>:root{color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#F7F3EC;color:#1A202E}@media (prefers-color-scheme:dark){:where(:root:not([data-theme=light])) body{background:#0F141B;color:#E5EAF0}}:where(:root[data-theme=dark]) body{background:#0F141B;color:#E5EAF0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><meta name="description" content="Hire Ground pulls open jobs from employer career pages and ranks them by how well they fit your resume. Free, no ads, and your resume stays in your browser."></head><body>
 <title>Hire Ground</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2032%2032%22%3E%3Crect%20width=%2232%22%20height=%2232%22%20rx=%226%22%20fill=%22%23F7F3EC%22/%3E%3Cpath%20d=%22M10%2024V12.5a3.5%203.5%200%200%201%203.5-3.5h5a3.5%203.5%200%200%201%203.5%203.5V24%22%20fill=%22none%22%20stroke=%22%23304C8E%22%20stroke-width=%222.6%22/%3E%3Cpath%20d=%22M5%2024h22%22%20stroke=%22%231A202E%22%20stroke-width=%222.6%22%20stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -304,6 +304,10 @@
   .skel i:nth-child(1) { width: 22%; } .skel i:nth-child(2) { width: 74%; height: 18px; } .skel i:nth-child(3) { width: 46%; }
   @keyframes skel { 50% { opacity: .45; } }
   @media (prefers-reduced-motion: reduce) { .skel i, .status-pill.busy .dot { animation: none; } }
+  /* theme control */
+  @media (max-width: 420px) { .status-pill { display: none; } }
+  .theme-btn .ti { width: 20px; height: 20px; display: none; }
+  .theme-btn[data-mode=auto] .ti-auto, .theme-btn[data-mode=light] .ti-light, .theme-btn[data-mode=dark] .ti-dark { display: block; }
   /* Horizon step 3: views, pipeline, toast */
   .views { display: flex; gap: var(--space-1); overflow-x: auto; margin: 0 0 var(--space-4); border-bottom: 1px solid var(--line); }
   .views button { background: transparent; border: 0; border-radius: 0; color: var(--ink-mute); padding: 0 var(--space-3); white-space: nowrap; }
@@ -342,6 +346,7 @@
   <span class="spacer"></span>
   <span class="status-pill" id="top-pill" role="status"><span class="dot"></span><span id="top-status">Loading</span><span id="top-upd" class="upd"></span></span>
   <button id="top-refresh" type="button" class="go" hidden>Refresh</button>
+  <button id="theme-btn" type="button" class="icon-btn theme-btn" data-mode="auto" aria-label="Color theme: Auto, follows your device" title="Color theme: Auto"><svg class="ti ti-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg><svg class="ti ti-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="ti ti-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
   <button id="how-btn" type="button" class="icon-btn" aria-label="How it works" aria-expanded="false" aria-controls="how">?</button>
 </header>
 <div class="how" id="how" hidden>
@@ -2080,6 +2085,26 @@ function toggleJob(card) {
   card.classList.toggle("open", on); const b = card.querySelector(".job-toggle"); if (b) b.setAttribute("aria-expanded", String(on));
   if (on) openJobs.add(id); else openJobs.delete(id);
 }
+// ---- color theme: Auto (follow the device) -> Light -> Dark. Saved on this device.
+(() => {
+  const btn = $("theme-btn"), root = document.documentElement, MODES = ["auto", "light", "dark"];
+  const BG = { light: "#F7F3EC", dark: "#0F141B" };
+  const NAME = { auto: "Auto, follows your device", light: "Light", dark: "Dark" };
+  let mode = MODES.includes(loadStore("hg-theme")) ? loadStore("hg-theme") : "auto";
+  const metas = [...document.querySelectorAll('meta[name="theme-color"]')];
+  function apply() {
+    if (mode === "auto") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", mode);
+    metas.forEach(m => m.setAttribute("content", mode === "auto" ? (m.media.includes("dark") ? BG.dark : BG.light) : BG[mode]));
+    btn.dataset.mode = mode; btn.setAttribute("aria-label", "Color theme: " + NAME[mode]); btn.title = "Color theme: " + NAME[mode].split(",")[0];
+  }
+  btn.addEventListener("click", () => {
+    mode = MODES[(MODES.indexOf(mode) + 1) % MODES.length];
+    if (mode === "auto") { try { localStorage.removeItem("hg-theme"); } catch (_) {} } else saveStore("hg-theme", mode);
+    apply();
+    if (typeof showToast === "function") showToast("Theme: " + NAME[mode], "", "");
+  });
+  apply();
+})();
 $("how-btn").addEventListener("click", () => { const h = $("how"); h.hidden = !h.hidden; $("how-btn").setAttribute("aria-expanded", String(!h.hidden)); });
 document.addEventListener("click", e => { const h = $("how"); if (!h.hidden && !h.contains(e.target) && e.target !== $("how-btn")) { h.hidden = true; $("how-btn").setAttribute("aria-expanded", "false"); } });
 $("view-btn").addEventListener("click", () => {
