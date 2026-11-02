@@ -18,6 +18,11 @@ const DATA = arg("--data", "data"), SITE = arg("--site", "site");
 // 1,500 chars is plenty for resume matching. Non-games employer boards roughly triple the job count,
 // so this keeps jobs.json light enough for phones.
 const DESC_MAX = 1500;
+// Employer boards are ~85% of jobs. Their fit verdict comes mostly from the title, so a shorter
+// description costs little ranking and halves their weight. The full posting is one click away.
+const DESC_MAX_EMPLOYER = 600;
+// Posts open longer than this are mostly always-open roles that rarely lead anywhere: leave them out.
+const MAX_AGE_DAYS = 180;
 const FIRST_SEEN_KEEP_DAYS = 120;
 
 // ---- load the app's pure logic
@@ -47,7 +52,8 @@ const now = new Date().toISOString().replace(/\.\d+Z$/, "Z");
 
 // ---- normalize each redistributable source
 const feeds = [], jobs = [];
-let skippedTerms = 0;
+let skippedTerms = 0, droppedOld = 0;
+const ageCutoff = Date.now() - MAX_AGE_DAYS * 86400000;
 for (const r of recs) {
   if (r.redistributable !== true) { skippedTerms++; continue; }
   const feed = { id: r.source, name: r.name, ok: false, count: 0, fetchedAt: r.at };
@@ -69,14 +75,16 @@ for (const r of recs) {
       let js = [];
       try { js = normalizeText(text); }
       catch (e) { if (r.job_count === 0) js = []; else throw e; }   // empty board is not an error
+      const descMax = employer ? DESC_MAX_EMPLOYER : DESC_MAX;
       for (const j of js) {
-        if (j.description && j.description.length > DESC_MAX) j.description = j.description.slice(0, DESC_MAX);
+        if (j.posted && j.posted < ageCutoff) { droppedOld++; continue; }
+        if (j.description && j.description.length > descMax) j.description = j.description.slice(0, descMax);
         j.firstSeen = firstSeen[j.id] || (firstSeen[j.id] = now);
         // Employer boards: the verified company name (Lever and Ashby feeds only carry the slug) + its industry.
         if (employer) { j.company = r.name; j.industry = r.industry; }
         jobs.push(j);
       }
-      feed.count += js.length;
+      feed.count += js.filter(j => !(j.posted && j.posted < ageCutoff)).length;
     }
     feed.ok = true;
   } catch (e) { feed.error = "could not read: " + String(e.message || e).slice(0, 120); }
@@ -96,6 +104,6 @@ fs.mkdirSync(SITE, { recursive: true });
 fs.writeFileSync(prevPath, JSON.stringify(bundle));
 fs.writeFileSync(fsPath, zlib.gzipSync(JSON.stringify(firstSeen)));
 const mb = (fs.statSync(prevPath).size / 1048576).toFixed(1);
-console.log(JSON.stringify({ run: runId, feeds: feeds.length, ok: okCount, jobs: jobs.length, mb, skippedTerms }));
-if (Number(mb) > 15) console.warn("::warning::jobs.json is " + mb + " MB. Phones will feel it; consider a lower DESC_MAX.");
+console.log(JSON.stringify({ run: runId, feeds: feeds.length, ok: okCount, jobs: jobs.length, droppedOld, mb, skippedTerms }));
+if (Number(mb) > 15) console.warn("::warning::jobs.json is " + mb + " MB. Phones will feel it; consider a lower DESC_MAX_EMPLOYER or MAX_AGE_DAYS.");
 if (feeds.length && okCount / feeds.length < 0.5) { console.error("Over half the feeds failed; refusing to publish."); process.exit(3); }

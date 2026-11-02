@@ -53,4 +53,5 @@ python recorder/record.py --root data --only greenhouse:riotgames,lever:skyboxla
 python tests/test_pipeline.py
 python tests/test_employers.py
 node tests/test_app_logic.mjs
+node tests/test_export.mjs
 ```
