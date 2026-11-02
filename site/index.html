@@ -226,13 +226,15 @@
   details.sub .btn-row { margin-top: 8px; }
   #panel-listings .status:empty { display: none; }
   .foot { max-width: 1180px; margin: 28px auto 0; padding: 0 16px; font-size: var(--step-n1); color: var(--mute); text-align: center; }
-  .empty { color: var(--mute); background: var(--card); border: 1px dashed var(--line); border-radius: var(--radius-s); padding: 28px 22px; text-align: center; }
-  .empty p { margin: 0 0 12px; color: var(--ink); } .empty .btn-row { justify-content: center; }
+  .empty { color: var(--mute); background: var(--card); border: 1px dashed var(--line); border-radius: var(--radius-s); padding: var(--space-6) var(--space-4); text-align: center; }
+  .empty p { margin: 0 auto var(--space-4); color: var(--ink-mute); max-width: 46ch; } .empty .btn-row { justify-content: center; }
+  .empty .empty-h { font-family: var(--font-display); font-size: var(--step-2); color: var(--ink); margin-bottom: var(--space-2); }
 
   /* honest fit verdicts (replace the old relative "Match" number) */
   .honest { border: 1px solid var(--line); border-bottom: var(--ground); background: var(--surface); border-radius: var(--radius-s); padding: 12px 16px; margin-bottom: 12px; }
   .honest p { margin: 0; font-size: var(--step-0); color: var(--mute); } .honest b { color: var(--ink); }
-  .empty.err { border-color: var(--danger); } .empty.err p { color: var(--danger); }
+  .empty.err { text-align: left; background: var(--warning-soft); border: 1px solid var(--warning); border-bottom: 2px solid var(--warning); }
+  .empty.err .empty-h { color: var(--warning); } .empty.err p { color: var(--ink); margin-left: 0; } .empty.err .btn-row { justify-content: flex-start; }
   .status-pill.err .dot { background: var(--danger); }
   button.linkish { background: none; border: 0; padding: 0; min-height: 0; color: var(--accent); font-weight: 600; font-size: var(--step-n1); text-decoration: underline; text-underline-offset: 2px; }
   .new-btn { margin-right: auto; padding: 0 14px; font-size: var(--step-n1); border-radius: var(--radius-pill); background: var(--card); border-color: var(--line); color: var(--ink); }
@@ -284,6 +286,24 @@
   @media (min-width: 768px) { .more-grid { grid-template-columns: 1fr 1fr; } .more-grid > .hint { grid-column: 1 / -1; } }
   .more-grid .check { margin-top: var(--space-3); min-height: var(--tap); }
   @media (max-width: 560px) { .s-field { flex: 1 1 100%; } .s-field input, .s-field select { flex: 1; min-width: 0; } .resume-ctl { margin-left: 0; } }
+
+  /* Horizon step 5: polish */
+  .job-meta { margin-left: -1.25em; clip-path: inset(-4px -4px -4px 1.25em); }
+  .job-meta > span:not(:last-child)::after { content: none; }
+  .job-meta > span::before { content: "\00b7"; display: inline-block; width: 1.25em; text-align: center; opacity: .7; }
+  .compact .job-title .clamp { -webkit-line-clamp: 1; }
+  .compact .job.open .job-title .clamp { -webkit-line-clamp: unset; }
+  .compact .job-top { font-size: var(--step-n1); }
+  .first-run { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-4); background: var(--card); border: 1px solid var(--line); border-bottom: var(--ground); border-radius: var(--radius-s); padding: var(--space-4); margin-bottom: var(--space-3); }
+  .first-run p { margin: 0; flex: 1 1 28ch; color: var(--ink-mute); }
+  .ph { visibility: hidden; }
+  .first-run label.btn { background: var(--card); color: var(--ink); border-color: var(--line); }
+  .first-run b { display: block; font-family: var(--font-display); font-weight: 500; font-size: var(--step-1); color: var(--ink); }
+  .skel { background: var(--card); border: 1px solid var(--line); border-bottom: var(--ground); border-radius: var(--radius-s); padding: var(--space-4) var(--space-5); margin-bottom: var(--space-3); }
+  .skel i { display: block; height: 12px; border-radius: var(--radius-s); background: var(--line); margin: var(--space-2) 0; animation: skel 1.6s ease-in-out infinite; }
+  .skel i:nth-child(1) { width: 22%; } .skel i:nth-child(2) { width: 74%; height: 18px; } .skel i:nth-child(3) { width: 46%; }
+  @keyframes skel { 50% { opacity: .45; } }
+  @media (prefers-reduced-motion: reduce) { .skel i, .status-pill.busy .dot { animation: none; } }
   /* Horizon step 3: views, pipeline, toast */
   .views { display: flex; gap: var(--space-1); overflow-x: auto; margin: 0 0 var(--space-4); border-bottom: 1px solid var(--line); }
   .views button { background: transparent; border: 0; border-radius: 0; color: var(--ink-mute); padding: 0 var(--space-3); white-space: nowrap; }
@@ -1556,7 +1576,9 @@ function exampleJobs() {
 
 // ---- state & storage
 const $ = id => document.getElementById(id);
-const state = { jobs: exampleJobs(), resume: "", limit: 100 };
+const state = { jobs: exampleJobs(), resume: "", limit: 100,
+  // Hosted page: show a loading state until jobs.json arrives, instead of flashing the example jobs.
+  loading: /^https?:$/.test(location.protocol) && !(window.claude && window.claude.use) };
 let dedupeCache = { src: null, out: [] };
 function uniqueJobs() { if (dedupeCache.src !== state.jobs) dedupeCache = { src: state.jobs, out: dedupeJobs(state.jobs).map(tagRole) }; return dedupeCache.out; }
 function loadStore(key) { try { return JSON.parse(localStorage.getItem(key) || "null"); } catch (_) { return null; } }
@@ -1617,6 +1639,7 @@ function setPill(text, mode, extra) { const p = $("top-pill"); $("top-status").t
 function updatePill() {
   if (topBusy) return;
   if (state.loadError) setPill("Couldn't load jobs", "err");
+  else if (state.loading) setPill("Loading jobs", "busy");
   else if (lastCount < 0) setPill("Example jobs only", "");
   else setPill(lastCount.toLocaleString() + " jobs", "live", lastUpdated ? "\u00b7 updated " + ago(lastUpdated) : "");
 }
@@ -1640,6 +1663,12 @@ const VERDICT_WHY = [
   "The title uses words your resume leans on."
 ];
 // Horizon card helpers
+function industryLabel(j) {
+  if (j.gameStudio) return "Game studio";
+  const opt = j.industry && document.querySelector('#industry option[value="' + String(j.industry).replace(/"/g, "") + '"]');
+  return opt ? (opt.dataset.label || opt.textContent) : "";
+}
+function roleLabel(j) { return j.family && j.family !== "Other" ? (j.discipline && j.discipline !== j.family ? j.discipline : j.family) + (j.seniority && j.seniority !== "Mid" ? ", " + j.seniority.toLowerCase() : "") : ""; }
 function stepsSvg(v) { const r = (x, y, h, on) => '<rect x="' + x + '" y="' + y + '" width="5" height="' + h + '" rx="1"' + (on ? ' class="on"' : "") + "/>";
   return '<svg class="steps" width="20" height="16" viewBox="0 0 20 16" aria-hidden="true">' + r(0, 10, 6, v >= 1) + r(7, 6, 10, v >= 2) + r(14, 2, 14, v >= 3) + "</svg>"; }
 function placesOf(j) { const own = String(j.location || "").split(";").map(s => s.trim()).filter(Boolean); return own.concat((j.others || []).map(x => x.location || "").filter(Boolean)); }
@@ -1756,6 +1785,7 @@ function cardHtml(j, e, hasResume, isNew, view) {
     pay ? '<span title="Pay mentioned in the listing">' + esc(pay) + "</span>" : "",
     "<span>" + esc(agePhrase(j.ageDays)) + "</span>"].filter(Boolean).join("");
   const why = [hasResume && j.tier > 0 && j.titleHits && j.titleHits.length ? "Matches: " + j.titleHits.slice(0, 3).join(", ") : "",
+    !hasResume ? roleLabel(j) : "", !hasResume ? industryLabel(j) : "",
     e.fit && !warnFit ? e.fit : ""].filter(Boolean).join(" · ");
   const ja = /[぀-ヿ一-鿿]/.test(j.title) ? ' lang="ja"' : "";
   return '<article class="job' + (open ? " open" : "") + '" data-id="' + esc(j.id) + '">' +
@@ -1789,7 +1819,7 @@ function renderPipelineView(evals, hasResume, w, now) {
   if (hasResume && jobs.length) for (const r of rankJobs(state.resume, jobs, { recencyWeight: w, maxAgeDays: null, now })) ranked.set(r.id, r);
   const ageOf = j => Math.max(Math.floor((now - j.posted) / 86400000), 0);
   $("results-note").textContent = entries.length ? entries.length + (entries.length === 1 ? " job" : " jobs") + (gone.length ? ", " + gone.length + " no longer listed" : "") + ". Stored on this device." : "";
-  if (!entries.length) { $("results").innerHTML = '<div class="empty"><p>' + EMPTY[view][0] + "</p><p style=\"color:var(--mute)\">" + EMPTY[view][1] + '</p><div class="btn-row"><button type="button" class="ghost" data-view="foryou">Back to For you</button></div></div>'; return; }
+  if (!entries.length) { $("results").innerHTML = '<div class="empty"><p class="empty-h">' + EMPTY[view][0] + "</p><p>" + EMPTY[view][1] + '</p><div class="btn-row"><button type="button" class="ghost" data-view="foryou">Back to For you</button></div></div>'; return; }
   $("results").innerHTML = live.map(en => { const j = jobIndex.get(en.id); const r = ranked.get(en.id);
       return cardHtml(Object.assign({}, j, r ? { tier: r.tier, titleHits: r.titleHits, matched: r.matched } : { tier: null, matched: [] }, { ageDays: ageOf(j), others: [] }), evals.get(en.id), hasResume, () => false, view); }).join("") +
     gone.map(en => closedHtml(en, view)).join("");
@@ -1815,6 +1845,7 @@ function render() {
   updatePill();
   updateSummaries(user, hasResume, exampleOnly);
   if (state.loadError) { renderLoadError(); return; }
+  if (state.loading) { renderLoading(); return; }
 
   const evals = new Map();
   const all = uniqueJobs(), industry = $("industry").value;
@@ -1866,7 +1897,6 @@ function render() {
 
   const shown = list.slice(0, state.limit);
   const note = [];
-  if (!hasResume) note.push("Add a resume to rank by fit.");
   note.push("Showing " + shown.length.toLocaleString() + " of " + list.length.toLocaleString() + (list.length === 1 ? " role" : " roles") + " from " + all.length.toLocaleString() + (exampleOnly ? " example listings." : " listings."));
   if (hiddenByWhere) note.push(hiddenByWhere.toLocaleString() + " hidden by location or work style.");
   if (hiddenByUser) note.push(hiddenByUser.toLocaleString() + " you hid.");
@@ -1883,14 +1913,15 @@ function render() {
     const why = (q || industry || role) ? "No jobs match your keywords, industry or role filters."
       : hiddenByAge ? "No jobs this recent match. Older ones are hidden."
       : hiddenByWhere ? "Nothing matches your location and work style." : "No jobs match these filters.";
-    $("results").innerHTML = '<div class="empty"><p>' + why + '</p><div class="btn-row">' + acts.map(x => '<button type="button" class="ghost" data-act="' + x[0] + '">' + x[1] + "</button>").join("") + "</div></div>";
+    $("results").innerHTML = '<div class="empty"><p class="empty-h">No jobs here yet</p><p>' + why + '</p><div class="btn-row">' + acts.map(x => '<button type="button" class="ghost" data-act="' + x[0] + '">' + x[1] + "</button>").join("") + "</div></div>";
     return;
   }
   // Honest floor: say so when nothing in the list clearly fits, instead of dressing up the least-bad job.
   const best = hasResume ? Math.max(...list.map(j => j.tier)) : 2;
-  const banner = best === 2 ? "" : '<div class="honest"><p><b>' + (best === 0 ? "We don't have jobs like yours yet." : "No strong matches yet.") + "</b> " +
+  const firstRun = hasResume || exampleOnly ? "" : '<div class="first-run"><p><b>See which jobs fit you</b>Add your resume and Hire Ground ranks these by fit and says why. It stays in this browser.</p><label class="btn" for="resume-file">Add your resume</label></div>';
+  const banner = firstRun + (best === 2 ? "" : '<div class="honest"><p><b>' + (best === 0 ? "We don't have jobs like yours yet." : "No strong matches yet.") + "</b> " +
     (best === 0 ? "Nothing in today's listings clearly matches your resume. " + (coverageText ? coverageText + " " : "") + "The closest jobs are below, marked Long shot."
-      : "The closest jobs are below, marked Stretch.") + "</p></div>";
+      : "The closest jobs are below, marked Stretch.") + "</p></div>");
   const moreBtn = list.length > shown.length ? '<button id="more-btn" type="button" class="ghost">Show 100 more</button>' : "";
   $("results").innerHTML = banner + shown.map(j => cardHtml(j, evals.get(j.id), hasResume, isNew, "foryou")).join("") + moreBtn;
   restoreFocus();
@@ -1939,11 +1970,21 @@ function updateSummaries(user, hasResume, exampleOnly) {
   $("resume-label").textContent = hasResume ? "Resume: " + (name || "added") : "Add your resume";
   $("resume-ctl").classList.toggle("has", hasResume);
 }
+function renderLoading() {
+  $("results-title").textContent = "Loading jobs";
+  // Invisible stand-in text reserves the space the real note and coverage line will take, so nothing jumps when jobs arrive.
+  $("results-note").innerHTML = '<span class="ph" aria-hidden="true">Showing 100 of 4,000 roles from 12,000 listings.</span>'; $("new-btn").hidden = true;
+  $("coverage").hidden = false; $("coverage").innerHTML = '<span class="ph" aria-hidden="true">Hire Ground covers 150 employers: game studios plus tech, finance, retail, healthcare, education, media and nonprofit companies.</span>';
+  const sk = '<div class="skel" aria-hidden="true"><i></i><i></i><i></i></div>';
+  $("results").innerHTML = '<div role="status" aria-label="Loading jobs">' + sk + sk + sk + "</div>";
+}
 function renderLoadError() {
   $("results-title").textContent = "Jobs didn't load";
   $("results-note").textContent = "";
   $("new-btn").hidden = true;
-  $("results").innerHTML = '<div class="empty err"><p>Today\'s job list couldn\'t be downloaded. Check your connection, then try again.</p>' +
+  const saved = Object.keys(pipe.saved).length + Object.keys(pipe.applied).length;
+  $("results").innerHTML = '<div class="empty err" role="alert"><p>Today\'s job list couldn\'t be downloaded. Check your connection, then try again.' +
+    (saved ? " Your saved and applied jobs are safe on this device." : "") + "</p>" +
     '<div class="btn-row"><button type="button" data-act="reload">Try again</button></div></div>';
 }
 let timer = null;
@@ -2395,6 +2436,7 @@ async function localLoad(st) {
     } catch (e) { feedLine(li.id, f.name, "could not read it. " + String(e.message || e).slice(0, 100), true); bad++; }
   }
   if (jobs.length) { state.jobs = jobs; state.limit = 100; }
+  state.loading = false;
   for (const li of Array.from(ul.querySelectorAll("li.err")).reverse()) ul.prepend(li);
   localStamp = st.updatedAt || ""; lastUpdated = st.updatedAt || "";
   const nUnique = dedupeJobs(jobs).length;
@@ -2407,7 +2449,8 @@ async function localLoad(st) {
 }
 async function localWatch() {
   let st;
-  try { st = await localStatus(); } catch (_) { return; }
+  try { st = await localStatus(); } catch (_) {
+    state.loading = false; return; }
   const p = st.progress || {};
   // Show what is already saved right away, even while a download is running.
   if (!localLoadedOnce && st.feeds.some(f => f.ok)) { localLoadedOnce = true; await localLoad(st); }
@@ -2430,7 +2473,7 @@ async function localInit() {
       state.loadError = true; state.jobs = [];
       $("auto-fetch").hidden = true; $("panel-search").hidden = true; $("import-box").hidden = true;
       render();
-    }
+    } else render();
     return;
   }
   $("local-box").hidden = false; $("auto-fetch").hidden = true; $("panel-search").hidden = true;
