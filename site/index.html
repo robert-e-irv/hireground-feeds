@@ -286,6 +286,10 @@
   .s-hint { margin: var(--space-2) 0 0; font-size: var(--step-n1); color: var(--ink-mute); }
   .s-hint:empty { display: none; }
   .more-opts { margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--line); }
+  /* Listings and sources: a plain dropdown row inside More options, not a sidebar card */
+  .more-opts .more-panel { background: transparent; border: 0; border-top: 1px solid var(--line); border-radius: 0; margin-top: var(--space-3); overflow: visible; }
+  .more-opts .more-panel > summary { padding: 12px 0; }
+  .more-opts .more-panel > .step-body { padding: 0 0 4px; }
   .more-grid { display: grid; gap: var(--space-4); }
   @media (min-width: 768px) { .more-grid { grid-template-columns: 1fr 1fr; } .more-grid > .hint { grid-column: 1 / -1; } }
   .more-grid .check { margin-top: var(--space-3); min-height: var(--tap); }
@@ -405,6 +409,86 @@
         </div>
         <p class="hint">Your resume, saved jobs and settings stay in this browser. Nothing goes to the job boards.</p>
       </div>
+    <details class="panel more-panel" id="panel-listings">
+      <summary><h2>Listings and sources</h2><span class="step-sum" id="sum-listings"></span><span class="chev"></span></summary>
+      <div class="step-body">
+      <p class="status" id="feed-summary" style="margin-top:0"></p>
+      <div id="local-box" hidden>
+        <div class="lc-head">
+          <div class="lc-stat"><b id="lc-count">0</b><span id="lc-sub">listings</span></div>
+          <button id="lc-refresh" type="button" class="go">Refresh now</button>
+        </div>
+        <p class="status" id="lc-status" role="status"></p>
+        <details class="sub" id="lc-sources">
+          <summary id="lc-sum">Sources</summary>
+          <ul class="board-status src-list" id="lc-list"></ul>
+        </details>
+      </div>
+      <details id="import-box">
+        <summary>Add listings</summary>
+        <div>
+          <div id="auto-fetch">
+          <p class="hint">Fetch automatically</p>
+          <div class="checks">
+            <label class="check" for="af-rgj"><input id="af-rgj" type="checkbox" checked> Remote Game Jobs</label>
+            <label class="check" for="af-studios"><input id="af-studios" type="checkbox" checked> <span id="af-studios-label">Game studios</span></label>
+          </div>
+          <div class="btn-row">
+            <button id="af-btn" type="button">Fetch game feeds</button>
+            <button id="af-remote-btn" type="button">Fetch remote boards (6)</button>
+            <button id="af-retry" type="button" class="ghost" hidden>Retry failed</button>
+            <button id="af-stop" type="button" class="ghost" hidden>Stop</button>
+          </div>
+          <p class="status" id="af-status" role="status"></p>
+          <ul class="board-status" id="af-list"></ul>
+          <details class="sub"><summary>Notes</summary><div>
+          <p class="hint">Remote boards use the job titles typed under Search job boards, so type them first for smaller, complete results. Remotive allows only a few requests a minute, so avoid running remote boards again right away.</p>
+          <p class="hint">Uses the browser built into the Claude desktop app, so it only works when this page is open there. Claude may ask you to allow each site once. If anything fails, use the manual steps below.</p>
+          </div></details>
+          </div>
+          <details class="sub"><summary>Paste or upload a feed</summary><div>
+          <p class="hint">This page cannot reach job sites itself. Open a feed from the links below, select all, copy, and paste it here. Add as many as you like, one after another.</p>
+          <label for="import-text">Paste feed text (JSON or RSS)
+            <textarea id="import-text" placeholder="Paste the whole feed here"></textarea>
+          </label>
+          <label for="import-file" style="margin-top:10px">Or choose saved feed files
+            <input id="import-file" type="file" accept=".json,.xml,.rss,.txt,application/json,text/xml" multiple>
+          </label>
+          <div class="btn-row">
+            <button id="import-btn" type="button">Add jobs</button>
+            <button id="reset-btn" type="button" class="ghost">Remove added jobs</button>
+          </div>
+          <p class="status" id="import-status" role="status"></p>
+          </div></details>
+          <details class="sub"><summary>Feed links</summary><div>
+          <p class="hint">Remote boards</p>
+          <ul class="feeds inline">
+            <li><a href="https://jobicy.com/api/v2/remote-jobs?count=200&amp;geo=usa" target="_blank" rel="noopener">Jobicy (USA)</a></li>
+            <li><a href="https://jobicy.com/api/v2/remote-jobs?count=200" target="_blank" rel="noopener">Jobicy (all regions)</a></li>
+            <li><a href="https://himalayas.app/jobs/api?limit=20" target="_blank" rel="noopener">Himalayas</a></li>
+            <li><a href="https://himalayas.app/jobs/api?limit=20&amp;offset=20" target="_blank" rel="noopener">Himalayas (next 20)</a></li>
+            <li><a href="https://remoteok.com/api" target="_blank" rel="noopener">RemoteOK</a></li>
+            <li><a href="https://weworkremotely.com/remote-jobs.rss" target="_blank" rel="noopener">We Work Remotely (RSS)</a></li>
+            <li><a href="https://remotive.com/api/remote-jobs" target="_blank" rel="noopener">Remotive</a></li>
+            <li><a href="https://www.arbeitnow.com/api/job-board-api" target="_blank" rel="noopener">Arbeitnow</a></li>
+          </ul>
+          <p class="hint">If the RSS feed shows as a tree or downloads, save the page and choose the saved file below.</p>
+          <p class="hint">Company career pages: type a company name, then open its feed.</p>
+          <ul class="feeds">
+            <li class="row"><input id="gh-token" type="text" placeholder="stripe" aria-label="Greenhouse board name"> <a id="gh-link" href="https://boards-api.greenhouse.io/v1/boards/stripe/jobs?content=true" target="_blank" rel="noopener">Greenhouse feed</a></li>
+            <li class="row"><input id="lv-token" type="text" placeholder="spotify" aria-label="Lever company name"> <a id="lv-link" href="https://api.lever.co/v0/postings/spotify?mode=json" target="_blank" rel="noopener">Lever feed</a></li>
+            <li class="row"><input id="as-token" type="text" placeholder="company" aria-label="Ashby company name"> <a id="as-link" aria-disabled="true" target="_blank" rel="noopener">Ashby feed</a></li>
+          </ul>
+          <p class="hint">Gaming: remote game jobs, then studio career pages (BC studios first).</p>
+          <ul class="feeds inline" id="gaming-feeds">
+            <li><a href="https://remotegamejobs.com/feed.rss" target="_blank" rel="noopener">Remote Game Jobs (RSS)</a></li>
+          </ul>
+          <p class="hint">Tip: save several studio feeds as files and add them together with the file picker below.</p>
+          </div></details>
+        </div>
+      </details>
+      </div>
+    </details>
     </div>
   </section>
   <nav class="views" id="views" aria-label="Your jobs">
@@ -473,86 +557,6 @@
     </main>
     <aside class="side">
       <section class="pipeline" id="pipeline" aria-labelledby="pipe-h"><h2 id="pipe-h">Your pipeline</h2><div id="pipe-body"></div></section>
-      <details class="panel" id="panel-listings">
-        <summary><h2>Listings and sources</h2><span class="step-sum" id="sum-listings"></span><span class="chev"></span></summary>
-        <div class="step-body">
-        <p class="status" id="feed-summary" style="margin-top:0"></p>
-        <div id="local-box" hidden>
-          <div class="lc-head">
-            <div class="lc-stat"><b id="lc-count">0</b><span id="lc-sub">listings</span></div>
-            <button id="lc-refresh" type="button" class="go">Refresh now</button>
-          </div>
-          <p class="status" id="lc-status" role="status"></p>
-          <details class="sub" id="lc-sources">
-            <summary id="lc-sum">Sources</summary>
-            <ul class="board-status src-list" id="lc-list"></ul>
-          </details>
-        </div>
-        <details id="import-box">
-          <summary>Add listings</summary>
-          <div>
-            <div id="auto-fetch">
-            <p class="hint">Fetch automatically</p>
-            <div class="checks">
-              <label class="check" for="af-rgj"><input id="af-rgj" type="checkbox" checked> Remote Game Jobs</label>
-              <label class="check" for="af-studios"><input id="af-studios" type="checkbox" checked> <span id="af-studios-label">Game studios</span></label>
-            </div>
-            <div class="btn-row">
-              <button id="af-btn" type="button">Fetch game feeds</button>
-              <button id="af-remote-btn" type="button">Fetch remote boards (6)</button>
-              <button id="af-retry" type="button" class="ghost" hidden>Retry failed</button>
-              <button id="af-stop" type="button" class="ghost" hidden>Stop</button>
-            </div>
-            <p class="status" id="af-status" role="status"></p>
-            <ul class="board-status" id="af-list"></ul>
-            <details class="sub"><summary>Notes</summary><div>
-            <p class="hint">Remote boards use the job titles typed under Search job boards, so type them first for smaller, complete results. Remotive allows only a few requests a minute, so avoid running remote boards again right away.</p>
-            <p class="hint">Uses the browser built into the Claude desktop app, so it only works when this page is open there. Claude may ask you to allow each site once. If anything fails, use the manual steps below.</p>
-            </div></details>
-            </div>
-            <details class="sub"><summary>Paste or upload a feed</summary><div>
-            <p class="hint">This page cannot reach job sites itself. Open a feed from the links below, select all, copy, and paste it here. Add as many as you like, one after another.</p>
-            <label for="import-text">Paste feed text (JSON or RSS)
-              <textarea id="import-text" placeholder="Paste the whole feed here"></textarea>
-            </label>
-            <label for="import-file" style="margin-top:10px">Or choose saved feed files
-              <input id="import-file" type="file" accept=".json,.xml,.rss,.txt,application/json,text/xml" multiple>
-            </label>
-            <div class="btn-row">
-              <button id="import-btn" type="button">Add jobs</button>
-              <button id="reset-btn" type="button" class="ghost">Remove added jobs</button>
-            </div>
-            <p class="status" id="import-status" role="status"></p>
-            </div></details>
-            <details class="sub"><summary>Feed links</summary><div>
-            <p class="hint">Remote boards</p>
-            <ul class="feeds inline">
-              <li><a href="https://jobicy.com/api/v2/remote-jobs?count=200&amp;geo=usa" target="_blank" rel="noopener">Jobicy (USA)</a></li>
-              <li><a href="https://jobicy.com/api/v2/remote-jobs?count=200" target="_blank" rel="noopener">Jobicy (all regions)</a></li>
-              <li><a href="https://himalayas.app/jobs/api?limit=20" target="_blank" rel="noopener">Himalayas</a></li>
-              <li><a href="https://himalayas.app/jobs/api?limit=20&amp;offset=20" target="_blank" rel="noopener">Himalayas (next 20)</a></li>
-              <li><a href="https://remoteok.com/api" target="_blank" rel="noopener">RemoteOK</a></li>
-              <li><a href="https://weworkremotely.com/remote-jobs.rss" target="_blank" rel="noopener">We Work Remotely (RSS)</a></li>
-              <li><a href="https://remotive.com/api/remote-jobs" target="_blank" rel="noopener">Remotive</a></li>
-              <li><a href="https://www.arbeitnow.com/api/job-board-api" target="_blank" rel="noopener">Arbeitnow</a></li>
-            </ul>
-            <p class="hint">If the RSS feed shows as a tree or downloads, save the page and choose the saved file below.</p>
-            <p class="hint">Company career pages: type a company name, then open its feed.</p>
-            <ul class="feeds">
-              <li class="row"><input id="gh-token" type="text" placeholder="stripe" aria-label="Greenhouse board name"> <a id="gh-link" href="https://boards-api.greenhouse.io/v1/boards/stripe/jobs?content=true" target="_blank" rel="noopener">Greenhouse feed</a></li>
-              <li class="row"><input id="lv-token" type="text" placeholder="spotify" aria-label="Lever company name"> <a id="lv-link" href="https://api.lever.co/v0/postings/spotify?mode=json" target="_blank" rel="noopener">Lever feed</a></li>
-              <li class="row"><input id="as-token" type="text" placeholder="company" aria-label="Ashby company name"> <a id="as-link" aria-disabled="true" target="_blank" rel="noopener">Ashby feed</a></li>
-            </ul>
-            <p class="hint">Gaming: remote game jobs, then studio career pages (BC studios first).</p>
-            <ul class="feeds inline" id="gaming-feeds">
-              <li><a href="https://remotegamejobs.com/feed.rss" target="_blank" rel="noopener">Remote Game Jobs (RSS)</a></li>
-            </ul>
-            <p class="hint">Tip: save several studio feeds as files and add them together with the file picker below.</p>
-            </div></details>
-          </div>
-        </details>
-        </div>
-      </details>
       <details class="panel" id="panel-search">
         <summary><h2>Search job boards</h2><span class="step-sum"></span><span class="chev"></span></summary>
         <div class="step-body">
@@ -1979,7 +1983,8 @@ function updateIndustryMenu(pool, all, exampleOnly) {
   line.hidden = false;
 }
 function updateSummaries(user, hasResume, exampleOnly) {
-  $("sum-listings").textContent = state.loadError ? "not loaded" : (exampleOnly ? "examples only" : uniqueJobs().length.toLocaleString() + " listings");
+  // The job count is already in the top bar; the collapsed row shows how many sources feed it.
+  $("sum-listings").textContent = state.loadError ? "not loaded" : (exampleOnly ? "examples only" : ($("sum-listings").dataset.sources || ""));
   const name = loadStore("jf-resume-name");
   $("resume-label").textContent = hasResume ? (name || "Your resume") : "Add your resume";
   $("resume-label").parentElement.title = hasResume ? (name || "Your resume") + ". Choose to replace it." : "";
@@ -2479,6 +2484,8 @@ async function localLoad(st) {
   $("lc-count").textContent = nUnique.toLocaleString();
   $("lc-sub").textContent = "listings from " + okFeeds + " sources \u00b7 updated " + ago(st.updatedAt);
   $("lc-sum").textContent = "Sources: " + okFeeds + " ok" + (bad ? ", " + bad + " with problems" : "");
+  $("sum-listings").dataset.sources = okFeeds.toLocaleString() + " sources" + (bad ? ", " + bad + " with problems" : "");
+  $("sum-listings").textContent = $("sum-listings").dataset.sources;
   $("lc-sum").style.color = bad ? "var(--danger)" : "";
   setStatus("lc-status", jobs.length ? "" : "No feeds downloaded yet. Choose Refresh now.", !jobs.length);
   render();
@@ -2513,7 +2520,7 @@ async function localInit() {
     return;
   }
   $("local-box").hidden = false; $("auto-fetch").hidden = true; $("panel-search").hidden = true;
-  $("import-box").hidden = true; $("feed-summary").hidden = true; $("panel-listings").open = true;
+  $("import-box").hidden = true; $("feed-summary").hidden = true;
   const canRefresh = st.canRefresh !== false;  // a public server refreshes itself; visitors only read
   $("top-refresh").hidden = !canRefresh; $("lc-refresh").hidden = !canRefresh;
   $("top-refresh").addEventListener("click", () => $("lc-refresh").click());
