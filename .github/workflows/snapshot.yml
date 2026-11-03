@@ -20,7 +20,7 @@ concurrency:
 jobs:
   snapshot:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     env:
       HC_URL: ${{ secrets.HEALTHCHECK_URL }}
     steps:
@@ -34,6 +34,11 @@ jobs:
       # correctly named ones. Skips itself when the list is under 7 days old.
       - name: Verify employer boards
         run: python recorder/verify_boards.py --max-age-days 7
+
+      # Weekly: re-check the games companies imported from Outscal's OpenJobs list
+      # (recorder/studio_candidates.json). Only live boards with open jobs reach the site.
+      - name: Verify imported studio boards
+        run: python recorder/verify_boards.py --set studios --max-age-days 7
 
       - name: Record snapshot
         id: rec
@@ -72,7 +77,7 @@ jobs:
         run: |
           git config user.name  "hireground-bot"
           git config user.email "hireground-bot@users.noreply.github.com"
-          git add data/index data/runs.jsonl data/first_seen.json.gz recorder/employers_verified.json 2>/dev/null || true
+          git add data/index data/runs.jsonl data/first_seen.json.gz recorder/employers_verified.json recorder/studios_verified.json 2>/dev/null || true
           git commit -m "snapshot $(date -u +%Y-%m-%dT%H:%MZ)" || echo "nothing to commit"
           # runs.jsonl merges as a union (.gitattributes); for anything else this run's newer data wins,
           # so a commit that landed on main mid-run can't fail the publish.

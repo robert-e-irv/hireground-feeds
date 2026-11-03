@@ -4,11 +4,16 @@ Kept = HTTP 200, parses with the strict parser, has at least one open job, and (
 the board's own name matches the company we expect, so a short slug like "ro" can't quietly
 publish a different company's jobs.
 
-Writes recorder/employers_verified.json, which sources.py reads. Runs in GitHub Actions before
-the snapshot; skips itself when the file is younger than --max-age-days.
+Two candidate sets, same rules:
+  employers  recorder/employers.py           -> recorder/employers_verified.json
+  studios    recorder/studio_candidates.json -> recorder/studios_verified.json
+             (games companies imported from Outscal's OpenJobs list by import_openjobs.py)
 
-  python recorder/verify_boards.py                 # verify now
-  python recorder/verify_boards.py --max-age-days 7
+sources.py reads the verified files. Runs in GitHub Actions before the snapshot; skips itself when
+the file is younger than --max-age-days.
+
+  python recorder/verify_boards.py                 # verify employers now
+  python recorder/verify_boards.py --set studios --max-age-days 7
 """
 import argparse
 import json
@@ -16,6 +21,7 @@ import re
 import sys
 import time
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -27,6 +33,20 @@ import record     # noqa: E402  (reuses fetch + polite per-host pacing)
 from sources import ATS_URL  # noqa: E402
 
 OUT = HERE / "employers_verified.json"
+SETS = {
+    "employers": (None, HERE / "employers_verified.json"),
+    "studios": (HERE / "studio_candidates.json", HERE / "studios_verified.json"),
+}
+
+
+def studio_candidates(path=SETS["studios"][0]):
+    """studio_candidates.json -> verifier tuples: (name, None, boards, {"adjacent": bool})."""
+    try:
+        doc = json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+    return [(c["name"], None, [tuple(b) for b in c["boards"]], {"adjacent": bool(c.get("adjacent"))})
+            for c in doc.get("candidates", [])]
 GH_BOARD = "https://boards-api.greenhouse.io/v1/boards/{slug}"
 
 
@@ -73,16 +93,31 @@ def check(name, ats, slug, pacer, fetch=record.fetch):
     return True, out
 
 
-def verify(candidates=None, fetch=record.fetch, gap=record.HOST_GAP):
+def verify(candidates=None, fetch=record.fetch, gap=record.HOST_GAP, workers=1):
+    """Candidates are (name, industry, boards) or (name, industry, boards, extra-fields).
+    workers > 1 checks several companies at once; the shared Pacer still spaces requests per host."""
     pacer = record.Pacer(gap)
-    kept, rejected = [], []
-    for name, industry, boards in (candidates or employers.CANDIDATES):
+
+    def one(cand):
+        name, industry, boards = cand[:3]
+        extra = cand[3] if len(cand) > 3 else {}
+        kept, rejected = [], []
         for ats, slug in boards:
-            ok, info = check(name, ats, slug, pacer, fetch)
-            info.update(name=name, industry=industry)
+            try:
+                ok, info = check(name, ats, slug, pacer, fetch)
+            except Exception as e:  # one odd board must never sink the weekly check
+                ok, info = False, {"ats": ats, "slug": slug, "reason": f"{type(e).__name__}: {e}"[:200]}
+            info.update(name=name, industry=industry, **extra)
             (kept if ok else rejected).append(info)
             if ok:
-                break  # one live board per employer is enough; the first listed wins
+                break  # one live board per company is enough; the first listed wins
+        return kept, rejected
+
+    cands = list(candidates if candidates is not None else employers.CANDIDATES)
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as ex:
+        results = list(ex.map(one, cands))   # map keeps the input order
+    kept = [k for ks, _ in results for k in ks]
+    rejected = [r for _, rs in results for r in rs]
     return {"verified_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "kept": kept, "rejected": rejected}
 
@@ -90,9 +125,11 @@ def verify(candidates=None, fetch=record.fetch, gap=record.HOST_GAP):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--max-age-days", type=float, default=0, help="skip if the file is younger than this")
-    ap.add_argument("--out", default=str(OUT))
+    ap.add_argument("--set", choices=sorted(SETS), default="employers")
+    ap.add_argument("--out", help="default: recorder/<set>_verified.json")
+    ap.add_argument("--workers", type=int, default=None, help="companies checked at once (default 1 employers, 8 studios)")
     a = ap.parse_args()
-    out = Path(a.out)
+    out = Path(a.out) if a.out else SETS[a.set][1]
     if a.max_age_days and out.exists():
         try:
             at = datetime.fromisoformat(json.loads(out.read_text())["verified_at"])
@@ -102,7 +139,10 @@ def main():
         except (ValueError, KeyError):
             pass
     t0 = time.monotonic()
-    res = verify()
+    if a.set == "studios":
+        res = verify(studio_candidates(), workers=a.workers or 8)
+    else:
+        res = verify(workers=a.workers or 1)
     out.write_text(json.dumps(res, indent=1, ensure_ascii=False) + "\n")
     print(json.dumps({"kept": len(res["kept"]), "rejected": len(res["rejected"]),
                       "jobs": sum(k.get("jobs", 0) for k in res["kept"]),
