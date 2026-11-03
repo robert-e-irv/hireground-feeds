@@ -1,0 +1,4954 @@
+{
+ "verified_at": "2026-11-03T16:27:42+00:00",
+ "kept": [
+  {
+   "ats": "greenhouse",
+   "slug": "2kvegas",
+   "status": 200,
+   "jobs": 3,
+   "board_name": "2K Vegas",
+   "name": "2K Vegas",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "31stunion",
+   "status": 200,
+   "jobs": 8,
+   "board_name": "31st Union",
+   "name": "31st Union",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "5minlab",
+   "status": 200,
+   "jobs": 1,
+   "board_name": "5minlab",
+   "name": "5Minlab",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "6sense",
+   "status": 200,
+   "jobs": 31,
+   "board_name": "6sense",
+   "name": "6Sense",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "a44games",
+   "status": 200,
+   "jobs": 3,
+   "name": "A44 Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "abgames",
+   "status": 200,
+   "jobs": 1,
+   "name": "AB Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "absurdventures",
+   "status": 200,
+   "jobs": 16,
+   "board_name": "Absurd Ventures",
+   "name": "Absurd Ventures",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "accor",
+   "status": 200,
+   "jobs": 100,
+   "name": "Accor",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "acldigital",
+   "status": 200,
+   "jobs": 2,
+   "name": "ACL Digital",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "adiresourcing",
+   "status": 200,
+   "jobs": 1,
+   "name": "ADI Resourcing",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "adpushup",
+   "status": 200,
+   "jobs": 1,
+   "name": "AdPushup",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "advantagesolutions",
+   "status": 200,
+   "jobs": 4,
+   "name": "Advantage Solutions",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "aegworldwide",
+   "status": 200,
+   "jobs": 148,
+   "board_name": "AEG Worldwide",
+   "name": "AEG Worldwide",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "aeratechnology",
+   "status": 200,
+   "jobs": 18,
+   "name": "Aera Technology",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "agavegames",
+   "status": 200,
+   "jobs": 3,
+   "name": "Agave Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "agoda",
+   "status": 200,
+   "jobs": 307,
+   "board_name": "Agoda",
+   "name": "Agoda",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "AIFund",
+   "status": 200,
+   "jobs": 39,
+   "name": "AIFund",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "AirlabInc",
+   "status": 200,
+   "jobs": 10,
+   "name": "AirlabInc",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "akqa",
+   "status": 200,
+   "jobs": 29,
+   "board_name": "AKQA",
+   "name": "AKQA",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Alegrium1",
+   "status": 200,
+   "jobs": 2,
+   "name": "Alegrium",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "alphasense",
+   "status": 200,
+   "jobs": 204,
+   "board_name": "AlphaSense",
+   "name": "Alpha Sense",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "altentechnologyusa",
+   "status": 200,
+   "jobs": 232,
+   "board_name": "ALTEN Technology USA",
+   "name": "Alten Technology",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "amanotes",
+   "status": 200,
+   "jobs": 16,
+   "name": "Amanotes",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "analogfolk",
+   "status": 200,
+   "jobs": 2,
+   "name": "AnalogFolk",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "anavationllc",
+   "status": 200,
+   "jobs": 73,
+   "name": "Anavation",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "andurilindustries",
+   "status": 200,
+   "jobs": 2562,
+   "board_name": "Anduril Industries",
+   "name": "Anduril Industries",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "animocabrands",
+   "status": 200,
+   "jobs": 10,
+   "name": "Animoca Brands",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "apolloio",
+   "status": 200,
+   "jobs": 52,
+   "board_name": "Apollo.io",
+   "name": "Apollo.io",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "april",
+   "status": 200,
+   "jobs": 13,
+   "name": "April",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Arkavis",
+   "status": 200,
+   "jobs": 2,
+   "name": "Arkavis",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Arrible",
+   "status": 200,
+   "jobs": 2,
+   "name": "Arrible",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "arthrex",
+   "status": 200,
+   "jobs": 1,
+   "name": "Arthrex",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "assetwatch",
+   "status": 200,
+   "jobs": 20,
+   "board_name": "AssetWatch, Inc.",
+   "name": "AssetWatch®",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "assistsoftware",
+   "status": 200,
+   "jobs": 1,
+   "name": "Assist software",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "ASSYSTEM",
+   "status": 200,
+   "jobs": 100,
+   "name": "Assystems",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "asteralabs",
+   "status": 200,
+   "jobs": 180,
+   "board_name": "Astera Labs",
+   "name": "Astera Labs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "astrocade",
+   "status": 200,
+   "jobs": 9,
+   "name": "Astrocade",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "atariinc",
+   "status": 200,
+   "jobs": 17,
+   "board_name": "Atari ",
+   "name": "Atari",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "athena-education",
+   "status": 200,
+   "jobs": 3,
+   "name": "Athena Education",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "atomiccartoons",
+   "status": 200,
+   "jobs": 4,
+   "board_name": "Atomic Cartoons",
+   "name": "Atomic cartoons",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "avacendinc",
+   "status": 200,
+   "jobs": 1,
+   "name": "Avacend Inc",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "avathon",
+   "status": 200,
+   "jobs": 52,
+   "board_name": "Avathon",
+   "name": "Avathon",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "axle",
+   "status": 200,
+   "jobs": 53,
+   "board_name": "Axle",
+   "name": "Axle",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "azragames",
+   "status": 200,
+   "jobs": 1,
+   "board_name": "Azra Games",
+   "name": "Azra Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "babilgames",
+   "status": 200,
+   "jobs": 3,
+   "name": "Babil Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "bazaarvoice",
+   "status": 200,
+   "jobs": 9,
+   "name": "Bazaar Voice",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "bcforward",
+   "status": 200,
+   "jobs": 1,
+   "name": "BCforward",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "believe",
+   "status": 200,
+   "jobs": 27,
+   "name": "Believe",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "bentoboxent",
+   "status": 200,
+   "jobs": 3,
+   "name": "Bento Box Entertainment LLC",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "beyondinc",
+   "status": 200,
+   "jobs": 1,
+   "name": "Beyond Inc.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "blackkitestudios",
+   "status": 200,
+   "jobs": 3,
+   "name": "Black Kite Studios",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "blinkux",
+   "status": 200,
+   "jobs": 3,
+   "name": "Blink UX",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Blockville",
+   "status": 200,
+   "jobs": 8,
+   "name": "Blockville",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "blueislestudios",
+   "status": 200,
+   "jobs": 2,
+   "name": "Blue Isle Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "bluehole",
+   "status": 200,
+   "jobs": 16,
+   "board_name": "Bluehole Inc.",
+   "name": "Bluehole",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "bold-orange",
+   "status": 200,
+   "jobs": 12,
+   "name": "Bold Orange",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "bootloaderstudio",
+   "status": 200,
+   "jobs": 1,
+   "name": "Bootloader studio",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "braintrust",
+   "status": 200,
+   "jobs": 29,
+   "name": "Braintrust",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "branch.gg",
+   "status": 200,
+   "jobs": 1,
+   "name": "Branch",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "brandnewschool",
+   "status": 200,
+   "jobs": 9,
+   "board_name": "Brand New School",
+   "name": "Brand New School",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "brightmachines",
+   "status": 200,
+   "jobs": 15,
+   "name": "Bright Machines",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "brillio-2",
+   "status": 200,
+   "jobs": 210,
+   "name": "Brillio",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "bytedance",
+   "status": 200,
+   "jobs": 2,
+   "name": "ByteDance",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "caci",
+   "status": 200,
+   "jobs": 14,
+   "name": "CACI",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "cantina",
+   "status": 200,
+   "jobs": 23,
+   "name": "Cantina",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "cape",
+   "status": 200,
+   "jobs": 24,
+   "name": "Cape",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "catdaddy",
+   "status": 200,
+   "jobs": 1,
+   "board_name": "Cat Daddy",
+   "name": "Cat Daddy",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "caterpillarinc",
+   "status": 200,
+   "jobs": 1,
+   "name": "Caterpillar Inc.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "CDPROJEKTRED",
+   "status": 200,
+   "jobs": 55,
+   "name": "Cd Projekt Red",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "character",
+   "status": 200,
+   "jobs": 13,
+   "name": "Character.AI",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "chargepoint",
+   "status": 200,
+   "jobs": 38,
+   "board_name": "ChargePoint",
+   "name": "ChargePoint",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "chimeratechnologies",
+   "status": 200,
+   "jobs": 1,
+   "name": "Chimera Technologies",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "cloudchamberen",
+   "status": 200,
+   "jobs": 14,
+   "board_name": "Cloud Chamber",
+   "name": "Cloud Chamber",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "clutch",
+   "status": 200,
+   "jobs": 79,
+   "board_name": "Clutch Technologies Inc.",
+   "name": "Clutch",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "comcastcorporation",
+   "status": 200,
+   "jobs": 1,
+   "name": "Comcast Corporation",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "continental",
+   "status": 200,
+   "jobs": 100,
+   "name": "Continental",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "creativecoveinc",
+   "status": 200,
+   "jobs": 5,
+   "name": "Creative Cove Inc.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "crunchyroll",
+   "status": 200,
+   "jobs": 101,
+   "board_name": "Crunchyroll, LLC",
+   "name": "Crunchyroll",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "curri",
+   "status": 200,
+   "jobs": 26,
+   "name": "Curri",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "cypher-games",
+   "status": 200,
+   "jobs": 8,
+   "name": "Cypher games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "dailywire",
+   "status": 200,
+   "jobs": 11,
+   "name": "Daily Wire",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "detroitlions",
+   "status": 200,
+   "jobs": 3,
+   "board_name": "Detroit Lions",
+   "name": "Detroit Lions",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "diligentcorporation",
+   "status": 200,
+   "jobs": 15,
+   "board_name": "Diligent Corporation",
+   "name": "Diligent Corporation",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "DONTNOD",
+   "status": 200,
+   "jobs": 3,
+   "name": "Don't Nod",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "dots",
+   "status": 200,
+   "jobs": 1,
+   "board_name": "Dots",
+   "name": "DOTS games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "DOTSOFTSA",
+   "status": 200,
+   "jobs": 7,
+   "name": "Dotsoft Sa",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "drpanda",
+   "status": 200,
+   "jobs": 3,
+   "name": "Dr. Panda",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "dxmindsinnovationlabspvtltd",
+   "status": 200,
+   "jobs": 1,
+   "name": "DxMinds Innovation Labs Pvt Ltd",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "e2openllc",
+   "status": 200,
+   "jobs": 1,
+   "board_name": "e2open",
+   "name": "E2 Open",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "easybrain",
+   "status": 200,
+   "jobs": 11,
+   "name": "Easybrain",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "easygo",
+   "status": 200,
+   "jobs": 29,
+   "board_name": "Easygo",
+   "name": "Easygo",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "easyship",
+   "status": 200,
+   "jobs": 20,
+   "board_name": "Easyship",
+   "name": "Easyship",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "echtra",
+   "status": 200,
+   "jobs": 2,
+   "name": "Echtra Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "egen",
+   "status": 200,
+   "jobs": 23,
+   "name": "Egen",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "ekosystem",
+   "status": 200,
+   "jobs": 1,
+   "name": "Eko System",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "elevenlabs",
+   "status": 200,
+   "jobs": 151,
+   "name": "ElevenLabs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "ello",
+   "status": 200,
+   "jobs": 4,
+   "name": "Ello",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "encore",
+   "status": 200,
+   "jobs": 3,
+   "board_name": "Encore ",
+   "name": "Encore",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "envoy",
+   "status": 200,
+   "jobs": 24,
+   "name": "Envoy",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "eositsolutions",
+   "status": 200,
+   "jobs": 192,
+   "board_name": "EOS",
+   "name": "EOS IT Solutions",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "epochgames",
+   "status": 200,
+   "jobs": 7,
+   "name": "Epoch Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "essilorluxottica",
+   "status": 200,
+   "jobs": 7,
+   "name": "EssilorLuxottica",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Evolution",
+   "status": 200,
+   "jobs": 100,
+   "name": "Evolution",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "evoplaygames",
+   "status": 200,
+   "jobs": 3,
+   "board_name": "Evoplay Games",
+   "name": "Evoplay",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "evsinc",
+   "status": 200,
+   "jobs": 1,
+   "name": "EVS, Inc.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "ewargames",
+   "status": 200,
+   "jobs": 4,
+   "name": "Ewar games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "experthiring",
+   "status": 200,
+   "jobs": 1,
+   "name": "ExpertHiring",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "explodingkittens",
+   "status": 200,
+   "jobs": 1,
+   "name": "Exploding Kittens, Inc.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "fanatee",
+   "status": 200,
+   "jobs": 10,
+   "name": "Fanatee",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "fandom",
+   "status": 200,
+   "jobs": 8,
+   "board_name": "Fandom",
+   "name": "Fandom",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "fanduel",
+   "status": 200,
+   "jobs": 96,
+   "board_name": "FanDuel",
+   "name": "FanDuel",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "fccincinnati",
+   "status": 200,
+   "jobs": 21,
+   "board_name": "Fussball Club Cincinnati LLC (“FC Cincinnati”)",
+   "name": "FC Cincinnati",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "federalsoftsystemsinc",
+   "status": 200,
+   "jobs": 4,
+   "name": "Federal Soft Systems Inc.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "FireHoseGames",
+   "status": 200,
+   "jobs": 1,
+   "name": "Fire Hose Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "Fliff",
+   "status": 200,
+   "jobs": 17,
+   "name": "Fliff",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "formlabs",
+   "status": 200,
+   "jobs": 239,
+   "board_name": "Formlabs",
+   "name": "Formlabs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "fourhands",
+   "status": 200,
+   "jobs": 30,
+   "board_name": "Four Hands",
+   "name": "Four Hands",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "fracturedbyte",
+   "status": 200,
+   "jobs": 1,
+   "name": "Fractured Byte",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "freshboxmediapvtltd",
+   "status": 200,
+   "jobs": 1,
+   "name": "FreshBox Media Pvt. Ltd",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "freshworks",
+   "status": 200,
+   "jobs": 100,
+   "name": "Freshworks",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "FunGuyStudioPhilippinesInc",
+   "status": 200,
+   "jobs": 5,
+   "name": "Funguy Studio",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "futransolutions",
+   "status": 200,
+   "jobs": 4,
+   "name": "Futran Solutions",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "FuturumTechnologyLtd",
+   "status": 200,
+   "jobs": 1,
+   "name": "Futurum Technology",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "GluckGames",
+   "status": 200,
+   "jobs": 1,
+   "name": "G.games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "galaxesolutions",
+   "status": 200,
+   "jobs": 1,
+   "name": "GalaxE.Solutions",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Game5Mobile",
+   "status": 200,
+   "jobs": 3,
+   "name": "Game5Mobile",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "gamechanger",
+   "status": 200,
+   "jobs": 10,
+   "name": "GameChanger",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "gamecloudtechnologiespvtltd",
+   "status": 200,
+   "jobs": 2,
+   "name": "GameCloud Technologies Pvt Ltd",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Gameloft",
+   "status": 200,
+   "jobs": 63,
+   "name": "Gameloft",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "GamesForLove",
+   "status": 200,
+   "jobs": 10,
+   "name": "Games For Love",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "gearinc",
+   "status": 200,
+   "jobs": 2,
+   "name": "Gear Inc",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "geico",
+   "status": 200,
+   "jobs": 1,
+   "name": "Geico",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "GeneraGames1",
+   "status": 200,
+   "jobs": 1,
+   "name": "Genera Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "GIANTSSoftwareGmbH",
+   "status": 200,
+   "jobs": 3,
+   "name": "GIANTS Software",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "glance",
+   "status": 200,
+   "jobs": 34,
+   "board_name": "Glance",
+   "name": "Glance",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "gofundme",
+   "status": 200,
+   "jobs": 19,
+   "board_name": "GoFundMe",
+   "name": "Go Fund Me",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "goodjobgames",
+   "status": 200,
+   "jobs": 28,
+   "board_name": "Good Job Games",
+   "name": "Good Job Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "goop",
+   "status": 200,
+   "jobs": 5,
+   "board_name": "goop",
+   "name": "Goop",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "gramgamescareers",
+   "status": 200,
+   "jobs": 5,
+   "board_name": "Gram Games",
+   "name": "Gram Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "growe",
+   "status": 200,
+   "jobs": 3,
+   "board_name": "GROWE",
+   "name": "Growe",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "hackerrank",
+   "status": 200,
+   "jobs": 29,
+   "board_name": "HackerRank Careers",
+   "name": "HackerRank",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "hardballgames",
+   "status": 200,
+   "jobs": 2,
+   "name": "Hard Ball Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "harmonic",
+   "status": 200,
+   "jobs": 9,
+   "name": "Harmonic",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "hatch",
+   "status": 200,
+   "jobs": 8,
+   "name": "Hatch",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "hawkeyeinnovations",
+   "status": 200,
+   "jobs": 21,
+   "name": "Hawkeye Innovations",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "higharc",
+   "status": 200,
+   "jobs": 12,
+   "name": "Higharc",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Hive1",
+   "status": 200,
+   "jobs": 5,
+   "name": "Hive",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "hovercraft",
+   "status": 200,
+   "jobs": 5,
+   "board_name": "Hovercraft",
+   "name": "Hovercraft",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "howardhannarealestateservices",
+   "status": 200,
+   "jobs": 9,
+   "name": "Howard Hanna Real Estate Services",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "hunterdouglas",
+   "status": 200,
+   "jobs": 76,
+   "board_name": "Hunter Douglas",
+   "name": "HunterDouglas",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "hyperhug",
+   "status": 200,
+   "jobs": 12,
+   "name": "Hyperhug",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "inkitt",
+   "status": 200,
+   "jobs": 12,
+   "name": "Inkittt",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "inmobi",
+   "status": 200,
+   "jobs": 82,
+   "board_name": "InMobi ",
+   "name": "InMobi",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "innovecs",
+   "status": 200,
+   "jobs": 8,
+   "board_name": "Innovecs",
+   "name": "Innovecs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "IntergalacticGamingLtd",
+   "status": 200,
+   "jobs": 1,
+   "name": "Intergalactic Gaming",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "intrepidstudios",
+   "status": 200,
+   "jobs": 1,
+   "name": "Intrepid Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "ixllearning",
+   "status": 200,
+   "jobs": 114,
+   "board_name": "IXL Learning",
+   "name": "IXL Learning",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "jsheldllc",
+   "status": 200,
+   "jobs": 100,
+   "name": "J.S. Held LLC",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "jammedia",
+   "status": 200,
+   "jobs": 2,
+   "name": "Jam media",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "Joyteractive",
+   "status": 200,
+   "jobs": 6,
+   "name": "Joyteractive",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "k-group1",
+   "status": 200,
+   "jobs": 10,
+   "name": "K-group1",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "kaizengaming",
+   "status": 200,
+   "jobs": 31,
+   "board_name": "Kaizen Gaming",
+   "name": "Kaizen Gaming",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "kaseya",
+   "status": 200,
+   "jobs": 96,
+   "board_name": "Kaseya Careers",
+   "name": "Kaseya",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "kayak",
+   "status": 200,
+   "jobs": 45,
+   "name": "Kayak",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "keensoftwarehouseas",
+   "status": 200,
+   "jobs": 1,
+   "board_name": "Keen Software House",
+   "name": "Keen Software Houses",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "kenvue",
+   "status": 200,
+   "jobs": 7,
+   "name": "Kenvue",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "keylentinc",
+   "status": 200,
+   "jobs": 3,
+   "name": "Keylent Inc",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "klaviyo",
+   "status": 200,
+   "jobs": 155,
+   "board_name": "Klaviyo",
+   "name": "Klaviyo",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "KnackStudios",
+   "status": 200,
+   "jobs": 5,
+   "name": "Knack studios",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "konecranes",
+   "status": 200,
+   "jobs": 100,
+   "name": "Konecranes",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "kraftonindia",
+   "status": 200,
+   "jobs": 8,
+   "board_name": "KRAFTON INDIA",
+   "name": "Krafton India",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "studiokraftonboard",
+   "status": 200,
+   "jobs": 5,
+   "board_name": "KRAFTON Montréal Studio",
+   "name": "KRAFTON Montréal Studio",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "loral",
+   "status": 200,
+   "jobs": 1,
+   "name": "L'Oréal",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "laclippers",
+   "status": 200,
+   "jobs": 8,
+   "board_name": "LA Clippers",
+   "name": "LA Clippers",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "launchdarkly",
+   "status": 200,
+   "jobs": 45,
+   "board_name": "LaunchDarkly",
+   "name": "LaunchDarkly",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "lincolndigitalgroup",
+   "status": 200,
+   "jobs": 1,
+   "name": "Lincoln Digital Group™",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "lindenlab",
+   "status": 200,
+   "jobs": 4,
+   "board_name": "Linden Lab",
+   "name": "Linden lab",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "liveperson",
+   "status": 200,
+   "jobs": 1,
+   "board_name": "LivePerson",
+   "name": "LivePerson",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "loft17visuals",
+   "status": 200,
+   "jobs": 1,
+   "name": "LOFT 17 visuals",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "loopgames",
+   "status": 200,
+   "jobs": 3,
+   "name": "Loop games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "lumengames",
+   "status": 200,
+   "jobs": 1,
+   "name": "Lumen Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "luminary",
+   "status": 200,
+   "jobs": 10,
+   "name": "Luminary",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "magnopus",
+   "status": 200,
+   "jobs": 3,
+   "name": "Magnopus",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "matchgroup",
+   "status": 200,
+   "jobs": 62,
+   "name": "Match Group",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "mm",
+   "status": 200,
+   "jobs": 2,
+   "board_name": "Media Molecule",
+   "name": "Media molecule",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "mentava",
+   "status": 200,
+   "jobs": 1,
+   "name": "Mentava",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "META4",
+   "status": 200,
+   "jobs": 4,
+   "name": "Meta4",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "metlife",
+   "status": 200,
+   "jobs": 39,
+   "name": "MetLife",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "mgmresortsinternational",
+   "status": 200,
+   "jobs": 5,
+   "name": "MGM Resorts International",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "miqdigital",
+   "status": 200,
+   "jobs": 47,
+   "board_name": "MiQ Digital",
+   "name": "MiQ",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "missionboxsolutions",
+   "status": 200,
+   "jobs": 8,
+   "name": "Mission Box Solutions",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "mistplay",
+   "status": 200,
+   "jobs": 11,
+   "name": "Mistplay",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "MixMob",
+   "status": 200,
+   "jobs": 3,
+   "name": "MixMob",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "mnrsolutionspvtltd",
+   "status": 200,
+   "jobs": 1,
+   "name": "MNR Solutions Pvt. Ltd.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "mobilityware",
+   "status": 200,
+   "jobs": 7,
+   "board_name": "MobilityWare",
+   "name": "Mobilityware",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "mobius",
+   "status": 200,
+   "jobs": 10,
+   "board_name": "Mobius",
+   "name": "Mobius",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "modulate",
+   "status": 200,
+   "jobs": 1,
+   "name": "Modulate",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "monks",
+   "status": 200,
+   "jobs": 334,
+   "board_name": "Monks",
+   "name": "Monks",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "monsterenergy",
+   "status": 200,
+   "jobs": 164,
+   "board_name": "Monster Energy",
+   "name": "Monster Energy",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "mottmacdonald",
+   "status": 200,
+   "jobs": 1,
+   "name": "Mott MacDonald",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "multiverse",
+   "status": 200,
+   "jobs": 28,
+   "name": "Multiverse",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "myfitnesspal",
+   "status": 200,
+   "jobs": 8,
+   "board_name": "MyFitnessPal",
+   "name": "My Fitness Pal",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "netradyne",
+   "status": 200,
+   "jobs": 37,
+   "board_name": "Netradyne",
+   "name": "Netradyne",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "netskope",
+   "status": 200,
+   "jobs": 122,
+   "board_name": "Netskope",
+   "name": "Netskope",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "newglobesandbox",
+   "status": 200,
+   "jobs": 4,
+   "board_name": "NewGlobe",
+   "name": "New Globe",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "newscorp",
+   "status": 200,
+   "jobs": 1,
+   "name": "News Corp",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "ninjavan",
+   "status": 200,
+   "jobs": 144,
+   "name": "NinjaVan",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "nksecuritiesresearch",
+   "status": 200,
+   "jobs": 14,
+   "board_name": "NK Securities Research",
+   "name": "NK Securities Research",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "nordeus",
+   "status": 200,
+   "jobs": 12,
+   "board_name": "Nordeus",
+   "name": "Nordeus",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "novomatictechnologiespoland",
+   "status": 200,
+   "jobs": 1,
+   "name": "NOVOMATIC Technologies Poland",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "NvizzioCreations",
+   "status": 200,
+   "jobs": 1,
+   "name": "Nvizzio Creations",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "octagon",
+   "status": 200,
+   "jobs": 5,
+   "board_name": "Octagon",
+   "name": "Octagon",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "ogilvy",
+   "status": 200,
+   "jobs": 111,
+   "board_name": "Ogilvy",
+   "name": "Ogilvy",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "OldSkullGames1",
+   "status": 200,
+   "jobs": 7,
+   "name": "Old Skull Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "oliverwyman",
+   "status": 200,
+   "jobs": 2,
+   "name": "Oliver Wyman",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "oshihealth",
+   "status": 200,
+   "jobs": 1,
+   "board_name": "Oshi Health",
+   "name": "Oshi Health",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "outfit7",
+   "status": 200,
+   "jobs": 9,
+   "board_name": "Outfit7",
+   "name": "Outfit7",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "overdare",
+   "status": 200,
+   "jobs": 7,
+   "board_name": "OVERDARE",
+   "name": "Overdare",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "panicbutton",
+   "status": 200,
+   "jobs": 4,
+   "board_name": "Panic Button",
+   "name": "Panic Button",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "patreon",
+   "status": 200,
+   "jobs": 20,
+   "name": "Patreon",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "penninteractive",
+   "status": 200,
+   "jobs": 33,
+   "board_name": "Penn Interactive",
+   "name": "Penn Interactive",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "PeopleCanFly",
+   "status": 200,
+   "jobs": 13,
+   "name": "People Can Fly",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "pharmaace",
+   "status": 200,
+   "jobs": 1,
+   "name": "PharmaACE",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "pinegames",
+   "status": 200,
+   "jobs": 6,
+   "name": "Pine games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "play-perfect",
+   "status": 200,
+   "jobs": 3,
+   "name": "Play Perfect",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "playground",
+   "status": 200,
+   "jobs": 6,
+   "name": "Playground",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "playq",
+   "status": 200,
+   "jobs": 2,
+   "board_name": "PlayQ",
+   "name": "Playq",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Playtech",
+   "status": 200,
+   "jobs": 100,
+   "name": "Playtech",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "playwing",
+   "status": 200,
+   "jobs": 1,
+   "name": "Playwing",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "Pocket%20Worlds",
+   "status": 200,
+   "jobs": 3,
+   "name": "Pocket Worlds",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "pokemoncareers",
+   "status": 200,
+   "jobs": 25,
+   "board_name": "The Pokémon Company International",
+   "name": "Pokemon",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "poki",
+   "status": 200,
+   "jobs": 2,
+   "name": "Poki",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "polygon-labs",
+   "status": 200,
+   "jobs": 3,
+   "name": "Polygon Labs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "porter",
+   "status": 200,
+   "jobs": 22,
+   "name": "Porter",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "profound",
+   "status": 200,
+   "jobs": 2,
+   "board_name": "ProFound",
+   "name": "Profound",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "prophecysimpledatalabs",
+   "status": 200,
+   "jobs": 5,
+   "board_name": "Prophecy",
+   "name": "Prophecy",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "proxima",
+   "status": 200,
+   "jobs": 7,
+   "name": "Proxima",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "quixel",
+   "status": 200,
+   "jobs": 1,
+   "name": "Quixel",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Ramboll3",
+   "status": 200,
+   "jobs": 100,
+   "name": "Ramboll3",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "rapp",
+   "status": 200,
+   "jobs": 7,
+   "board_name": "RAPP",
+   "name": "RAPP",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "rdsdigital",
+   "status": 200,
+   "jobs": 1,
+   "name": "RDS Digital",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "realitygames",
+   "status": 200,
+   "jobs": 1,
+   "name": "Reality Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "red6",
+   "status": 200,
+   "jobs": 16,
+   "name": "Red 6",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "RedPointLabs",
+   "status": 200,
+   "jobs": 5,
+   "name": "Red Point Labs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "resmed",
+   "status": 200,
+   "jobs": 2,
+   "name": "ResMed",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "rise",
+   "status": 200,
+   "jobs": 23,
+   "name": "Rise",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "rocketsciencegg",
+   "status": 200,
+   "jobs": 2,
+   "name": "Rocket Science",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "roofstacks",
+   "status": 200,
+   "jobs": 23,
+   "name": "Roof Stacks",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "rovio-2",
+   "status": 200,
+   "jobs": 5,
+   "name": "Rovio",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "rtbhouse",
+   "status": 200,
+   "jobs": 69,
+   "board_name": "RTB House",
+   "name": "RTB House",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "rubrik",
+   "status": 200,
+   "jobs": 155,
+   "board_name": "Rubrik Job Board",
+   "name": "Rubrik",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "rubyplay",
+   "status": 200,
+   "jobs": 1,
+   "name": "Ruby play",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "rushdownstudios",
+   "status": 200,
+   "jobs": 6,
+   "board_name": "Rushdown Studios",
+   "name": "Rush down studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "rushstreetinteractive",
+   "status": 200,
+   "jobs": 28,
+   "board_name": "Rush Street Interactive",
+   "name": "Rush street interactive",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "ryseupstudios",
+   "status": 200,
+   "jobs": 1,
+   "name": "Ryse up studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "saltxc",
+   "status": 200,
+   "jobs": 37,
+   "board_name": "SALT XC ",
+   "name": "Salt Xc",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "sandboxvr",
+   "status": 200,
+   "jobs": 46,
+   "name": "Sandbox VR",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "saviynt",
+   "status": 200,
+   "jobs": 66,
+   "name": "Saviynt",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "secondtalent",
+   "status": 200,
+   "jobs": 5,
+   "name": "Second Talent",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "seedify-fund",
+   "status": 200,
+   "jobs": 2,
+   "name": "Seedify",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "servicenow",
+   "status": 200,
+   "jobs": 100,
+   "name": "ServiceNow",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "shyftlabs",
+   "status": 200,
+   "jobs": 31,
+   "name": "ShyftLabs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "SilentGames",
+   "status": 200,
+   "jobs": 1,
+   "name": "Silent Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "skeletonkey",
+   "status": 200,
+   "jobs": 1,
+   "name": "Skeleton key",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "skillzinc",
+   "status": 200,
+   "jobs": 18,
+   "board_name": "Skillz Inc",
+   "name": "Skillz Inc.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "skydance",
+   "status": 200,
+   "jobs": 9,
+   "name": "Skydance",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "skyrocketventures",
+   "status": 200,
+   "jobs": 5,
+   "name": "Skyrocket Ventures",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "sleeper",
+   "status": 200,
+   "jobs": 7,
+   "name": "Sleeper",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "sonarsource",
+   "status": 200,
+   "jobs": 122,
+   "name": "Sonar Source",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "sonicwall",
+   "status": 200,
+   "jobs": 45,
+   "board_name": "SonicWall",
+   "name": "SonicWall",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "sonymusicentertainment",
+   "status": 200,
+   "jobs": 139,
+   "board_name": "Sony Music Global Job Board",
+   "name": "Sony Music Entertainment",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "sonypicturesanimation",
+   "status": 200,
+   "jobs": 5,
+   "board_name": "Sony Pictures Animation",
+   "name": "Sony pictures animation",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "Sorare",
+   "status": 200,
+   "jobs": 3,
+   "name": "Sorare",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "sourcegraph91",
+   "status": 200,
+   "jobs": 7,
+   "board_name": "Sourcegraph",
+   "name": "Sourcegraph Inc.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "speckle",
+   "status": 200,
+   "jobs": 2,
+   "name": "Speckle",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "spellbrush",
+   "status": 200,
+   "jobs": 11,
+   "name": "Spellbrush",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "sphereentertainment",
+   "status": 200,
+   "jobs": 20,
+   "board_name": "Sphere Entertainment Group, LLC",
+   "name": "Sphere Entertainment",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "springernature",
+   "status": 200,
+   "jobs": 6,
+   "name": "Springer Nature",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "spyke-games",
+   "status": 200,
+   "jobs": 11,
+   "name": "Spyke Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "starmarketing",
+   "status": 200,
+   "jobs": 1,
+   "name": "Star Marketing",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "Storygrounds",
+   "status": 200,
+   "jobs": 1,
+   "name": "Story Ground",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "sustainabletalent",
+   "status": 200,
+   "jobs": 34,
+   "board_name": "Sustainable Talent",
+   "name": "Sustainable Talent",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "symphonyai",
+   "status": 200,
+   "jobs": 1,
+   "name": "SymphonyAI",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "synergyresourcesolutions",
+   "status": 200,
+   "jobs": 1,
+   "name": "Synergy Resource Solutions",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "T-SystemsICTIndiaPvtLtd1",
+   "status": 200,
+   "jobs": 75,
+   "name": "T systems",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "talentsocio",
+   "status": 200,
+   "jobs": 1,
+   "name": "Talent Socio",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "talentsoftwareservices",
+   "status": 200,
+   "jobs": 6,
+   "name": "TALENT Software Services",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "talentxo",
+   "status": 200,
+   "jobs": 3,
+   "name": "TalentXO",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "tapblaze",
+   "status": 200,
+   "jobs": 2,
+   "name": "Tapblaze",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "tatsuworks",
+   "status": 200,
+   "jobs": 1,
+   "name": "Tatsu Works",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "teampumpkin",
+   "status": 200,
+   "jobs": 5,
+   "name": "Team Pumpkin",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "techholding",
+   "status": 200,
+   "jobs": 20,
+   "board_name": "Tech Holding",
+   "name": "Techholding",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "TechlandSA",
+   "status": 200,
+   "jobs": 28,
+   "name": "Techland",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "TechnorizenSoftwareSolution",
+   "status": 200,
+   "jobs": 9,
+   "name": "Technorizen Software Solution",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "techstargroup",
+   "status": 200,
+   "jobs": 5,
+   "name": "Techstar group",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "thatsnomoonentertainment",
+   "status": 200,
+   "jobs": 2,
+   "board_name": "That's No Moon Entertainment",
+   "name": "That's No Moon",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "believer",
+   "status": 200,
+   "jobs": 1,
+   "name": "The Believer Company",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "TheMill2",
+   "status": 200,
+   "jobs": 4,
+   "name": "The Mill",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "thinkacademyus",
+   "status": 200,
+   "jobs": 116,
+   "board_name": "Think Academy US",
+   "name": "Think Academy U.S",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "threattec",
+   "status": 200,
+   "jobs": 54,
+   "name": "Threat Tec",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "TonicDNA1",
+   "status": 200,
+   "jobs": 1,
+   "name": "Tonic DNA",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "toptal",
+   "status": 200,
+   "jobs": 28,
+   "name": "Toptal",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "trackvfx",
+   "status": 200,
+   "jobs": 8,
+   "name": "Track VFX",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "trilitech",
+   "status": 200,
+   "jobs": 2,
+   "name": "Trilitech",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "trovebrands",
+   "status": 200,
+   "jobs": 36,
+   "board_name": "Trove Brands",
+   "name": "Trove Brands",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "uber",
+   "status": 200,
+   "jobs": 1,
+   "name": "Uber",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Ubisoft2",
+   "status": 200,
+   "jobs": 100,
+   "name": "Ubisoft",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "citystateentertainmentllc",
+   "status": 200,
+   "jobs": 1,
+   "name": "Unchained Entertainment",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "unifynd",
+   "status": 200,
+   "jobs": 2,
+   "name": "Unifynd",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "unispace",
+   "status": 200,
+   "jobs": 8,
+   "board_name": "Unispace",
+   "name": "Unispace",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "UntoldTalesSA",
+   "status": 200,
+   "jobs": 1,
+   "name": "Untold Tales",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "ursusinc",
+   "status": 200,
+   "jobs": 1,
+   "name": "Ursus, Inc.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "valtech",
+   "status": 200,
+   "jobs": 114,
+   "board_name": "Valtech",
+   "name": "Valtech",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "vaynermedia",
+   "status": 200,
+   "jobs": 94,
+   "board_name": "VaynerMedia LLC",
+   "name": "VaynerMedia",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "Version1",
+   "status": 200,
+   "jobs": 100,
+   "name": "Version 1",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "vgw",
+   "status": 200,
+   "jobs": 2,
+   "board_name": "VGW",
+   "name": "VGW",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "vizexperts",
+   "status": 200,
+   "jobs": 19,
+   "name": "Viz Experts",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "Voldex",
+   "status": 200,
+   "jobs": 2,
+   "name": "Voldex",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "wargamingen",
+   "status": 200,
+   "jobs": 37,
+   "board_name": "Wargaming",
+   "name": "Wargaming",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "wayup",
+   "status": 200,
+   "jobs": 2,
+   "name": "WayUp",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "whizzhr",
+   "status": 200,
+   "jobs": 1,
+   "name": "Whizz HR",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "WildBrain",
+   "status": 200,
+   "jobs": 11,
+   "name": "WildBrain",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "wildlifestudios",
+   "status": 200,
+   "jobs": 15,
+   "board_name": "Wildlife Studios",
+   "name": "Wildlife Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "windranger",
+   "status": 200,
+   "jobs": 7,
+   "name": "Windranger",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "wongdoody",
+   "status": 200,
+   "jobs": 27,
+   "board_name": "WongDoody",
+   "name": "WongDoody",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "swissborg",
+   "status": 200,
+   "jobs": 8,
+   "name": "XBorg",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "xsolla",
+   "status": 200,
+   "jobs": 185,
+   "name": "Xsolla",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "YggdrasilSandbox",
+   "status": 200,
+   "jobs": 2,
+   "name": "Yggdrasil Gaming Ltd",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "yubo",
+   "status": 200,
+   "jobs": 6,
+   "name": "Yubo",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "zoominfo",
+   "status": 200,
+   "jobs": 97,
+   "board_name": "ZoomInfo Technologies LLC",
+   "name": "ZoomInfo",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "zuora",
+   "status": 200,
+   "jobs": 36,
+   "board_name": "Zuora",
+   "name": "Zuora",
+   "industry": null,
+   "adjacent": true
+  }
+ ],
+ "rejected": [
+  {
+   "ats": "greenhouse",
+   "slug": "1047games",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "1047 Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "a",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "A-Team",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "abstraction.games",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Abstraction Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "aofl",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Age of Learning",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "airshipsyndicate",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Airship Syndicate",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "alictus",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Alictus",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "anchorpoint",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Anchor Point Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "animallogicsydneyhybridusdam",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Animal logic",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "apollographql",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Apollo",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "appliedintuition",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Applied Intuition",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "archetypeentertainment",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Archetype Entertainment",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "argus",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Argus",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "automatainc",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "ATMTA, Inc.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "aviator",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Aviator",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "axiomzen",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Axiom Zen",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "badbrain",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Bad Brain Game Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "badrobotgames",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Bad Robot Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "bardelentertainment",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Bardel Entertainment",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "beautifulai",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Beautiful.ai",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "beyond-creative",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Beyond Creative",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "beyondsports",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Beyond Sports",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "biggergames",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Bigger Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "biltrewards",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Blitre Rewards",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "blitzapp",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Blitz app",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "bloxd",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Bloxd",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "blur",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Blur Studio",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "boomentertainment",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Boom Entertainment",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "bonfirestudios",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Born Fire Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "bseglobal",
+   "status": 200,
+   "jobs": 31,
+   "board_name": "Brooklyn Sports & Entertainment",
+   "reason": "board name 'Brooklyn Sports & Entertainment' doesn't match 'BSE Global'",
+   "name": "BSE Global",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "bulletfarm",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Bullet Farm",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "113134",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Cast and Crew",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "ClosingTheory",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Closing Theory",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "codecombat",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "CodeCombat",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "codewaystudios",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Codeway Studios",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "Convai-technologies-inc",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Convai Technologies",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "creadits",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Creadits",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "curvegames",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Curve Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "daredrop",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Dare Drop -    -----",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "demiurgestudios",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Demiurge Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "disruptivegames",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Disruptive Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "Doodles",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Doodles",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "dpsgames",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "DPS Games Studio",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "dragonarmy",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Dragon Army",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "dreamsports",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Dream Sports",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "droit",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Droit",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "dynastystudios",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Dynasty Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "edglrd",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Edglrd",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "ElodieGames",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Elodie Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "engagedmd",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "EngagedMD",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "everstreamanalytics",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Everstream Analytics",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "Expopulus",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Ex Populus",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "scanlinevfx",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Eyeline",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "fantasticpixelcastle",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Fantastic Pixel Castle",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "fiddler-ai",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Fiddler AI",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "finmo",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Finmo",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "firewalk",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Firewalk Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "forge",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Forge",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "forte",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Forte",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "frgjobs",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Free Range Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "FundamentallyGames",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Fundamentally Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "gametime",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Gametime",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "genies",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Genies",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "genpopinteractiveinc",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Genpop interactive",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "golfscopeinc",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Golfscopeinc",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "gomotive",
+   "status": 200,
+   "jobs": 172,
+   "board_name": "Motive",
+   "reason": "board name 'Motive' doesn't match 'GoMotive'",
+   "name": "GoMotive",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "gravitywell",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Gravity Well",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "greenwaveradios",
+   "status": 200,
+   "jobs": 11,
+   "board_name": " GreenWave Radios™",
+   "reason": "board name ' GreenWave Radios™' doesn't match 'GreenWave™ Radios'",
+   "name": "GreenWave™ Radios",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "guerrilla",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Guerrilla",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "hardsuitlabs",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Hardsuit Labs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "harmonic",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Harmonic",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "hbstudios",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "HB studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "hdworks",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Head Digital Works",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "HeartMachine",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Heart Machine",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "hirezstudios",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Hi-Rez Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "highdive",
+   "status": 200,
+   "jobs": 9,
+   "board_name": "Highdive",
+   "reason": "board name 'Highdive' doesn't match 'High Drive'",
+   "name": "High Drive",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "hologram",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Hologram Labs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "hopelab",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Hope Lab",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "hypixelstudios",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Hypixel Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "illumination",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Illumination",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "imaginitesoft",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Imaginite soft studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "improbable",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Improbable",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "inflexion",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Inflexion games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "ingenuitystudios",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Ingenuity Studios, LLC",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "inworldai",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Inworld AI",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "IronbellyStudios",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Ironbelly Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "jackalypticgames",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Jackalyptic Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "jagex",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Jagex",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "jarofsparks",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Jar of sparks",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "journee",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Journee",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "kayak",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Kayak",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "klanggames",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Klang Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "kyruushealth",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Kyruus Health",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "LegacyLabs",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Legacy Labs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "levelex",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Level Ex",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "limitbreak",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Limit Break",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "loaded",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Loaded",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "lumapictures",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Luma Pictures",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "LunchboxEntertainment",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Lunchbox Entertainment",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "madbox",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Madbox",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "magicgames",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Magic games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "ManticoreGames",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Manticore Games Inc.",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "midsummerstudios",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Mid summer studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "mona",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Mona",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "monomipark",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Monomi Park",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "monsters",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Monsters",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "mythicalgames",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Mythical Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "dmarket",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Mythical Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "neonkoi",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Neon Koi",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "neverforgetgames",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Never forget games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "niantic",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Niantic",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "nielsen",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Nielsen Holdings",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "nightdivestudios",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Night Dive Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "nimblegiant",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Nimble Giant Entertainment -------",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "noice.com",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Noice",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "nothing",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Nothing",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "OdysseyInteractive",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Odyssey Interactive",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "ocp",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Omni Creator Products",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "onistudios",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Oni studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "optimism",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Optimism",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "othersideentertainment",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Otherside Entertainment",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "pahdo",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Pahdo Labs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "paradoxum-gg",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Paradoxum Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "parity",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Parity",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "peoplefun",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "PeopleFun",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "pika",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Pika",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "plailabsinc",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Plai Labs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "playgiginc",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "PlayGig",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "playgig",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "PlayGig",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "playstationlondonstudio",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "PlayStation London Studio",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "playvs",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "PlayVS",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "poppulo",
+   "status": 200,
+   "jobs": 10,
+   "board_name": "Poppulo",
+   "reason": "board name 'Poppulo' doesn't match 'Populla'",
+   "name": "Populla",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "pragmaplatform",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Pragma",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "prime",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Prime",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "prodigyeducation",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Prodigy Education",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "proofofplay",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Proof of Play",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "proofofplay",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Proof of Play",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "pubgemea",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Pubg Emea",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "quizizz",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Quizizz",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "rackspace",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Rackspace Technology",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "ramenvr",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "ramen VR",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "readyplayerme",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Ready Player Me",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "RecRoom",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Rec Room",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "regressiongg",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Regression Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "reli-sh",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Relish Studios",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "remedyentertainment",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Remedy Entertainment Plc",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "rosettagaming",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Rosetta gaming",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "sagent",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Sagent",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "savagegamestudios",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Savage Game Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "scopear",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Scope AR",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "seriesai",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Series Ai",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "shrapnelstudio",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Shrapnel Studio",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "SignalSpaceLab",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Signal Space Lab",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "softsuavetechnologies",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Soft Suave Technologies",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "spliced",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Spliced Inc.",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "sporty",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Sporty",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "starkflow",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Starkflow",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "startplaying",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "StartPlaying",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "Stoic",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Stoic Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "pubgsanramon",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Striking Distance Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "sumo-digital",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Sumo Digital",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "superduper",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Super Duper",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "tminuszero",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "T-Minus Zero Entertainment",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "TechnicolorGroup",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Technicolor Creative Studios",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "TechnicolorCreativeStudios",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Technicolor Creative Studios",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "tempo",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Tempo",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "tempo",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Tempo",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "thatgamecompany",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "The Game Company",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "thirdwavelabs",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Thirdwavelabs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "threespacelab",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Three space lab",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "titmouse",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Titmouse",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "tornbannerstudios",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Torn banner studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "traderepublic",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Trade Republic",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "trailerpark",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Trailer park group",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "Treasure",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Treasure",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "ultra",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Ultra",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "umanaiainteractive",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Umanaia Interactive",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "UnbrokenStudios",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Unbroken Studios",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "undeadlabsllc",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Undead Labs",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "universe-group",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Universe Group",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "useinsider",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "USE Insider",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "ushur",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Ushur",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "ustwogames",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Ustwo games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "ValkyrieEntertainment",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Valkyrie Entertainment",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "vectornorth",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Vector North",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "viacom18",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Viacom 18",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "volka",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Volka Games",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "volleythat",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Volly That",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "wargamingwelcometothejungle",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Wargaming",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "WayForwardTechnologies",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "WayForward Technologies",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "wfclainc",
+   "status": 200,
+   "jobs": 4,
+   "board_name": "Angel City ",
+   "reason": "board name 'Angel City ' doesn't match 'WFC LA Inc'",
+   "name": "WFC LA Inc",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "smartrecruiters",
+   "slug": "KeywordsAustralia",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Wicked Workshop",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "lever",
+   "slug": "wildlight",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Wildlight",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "wizardsofthecoast",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Wizards of the Coast",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "wolfjawstudios",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Wolfjaw studios -----",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "lever",
+   "slug": "worldmakers",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "World Makers",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "ashby",
+   "slug": "Worlds",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Worlds",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "worldsuntold",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Worlds Untold",
+   "industry": null,
+   "adjacent": false
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "xgames",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "X games",
+   "industry": null,
+   "adjacent": true
+  },
+  {
+   "ats": "ashby",
+   "slug": "Yellow3d",
+   "status": 404,
+   "reason": "HTTP 404",
+   "name": "Yellow 3D",
+   "industry": null,
+   "adjacent": true
+  }
+ ]
+}
