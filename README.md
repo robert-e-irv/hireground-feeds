@@ -9,7 +9,9 @@ Every hour GitHub Actions refreshes the job feeds that are due (games studios an
 | Path | What |
 |---|---|
 | `site/index.html` | The app. Its `// <pure>` block is the shared feed parser |
-| `pipeline/export.mjs` | Builds `site/jobs.json` from the latest snapshot |
+| `pipeline/export.mjs` | Builds `site/jobs.json` from the latest snapshot, and tags each posting with its occupation, level, licences and remote limits (`site/relevance.js`) |
+| `site/relevance.js` | Relevance rules: reads a resume into a profile the person can correct, and decides which jobs to show them. Used by the page, the pipeline and the tests |
+| `site/onet_dict.json` | Job-title dictionary (O*NET 30.1, CC BY 4.0). Rebuild with `node pipeline/build_onet.mjs` after editing its title lists or updating `data/onet/` |
 | `recorder/employers.py` | Non-games employers (health, finance, retail, education, nonprofit, tech) on Greenhouse, Lever, Ashby and SmartRecruiters. Candidates only |
 | `recorder/import_openjobs.py` | Imports games-company boards from [Outscal's OpenJobs](https://github.com/outscal/OpenJobs) list (MIT, the data behind ASGC's jobs workbook) into `recorder/studio_candidates.json`. Candidates only |
 | `recorder/sources.py` `cadence_h` | How often each kind of board is refreshed (`CADENCE_H`, `FAST_CATEGORIES`) |
@@ -67,5 +69,6 @@ python tests/test_cache.py
 python tests/test_openjobs.py
 python tests/test_employers.py
 node tests/test_app_logic.mjs
+node tests/test_relevance.mjs
 node tests/test_export.mjs
 ```

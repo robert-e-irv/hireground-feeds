@@ -74,6 +74,10 @@ jobs:
         with:
           node-version: "24"
 
+      # The relevance rules every posting is tagged with below. A broken rule set never ships.
+      - name: Test relevance rules
+        run: node tests/test_relevance.mjs
+
       # Build site/jobs.json with the app's own parser (redistributable sources only).
       # Exits non-zero if over half the feeds failed, so a broken run never replaces a good site.
       - name: Build jobs.json
