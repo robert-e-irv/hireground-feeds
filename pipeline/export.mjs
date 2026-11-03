@@ -7,14 +7,18 @@
 // Only sources marked redistributable (recorder/sources.py) are published.
 // first-seen dates persist in data/first_seen.json.gz (powers "new since last visit").
 //
-// Usage: node pipeline/export.mjs [--data data] [--site site]
+// With --cache DIR (production, see recorder/record.py): boards that answered "not modified" or were
+// not due this run are read from the body cache, so an hourly games-only refresh still publishes
+// every board.
+//
+// Usage: node pipeline/export.mjs [--data data] [--site site] [--cache cache]
 import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
 import vm from "node:vm";
 
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
-const DATA = arg("--data", "data"), SITE = arg("--site", "site");
+const DATA = arg("--data", "data"), SITE = arg("--site", "site"), CACHE = arg("--cache", null);
 // 1,500 chars is plenty for resume matching. Non-games employer boards roughly triple the job count,
 // so this keeps jobs.json light enough for phones.
 const DESC_MAX = 1500;
@@ -70,13 +74,17 @@ for (const r of recs) {
   feeds.push(feed);
   if (!r.ok) { feed.error = r.error || ("HTTP " + r.status); continue; }
   if (r.schema_error) { feed.error = "feed format changed: " + r.schema_error; continue; }
-  const pages = fs.existsSync(rawDir)
-    ? fs.readdirSync(rawDir).filter(f => f === safe(r.source) + ".body.gz" || (f.startsWith(safe(r.source) + ".p") && f.endsWith(".body.gz"))).sort()
+  const pagesIn = dir => fs.existsSync(dir)
+    ? fs.readdirSync(dir).filter(f => f === safe(r.source) + ".body.gz" || (f.startsWith(safe(r.source) + ".p") && f.endsWith(".body.gz"))).sort()
     : [];
+  // Fresh 200 bodies are in this run's raw dir; 304 and carried boards live in the cache.
+  let bodyDir = rawDir, pages = (r.carried || r.not_modified) ? [] : pagesIn(rawDir);
+  if (!pages.length && CACHE) { bodyDir = CACHE; pages = pagesIn(CACHE); }
   if (!pages.length) { feed.error = "raw body missing"; continue; }
+  if (r.carried) feed.checkedAt = r.at;
   try {
     for (const p of pages) {
-      let text = zlib.gunzipSync(fs.readFileSync(path.join(rawDir, p))).toString("utf8");
+      let text = zlib.gunzipSync(fs.readFileSync(path.join(bodyDir, p))).toString("utf8");
       if (r.kind === "smartrecruiters") {           // its API omits a readable company name
         const d = JSON.parse(text); d.jfCompany = r.name; d.jfSlug = r.source.split(":")[1]; text = JSON.stringify(d);
       }
@@ -110,7 +118,9 @@ for (const [k, v] of Object.entries(firstSeen)) if (!live.has(k) && Date.parse(v
 const okCount = feeds.filter(f => f.ok).length;
 // Health gate below: a collapsed run exits non-zero so the deploy step is skipped
 const prevPath = path.join(SITE, "jobs.json");
-const bundle = { updatedAt: recs[0].at || now, run: runId, feeds, jobs,
+// Newest check of any board (carried boards keep the time they were last checked).
+const updatedAt = recs.filter(r => !r.carried).map(r => r.at).filter(Boolean).sort().pop() || recs[0].at || now;
+const bundle = { updatedAt, run: runId, feeds, jobs,
                  note: skippedTerms + " sources are measured but not published (terms)" };
 fs.mkdirSync(SITE, { recursive: true });
 fs.writeFileSync(prevPath, JSON.stringify(bundle));

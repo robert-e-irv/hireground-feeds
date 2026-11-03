@@ -1,12 +1,18 @@
 name: Refresh jobs and publish site
 
-# Every 6 hours (off the hour, so GitHub's top-of-hour queue doesn't delay it).
-# 6-hourly, not daily, on purpose: we can only learn whether daily is fast
-# enough by sampling faster than daily.
+# Hourly (off the hour, so GitHub's top-of-hour queue doesn't delay it). Each run only fetches the
+# boards that are due (recorder/sources.py cadence_h): games studios and publishers every hour,
+# everything else every 6 hours. The rest is reused from a body cache kept between runs, and every
+# fetch asks "changed since last time?" so unchanged boards cost a few hundred bytes.
 on:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
+    inputs:
+      full:
+        description: "Refresh every board now, not just the ones that are due"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -40,12 +46,29 @@ jobs:
       - name: Verify imported studio boards
         run: python recorder/verify_boards.py --set studios --max-age-days 7
 
+      # Latest body + validators for every board, carried between runs. Each run saves a new
+      # entry (cache keys are immutable); GitHub evicts old ones. A miss just means a full refresh.
+      - name: Restore body cache
+        uses: actions/cache/restore@v4
+        with:
+          path: cache
+          key: bodies-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: bodies-
+
       - name: Record snapshot
         id: rec
         env:
           ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
           ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
-        run: python recorder/record.py --root data
+          FULL: ${{ github.event_name == 'workflow_dispatch' && inputs.full && '--all' || '' }}
+        run: python recorder/record.py --root data --cache cache $FULL
+
+      - name: Save body cache
+        if: always() && steps.rec.outcome != 'skipped'
+        uses: actions/cache/save@v4
+        with:
+          path: cache
+          key: bodies-${{ github.run_id }}-${{ github.run_attempt }}
 
       - uses: actions/setup-node@v4
         with:
@@ -55,7 +78,7 @@ jobs:
       # Exits non-zero if over half the feeds failed, so a broken run never replaces a good site.
       - name: Build jobs.json
         id: export
-        run: node pipeline/export.mjs --data data --site site
+        run: node pipeline/export.mjs --data data --site site --cache cache
 
       - name: Upload site for Pages
         if: steps.export.outcome == 'success'
@@ -63,13 +86,13 @@ jobs:
         with:
           path: site
 
-      - name: Upload raw bodies (kept 30 days, not committed)
+      - name: Upload raw bodies (kept 14 days, not committed)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: raw-${{ github.run_id }}
           path: data/raw/
-          retention-days: 30
+          retention-days: 14
           if-no-files-found: ignore
 
       - name: Commit index + run log

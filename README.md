@@ -2,7 +2,7 @@
 
 **Live app:** https://robert-e-irv.github.io/hireground-feeds/
 
-Every 6 hours GitHub Actions downloads every job feed, builds `jobs.json` with the app's own parser (only sources whose terms allow republishing), and redeploys the site. Visitors just open the URL. Resumes are read and ranked in the visitor's browser and never uploaded.
+Every hour GitHub Actions refreshes the job feeds that are due (games studios and publishers hourly, everything else every 6 hours), builds `jobs.json` with the app's own parser (only sources whose terms allow republishing), and redeploys the site. A body cache carried between runs supplies the boards that weren't due, and every fetch asks "changed since last time?" so unchanged boards cost almost nothing. To refresh every board at once: Actions tab → *Refresh jobs and publish site* → **Run workflow** → tick **full**. Visitors just open the URL. Resumes are read and ranked in the visitor's browser and never uploaded.
 
 | Path | What |
 |---|---|
@@ -10,6 +10,7 @@ Every 6 hours GitHub Actions downloads every job feed, builds `jobs.json` with t
 | `pipeline/export.mjs` | Builds `site/jobs.json` from the latest snapshot |
 | `recorder/employers.py` | Non-games employers (health, finance, retail, education, nonprofit, tech) on Greenhouse, Lever, Ashby and SmartRecruiters. Candidates only |
 | `recorder/import_openjobs.py` | Imports games-company boards from [Outscal's OpenJobs](https://github.com/outscal/OpenJobs) list (MIT, the data behind ASGC's jobs workbook) into `recorder/studio_candidates.json`. Candidates only |
+| `recorder/sources.py` `cadence_h` | How often each kind of board is refreshed (`CADENCE_H`, `FAST_CATEGORIES`) |
 | `recorder/verify_boards.py` | Weekly check in Actions: keeps boards that answer with open jobs and (Greenhouse) whose board name matches. Writes `recorder/employers_verified.json`, and with `--set studios` writes `recorder/studios_verified.json` |
 
 ### Refreshing the OpenJobs studio list
@@ -60,6 +61,8 @@ Open `report/report.md`. It includes scheduler reliability, per-source failure r
 ```bash
 python recorder/record.py --root data --only greenhouse:riotgames,lever:skyboxlabs
 python tests/test_pipeline.py
+python tests/test_cache.py
+python tests/test_openjobs.py
 python tests/test_employers.py
 node tests/test_app_logic.mjs
 node tests/test_export.mjs

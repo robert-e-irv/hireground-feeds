@@ -25,6 +25,7 @@ import analyze  # noqa: E402
 import parsers  # noqa: E402
 
 record.HOST_GAP = 0.0
+analyze.SCHEDULE_EVERY_H = 6   # this test simulates the original 6-hourly study schedule
 STATE = {"run": 0, "flaky_hits": 0}
 T0 = datetime(2026, 11, 2, 0, 17, tzinfo=timezone.utc)
 

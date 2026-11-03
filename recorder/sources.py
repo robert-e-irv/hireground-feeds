@@ -113,6 +113,17 @@ ATS_URL = {
 }
 
 
+# How often each kind of board is refreshed (hours). The workflow runs hourly; with a body cache
+# (record.py --cache) each run only fetches the boards that are due and reuses the rest.
+# Games boards are cheap (~10% of bytes) and they're the core audience, so they go first.
+FAST_CATEGORIES = {"studio", "publisher", "adjacent", "platform"}
+CADENCE_H = {"fast": 1, "default": 6}
+
+
+def cadence_h(src):
+    return CADENCE_H["fast"] if src.get("category") in FAST_CATEGORIES else CADENCE_H["default"]
+
+
 def verified_employers(path=None):
     """Non-games employer boards that passed verify_boards.py (see employers.py). Empty until verified."""
     import json
