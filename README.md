@@ -2,7 +2,9 @@
 
 **Live app:** https://robert-e-irv.github.io/hireground-feeds/
 
-Every hour GitHub Actions refreshes the job feeds that are due (games studios and publishers hourly, everything else every 6 hours), builds `jobs.json` with the app's own parser (only sources whose terms allow republishing), and redeploys the site. A body cache carried between runs supplies the boards that weren't due, and every fetch asks "changed since last time?" so unchanged boards cost almost nothing. To refresh every board at once: Actions tab → *Refresh jobs and publish site* → **Run workflow** → tick **full**. Visitors just open the URL. Resumes are read and ranked in the visitor's browser and never uploaded.
+Every hour GitHub Actions refreshes the job feeds that are due (games studios and publishers hourly, everything else every 6 hours), builds `jobs.json` with the app's own parser (only sources whose terms allow republishing), and redeploys the site. A body cache carried between runs supplies the boards that weren't due, and every fetch asks "changed since last time?" so unchanged boards cost almost nothing. To refresh every board at once: Actions tab → *Refresh jobs and publish site* → **Run workflow** → tick **full**.
+
+**Page-only changes publish themselves.** Any push to `main` that changes `site/` runs *Publish site only*: it tests the app logic, waits for any running refresh to finish, and redeploys the page with the jobs list that's already live. About a minute, no feed refresh. You can also run it by hand from the Actions tab. Visitors just open the URL. Resumes are read and ranked in the visitor's browser and never uploaded.
 
 | Path | What |
 |---|---|

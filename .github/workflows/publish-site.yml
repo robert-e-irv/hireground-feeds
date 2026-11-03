@@ -1,0 +1,82 @@
+name: Publish site only
+
+# Fast path for layout and functionality changes: redeploys site/ with the jobs list that is
+# already live. No feed refresh, so it finishes in about a minute instead of waiting for the
+# hourly "Refresh jobs and publish site" run.
+#
+# Runs on its own when a push to main changes anything in site/ (the refresh bot's commits only
+# touch data/, so they never trigger it). Also runnable by hand: Actions tab -> Publish site only.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/publish-site.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read     # to see whether a refresh run is mid-flight
+
+# Two quick pushes in a row: only the newest needs to go out.
+concurrency:
+  group: publish-site
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Same app-logic test the refresh relies on; a broken page never ships.
+      - name: Test app logic
+        run: node tests/test_app_logic.mjs
+
+      # A refresh that started before this push checked out the OLD page and would redeploy it a few
+      # minutes after us. Let it finish first, then publish on top (it waits at most ~20 minutes).
+      - name: Wait for any running refresh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 40); do
+            n=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow snapshot.yml --status in_progress --json databaseId --jq length)
+            [ "$n" = "0" ] && exit 0
+            echo "A job refresh is running; waiting so it can't overwrite this publish ($i/40)"
+            sleep 30
+          done
+          echo "::warning::Refresh still running after 20 minutes; publishing anyway. The next hourly refresh will republish this page."
+
+      # jobs.json isn't in git (the refresh builds it), so take the copy that's live right now.
+      - name: Fetch the live jobs list
+        run: |
+          owner="${GITHUB_REPOSITORY%%/*}"; repo="${GITHUB_REPOSITORY#*/}"
+          url="https://${owner,,}.github.io/${repo}/jobs.json?publish=${GITHUB_RUN_ID}"
+          curl -fsSL --retry 3 --retry-delay 5 -m 120 "$url" -o site/jobs.json
+          node -e '
+            const d = JSON.parse(require("fs").readFileSync("site/jobs.json", "utf8"));
+            if (!Array.isArray(d.jobs) || !d.jobs.length) { console.error("Live jobs.json has no jobs; not publishing."); process.exit(1); }
+            console.log(JSON.stringify({ jobs: d.jobs.length, feeds: (d.feeds || []).length, updatedAt: d.updatedAt }));'
+
+      - name: Upload site for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
