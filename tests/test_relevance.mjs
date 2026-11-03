@@ -81,7 +81,14 @@ const ap = R.profileFromResume("Experience\nSenior Accountant, Acme (2018 - Pres
 const acc = run(ap, [job("m", "Manager, Lease Accounting"), job("u", "Technical Accounting Policy Manager"), job("c", "Compliance Analyst")]);
 assert.deepEqual(acc.list.map(j => j.id).sort(), ["m", "u"], JSON.stringify(acc.hidden));
 
-// 8. Freshness orders, it doesn't gate; a repost keeps its original age.
+// 8. A UX designer is not shown game design (O*NET files both under 15-1255); a nurse still sees critical care nursing.
+const ux = R.profileFromResume("Experience\nSenior Product Designer, Acme (2019 - Present)", dict, 2026);
+const uxr = run(ux, [job("g", "Senior Game Designer", { gameStudio: true }), job("p", "Lead Product Designer")]);
+assert.deepEqual(uxr.list.map(j => j.id), ["p"], JSON.stringify(uxr.hidden));
+assert.equal(R.matchTitle("Critical Care Nurse", dict).code.slice(0, 7), "29-1141");
+assert.equal(run(rp, [job("cc", "Critical Care Nurse")]).list.length, 1, "critical care nursing is nursing");
+
+// 9. Freshness orders, it doesn't gate; a repost keeps its original age.
 const p3 = run(rp, [job("old", "Registered Nurse", { posted: NOW - 90 * day }), job("new", "Registered Nurse - Days", { posted: NOW - 2 * day })]);
 assert.deepEqual(p3.list.map(j => j.id), ["new", "old"]);
 console.log("ALL PASSED");

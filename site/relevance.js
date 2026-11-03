@@ -292,8 +292,14 @@ function occScore(j, p, dict) {
   if (same(oc[0])) return { s: j.ocf >= 0.7 ? 1 : j.ocf >= 0.5 ? 0.85 : 0.6, why: "same" };
   // Same detailed SOC, one direction only: "Registered Nurses" (.00) includes "Critical Care Nurses" (.03),
   // but "Video Game Designers" (.01) does not include "Web and Digital Interface Designers" (.00).
+  // O*NET's .00 is not always the parent ("Web and Digital Interface Designers" is a sibling of "Video Game Designers"),
+  // so the specialisation must also share the field's own distinctive word ("nurse" yes, generic "designer" no).
   const Tsoc = new Set(Array.from(T).filter(c => /\.00$/.test(c)).map(soc));
-  if (!/^hg-/.test(oc[0]) && !/\.00$/.test(oc[0]) && Tsoc.has(soc(oc[0]))) return { s: 0.7, why: "close" };
+  if (!/^hg-/.test(oc[0]) && !/\.00$/.test(oc[0]) && Tsoc.has(soc(oc[0]))) {
+    const words = c => normTitle(occName(c, dict)).split(" ").filter(w => w.length >= 4 && !GENERIC_ONE.has(w) && !BROAD.has(w) && w !== "and");
+    const parent = Array.from(T).find(c => soc(c) === soc(oc[0]));
+    if (parent && words(oc[0]).some(w => words(parent).indexOf(w) >= 0)) return { s: 0.7, why: "close" };
+  }
   // Managing or leading your own field ("Manager, Lease Accounting", "Nurse Manager"): a management occupation
   // whose title names your field.
   if (/^11-/.test(oc[0]) && hasFieldWord(j.title, stems)) return { s: 0.7, why: "manage" };
