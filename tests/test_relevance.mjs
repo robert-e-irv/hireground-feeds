@@ -63,11 +63,11 @@ assert.equal(nurse.hidden.cred, 1, "a role needing a clearance the person doesn'
 const gd = run(gp, [job("1", "Senior Game Designer", { gameStudio: true }), job("2", "Associate Game Designer", { gameStudio: true }),
   job("3", "Senior UX Designer"), job("4", "QA Tester", { gameStudio: true }), job("5", "Game Director", { gameStudio: true }),
   job("6", "Senior Game Designer", { gameStudio: true, rm: "remote", description: "You must reside in the United States." }),
-  job("8", "Design Director", { gameStudio: true })], "Canada");
-assert.deepEqual(gd.list.map(j => j.id), ["1"], "only the senior game design role in reach: " + JSON.stringify(gd.hidden));
+  job("8", "Design Director", { gameStudio: true }), job("9", "Chief Design Officer", { gameStudio: true })], "Canada");
+assert.deepEqual(gd.list.map(j => j.id).sort(), ["1", "8"], "senior and director-level game design are in reach for a lead: " + JSON.stringify(gd.hidden));
 assert.equal(gd.hidden.junior, 1, "Associate is below a lead's range");
 assert.equal(gd.hidden.field, 3, "UX design, QA and game direction (production) are other fields");
-assert.equal(gd.hidden.senior, 1, "Design Director is above a lead's default range");
+assert.equal(gd.hidden.senior, 1, "an executive role is above a lead's default range (one step down, two up)");
 assert.equal(gd.hidden.where, 1, "a US-only remote role is hidden for someone in Canada");
 
 // 6. The person's corrections win: add a field, widen the level, games only.
@@ -76,7 +76,12 @@ const gd2 = run(ep, [job("5", "Game Director", { gameStudio: true }), job("7", "
 assert.deepEqual(gd2.list.map(j => j.id), ["5"]);
 assert.equal(gd2.hidden.domain, 1, "a producer outside games is hidden when the person asks for games only");
 
-// 7. Freshness orders, it doesn't gate; a repost keeps its original age.
+// 7. Your own field, managed: titles naming your field pass even when O*NET files them elsewhere.
+const ap = R.profileFromResume("Experience\nSenior Accountant, Acme (2018 - Present)", dict, 2026);
+const acc = run(ap, [job("m", "Manager, Lease Accounting"), job("u", "Technical Accounting Policy Manager"), job("c", "Compliance Analyst")]);
+assert.deepEqual(acc.list.map(j => j.id).sort(), ["m", "u"], JSON.stringify(acc.hidden));
+
+// 8. Freshness orders, it doesn't gate; a repost keeps its original age.
 const p3 = run(rp, [job("old", "Registered Nurse", { posted: NOW - 90 * day }), job("new", "Registered Nurse - Days", { posted: NOW - 2 * day })]);
 assert.deepEqual(p3.list.map(j => j.id), ["new", "old"]);
 console.log("ALL PASSED");

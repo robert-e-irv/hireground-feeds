@@ -154,14 +154,15 @@ const GAME_RE = /\b(games?|gaming|gameplay|game ?dev\w*|live ?ops|esports?|unity
 const NOT_GAME_DESIGN = /\b(ux|ui|graphic|product|visual|brand|interior|fashion|motion|web|marketing|instructional|industrial|hardware|mechanical|electrical|circuit|pcb|asic|chip|cad|landscape|floral|jewelry)\b/;
 function enrichJob(j, dict) {
   let m = matchTitle(j.title, dict);
-  const isGame = !!j.gameStudio || GAME_RE.test((j.title || "") + " " + (j.dept || ""));
+  const isGame = !!j.gameStudio || GAME_RE.test((j.title || "") + " " + (j.dept || "")) ||
+    (String(j.description || "").slice(0, 3000).match(/\b(games?|gaming|gameplay|players?)\b/gi) || []).length >= 4;
   // Inside games, design and production titles mean game design and game production, whatever O*NET would guess
   // ("Technical Designer" at a studio is not a drafter; "Senior Match-3 Designer" is a game designer).
   if (isGame) {
     const t = normTitle(j.title);
     if (/\bdesign(er)?\b/.test(t) && !NOT_GAME_DESIGN.test(t) && !/\b(audio|sound|presentation|asset|investment)\b/.test(t) && (!m || m.conf < 0.9 || /designer$/.test(m.phrase)))
       m = { code: "15-1255.01", alts: [], conf: 0.9, phrase: "game design" };
-    else if (/\b(produc(er|tion)|game (lead|manager|director)|development director)\b/.test(t) && (!m || m.conf < 0.9))
+    else if (/\b(produc(er|tion)|game (lead|manager|director)|development director|release manager|(project|program) manager)\b/.test(t) && (!m || m.conf < 0.9 || /^(15|13)-/.test(m.code)))
       m = { code: "27-2012.00", alts: [], conf: 0.9, phrase: "game production" };
   }
   // Some fields only exist inside one industry: a "content creator" at a voice-AI company is not a game designer.
@@ -229,7 +230,8 @@ function profileFromResume(text, dict, nowYear) {
   return {
     targets, past, suggest, phrases: current ? [current.phrase] : [],
     domain: (String(text).match(GAME_WORDS) || []).length >= 4 ? "games" : "",
-    level, levelMin: Math.max(1, level - 1), levelMax: Math.min(7, level + 1),
+    // Default range: one step down, two up (Senior Accountant -> Accounting Manager is a normal next move).
+    level, levelMin: Math.max(1, level - 1), levelMax: Math.min(7, level + 2),
     years: current ? yearsIn(current.codes) : 0, totalYears,
     creds: credentialsHeld(text), roles, words: String(text || ""),
   };
@@ -259,13 +261,30 @@ const occName = (c, dict) => (dict.occ[c] || [c])[0];
 // ---------- matching
 const eqOf = (c, dict) => (dict.occ[c] && dict.occ[c][3] === "eq") ? dict.occ[c][2] : c;
 const soc = c => c.slice(0, 7);   // detailed SOC, without O*NET's .01 split
+// The person's own field words: distinctive words of their job phrase, plus the field's other form
+// ("accountant" -> "accounting", "nurse" -> "nursing"). Exact words, not stems: "mechanic" must not match "mechanical".
+// Broad words (service, sales, product...) and generic job nouns (manager, engineer...) never count.
+const FIELD_FORMS = { accountant: ["accounting"], nurse: ["nursing"], lawyer: ["legal"], attorney: ["legal"], counsel: ["legal"],
+  paralegal: ["legal"], recruiter: ["recruiting", "talent acquisition"], teacher: ["teaching"], pharmacist: ["pharmacy"],
+  auditor: ["audit"], electrician: ["electrical"], plumber: ["plumbing"], chef: ["culinary", "kitchen"], cook: ["culinary", "kitchen"],
+  producer: ["production"], writer: ["writing"], editor: ["editorial"], therapist: ["therapy"], payroll: ["payroll"] };
+const BROAD = new Set("service services customer client sales operation operations business product project program account support quality system systems technical digital general office professional senior junior staff lead chief head assistant associate global regional national".split(" "));
+function fieldWords(p) {
+  const out = [];
+  for (const ph of p.phrases || []) for (const w of String(ph).split(" "))
+    if (w.length >= 4 && !GENERIC_ONE.has(w) && !BROAD.has(w)) out.push(w, ...(FIELD_FORMS[w] || []));
+  return uniq(out);
+}
+function hasFieldWord(title, words) {
+  if (!words.length) return false;
+  const t = " " + normTitle(title) + " ";
+  return words.some(w => t.indexOf(" " + w + " ") >= 0);
+}
 function occScore(j, p, dict) {
-  const oc = j.oc || [];
+  const oc = j.oc || [], stems = p._fw || (p._fw = fieldWords(p));
   if (!oc.length) {
-    // Title O*NET can't read: accept it only if it contains the person's own job phrase ("staff accountant").
-    const t = " " + normTitle(j.title) + " ";
-    if ((p.phrases || []).some(ph => ph && (ph.indexOf(" ") > 0 || !GENERIC_ONE.has(ph)) && t.indexOf(" " + ph + " ") >= 0)) return { s: 0.6, why: "words" };
-    return { s: 0, why: "unknown" };
+    // A title O*NET can't read: accept it only if it names the person's own field ("Technical Accounting Policy Manager").
+    return hasFieldWord(j.title, stems) ? { s: 0.6, why: "words" } : { s: 0, why: "unknown" };
   }
   if ((p.block || []).indexOf(oc[0]) >= 0) return { s: 0, why: "blocked" };
   const T = new Set(p.targets.map(c => eqOf(c, dict)));
@@ -275,7 +294,9 @@ function occScore(j, p, dict) {
   // but "Video Game Designers" (.01) does not include "Web and Digital Interface Designers" (.00).
   const Tsoc = new Set(Array.from(T).filter(c => /\.00$/.test(c)).map(soc));
   if (!/^hg-/.test(oc[0]) && !/\.00$/.test(oc[0]) && Tsoc.has(soc(oc[0]))) return { s: 0.7, why: "close" };
-  if (oc.slice(1).some(same) && j.ocf < 0.8) return { s: 0.6, why: "maybe" };   // ambiguous title, one reading fits
+  // Managing or leading your own field ("Manager, Lease Accounting", "Nurse Manager"): a management occupation
+  // whose title names your field.
+  if (/^11-/.test(oc[0]) && hasFieldWord(j.title, stems)) return { s: 0.7, why: "manage" };
   return { s: 0, why: "field" };
 }
 // TF-IDF cosine between the resume and each job; absolute, not divided by the best job in the list.

@@ -75,7 +75,8 @@ for (const [code, list] of Object.entries(EXTRA)) for (const title of list) {
 
 // Occupations O*NET folds into a broader code but job seekers treat as their own field. Parent = closest O*NET code.
 const CUSTOM = {
-  "hg-pm": ["Product Managers", "11-2021.00", "under", ["product manager", "product owner", "group product manager", "product lead", "game product manager", "technical product manager", "director of product", "head of product", "product management intern", "product management", "publishing product manager"]],
+  "hg-pm": ["Product Managers", "11-2021.00", "under", ["product manager", "product owner", "group product manager", "product lead", "game product manager", "technical product manager", "director of product", "head of product", "product management intern", "product management", "publishing product manager",
+                 "director of product management", "product management director", "director product management", "head of product management"]],
   "hg-liveops": ["Live Operations (games)", "27-2012.00", "under", ["live ops manager", "liveops manager", "live operations manager", "live ops lead", "live ops director", "live operations director", "live game manager", "monetization manager", "game economy manager", "economy manager", "product economy manager"]],
   "hg-autotech": ["Automotive Service Technicians", "49-3023.00", "eq", ["automotive technician", "auto technician", "automotive service technician", "auto mechanic", "car mechanic", "lube technician", "service technician automotive", "ev technician", "automotive service advisor"]],
 };
