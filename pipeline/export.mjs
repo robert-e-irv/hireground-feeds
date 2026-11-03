@@ -50,9 +50,17 @@ let firstSeen = {};
 try { firstSeen = JSON.parse(zlib.gunzipSync(fs.readFileSync(fsPath)).toString("utf8")); } catch (_) {}
 const now = new Date().toISOString().replace(/\.\d+Z$/, "Z");
 
+// Imported studio boards (recorder/import_openjobs.py): same key the app's studioInfo() builds.
+const foldName = s => String(s || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const studioKeyOf = name => foldName(String(name).replace(/\s*\([^)]*\)$/, "")).replace(/[^a-z0-9]+/g, " ").trim();
+// Game-adjacent imports (the dataset tags some non-game firms "gaming") only publish roles that are about games.
+const NOT_GAMES = /\bgame[\s-]*(chang\w*|plan\w*|day)\b/gi;   // "game-changing", "game plan", "game day"
+const isGameRole = j => GAME_ROLE.test(((j.title || "") + " " + (j.department || "") + " " + (j.description || "")).replace(NOT_GAMES, " "));
+const GAME_ROLE = /\b(games?|gaming|gameplay|game ?dev\w*|unity|unreal|godot|level design\w*|esports?|live ?ops|player experience|playtest\w*)\b/i;
+
 // ---- normalize each redistributable source
 const feeds = [], jobs = [];
-let skippedTerms = 0, droppedOld = 0;
+let skippedTerms = 0, droppedOld = 0, droppedOffTopic = 0;
 const ageCutoff = Date.now() - MAX_AGE_DAYS * 86400000;
 for (const r of recs) {
   if (r.redistributable !== true) { skippedTerms++; continue; }
@@ -78,13 +86,17 @@ for (const r of recs) {
       const descMax = employer ? DESC_MAX_EMPLOYER : DESC_MAX;
       for (const j of js) {
         if (j.posted && j.posted < ageCutoff) { droppedOld++; continue; }
+        if (r.origin === "openjobs" && !j.gameStudio) {   // the app's own STUDIOS list wins when it knows the board
+          if (r.adjacent && !isGameRole(j)) { droppedOffTopic++; j.offTopic = true; continue; }
+          j.company = r.name; j.studioKey = studioKeyOf(r.name); j.gameStudio = !r.adjacent;
+        }
         if (j.description && j.description.length > descMax) j.description = j.description.slice(0, descMax);
         j.firstSeen = firstSeen[j.id] || (firstSeen[j.id] = now);
         // Employer boards: the verified company name (Lever and Ashby feeds only carry the slug) + its industry.
         if (employer) { j.company = r.name; j.industry = r.industry; }
         jobs.push(j);
       }
-      feed.count += js.filter(j => !(j.posted && j.posted < ageCutoff)).length;
+      feed.count += js.filter(j => !(j.posted && j.posted < ageCutoff) && !j.offTopic).length;
     }
     feed.ok = true;
   } catch (e) { feed.error = "could not read: " + String(e.message || e).slice(0, 120); }
@@ -104,6 +116,6 @@ fs.mkdirSync(SITE, { recursive: true });
 fs.writeFileSync(prevPath, JSON.stringify(bundle));
 fs.writeFileSync(fsPath, zlib.gzipSync(JSON.stringify(firstSeen)));
 const mb = (fs.statSync(prevPath).size / 1048576).toFixed(1);
-console.log(JSON.stringify({ run: runId, feeds: feeds.length, ok: okCount, jobs: jobs.length, droppedOld, mb, skippedTerms }));
+console.log(JSON.stringify({ run: runId, feeds: feeds.length, ok: okCount, jobs: jobs.length, droppedOld, droppedOffTopic, mb, skippedTerms }));
 if (Number(mb) > 15) console.warn("::warning::jobs.json is " + mb + " MB. Phones will feel it; consider a lower DESC_MAX_EMPLOYER or MAX_AGE_DAYS.");
 if (feeds.length && okCount / feeds.length < 0.5) { console.error("Over half the feeds failed; refusing to publish."); process.exit(3); }

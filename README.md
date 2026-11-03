@@ -9,7 +9,16 @@ Every 6 hours GitHub Actions downloads every job feed, builds `jobs.json` with t
 | `site/index.html` | The app. Its `// <pure>` block is the shared feed parser |
 | `pipeline/export.mjs` | Builds `site/jobs.json` from the latest snapshot |
 | `recorder/employers.py` | Non-games employers (health, finance, retail, education, nonprofit, tech) on Greenhouse, Lever, Ashby and SmartRecruiters. Candidates only |
-| `recorder/verify_boards.py` | Weekly check in Actions: keeps boards that answer with open jobs and (Greenhouse) whose board name matches. Writes `recorder/employers_verified.json` |
+| `recorder/import_openjobs.py` | Imports games-company boards from [Outscal's OpenJobs](https://github.com/outscal/OpenJobs) list (MIT, the data behind ASGC's jobs workbook) into `recorder/studio_candidates.json`. Candidates only |
+| `recorder/verify_boards.py` | Weekly check in Actions: keeps boards that answer with open jobs and (Greenhouse) whose board name matches. Writes `recorder/employers_verified.json`, and with `--set studios` writes `recorder/studios_verified.json` |
+
+### Refreshing the OpenJobs studio list
+
+```bash
+python recorder/import_openjobs.py        # re-download the list and rewrite studio_candidates.json
+```
+
+Commit the new file; the next weekly check verifies it (or delete `recorder/studios_verified.json` to force a check on the next run). Casino and betting companies are left out unless you pass `--include-igaming`. Companies without clear evidence of being a game studio are imported as game-adjacent: only their game-related roles are published.
 
 ---
 

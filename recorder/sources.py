@@ -1,6 +1,8 @@
 """Every Hire Ground source the recorder snapshots.
 
 STUDIOS: 66 studio boards verified 2026-10-28 (Greenhouse, Lever, Ashby).
+Verified employer boards (employers.py) and imported studio boards (import_openjobs.py) join
+them once verify_boards.py has checked them.
 AGGREGATORS: board-wide feeds the app also pulls.
 `redistributable` is the terms gate for the PUBLIC cache. The recorder measures
 everything; the pipeline only publishes sources marked True (see DESIGN.md).
@@ -122,6 +124,17 @@ def verified_employers(path=None):
         return []
 
 
+def verified_studios(path=None):
+    """Games companies from the OpenJobs import that passed verify_boards.py --set studios. Empty until verified."""
+    import json
+    from pathlib import Path
+    p = Path(path) if path else Path(__file__).with_name("studios_verified.json")
+    try:
+        return json.loads(p.read_text())["kept"]
+    except (OSError, ValueError, KeyError):
+        return []
+
+
 def all_sources():
     """Yield dicts: id, name, kind, url, redistributable, notes (+ industry for employer boards)."""
     seen = set()
@@ -140,6 +153,16 @@ def all_sources():
         yield {"id": sid, "name": e["name"], "category": "employer", "industry": e["industry"],
                "kind": e["ats"], "url": ATS_URL[e["ats"]].format(slug=e["slug"]),
                "redistributable": ATS_REDISTRIBUTABLE[e["ats"]], "notes": ""}
+    for e in verified_studios():
+        sid = f"{e['ats']}:{e['slug']}"
+        if sid.lower() in seen:
+            continue
+        seen.add(sid.lower())
+        # Greenhouse tells us the company's own name for its board; prefer it to the dataset's spelling.
+        yield {"id": sid, "name": e.get("board_name") or e["name"], "category": "studio",
+               "origin": "openjobs", "adjacent": bool(e.get("adjacent")),
+               "kind": e["ats"], "url": ATS_URL[e["ats"]].format(slug=e["slug"]),
+               "redistributable": ATS_REDISTRIBUTABLE[e["ats"]], "notes": "imported from OpenJobs"}
     for kind, name, url, redis, notes in AGGREGATORS:
         yield {"id": kind, "name": name, "category": "aggregator", "kind": kind,
                "url": url, "redistributable": redis, "notes": notes}

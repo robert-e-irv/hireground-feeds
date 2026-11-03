@@ -1,0 +1,5801 @@
+{
+ "source": "Outscal OpenJobs data/companies_v2.json (MIT), https://github.com/outscal/OpenJobs",
+ "imported_at": "2026-11-03T16:14:59+00:00",
+ "note": "Candidates only. verify_boards.py --set studios decides what is published.",
+ "candidates": [
+  {
+   "name": "1047 Games",
+   "adjacent": false,
+   "website": "https://www.1047games.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "1047games"
+    ]
+   ]
+  },
+  {
+   "name": "2K Vegas",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "2kvegas"
+    ]
+   ]
+  },
+  {
+   "name": "31st Union",
+   "adjacent": false,
+   "website": "http://www.thirtyfirstunion.com",
+   "boards": [
+    [
+     "greenhouse",
+     "31stunion"
+    ]
+   ]
+  },
+  {
+   "name": "5Minlab",
+   "adjacent": true,
+   "website": "https://5minlab.com/ko/",
+   "boards": [
+    [
+     "greenhouse",
+     "5minlab"
+    ]
+   ]
+  },
+  {
+   "name": "6Sense",
+   "adjacent": true,
+   "website": "http://www.6sense.com",
+   "boards": [
+    [
+     "greenhouse",
+     "6sense"
+    ]
+   ]
+  },
+  {
+   "name": "A-Team",
+   "adjacent": true,
+   "website": "https://www.a.team/",
+   "boards": [
+    [
+     "lever",
+     "a"
+    ]
+   ]
+  },
+  {
+   "name": "A44 Games",
+   "adjacent": false,
+   "website": "http://www.a44games.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "a44games"
+    ]
+   ]
+  },
+  {
+   "name": "AB Games",
+   "adjacent": false,
+   "website": "https://www.ab-games.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "abgames"
+    ]
+   ]
+  },
+  {
+   "name": "Abstraction Games",
+   "adjacent": false,
+   "website": "http://abstraction.games",
+   "boards": [
+    [
+     "ashby",
+     "abstraction.games"
+    ]
+   ]
+  },
+  {
+   "name": "Absurd Ventures",
+   "adjacent": true,
+   "website": "https://www.absurdventures.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "absurdventures"
+    ]
+   ]
+  },
+  {
+   "name": "Accor",
+   "adjacent": true,
+   "website": "https://www.group.accor.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "accor"
+    ]
+   ]
+  },
+  {
+   "name": "ACL Digital",
+   "adjacent": true,
+   "website": "https://www.acldigital.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "acldigital"
+    ]
+   ]
+  },
+  {
+   "name": "ADI Resourcing",
+   "adjacent": true,
+   "website": "https://www.adiresourcing.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "adiresourcing"
+    ]
+   ]
+  },
+  {
+   "name": "AdPushup",
+   "adjacent": true,
+   "website": "https://www.adpushup.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "adpushup"
+    ]
+   ]
+  },
+  {
+   "name": "Advantage Solutions",
+   "adjacent": true,
+   "website": "https://adv-solutions.org/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "advantagesolutions"
+    ]
+   ]
+  },
+  {
+   "name": "AEG Worldwide",
+   "adjacent": true,
+   "website": "http://www.aegworldwide.com",
+   "boards": [
+    [
+     "greenhouse",
+     "aegworldwide"
+    ]
+   ]
+  },
+  {
+   "name": "Aera Technology",
+   "adjacent": true,
+   "website": "http://aeratechnology.com",
+   "boards": [
+    [
+     "lever",
+     "aeratechnology"
+    ]
+   ]
+  },
+  {
+   "name": "Agave Games",
+   "adjacent": false,
+   "website": "https://www.agavegames.com",
+   "boards": [
+    [
+     "ashby",
+     "agavegames"
+    ]
+   ]
+  },
+  {
+   "name": "Age of Learning",
+   "adjacent": true,
+   "website": "http://www.ageoflearning.com",
+   "boards": [
+    [
+     "lever",
+     "aofl"
+    ]
+   ]
+  },
+  {
+   "name": "Agoda",
+   "adjacent": true,
+   "website": "http://careersatagoda.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "agoda"
+    ]
+   ]
+  },
+  {
+   "name": "AIFund",
+   "adjacent": true,
+   "website": "https://www.linkedin.com/company/aifund",
+   "boards": [
+    [
+     "lever",
+     "AIFund"
+    ]
+   ]
+  },
+  {
+   "name": "AirlabInc",
+   "adjacent": true,
+   "website": "https://airlab.ai",
+   "boards": [
+    [
+     "smartrecruiters",
+     "AirlabInc"
+    ]
+   ]
+  },
+  {
+   "name": "Airship Syndicate",
+   "adjacent": true,
+   "website": "https://outscal.com/company/airship-syndicate",
+   "boards": [
+    [
+     "lever",
+     "airshipsyndicate"
+    ]
+   ]
+  },
+  {
+   "name": "AKQA",
+   "adjacent": true,
+   "website": "https://www.akqa.com/showreel/",
+   "boards": [
+    [
+     "greenhouse",
+     "akqa"
+    ]
+   ]
+  },
+  {
+   "name": "Alegrium",
+   "adjacent": true,
+   "website": "http://www.alegrium.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Alegrium1"
+    ]
+   ]
+  },
+  {
+   "name": "Alictus",
+   "adjacent": false,
+   "website": "https://alictus.com",
+   "boards": [
+    [
+     "lever",
+     "alictus"
+    ]
+   ]
+  },
+  {
+   "name": "Alpha Sense",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "alphasense"
+    ]
+   ]
+  },
+  {
+   "name": "Alten Technology",
+   "adjacent": true,
+   "website": "https://www.atlenusa.com",
+   "boards": [
+    [
+     "greenhouse",
+     "altentechnologyusa"
+    ]
+   ]
+  },
+  {
+   "name": "Amanotes",
+   "adjacent": true,
+   "website": "http://amanotes.com/",
+   "boards": [
+    [
+     "lever",
+     "amanotes"
+    ]
+   ]
+  },
+  {
+   "name": "AnalogFolk",
+   "adjacent": true,
+   "website": "http://www.analogfolk.com",
+   "boards": [
+    [
+     "lever",
+     "analogfolk"
+    ]
+   ]
+  },
+  {
+   "name": "Anavation",
+   "adjacent": true,
+   "website": "http://www.anavationllc.com",
+   "boards": [
+    [
+     "lever",
+     "anavationllc"
+    ]
+   ]
+  },
+  {
+   "name": "Anchor Point Studios",
+   "adjacent": false,
+   "website": "https://www.anchor-point.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "anchorpoint"
+    ]
+   ]
+  },
+  {
+   "name": "Anduril Industries",
+   "adjacent": true,
+   "website": "https://www.anduril.com",
+   "boards": [
+    [
+     "greenhouse",
+     "andurilindustries"
+    ]
+   ]
+  },
+  {
+   "name": "Animal logic",
+   "adjacent": true,
+   "website": "http://www.animallogic.com",
+   "boards": [
+    [
+     "greenhouse",
+     "animallogicsydneyhybridusdam"
+    ]
+   ]
+  },
+  {
+   "name": "Animoca Brands",
+   "adjacent": true,
+   "website": "https://www.animocabrands.com",
+   "boards": [
+    [
+     "lever",
+     "animocabrands"
+    ]
+   ]
+  },
+  {
+   "name": "Apollo",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "apollographql"
+    ]
+   ]
+  },
+  {
+   "name": "Apollo.io",
+   "adjacent": true,
+   "website": "https://www.apollo.io",
+   "boards": [
+    [
+     "greenhouse",
+     "apolloio"
+    ]
+   ]
+  },
+  {
+   "name": "Applied Intuition",
+   "adjacent": true,
+   "website": "https://www.appliedintuition.com",
+   "boards": [
+    [
+     "greenhouse",
+     "appliedintuition"
+    ]
+   ]
+  },
+  {
+   "name": "April",
+   "adjacent": true,
+   "website": "https://www.getapril.com",
+   "boards": [
+    [
+     "ashby",
+     "april"
+    ]
+   ]
+  },
+  {
+   "name": "Archetype Entertainment",
+   "adjacent": false,
+   "website": "https://outscal.com/company/archetype-entertainment",
+   "boards": [
+    [
+     "greenhouse",
+     "archetypeentertainment"
+    ]
+   ]
+  },
+  {
+   "name": "Argus",
+   "adjacent": true,
+   "website": "https://jobs.ashbyhq.com",
+   "boards": [
+    [
+     "ashby",
+     "argus"
+    ]
+   ]
+  },
+  {
+   "name": "Arkavis",
+   "adjacent": true,
+   "website": "http://www.arkavis.ca",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Arkavis"
+    ]
+   ]
+  },
+  {
+   "name": "Arrible",
+   "adjacent": false,
+   "website": "https://www.arrible.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Arrible"
+    ]
+   ]
+  },
+  {
+   "name": "Arthrex",
+   "adjacent": true,
+   "website": "http://www.Arthrex.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "arthrex"
+    ]
+   ]
+  },
+  {
+   "name": "AssetWatch®",
+   "adjacent": true,
+   "website": "https://www.assetwatch.com",
+   "boards": [
+    [
+     "greenhouse",
+     "assetwatch"
+    ]
+   ]
+  },
+  {
+   "name": "Assist software",
+   "adjacent": true,
+   "website": "https://assist-software.net/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "assistsoftware"
+    ]
+   ]
+  },
+  {
+   "name": "Assystems",
+   "adjacent": true,
+   "website": "https://www.assystem.com/en/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "ASSYSTEM"
+    ]
+   ]
+  },
+  {
+   "name": "Astera Labs",
+   "adjacent": true,
+   "website": "http://www.asteralabs.com",
+   "boards": [
+    [
+     "greenhouse",
+     "asteralabs"
+    ]
+   ]
+  },
+  {
+   "name": "Astrocade",
+   "adjacent": true,
+   "website": "astrocade.com",
+   "boards": [
+    [
+     "ashby",
+     "astrocade"
+    ]
+   ]
+  },
+  {
+   "name": "Atari",
+   "adjacent": true,
+   "website": "http://www.atari.com",
+   "boards": [
+    [
+     "greenhouse",
+     "atariinc"
+    ]
+   ]
+  },
+  {
+   "name": "Athena Education",
+   "adjacent": true,
+   "website": "https://athenaedu.com",
+   "boards": [
+    [
+     "lever",
+     "athena-education"
+    ]
+   ]
+  },
+  {
+   "name": "ATMTA, Inc.",
+   "adjacent": true,
+   "website": "https://atmta.com",
+   "boards": [
+    [
+     "greenhouse",
+     "automatainc"
+    ]
+   ]
+  },
+  {
+   "name": "Atomic cartoons",
+   "adjacent": true,
+   "website": "http://www.atomiccartoons.com",
+   "boards": [
+    [
+     "greenhouse",
+     "atomiccartoons"
+    ]
+   ]
+  },
+  {
+   "name": "Avacend Inc",
+   "adjacent": true,
+   "website": "http://www.avacend.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "avacendinc"
+    ]
+   ]
+  },
+  {
+   "name": "Avathon",
+   "adjacent": true,
+   "website": "https://www.avathon.com",
+   "boards": [
+    [
+     "greenhouse",
+     "avathon"
+    ]
+   ]
+  },
+  {
+   "name": "Aviator",
+   "adjacent": true,
+   "website": "https://outscal.com/company/aviator",
+   "boards": [
+    [
+     "ashby",
+     "aviator"
+    ]
+   ]
+  },
+  {
+   "name": "Axiom Zen",
+   "adjacent": true,
+   "website": "http://www.axiomzen.co",
+   "boards": [
+    [
+     "lever",
+     "axiomzen"
+    ]
+   ]
+  },
+  {
+   "name": "Axle",
+   "adjacent": true,
+   "website": "https://www.axle.com",
+   "boards": [
+    [
+     "greenhouse",
+     "axle"
+    ]
+   ]
+  },
+  {
+   "name": "Azra Games",
+   "adjacent": false,
+   "website": "https://azragames.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "azragames"
+    ]
+   ]
+  },
+  {
+   "name": "Babil Games",
+   "adjacent": false,
+   "website": "http://www.babilgames.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "babilgames"
+    ]
+   ]
+  },
+  {
+   "name": "Bad Brain Game Studios",
+   "adjacent": false,
+   "website": "https://www.badbraingames.com",
+   "boards": [
+    [
+     "greenhouse",
+     "badbrain"
+    ]
+   ]
+  },
+  {
+   "name": "Bad Robot Games",
+   "adjacent": false,
+   "website": "jobs@badrobotgames.com.",
+   "boards": [
+    [
+     "ashby",
+     "badrobotgames"
+    ]
+   ]
+  },
+  {
+   "name": "Bardel Entertainment",
+   "adjacent": true,
+   "website": "http://www.bardel.ca",
+   "boards": [
+    [
+     "greenhouse",
+     "bardelentertainment"
+    ]
+   ]
+  },
+  {
+   "name": "Bazaar Voice",
+   "adjacent": true,
+   "website": "https://www.bazaarvoice.com",
+   "boards": [
+    [
+     "lever",
+     "bazaarvoice"
+    ]
+   ]
+  },
+  {
+   "name": "BCforward",
+   "adjacent": true,
+   "website": "https://www.bcforward.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "bcforward"
+    ]
+   ]
+  },
+  {
+   "name": "Beautiful.ai",
+   "adjacent": true,
+   "website": "https://www.beautiful.ai",
+   "boards": [
+    [
+     "greenhouse",
+     "beautifulai"
+    ]
+   ]
+  },
+  {
+   "name": "Believe",
+   "adjacent": true,
+   "website": "https://www.believe.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "believe"
+    ]
+   ]
+  },
+  {
+   "name": "Bento Box Entertainment LLC",
+   "adjacent": true,
+   "website": "http://www.bentoboxent.com",
+   "boards": [
+    [
+     "lever",
+     "bentoboxent"
+    ]
+   ]
+  },
+  {
+   "name": "Beyond Creative",
+   "adjacent": true,
+   "website": "http://www.beyondcreative.gg",
+   "boards": [
+    [
+     "lever",
+     "beyond-creative"
+    ]
+   ]
+  },
+  {
+   "name": "Beyond Inc.",
+   "adjacent": true,
+   "website": "https://www.beyond.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "beyondinc"
+    ]
+   ]
+  },
+  {
+   "name": "Beyond Sports",
+   "adjacent": true,
+   "website": "http://www.beyondsports.nl/",
+   "boards": [
+    [
+     "ashby",
+     "beyondsports"
+    ]
+   ]
+  },
+  {
+   "name": "Bigger Games",
+   "adjacent": false,
+   "website": "http://biggergames.com/",
+   "boards": [
+    [
+     "lever",
+     "biggergames"
+    ]
+   ]
+  },
+  {
+   "name": "Black Kite Studios",
+   "adjacent": true,
+   "website": "https://joinus.blackkitestudios.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "blackkitestudios"
+    ]
+   ]
+  },
+  {
+   "name": "Blink UX",
+   "adjacent": true,
+   "website": "https://blinkux.com",
+   "boards": [
+    [
+     "lever",
+     "blinkux"
+    ]
+   ]
+  },
+  {
+   "name": "Blitre Rewards",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "biltrewards"
+    ]
+   ]
+  },
+  {
+   "name": "Blitz app",
+   "adjacent": true,
+   "website": "https://blitz.gg",
+   "boards": [
+    [
+     "greenhouse",
+     "blitzapp"
+    ]
+   ]
+  },
+  {
+   "name": "Blockville",
+   "adjacent": true,
+   "website": "https://blockville.co/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Blockville"
+    ]
+   ]
+  },
+  {
+   "name": "Bloxd",
+   "adjacent": true,
+   "website": "https://bloxd.io/",
+   "boards": [
+    [
+     "ashby",
+     "bloxd"
+    ]
+   ]
+  },
+  {
+   "name": "Blue Isle Studios",
+   "adjacent": false,
+   "website": "http://www.blueislestudios.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "blueislestudios"
+    ]
+   ]
+  },
+  {
+   "name": "Bluehole",
+   "adjacent": false,
+   "website": "http://krafton.com/kr/",
+   "boards": [
+    [
+     "greenhouse",
+     "bluehole"
+    ]
+   ]
+  },
+  {
+   "name": "Blur Studio",
+   "adjacent": true,
+   "website": "https://www.blur.com/",
+   "boards": [
+    [
+     "lever",
+     "blur"
+    ]
+   ]
+  },
+  {
+   "name": "Bold Orange",
+   "adjacent": true,
+   "website": "https://boldorange.com",
+   "boards": [
+    [
+     "lever",
+     "bold-orange"
+    ]
+   ]
+  },
+  {
+   "name": "Boom Entertainment",
+   "adjacent": false,
+   "website": "https://www.booment.com",
+   "boards": [
+    [
+     "greenhouse",
+     "boomentertainment"
+    ]
+   ]
+  },
+  {
+   "name": "Bootloader studio",
+   "adjacent": true,
+   "website": "https://bootloader.studio",
+   "boards": [
+    [
+     "smartrecruiters",
+     "bootloaderstudio"
+    ]
+   ]
+  },
+  {
+   "name": "Born Fire Studios",
+   "adjacent": false,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "bonfirestudios"
+    ]
+   ]
+  },
+  {
+   "name": "Braintrust",
+   "adjacent": true,
+   "website": "http://www.usebraintrust.com",
+   "boards": [
+    [
+     "ashby",
+     "braintrust"
+    ]
+   ]
+  },
+  {
+   "name": "Branch",
+   "adjacent": false,
+   "website": "https://branch.io",
+   "boards": [
+    [
+     "lever",
+     "branch.gg"
+    ]
+   ]
+  },
+  {
+   "name": "Brand New School",
+   "adjacent": true,
+   "website": "https://brandnewschool.com",
+   "boards": [
+    [
+     "greenhouse",
+     "brandnewschool"
+    ]
+   ]
+  },
+  {
+   "name": "Bright Machines",
+   "adjacent": true,
+   "website": "https://www.brightmachines.com",
+   "boards": [
+    [
+     "lever",
+     "brightmachines"
+    ]
+   ]
+  },
+  {
+   "name": "Brillio",
+   "adjacent": true,
+   "website": "https://www.brillio.com",
+   "boards": [
+    [
+     "lever",
+     "brillio-2"
+    ]
+   ]
+  },
+  {
+   "name": "BSE Global",
+   "adjacent": true,
+   "website": "https://www.bseglobal.com",
+   "boards": [
+    [
+     "greenhouse",
+     "bseglobal"
+    ]
+   ]
+  },
+  {
+   "name": "Bullet Farm",
+   "adjacent": true,
+   "website": "bulletfarm.com",
+   "boards": [
+    [
+     "greenhouse",
+     "bulletfarm"
+    ]
+   ]
+  },
+  {
+   "name": "ByteDance",
+   "adjacent": true,
+   "website": "https://outscal.com/company/bytedance",
+   "boards": [
+    [
+     "smartrecruiters",
+     "bytedance"
+    ]
+   ]
+  },
+  {
+   "name": "CACI",
+   "adjacent": true,
+   "website": "https://www.caci.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "caci"
+    ]
+   ]
+  },
+  {
+   "name": "Cantina",
+   "adjacent": true,
+   "website": "cantina.com",
+   "boards": [
+    [
+     "ashby",
+     "cantina"
+    ]
+   ]
+  },
+  {
+   "name": "Cape",
+   "adjacent": true,
+   "website": "https://cape.ai",
+   "boards": [
+    [
+     "ashby",
+     "cape"
+    ]
+   ]
+  },
+  {
+   "name": "Cast and Crew",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "113134"
+    ]
+   ]
+  },
+  {
+   "name": "Cat Daddy",
+   "adjacent": false,
+   "website": "http://www.catdaddygames.com",
+   "boards": [
+    [
+     "greenhouse",
+     "catdaddy"
+    ]
+   ]
+  },
+  {
+   "name": "Caterpillar Inc.",
+   "adjacent": true,
+   "website": "https://www.caterpillar.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "caterpillarinc"
+    ]
+   ]
+  },
+  {
+   "name": "Cd Projekt Red",
+   "adjacent": true,
+   "website": "https://en.cdprojektred.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "CDPROJEKTRED"
+    ]
+   ]
+  },
+  {
+   "name": "Character.AI",
+   "adjacent": true,
+   "website": "https://www.character.ai",
+   "boards": [
+    [
+     "ashby",
+     "character"
+    ]
+   ]
+  },
+  {
+   "name": "ChargePoint",
+   "adjacent": true,
+   "website": "https://www.chargepoint.com",
+   "boards": [
+    [
+     "greenhouse",
+     "chargepoint"
+    ]
+   ]
+  },
+  {
+   "name": "Chimera Technologies",
+   "adjacent": true,
+   "website": "http://www.chimeratechnologies.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "chimeratechnologies"
+    ]
+   ]
+  },
+  {
+   "name": "Closing Theory",
+   "adjacent": true,
+   "website": "https://closingtheory.com",
+   "boards": [
+    [
+     "ashby",
+     "ClosingTheory"
+    ]
+   ]
+  },
+  {
+   "name": "Cloud Chamber",
+   "adjacent": false,
+   "website": "https://cloudchamberstudios.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "cloudchamberen"
+    ]
+   ]
+  },
+  {
+   "name": "Clutch",
+   "adjacent": true,
+   "website": "https://clutch.co",
+   "boards": [
+    [
+     "greenhouse",
+     "clutch"
+    ]
+   ]
+  },
+  {
+   "name": "CodeCombat",
+   "adjacent": true,
+   "website": "http://codecombat.com",
+   "boards": [
+    [
+     "lever",
+     "codecombat"
+    ]
+   ]
+  },
+  {
+   "name": "Codeway Studios",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "codewaystudios"
+    ]
+   ]
+  },
+  {
+   "name": "Comcast Corporation",
+   "adjacent": true,
+   "website": "www.corporate.comcast.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "comcastcorporation"
+    ]
+   ]
+  },
+  {
+   "name": "Continental",
+   "adjacent": true,
+   "website": "https://www.continental.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "continental"
+    ]
+   ]
+  },
+  {
+   "name": "Convai Technologies",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "Convai-technologies-inc"
+    ]
+   ]
+  },
+  {
+   "name": "Creadits",
+   "adjacent": true,
+   "website": "http://www.creadits.com",
+   "boards": [
+    [
+     "lever",
+     "creadits"
+    ]
+   ]
+  },
+  {
+   "name": "Creative Cove Inc.",
+   "adjacent": true,
+   "website": "http://www.creativecoveinc.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "creativecoveinc"
+    ]
+   ]
+  },
+  {
+   "name": "Crunchyroll",
+   "adjacent": true,
+   "website": "http://www.crunchyroll.com/about",
+   "boards": [
+    [
+     "greenhouse",
+     "crunchyroll"
+    ]
+   ]
+  },
+  {
+   "name": "Curri",
+   "adjacent": true,
+   "website": "https://www.curri.com",
+   "boards": [
+    [
+     "ashby",
+     "curri"
+    ]
+   ]
+  },
+  {
+   "name": "Curve Games",
+   "adjacent": false,
+   "website": "http://www.curvegames.com",
+   "boards": [
+    [
+     "greenhouse",
+     "curvegames"
+    ]
+   ]
+  },
+  {
+   "name": "Cypher games",
+   "adjacent": false,
+   "website": "https://www.cyphergames.com",
+   "boards": [
+    [
+     "lever",
+     "cypher-games"
+    ]
+   ]
+  },
+  {
+   "name": "Daily Wire",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "dailywire"
+    ]
+   ]
+  },
+  {
+   "name": "Dare Drop -    -----",
+   "adjacent": false,
+   "website": "https://daredrop.com",
+   "boards": [
+    [
+     "greenhouse",
+     "daredrop"
+    ]
+   ]
+  },
+  {
+   "name": "Demiurge Studios",
+   "adjacent": false,
+   "website": "https://demiurgestudios.com/",
+   "boards": [
+    [
+     "lever",
+     "demiurgestudios"
+    ]
+   ]
+  },
+  {
+   "name": "Detroit Lions",
+   "adjacent": true,
+   "website": "https://www.detroitlions.com",
+   "boards": [
+    [
+     "greenhouse",
+     "detroitlions"
+    ]
+   ]
+  },
+  {
+   "name": "Diligent Corporation",
+   "adjacent": true,
+   "website": "https://www.diligent.com",
+   "boards": [
+    [
+     "greenhouse",
+     "diligentcorporation"
+    ]
+   ]
+  },
+  {
+   "name": "Disruptive Games",
+   "adjacent": false,
+   "website": "https://disruptivegames.com/",
+   "boards": [
+    [
+     "lever",
+     "disruptivegames"
+    ]
+   ]
+  },
+  {
+   "name": "Don't Nod",
+   "adjacent": false,
+   "website": "http://www.dont-nod.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "DONTNOD"
+    ]
+   ]
+  },
+  {
+   "name": "Doodles",
+   "adjacent": true,
+   "website": "https://doodles.app",
+   "boards": [
+    [
+     "ashby",
+     "Doodles"
+    ]
+   ]
+  },
+  {
+   "name": "DOTS games",
+   "adjacent": false,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "dots"
+    ]
+   ]
+  },
+  {
+   "name": "Dotsoft Sa",
+   "adjacent": true,
+   "website": "http://www.dotsoft.gr",
+   "boards": [
+    [
+     "smartrecruiters",
+     "DOTSOFTSA"
+    ]
+   ]
+  },
+  {
+   "name": "DPS Games Studio",
+   "adjacent": false,
+   "website": "http://www.dpsgames.ro",
+   "boards": [
+    [
+     "greenhouse",
+     "dpsgames"
+    ]
+   ]
+  },
+  {
+   "name": "Dr. Panda",
+   "adjacent": true,
+   "website": "https://www.drpanda.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "drpanda"
+    ]
+   ]
+  },
+  {
+   "name": "Dragon Army",
+   "adjacent": true,
+   "website": "http://www.dragonarmy.com",
+   "boards": [
+    [
+     "lever",
+     "dragonarmy"
+    ]
+   ]
+  },
+  {
+   "name": "Dream Sports",
+   "adjacent": true,
+   "website": "https://dreamsports.group/",
+   "boards": [
+    [
+     "lever",
+     "dreamsports"
+    ]
+   ]
+  },
+  {
+   "name": "Droit",
+   "adjacent": true,
+   "website": "http://www.droitcorp.com",
+   "boards": [
+    [
+     "greenhouse",
+     "droit"
+    ]
+   ]
+  },
+  {
+   "name": "DxMinds Innovation Labs Pvt Ltd",
+   "adjacent": true,
+   "website": "https://dxminds.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "dxmindsinnovationlabspvtltd"
+    ]
+   ]
+  },
+  {
+   "name": "Dynasty Studios",
+   "adjacent": false,
+   "website": "https://dynastystudios.io/",
+   "boards": [
+    [
+     "lever",
+     "dynastystudios"
+    ]
+   ]
+  },
+  {
+   "name": "E2 Open",
+   "adjacent": true,
+   "website": "https://boards.eu.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "e2openllc"
+    ]
+   ]
+  },
+  {
+   "name": "Easybrain",
+   "adjacent": false,
+   "website": "http://www.easybrain.com",
+   "boards": [
+    [
+     "lever",
+     "easybrain"
+    ]
+   ]
+  },
+  {
+   "name": "Easygo",
+   "adjacent": true,
+   "website": "http://www.easygo.io",
+   "boards": [
+    [
+     "greenhouse",
+     "easygo"
+    ]
+   ]
+  },
+  {
+   "name": "Easyship",
+   "adjacent": true,
+   "website": "https://easyship.com",
+   "boards": [
+    [
+     "greenhouse",
+     "easyship"
+    ]
+   ]
+  },
+  {
+   "name": "Echtra Games",
+   "adjacent": false,
+   "website": "http://echtragames.com/",
+   "boards": [
+    [
+     "lever",
+     "echtra"
+    ]
+   ]
+  },
+  {
+   "name": "Edglrd",
+   "adjacent": true,
+   "website": "https://www.edglrd.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "edglrd"
+    ]
+   ]
+  },
+  {
+   "name": "Egen",
+   "adjacent": true,
+   "website": "https://www.egen.ai",
+   "boards": [
+    [
+     "lever",
+     "egen"
+    ]
+   ]
+  },
+  {
+   "name": "Eko System",
+   "adjacent": true,
+   "website": "http://www.ekosystem.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "ekosystem"
+    ]
+   ]
+  },
+  {
+   "name": "ElevenLabs",
+   "adjacent": true,
+   "website": "https://www.elevenlabs.io/",
+   "boards": [
+    [
+     "ashby",
+     "elevenlabs"
+    ]
+   ]
+  },
+  {
+   "name": "Ello",
+   "adjacent": true,
+   "website": "https://www.ello.com",
+   "boards": [
+    [
+     "ashby",
+     "ello"
+    ]
+   ]
+  },
+  {
+   "name": "Elodie Games",
+   "adjacent": false,
+   "website": "https://elodie.games/",
+   "boards": [
+    [
+     "lever",
+     "ElodieGames"
+    ]
+   ]
+  },
+  {
+   "name": "Encore",
+   "adjacent": true,
+   "website": "https://darkslope.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "encore"
+    ]
+   ]
+  },
+  {
+   "name": "EngagedMD",
+   "adjacent": true,
+   "website": "https://appsforbharat.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "engagedmd"
+    ]
+   ]
+  },
+  {
+   "name": "Envoy",
+   "adjacent": true,
+   "website": "https://www.envoy.com",
+   "boards": [
+    [
+     "ashby",
+     "envoy"
+    ]
+   ]
+  },
+  {
+   "name": "EOS IT Solutions",
+   "adjacent": true,
+   "website": "https://eosits.com",
+   "boards": [
+    [
+     "greenhouse",
+     "eositsolutions"
+    ]
+   ]
+  },
+  {
+   "name": "Epoch Games",
+   "adjacent": false,
+   "website": "http://www.epochgames.co.uk",
+   "boards": [
+    [
+     "smartrecruiters",
+     "epochgames"
+    ]
+   ]
+  },
+  {
+   "name": "EssilorLuxottica",
+   "adjacent": true,
+   "website": "https://www.essilorluxottica.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "essilorluxottica"
+    ]
+   ]
+  },
+  {
+   "name": "Everstream Analytics",
+   "adjacent": true,
+   "website": "https://www.everstream.ai",
+   "boards": [
+    [
+     "greenhouse",
+     "everstreamanalytics"
+    ]
+   ]
+  },
+  {
+   "name": "Evolution",
+   "adjacent": false,
+   "website": "https://www.evolution.com/careers",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Evolution"
+    ]
+   ]
+  },
+  {
+   "name": "Evoplay",
+   "adjacent": false,
+   "website": "http://evoplay.com",
+   "boards": [
+    [
+     "greenhouse",
+     "evoplaygames"
+    ]
+   ]
+  },
+  {
+   "name": "EVS, Inc.",
+   "adjacent": true,
+   "website": "https://www.evs-eng.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "evsinc"
+    ]
+   ]
+  },
+  {
+   "name": "Ewar games",
+   "adjacent": false,
+   "website": "https://www.ewar.in",
+   "boards": [
+    [
+     "smartrecruiters",
+     "ewargames"
+    ]
+   ]
+  },
+  {
+   "name": "Ex Populus",
+   "adjacent": true,
+   "website": "http://expopulus.com",
+   "boards": [
+    [
+     "lever",
+     "Expopulus"
+    ]
+   ]
+  },
+  {
+   "name": "ExpertHiring",
+   "adjacent": true,
+   "website": "http://www.ExpertHiring.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "experthiring"
+    ]
+   ]
+  },
+  {
+   "name": "Exploding Kittens, Inc.",
+   "adjacent": true,
+   "website": "http://explodingkittens.com/",
+   "boards": [
+    [
+     "lever",
+     "explodingkittens"
+    ]
+   ]
+  },
+  {
+   "name": "Eyeline",
+   "adjacent": false,
+   "website": "https://eyelinestudios.com/en",
+   "boards": [
+    [
+     "lever",
+     "scanlinevfx"
+    ]
+   ]
+  },
+  {
+   "name": "Fanatee",
+   "adjacent": false,
+   "website": "https://fanatee.com/",
+   "boards": [
+    [
+     "lever",
+     "fanatee"
+    ]
+   ]
+  },
+  {
+   "name": "Fandom",
+   "adjacent": true,
+   "website": "https://about.fandom.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "fandom"
+    ]
+   ]
+  },
+  {
+   "name": "FanDuel",
+   "adjacent": true,
+   "website": "https://www.fanduel.com",
+   "boards": [
+    [
+     "greenhouse",
+     "fanduel"
+    ]
+   ]
+  },
+  {
+   "name": "Fantastic Pixel Castle",
+   "adjacent": false,
+   "website": "fantasticpixelcastle.com",
+   "boards": [
+    [
+     "greenhouse",
+     "fantasticpixelcastle"
+    ]
+   ]
+  },
+  {
+   "name": "FC Cincinnati",
+   "adjacent": true,
+   "website": "https://www.fccincinnati.com",
+   "boards": [
+    [
+     "greenhouse",
+     "fccincinnati"
+    ]
+   ]
+  },
+  {
+   "name": "Federal Soft Systems Inc.",
+   "adjacent": true,
+   "website": "https://federalsoftsystems.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "federalsoftsystemsinc"
+    ]
+   ]
+  },
+  {
+   "name": "Fiddler AI",
+   "adjacent": true,
+   "website": "https://www.fiddler.ai",
+   "boards": [
+    [
+     "ashby",
+     "fiddler-ai"
+    ]
+   ]
+  },
+  {
+   "name": "Finmo",
+   "adjacent": true,
+   "website": "https://finmo.net",
+   "boards": [
+    [
+     "smartrecruiters",
+     "finmo"
+    ]
+   ]
+  },
+  {
+   "name": "Fire Hose Games",
+   "adjacent": false,
+   "website": "http://www.firehosegames.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "FireHoseGames"
+    ]
+   ]
+  },
+  {
+   "name": "Firewalk Studios",
+   "adjacent": false,
+   "website": "http://www.firewalkstudios.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "firewalk"
+    ]
+   ]
+  },
+  {
+   "name": "Fliff",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "Fliff"
+    ]
+   ]
+  },
+  {
+   "name": "Forge",
+   "adjacent": true,
+   "website": "forge.gg/",
+   "boards": [
+    [
+     "ashby",
+     "forge"
+    ]
+   ]
+  },
+  {
+   "name": "Formlabs",
+   "adjacent": true,
+   "website": "https://formlabs.com",
+   "boards": [
+    [
+     "greenhouse",
+     "formlabs"
+    ]
+   ]
+  },
+  {
+   "name": "Forte",
+   "adjacent": true,
+   "website": "http://www.forte.io",
+   "boards": [
+    [
+     "greenhouse",
+     "forte"
+    ]
+   ]
+  },
+  {
+   "name": "Four Hands",
+   "adjacent": true,
+   "website": "https://www.fourhands.com",
+   "boards": [
+    [
+     "greenhouse",
+     "fourhands"
+    ]
+   ]
+  },
+  {
+   "name": "Fractured Byte",
+   "adjacent": true,
+   "website": "https://fracturedbyte.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "fracturedbyte"
+    ]
+   ]
+  },
+  {
+   "name": "Free Range Games",
+   "adjacent": false,
+   "website": "https://freerangegames.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "frgjobs"
+    ]
+   ]
+  },
+  {
+   "name": "FreshBox Media Pvt. Ltd",
+   "adjacent": true,
+   "website": "https://freshboxmedia.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "freshboxmediapvtltd"
+    ]
+   ]
+  },
+  {
+   "name": "Freshworks",
+   "adjacent": true,
+   "website": "https://bit.ly/3iPrRWb",
+   "boards": [
+    [
+     "smartrecruiters",
+     "freshworks"
+    ]
+   ]
+  },
+  {
+   "name": "Fundamentally Games",
+   "adjacent": false,
+   "website": "http://www.fundamentally.games",
+   "boards": [
+    [
+     "smartrecruiters",
+     "FundamentallyGames"
+    ]
+   ]
+  },
+  {
+   "name": "Funguy Studio",
+   "adjacent": false,
+   "website": "http://www.FunGuyStudio.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "FunGuyStudioPhilippinesInc"
+    ]
+   ]
+  },
+  {
+   "name": "Futran Solutions",
+   "adjacent": true,
+   "website": "https://www.futransolutions.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "futransolutions"
+    ]
+   ]
+  },
+  {
+   "name": "Futurum Technology",
+   "adjacent": true,
+   "website": "https://careers.smartrecruiters.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "FuturumTechnologyLtd"
+    ]
+   ]
+  },
+  {
+   "name": "G.games",
+   "adjacent": false,
+   "website": "https://g.games/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "GluckGames"
+    ]
+   ]
+  },
+  {
+   "name": "GalaxE.Solutions",
+   "adjacent": true,
+   "website": "http://www.galaxe.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "galaxesolutions"
+    ]
+   ]
+  },
+  {
+   "name": "Game5Mobile",
+   "adjacent": false,
+   "website": "https://www.game5mobile.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Game5Mobile"
+    ]
+   ]
+  },
+  {
+   "name": "GameChanger",
+   "adjacent": false,
+   "website": "http://www.gc.com",
+   "boards": [
+    [
+     "ashby",
+     "gamechanger"
+    ]
+   ]
+  },
+  {
+   "name": "GameCloud Technologies Pvt Ltd",
+   "adjacent": false,
+   "website": "https://outscal.com/company/gamecloud-technologies-pvt-ltd",
+   "boards": [
+    [
+     "smartrecruiters",
+     "gamecloudtechnologiespvtltd"
+    ]
+   ]
+  },
+  {
+   "name": "Gameloft",
+   "adjacent": false,
+   "website": "http://www.gameloft.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Gameloft"
+    ]
+   ]
+  },
+  {
+   "name": "Games For Love",
+   "adjacent": false,
+   "website": "http://gamesforlove.org",
+   "boards": [
+    [
+     "smartrecruiters",
+     "GamesForLove"
+    ]
+   ]
+  },
+  {
+   "name": "Gametime",
+   "adjacent": true,
+   "website": "https://gametime.co/",
+   "boards": [
+    [
+     "lever",
+     "gametime"
+    ]
+   ]
+  },
+  {
+   "name": "Gear Inc",
+   "adjacent": true,
+   "website": "www.gearinc.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "gearinc"
+    ]
+   ]
+  },
+  {
+   "name": "Geico",
+   "adjacent": true,
+   "website": "https://www.geico.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "geico"
+    ]
+   ]
+  },
+  {
+   "name": "Genera Games",
+   "adjacent": false,
+   "website": "https://careers.smartrecruiters.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "GeneraGames1"
+    ]
+   ]
+  },
+  {
+   "name": "Genies",
+   "adjacent": true,
+   "website": "http://genies.com",
+   "boards": [
+    [
+     "greenhouse",
+     "genies"
+    ]
+   ]
+  },
+  {
+   "name": "Genpop interactive",
+   "adjacent": false,
+   "website": "https://genpopinteractive.com",
+   "boards": [
+    [
+     "greenhouse",
+     "genpopinteractiveinc"
+    ]
+   ]
+  },
+  {
+   "name": "GIANTS Software",
+   "adjacent": true,
+   "website": "https://www.giants-software.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "GIANTSSoftwareGmbH"
+    ]
+   ]
+  },
+  {
+   "name": "Glance",
+   "adjacent": false,
+   "website": "https://www.glance.com/company",
+   "boards": [
+    [
+     "greenhouse",
+     "glance"
+    ]
+   ]
+  },
+  {
+   "name": "Go Fund Me",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "gofundme"
+    ]
+   ]
+  },
+  {
+   "name": "Golfscopeinc",
+   "adjacent": true,
+   "website": "https://www.golfplusvr.com",
+   "boards": [
+    [
+     "lever",
+     "golfscopeinc"
+    ]
+   ]
+  },
+  {
+   "name": "GoMotive",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "gomotive"
+    ]
+   ]
+  },
+  {
+   "name": "Good Job Games",
+   "adjacent": false,
+   "website": "http://www.goodjobgames.com",
+   "boards": [
+    [
+     "greenhouse",
+     "goodjobgames"
+    ]
+   ]
+  },
+  {
+   "name": "Goop",
+   "adjacent": true,
+   "website": "https://goop.com",
+   "boards": [
+    [
+     "greenhouse",
+     "goop"
+    ]
+   ]
+  },
+  {
+   "name": "Gram Games",
+   "adjacent": false,
+   "website": "https://gram.gs/",
+   "boards": [
+    [
+     "greenhouse",
+     "gramgamescareers"
+    ]
+   ]
+  },
+  {
+   "name": "Gravity Well",
+   "adjacent": false,
+   "website": "https://gravitywell.games/",
+   "boards": [
+    [
+     "greenhouse",
+     "gravitywell"
+    ]
+   ]
+  },
+  {
+   "name": "GreenWave™ Radios",
+   "adjacent": true,
+   "website": "https://greenwaveradios.com",
+   "boards": [
+    [
+     "greenhouse",
+     "greenwaveradios"
+    ]
+   ]
+  },
+  {
+   "name": "Growe",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "growe"
+    ]
+   ]
+  },
+  {
+   "name": "Guerrilla",
+   "adjacent": false,
+   "website": "http://www.guerrilla-games.com",
+   "boards": [
+    [
+     "greenhouse",
+     "guerrilla"
+    ]
+   ]
+  },
+  {
+   "name": "HackerRank",
+   "adjacent": true,
+   "website": "https://www.hackerrank.com",
+   "boards": [
+    [
+     "greenhouse",
+     "hackerrank"
+    ],
+    [
+     "smartrecruiters",
+     "hackerrank"
+    ]
+   ]
+  },
+  {
+   "name": "Hard Ball Games",
+   "adjacent": false,
+   "website": "https://www.hardball.games",
+   "boards": [
+    [
+     "smartrecruiters",
+     "hardballgames"
+    ]
+   ]
+  },
+  {
+   "name": "Hardsuit Labs",
+   "adjacent": true,
+   "website": "https://outscal.com/company/hardsuit-labs",
+   "boards": [
+    [
+     "greenhouse",
+     "hardsuitlabs"
+    ]
+   ]
+  },
+  {
+   "name": "Harmonic",
+   "adjacent": true,
+   "website": "https://www.harmonicinc.com",
+   "boards": [
+    [
+     "greenhouse",
+     "harmonic"
+    ],
+    [
+     "ashby",
+     "harmonic"
+    ]
+   ]
+  },
+  {
+   "name": "Hatch",
+   "adjacent": true,
+   "website": "https://www.usehatchapp.com",
+   "boards": [
+    [
+     "ashby",
+     "hatch"
+    ]
+   ]
+  },
+  {
+   "name": "Hawkeye Innovations",
+   "adjacent": true,
+   "website": "https://jobs.ashbyhq.com",
+   "boards": [
+    [
+     "ashby",
+     "hawkeyeinnovations"
+    ]
+   ]
+  },
+  {
+   "name": "HB studios",
+   "adjacent": false,
+   "website": "http://www.hb-studios.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "hbstudios"
+    ]
+   ]
+  },
+  {
+   "name": "Head Digital Works",
+   "adjacent": true,
+   "website": "http://www.hdworks.in/",
+   "boards": [
+    [
+     "lever",
+     "hdworks"
+    ]
+   ]
+  },
+  {
+   "name": "Heart Machine",
+   "adjacent": false,
+   "website": "http://www.heartmachine.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "HeartMachine"
+    ]
+   ]
+  },
+  {
+   "name": "Hi-Rez Studios",
+   "adjacent": false,
+   "website": "https://hirezstudios.com/",
+   "boards": [
+    [
+     "lever",
+     "hirezstudios"
+    ]
+   ]
+  },
+  {
+   "name": "High Drive",
+   "adjacent": false,
+   "website": "https://highdivegames.com/en",
+   "boards": [
+    [
+     "greenhouse",
+     "highdive"
+    ]
+   ]
+  },
+  {
+   "name": "Higharc",
+   "adjacent": true,
+   "website": "https://higharc.com/",
+   "boards": [
+    [
+     "ashby",
+     "higharc"
+    ]
+   ]
+  },
+  {
+   "name": "Hive",
+   "adjacent": true,
+   "website": "https://careers.smartrecruiters.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Hive1"
+    ]
+   ]
+  },
+  {
+   "name": "Hologram Labs",
+   "adjacent": true,
+   "website": "https://hologram.xyz",
+   "boards": [
+    [
+     "lever",
+     "hologram"
+    ]
+   ]
+  },
+  {
+   "name": "Hope Lab",
+   "adjacent": true,
+   "website": "https://hopelab.org/",
+   "boards": [
+    [
+     "lever",
+     "hopelab"
+    ]
+   ]
+  },
+  {
+   "name": "Hovercraft",
+   "adjacent": false,
+   "website": "https://hovercraftstudio.com",
+   "boards": [
+    [
+     "greenhouse",
+     "hovercraft"
+    ]
+   ]
+  },
+  {
+   "name": "Howard Hanna Real Estate Services",
+   "adjacent": true,
+   "website": "https://www.howardhanna.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "howardhannarealestateservices"
+    ]
+   ]
+  },
+  {
+   "name": "HunterDouglas",
+   "adjacent": true,
+   "website": "https://www.hunterdouglasgroup.com",
+   "boards": [
+    [
+     "greenhouse",
+     "hunterdouglas"
+    ]
+   ]
+  },
+  {
+   "name": "Hyperhug",
+   "adjacent": true,
+   "website": "https://hyperhug.io",
+   "boards": [
+    [
+     "ashby",
+     "hyperhug"
+    ]
+   ]
+  },
+  {
+   "name": "Hypixel Studios",
+   "adjacent": false,
+   "website": "https://hypixelstudios.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "hypixelstudios"
+    ]
+   ]
+  },
+  {
+   "name": "Illumination",
+   "adjacent": true,
+   "website": "https://www.illumination.com/",
+   "boards": [
+    [
+     "lever",
+     "illumination"
+    ]
+   ]
+  },
+  {
+   "name": "Imaginite soft studios",
+   "adjacent": false,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "imaginitesoft"
+    ]
+   ]
+  },
+  {
+   "name": "Improbable",
+   "adjacent": false,
+   "website": "https://improbable.io/",
+   "boards": [
+    [
+     "lever",
+     "improbable"
+    ]
+   ]
+  },
+  {
+   "name": "Inflexion games",
+   "adjacent": false,
+   "website": "https://www.inflexion.io",
+   "boards": [
+    [
+     "lever",
+     "inflexion"
+    ]
+   ]
+  },
+  {
+   "name": "Ingenuity Studios, LLC",
+   "adjacent": true,
+   "website": "http://www.ingenuitystudios.com",
+   "boards": [
+    [
+     "greenhouse",
+     "ingenuitystudios"
+    ]
+   ]
+  },
+  {
+   "name": "Inkittt",
+   "adjacent": true,
+   "website": "https://www.inkitt.com/jobs/",
+   "boards": [
+    [
+     "lever",
+     "inkitt"
+    ]
+   ]
+  },
+  {
+   "name": "InMobi",
+   "adjacent": true,
+   "website": "http://www.inmobi.com",
+   "boards": [
+    [
+     "greenhouse",
+     "inmobi"
+    ]
+   ]
+  },
+  {
+   "name": "Innovecs",
+   "adjacent": true,
+   "website": "https://www.innovecs.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "innovecs"
+    ],
+    [
+     "smartrecruiters",
+     "innovecs"
+    ]
+   ]
+  },
+  {
+   "name": "Intergalactic Gaming",
+   "adjacent": false,
+   "website": "https://careers.smartrecruiters.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "IntergalacticGamingLtd"
+    ]
+   ]
+  },
+  {
+   "name": "Intrepid Studios",
+   "adjacent": false,
+   "website": "https://intrepidstudios.applytojob.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "intrepidstudios"
+    ]
+   ]
+  },
+  {
+   "name": "Inworld AI",
+   "adjacent": true,
+   "website": "https://inworld.ai",
+   "boards": [
+    [
+     "greenhouse",
+     "inworldai"
+    ]
+   ]
+  },
+  {
+   "name": "Ironbelly Studios",
+   "adjacent": false,
+   "website": "http://www.ironbellystudios.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "IronbellyStudios"
+    ]
+   ]
+  },
+  {
+   "name": "IXL Learning",
+   "adjacent": true,
+   "website": "https://www.ixl.com",
+   "boards": [
+    [
+     "greenhouse",
+     "ixllearning"
+    ]
+   ]
+  },
+  {
+   "name": "J.S. Held LLC",
+   "adjacent": true,
+   "website": "https://www.jsheld.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "jsheldllc"
+    ]
+   ]
+  },
+  {
+   "name": "Jackalyptic Games",
+   "adjacent": false,
+   "website": "https://jackalyptic.com",
+   "boards": [
+    [
+     "greenhouse",
+     "jackalypticgames"
+    ]
+   ]
+  },
+  {
+   "name": "Jagex",
+   "adjacent": false,
+   "website": "https://www.jagex.com/",
+   "boards": [
+    [
+     "lever",
+     "jagex"
+    ]
+   ]
+  },
+  {
+   "name": "Jam media",
+   "adjacent": true,
+   "website": "https://www.jammedia.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "jammedia"
+    ]
+   ]
+  },
+  {
+   "name": "Jar of sparks",
+   "adjacent": true,
+   "website": "www.jarofsparks.com",
+   "boards": [
+    [
+     "greenhouse",
+     "jarofsparks"
+    ]
+   ]
+  },
+  {
+   "name": "Journee",
+   "adjacent": true,
+   "website": "https://www.journee.live/",
+   "boards": [
+    [
+     "greenhouse",
+     "journee"
+    ]
+   ]
+  },
+  {
+   "name": "Joyteractive",
+   "adjacent": true,
+   "website": "https://www.joyteractive.com/",
+   "boards": [
+    [
+     "ashby",
+     "Joyteractive"
+    ]
+   ]
+  },
+  {
+   "name": "K-group1",
+   "adjacent": true,
+   "website": "https://www.group1.ai",
+   "boards": [
+    [
+     "smartrecruiters",
+     "k-group1"
+    ]
+   ]
+  },
+  {
+   "name": "Kaizen Gaming",
+   "adjacent": false,
+   "website": "http://careers.kaizengaming.com",
+   "boards": [
+    [
+     "greenhouse",
+     "kaizengaming"
+    ]
+   ]
+  },
+  {
+   "name": "Kaseya",
+   "adjacent": true,
+   "website": "https://www.kaseya.com",
+   "boards": [
+    [
+     "greenhouse",
+     "kaseya"
+    ]
+   ]
+  },
+  {
+   "name": "Kayak",
+   "adjacent": true,
+   "website": "http://www.kayak.com",
+   "boards": [
+    [
+     "greenhouse",
+     "kayak"
+    ],
+    [
+     "ashby",
+     "kayak"
+    ]
+   ]
+  },
+  {
+   "name": "Keen Software Houses",
+   "adjacent": true,
+   "website": "https://boards.eu.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "keensoftwarehouseas"
+    ]
+   ]
+  },
+  {
+   "name": "Kenvue",
+   "adjacent": true,
+   "website": "https://www.kenvue.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "kenvue"
+    ]
+   ]
+  },
+  {
+   "name": "Keylent Inc",
+   "adjacent": true,
+   "website": "https://outscal.com/company/keylent-inc",
+   "boards": [
+    [
+     "smartrecruiters",
+     "keylentinc"
+    ]
+   ]
+  },
+  {
+   "name": "Klang Games",
+   "adjacent": false,
+   "website": "http://www.klang-games.com",
+   "boards": [
+    [
+     "greenhouse",
+     "klanggames"
+    ]
+   ]
+  },
+  {
+   "name": "Klaviyo",
+   "adjacent": true,
+   "website": "https://www.klaviyo.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "klaviyo"
+    ]
+   ]
+  },
+  {
+   "name": "Knack studios",
+   "adjacent": true,
+   "website": "http://www.knackstudios.in",
+   "boards": [
+    [
+     "smartrecruiters",
+     "KnackStudios"
+    ]
+   ]
+  },
+  {
+   "name": "Konecranes",
+   "adjacent": true,
+   "website": "http://www.konecranes.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "konecranes"
+    ]
+   ]
+  },
+  {
+   "name": "Krafton India",
+   "adjacent": true,
+   "website": "https://www.krafton.in/",
+   "boards": [
+    [
+     "greenhouse",
+     "kraftonindia"
+    ]
+   ]
+  },
+  {
+   "name": "KRAFTON Montréal Studio",
+   "adjacent": false,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "studiokraftonboard"
+    ]
+   ]
+  },
+  {
+   "name": "Kyruus Health",
+   "adjacent": true,
+   "website": "https://kyruushealth.com",
+   "boards": [
+    [
+     "lever",
+     "kyruushealth"
+    ]
+   ]
+  },
+  {
+   "name": "L'Oréal",
+   "adjacent": true,
+   "website": "https://www.loreal.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "loral"
+    ]
+   ]
+  },
+  {
+   "name": "LA Clippers",
+   "adjacent": true,
+   "website": "https://outscal.com/company/la-clippers",
+   "boards": [
+    [
+     "greenhouse",
+     "laclippers"
+    ]
+   ]
+  },
+  {
+   "name": "LaunchDarkly",
+   "adjacent": true,
+   "website": "https://launchdarkly.com",
+   "boards": [
+    [
+     "greenhouse",
+     "launchdarkly"
+    ]
+   ]
+  },
+  {
+   "name": "Legacy Labs",
+   "adjacent": true,
+   "website": "https://legacylabs.io",
+   "boards": [
+    [
+     "lever",
+     "LegacyLabs"
+    ]
+   ]
+  },
+  {
+   "name": "Level Ex",
+   "adjacent": false,
+   "website": "http://www.levelex.com",
+   "boards": [
+    [
+     "greenhouse",
+     "levelex"
+    ]
+   ]
+  },
+  {
+   "name": "Limit Break",
+   "adjacent": true,
+   "website": "https://www.limitbreak.com",
+   "boards": [
+    [
+     "lever",
+     "limitbreak"
+    ]
+   ]
+  },
+  {
+   "name": "Lincoln Digital Group™",
+   "adjacent": true,
+   "website": "https://www.lincolndigitalgroup.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "lincolndigitalgroup"
+    ]
+   ]
+  },
+  {
+   "name": "Linden lab",
+   "adjacent": false,
+   "website": "http://www.lindenlab.com",
+   "boards": [
+    [
+     "greenhouse",
+     "lindenlab"
+    ]
+   ]
+  },
+  {
+   "name": "LivePerson",
+   "adjacent": true,
+   "website": "https://www.liveperson.com",
+   "boards": [
+    [
+     "greenhouse",
+     "liveperson"
+    ]
+   ]
+  },
+  {
+   "name": "Loaded",
+   "adjacent": false,
+   "website": "https://www.loaded.gg",
+   "boards": [
+    [
+     "lever",
+     "loaded"
+    ]
+   ]
+  },
+  {
+   "name": "LOFT 17 visuals",
+   "adjacent": true,
+   "website": "http://www.loft17.in",
+   "boards": [
+    [
+     "smartrecruiters",
+     "loft17visuals"
+    ]
+   ]
+  },
+  {
+   "name": "Loop games",
+   "adjacent": false,
+   "website": "https://loopgames.net",
+   "boards": [
+    [
+     "lever",
+     "loopgames"
+    ]
+   ]
+  },
+  {
+   "name": "Luma Pictures",
+   "adjacent": true,
+   "website": "https://www.luma.inc",
+   "boards": [
+    [
+     "lever",
+     "lumapictures"
+    ]
+   ]
+  },
+  {
+   "name": "Lumen Games",
+   "adjacent": false,
+   "website": "http://lumen.games",
+   "boards": [
+    [
+     "smartrecruiters",
+     "lumengames"
+    ]
+   ]
+  },
+  {
+   "name": "Luminary",
+   "adjacent": true,
+   "website": "https://www.luminary.com/",
+   "boards": [
+    [
+     "ashby",
+     "luminary"
+    ]
+   ]
+  },
+  {
+   "name": "Lunchbox Entertainment",
+   "adjacent": false,
+   "website": "https://www.lunchboxentertainment.com/",
+   "boards": [
+    [
+     "lever",
+     "LunchboxEntertainment"
+    ]
+   ]
+  },
+  {
+   "name": "Madbox",
+   "adjacent": false,
+   "website": "https://madbox.io",
+   "boards": [
+    [
+     "lever",
+     "madbox"
+    ]
+   ]
+  },
+  {
+   "name": "Magic games",
+   "adjacent": false,
+   "website": "https://magic.gs/",
+   "boards": [
+    [
+     "lever",
+     "magicgames"
+    ]
+   ]
+  },
+  {
+   "name": "Magnopus",
+   "adjacent": true,
+   "website": "https://outscal.com/company/magnopus",
+   "boards": [
+    [
+     "lever",
+     "magnopus"
+    ]
+   ]
+  },
+  {
+   "name": "Manticore Games Inc.",
+   "adjacent": false,
+   "website": "http://www.manticoregames.com",
+   "boards": [
+    [
+     "greenhouse",
+     "ManticoreGames"
+    ]
+   ]
+  },
+  {
+   "name": "Match Group",
+   "adjacent": true,
+   "website": "https://ustwogames.co.uk/",
+   "boards": [
+    [
+     "lever",
+     "matchgroup"
+    ]
+   ]
+  },
+  {
+   "name": "Media molecule",
+   "adjacent": false,
+   "website": "https://www.mediamolecule.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "mm"
+    ]
+   ]
+  },
+  {
+   "name": "Mentava",
+   "adjacent": true,
+   "website": "https://www.mentava.com/",
+   "boards": [
+    [
+     "ashby",
+     "mentava"
+    ]
+   ]
+  },
+  {
+   "name": "Meta4",
+   "adjacent": true,
+   "website": "https://careers.smartrecruiters.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "META4"
+    ]
+   ]
+  },
+  {
+   "name": "MetLife",
+   "adjacent": true,
+   "website": "https://www.metlife.com",
+   "boards": [
+    [
+     "lever",
+     "metlife"
+    ]
+   ]
+  },
+  {
+   "name": "MGM Resorts International",
+   "adjacent": true,
+   "website": "https://www.mgmresorts.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "mgmresortsinternational"
+    ]
+   ]
+  },
+  {
+   "name": "Mid summer studios",
+   "adjacent": false,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "midsummerstudios"
+    ]
+   ]
+  },
+  {
+   "name": "MiQ",
+   "adjacent": true,
+   "website": "https://www.wearemiq.com",
+   "boards": [
+    [
+     "greenhouse",
+     "miqdigital"
+    ]
+   ]
+  },
+  {
+   "name": "Mission Box Solutions",
+   "adjacent": true,
+   "website": "Mission Box Solutions",
+   "boards": [
+    [
+     "smartrecruiters",
+     "missionboxsolutions"
+    ]
+   ]
+  },
+  {
+   "name": "Mistplay",
+   "adjacent": true,
+   "website": "http://www.mistplay.com",
+   "boards": [
+    [
+     "lever",
+     "mistplay"
+    ]
+   ]
+  },
+  {
+   "name": "MixMob",
+   "adjacent": true,
+   "website": "http://www.mixmob.io",
+   "boards": [
+    [
+     "smartrecruiters",
+     "MixMob"
+    ]
+   ]
+  },
+  {
+   "name": "MNR Solutions Pvt. Ltd.",
+   "adjacent": true,
+   "website": "https://www.mnrsolutions.in",
+   "boards": [
+    [
+     "smartrecruiters",
+     "mnrsolutionspvtltd"
+    ]
+   ]
+  },
+  {
+   "name": "Mobilityware",
+   "adjacent": false,
+   "website": "http://www.mobilityware.com",
+   "boards": [
+    [
+     "greenhouse",
+     "mobilityware"
+    ]
+   ]
+  },
+  {
+   "name": "Mobius",
+   "adjacent": true,
+   "website": "http://mobiustech.in",
+   "boards": [
+    [
+     "greenhouse",
+     "mobius"
+    ]
+   ]
+  },
+  {
+   "name": "Modulate",
+   "adjacent": true,
+   "website": "http://modulate.ai",
+   "boards": [
+    [
+     "lever",
+     "modulate"
+    ]
+   ]
+  },
+  {
+   "name": "Mona",
+   "adjacent": true,
+   "website": "https://outscal.com/company/mona",
+   "boards": [
+    [
+     "ashby",
+     "mona"
+    ]
+   ]
+  },
+  {
+   "name": "Monks",
+   "adjacent": true,
+   "website": "https://www.monks.com",
+   "boards": [
+    [
+     "greenhouse",
+     "monks"
+    ]
+   ]
+  },
+  {
+   "name": "Monomi Park",
+   "adjacent": false,
+   "website": "http://www.monomipark.com",
+   "boards": [
+    [
+     "greenhouse",
+     "monomipark"
+    ]
+   ]
+  },
+  {
+   "name": "Monster Energy",
+   "adjacent": true,
+   "website": "https://www.monsterenergy.com",
+   "boards": [
+    [
+     "greenhouse",
+     "monsterenergy"
+    ]
+   ]
+  },
+  {
+   "name": "Monsters",
+   "adjacent": true,
+   "website": "http://monstersarehere.com",
+   "boards": [
+    [
+     "ashby",
+     "monsters"
+    ]
+   ]
+  },
+  {
+   "name": "Mott MacDonald",
+   "adjacent": true,
+   "website": "https://www.mottmac.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "mottmacdonald"
+    ]
+   ]
+  },
+  {
+   "name": "Multiverse",
+   "adjacent": true,
+   "website": "https://multiversecom.notion.site",
+   "boards": [
+    [
+     "ashby",
+     "multiverse"
+    ]
+   ]
+  },
+  {
+   "name": "My Fitness Pal",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "myfitnesspal"
+    ]
+   ]
+  },
+  {
+   "name": "Mythical Games",
+   "adjacent": false,
+   "website": "https://mythical.games",
+   "boards": [
+    [
+     "greenhouse",
+     "mythicalgames"
+    ],
+    [
+     "greenhouse",
+     "dmarket"
+    ]
+   ]
+  },
+  {
+   "name": "Neon Koi",
+   "adjacent": true,
+   "website": "https://www.neonkoi.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "neonkoi"
+    ]
+   ]
+  },
+  {
+   "name": "Netradyne",
+   "adjacent": true,
+   "website": "https://www.netradyne.com",
+   "boards": [
+    [
+     "greenhouse",
+     "netradyne"
+    ],
+    [
+     "smartrecruiters",
+     "netradyne"
+    ]
+   ]
+  },
+  {
+   "name": "Netskope",
+   "adjacent": true,
+   "website": "https://www.netskope.com",
+   "boards": [
+    [
+     "greenhouse",
+     "netskope"
+    ],
+    [
+     "smartrecruiters",
+     "netskope"
+    ]
+   ]
+  },
+  {
+   "name": "Never forget games",
+   "adjacent": false,
+   "website": "https://neverforgetgames.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "neverforgetgames"
+    ]
+   ]
+  },
+  {
+   "name": "New Globe",
+   "adjacent": true,
+   "website": "https://job-boards.greenhouse.io/newglobesandbox",
+   "boards": [
+    [
+     "greenhouse",
+     "newglobesandbox"
+    ]
+   ]
+  },
+  {
+   "name": "News Corp",
+   "adjacent": true,
+   "website": "https://newscorp.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "newscorp"
+    ]
+   ]
+  },
+  {
+   "name": "Niantic",
+   "adjacent": true,
+   "website": "https://nianticlabs.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "niantic"
+    ]
+   ]
+  },
+  {
+   "name": "Nielsen Holdings",
+   "adjacent": true,
+   "website": "https://www.nielsen.com/",
+   "boards": [
+    [
+     "lever",
+     "nielsen"
+    ]
+   ]
+  },
+  {
+   "name": "Night Dive Studios",
+   "adjacent": false,
+   "website": "https://www.nightdivestudios.com",
+   "boards": [
+    [
+     "greenhouse",
+     "nightdivestudios"
+    ]
+   ]
+  },
+  {
+   "name": "Nimble Giant Entertainment -------",
+   "adjacent": false,
+   "website": "https://nimblegiant.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "nimblegiant"
+    ]
+   ]
+  },
+  {
+   "name": "NinjaVan",
+   "adjacent": true,
+   "website": "http://www.ninjavan.co/",
+   "boards": [
+    [
+     "lever",
+     "ninjavan"
+    ]
+   ]
+  },
+  {
+   "name": "NK Securities Research",
+   "adjacent": true,
+   "website": "https://www.nksecurities.com",
+   "boards": [
+    [
+     "greenhouse",
+     "nksecuritiesresearch"
+    ]
+   ]
+  },
+  {
+   "name": "Noice",
+   "adjacent": false,
+   "website": "http://www.noice.com",
+   "boards": [
+    [
+     "lever",
+     "noice.com"
+    ]
+   ]
+  },
+  {
+   "name": "Nordeus",
+   "adjacent": false,
+   "website": "https://norde.us/info",
+   "boards": [
+    [
+     "greenhouse",
+     "nordeus"
+    ]
+   ]
+  },
+  {
+   "name": "Nothing",
+   "adjacent": true,
+   "website": "http://nothing.tech",
+   "boards": [
+    [
+     "greenhouse",
+     "nothing"
+    ]
+   ]
+  },
+  {
+   "name": "NOVOMATIC Technologies Poland",
+   "adjacent": true,
+   "website": "https://www.novomatic-tech.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "novomatictechnologiespoland"
+    ]
+   ]
+  },
+  {
+   "name": "Nvizzio Creations",
+   "adjacent": true,
+   "website": "https://careers.smartrecruiters.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "NvizzioCreations"
+    ]
+   ]
+  },
+  {
+   "name": "Octagon",
+   "adjacent": true,
+   "website": "https://octagonds.com",
+   "boards": [
+    [
+     "greenhouse",
+     "octagon"
+    ]
+   ]
+  },
+  {
+   "name": "Odyssey Interactive",
+   "adjacent": false,
+   "website": "http://OdysseyInteractive.gg",
+   "boards": [
+    [
+     "smartrecruiters",
+     "OdysseyInteractive"
+    ]
+   ]
+  },
+  {
+   "name": "Ogilvy",
+   "adjacent": true,
+   "website": "http://www.ogilvy.com",
+   "boards": [
+    [
+     "greenhouse",
+     "ogilvy"
+    ]
+   ]
+  },
+  {
+   "name": "Old Skull Games",
+   "adjacent": false,
+   "website": "http://www.oldskullgames.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "OldSkullGames1"
+    ]
+   ]
+  },
+  {
+   "name": "Oliver Wyman",
+   "adjacent": true,
+   "website": "https://www.oliverwyman.com",
+   "boards": [
+    [
+     "lever",
+     "oliverwyman"
+    ]
+   ]
+  },
+  {
+   "name": "Omni Creator Products",
+   "adjacent": true,
+   "website": "http://ocp.gg",
+   "boards": [
+    [
+     "ashby",
+     "ocp"
+    ]
+   ]
+  },
+  {
+   "name": "Oni studios",
+   "adjacent": false,
+   "website": "https://outscal.com/company/oni-studios",
+   "boards": [
+    [
+     "greenhouse",
+     "onistudios"
+    ]
+   ]
+  },
+  {
+   "name": "Optimism",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "optimism"
+    ]
+   ]
+  },
+  {
+   "name": "Oshi Health",
+   "adjacent": true,
+   "website": "https://www.oshihealth.com",
+   "boards": [
+    [
+     "greenhouse",
+     "oshihealth"
+    ]
+   ]
+  },
+  {
+   "name": "Otherside Entertainment",
+   "adjacent": false,
+   "website": "http://www.othersideentertainment.com",
+   "boards": [
+    [
+     "greenhouse",
+     "othersideentertainment"
+    ]
+   ]
+  },
+  {
+   "name": "Outfit7",
+   "adjacent": true,
+   "website": "https://outfit7.com/careers/jobs",
+   "boards": [
+    [
+     "greenhouse",
+     "outfit7"
+    ]
+   ]
+  },
+  {
+   "name": "Overdare",
+   "adjacent": true,
+   "website": "https://www.overdare.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "overdare"
+    ]
+   ]
+  },
+  {
+   "name": "Pahdo Labs",
+   "adjacent": true,
+   "website": "https://pahdolabs.com",
+   "boards": [
+    [
+     "ashby",
+     "pahdo"
+    ]
+   ]
+  },
+  {
+   "name": "Panic Button",
+   "adjacent": false,
+   "website": "http://www.panicbuttongames.com",
+   "boards": [
+    [
+     "greenhouse",
+     "panicbutton"
+    ]
+   ]
+  },
+  {
+   "name": "Paradoxum Games",
+   "adjacent": false,
+   "website": "https://paradoxum.gg/",
+   "boards": [
+    [
+     "lever",
+     "paradoxum-gg"
+    ]
+   ]
+  },
+  {
+   "name": "Parity",
+   "adjacent": true,
+   "website": "https://parity.is",
+   "boards": [
+    [
+     "ashby",
+     "parity"
+    ]
+   ]
+  },
+  {
+   "name": "Patreon",
+   "adjacent": true,
+   "website": "https://outscal.com/company/patreon",
+   "boards": [
+    [
+     "ashby",
+     "patreon"
+    ]
+   ]
+  },
+  {
+   "name": "Penn Interactive",
+   "adjacent": false,
+   "website": "https://outscal.com/company/penn-interactive",
+   "boards": [
+    [
+     "greenhouse",
+     "penninteractive"
+    ]
+   ]
+  },
+  {
+   "name": "People Can Fly",
+   "adjacent": false,
+   "website": "https://peoplecanfly.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "PeopleCanFly"
+    ]
+   ]
+  },
+  {
+   "name": "PeopleFun",
+   "adjacent": false,
+   "website": "https://www.peoplefun.com/",
+   "boards": [
+    [
+     "lever",
+     "peoplefun"
+    ]
+   ]
+  },
+  {
+   "name": "PharmaACE",
+   "adjacent": true,
+   "website": "https://www.pharmaace.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "pharmaace"
+    ]
+   ]
+  },
+  {
+   "name": "Pika",
+   "adjacent": true,
+   "website": "https://pika.art",
+   "boards": [
+    [
+     "greenhouse",
+     "pika"
+    ]
+   ]
+  },
+  {
+   "name": "Pine games",
+   "adjacent": false,
+   "website": "https://pinegames.com",
+   "boards": [
+    [
+     "lever",
+     "pinegames"
+    ]
+   ]
+  },
+  {
+   "name": "Plai Labs",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "plailabsinc"
+    ]
+   ]
+  },
+  {
+   "name": "Play Perfect",
+   "adjacent": false,
+   "website": "https://play-perfect.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "play-perfect"
+    ]
+   ]
+  },
+  {
+   "name": "PlayGig",
+   "adjacent": false,
+   "website": "http://www.playgig.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "playgiginc"
+    ],
+    [
+     "ashby",
+     "playgig"
+    ]
+   ]
+  },
+  {
+   "name": "Playground",
+   "adjacent": false,
+   "website": "https://playground-games.com",
+   "boards": [
+    [
+     "ashby",
+     "playground"
+    ]
+   ]
+  },
+  {
+   "name": "Playq",
+   "adjacent": false,
+   "website": "https://www.playq.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "playq"
+    ]
+   ]
+  },
+  {
+   "name": "PlayStation London Studio",
+   "adjacent": false,
+   "website": "https://playstationlondonstudio.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "playstationlondonstudio"
+    ]
+   ]
+  },
+  {
+   "name": "Playtech",
+   "adjacent": true,
+   "website": "http://www.playtech.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Playtech"
+    ]
+   ]
+  },
+  {
+   "name": "PlayVS",
+   "adjacent": false,
+   "website": "http://www.playvs.com",
+   "boards": [
+    [
+     "lever",
+     "playvs"
+    ]
+   ]
+  },
+  {
+   "name": "Playwing",
+   "adjacent": false,
+   "website": "https://www.playwing.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "playwing"
+    ]
+   ]
+  },
+  {
+   "name": "Pocket Worlds",
+   "adjacent": true,
+   "website": "https://pocketworlds.com/",
+   "boards": [
+    [
+     "ashby",
+     "Pocket%20Worlds"
+    ]
+   ]
+  },
+  {
+   "name": "Pokemon",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "pokemoncareers"
+    ]
+   ]
+  },
+  {
+   "name": "Poki",
+   "adjacent": true,
+   "website": "http://about.poki.com",
+   "boards": [
+    [
+     "lever",
+     "poki"
+    ]
+   ]
+  },
+  {
+   "name": "Polygon Labs",
+   "adjacent": true,
+   "website": "https://polygon.technology",
+   "boards": [
+    [
+     "ashby",
+     "polygon-labs"
+    ]
+   ]
+  },
+  {
+   "name": "Populla",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "poppulo"
+    ]
+   ]
+  },
+  {
+   "name": "Porter",
+   "adjacent": true,
+   "website": "https://helloporter.com",
+   "boards": [
+    [
+     "lever",
+     "porter"
+    ]
+   ]
+  },
+  {
+   "name": "Pragma",
+   "adjacent": true,
+   "website": "http://pragma.gg",
+   "boards": [
+    [
+     "ashby",
+     "pragmaplatform"
+    ]
+   ]
+  },
+  {
+   "name": "Prime",
+   "adjacent": true,
+   "website": "https://prime.ai",
+   "boards": [
+    [
+     "ashby",
+     "prime"
+    ]
+   ]
+  },
+  {
+   "name": "Prodigy Education",
+   "adjacent": true,
+   "website": "https://www.prodigygame.com/main-en/jobs",
+   "boards": [
+    [
+     "lever",
+     "prodigyeducation"
+    ]
+   ]
+  },
+  {
+   "name": "Profound",
+   "adjacent": true,
+   "website": "https://profound.com",
+   "boards": [
+    [
+     "greenhouse",
+     "profound"
+    ],
+    [
+     "ashby",
+     "profound"
+    ]
+   ]
+  },
+  {
+   "name": "Proof of Play",
+   "adjacent": true,
+   "website": "https://www.proofofplay.com",
+   "boards": [
+    [
+     "ashby",
+     "proofofplay"
+    ],
+    [
+     "lever",
+     "proofofplay"
+    ]
+   ]
+  },
+  {
+   "name": "Prophecy",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "prophecysimpledatalabs"
+    ]
+   ]
+  },
+  {
+   "name": "Proxima",
+   "adjacent": true,
+   "website": "https://www.proxima.ai",
+   "boards": [
+    [
+     "ashby",
+     "proxima"
+    ]
+   ]
+  },
+  {
+   "name": "Pubg Emea",
+   "adjacent": false,
+   "website": "https://pec.pubgesports.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "pubgemea"
+    ]
+   ]
+  },
+  {
+   "name": "Quixel",
+   "adjacent": true,
+   "website": "https://quixel.com",
+   "boards": [
+    [
+     "lever",
+     "quixel"
+    ]
+   ]
+  },
+  {
+   "name": "Quizizz",
+   "adjacent": true,
+   "website": "https://quizizz.com",
+   "boards": [
+    [
+     "lever",
+     "quizizz"
+    ]
+   ]
+  },
+  {
+   "name": "Rackspace Technology",
+   "adjacent": true,
+   "website": "https://www.rackspace.com/",
+   "boards": [
+    [
+     "lever",
+     "rackspace"
+    ]
+   ]
+  },
+  {
+   "name": "Ramboll3",
+   "adjacent": true,
+   "website": "https://www.ramboll.com/en-apac",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Ramboll3"
+    ]
+   ]
+  },
+  {
+   "name": "ramen VR",
+   "adjacent": true,
+   "website": "https://zenithmmo.com/",
+   "boards": [
+    [
+     "lever",
+     "ramenvr"
+    ]
+   ]
+  },
+  {
+   "name": "RAPP",
+   "adjacent": true,
+   "website": "https://www.rapp.com",
+   "boards": [
+    [
+     "greenhouse",
+     "rapp"
+    ]
+   ]
+  },
+  {
+   "name": "RDS Digital",
+   "adjacent": true,
+   "website": "https://www.rdsdigitals.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "rdsdigital"
+    ]
+   ]
+  },
+  {
+   "name": "Ready Player Me",
+   "adjacent": false,
+   "website": "https://readyplayer.me",
+   "boards": [
+    [
+     "greenhouse",
+     "readyplayerme"
+    ]
+   ]
+  },
+  {
+   "name": "Reality Games",
+   "adjacent": false,
+   "website": "https://www.reality.co",
+   "boards": [
+    [
+     "smartrecruiters",
+     "realitygames"
+    ]
+   ]
+  },
+  {
+   "name": "Rec Room",
+   "adjacent": false,
+   "website": "https://recroom.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "RecRoom"
+    ]
+   ]
+  },
+  {
+   "name": "Red 6",
+   "adjacent": true,
+   "website": "https://red6ar.com",
+   "boards": [
+    [
+     "ashby",
+     "red6"
+    ]
+   ]
+  },
+  {
+   "name": "Red Point Labs",
+   "adjacent": true,
+   "website": "https://www.linkedin.com/company/red-point-labs/about/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "RedPointLabs"
+    ]
+   ]
+  },
+  {
+   "name": "Regression Games",
+   "adjacent": false,
+   "website": "https://twitter.com/RegressionGG",
+   "boards": [
+    [
+     "ashby",
+     "regressiongg"
+    ]
+   ]
+  },
+  {
+   "name": "Relish Studios",
+   "adjacent": true,
+   "website": "http://www.reli.sh",
+   "boards": [
+    [
+     "lever",
+     "reli-sh"
+    ]
+   ]
+  },
+  {
+   "name": "Remedy Entertainment Plc",
+   "adjacent": false,
+   "website": "http://www.remedygames.com",
+   "boards": [
+    [
+     "lever",
+     "remedyentertainment"
+    ]
+   ]
+  },
+  {
+   "name": "ResMed",
+   "adjacent": true,
+   "website": "https://www.resmed.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "resmed"
+    ]
+   ]
+  },
+  {
+   "name": "Rise",
+   "adjacent": true,
+   "website": "https://risecodes.com/?utm_source=linkedin&utm_medium=about-page&utm_campaign=social",
+   "boards": [
+    [
+     "lever",
+     "rise"
+    ]
+   ]
+  },
+  {
+   "name": "Rocket Science",
+   "adjacent": true,
+   "website": "https://www.rocketscience.gg",
+   "boards": [
+    [
+     "ashby",
+     "rocketsciencegg"
+    ]
+   ]
+  },
+  {
+   "name": "Roof Stacks",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "roofstacks"
+    ]
+   ]
+  },
+  {
+   "name": "Rosetta gaming",
+   "adjacent": false,
+   "website": "https://www.rosettagaming.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "rosettagaming"
+    ]
+   ]
+  },
+  {
+   "name": "Rovio",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "rovio-2"
+    ]
+   ]
+  },
+  {
+   "name": "RTB House",
+   "adjacent": true,
+   "website": "https://www.rtbhouse.com",
+   "boards": [
+    [
+     "greenhouse",
+     "rtbhouse"
+    ]
+   ]
+  },
+  {
+   "name": "Rubrik",
+   "adjacent": true,
+   "website": "https://www.rubrik.com",
+   "boards": [
+    [
+     "greenhouse",
+     "rubrik"
+    ]
+   ]
+  },
+  {
+   "name": "Ruby play",
+   "adjacent": false,
+   "website": "https://rubyplay.talentlyft.com",
+   "boards": [
+    [
+     "lever",
+     "rubyplay"
+    ]
+   ]
+  },
+  {
+   "name": "Rush down studios",
+   "adjacent": false,
+   "website": "https://www.indeed.com",
+   "boards": [
+    [
+     "greenhouse",
+     "rushdownstudios"
+    ]
+   ]
+  },
+  {
+   "name": "Rush street interactive",
+   "adjacent": false,
+   "website": "https://www.rushstreetinteractive.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "rushstreetinteractive"
+    ]
+   ]
+  },
+  {
+   "name": "Ryse up studios",
+   "adjacent": false,
+   "website": "https://ryseupstudios.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "ryseupstudios"
+    ]
+   ]
+  },
+  {
+   "name": "Sagent",
+   "adjacent": true,
+   "website": "https://www.sagent.com",
+   "boards": [
+    [
+     "greenhouse",
+     "sagent"
+    ]
+   ]
+  },
+  {
+   "name": "Salt Xc",
+   "adjacent": true,
+   "website": "http://www.SaltXC.com",
+   "boards": [
+    [
+     "greenhouse",
+     "saltxc"
+    ]
+   ]
+  },
+  {
+   "name": "Sandbox VR",
+   "adjacent": true,
+   "website": "https://outscal.com/company/sandbox-vr",
+   "boards": [
+    [
+     "lever",
+     "sandboxvr"
+    ]
+   ]
+  },
+  {
+   "name": "Savage Game Studios",
+   "adjacent": false,
+   "website": "https://www.neonkoi.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "savagegamestudios"
+    ]
+   ]
+  },
+  {
+   "name": "Saviynt",
+   "adjacent": true,
+   "website": "https://www.saviynt.com",
+   "boards": [
+    [
+     "lever",
+     "saviynt"
+    ]
+   ]
+  },
+  {
+   "name": "Scope AR",
+   "adjacent": true,
+   "website": "http://scopear.com",
+   "boards": [
+    [
+     "lever",
+     "scopear"
+    ]
+   ]
+  },
+  {
+   "name": "Second Talent",
+   "adjacent": true,
+   "website": "https://www.linkedin.com/company/second-talent/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "secondtalent"
+    ]
+   ]
+  },
+  {
+   "name": "Seedify",
+   "adjacent": true,
+   "website": "http://seedify.fund",
+   "boards": [
+    [
+     "lever",
+     "seedify-fund"
+    ]
+   ]
+  },
+  {
+   "name": "Series Ai",
+   "adjacent": true,
+   "website": "https://www.series.inc/",
+   "boards": [
+    [
+     "ashby",
+     "seriesai"
+    ]
+   ]
+  },
+  {
+   "name": "ServiceNow",
+   "adjacent": true,
+   "website": "https://www.servicenow.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "servicenow"
+    ]
+   ]
+  },
+  {
+   "name": "Shrapnel Studio",
+   "adjacent": false,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "shrapnelstudio"
+    ]
+   ]
+  },
+  {
+   "name": "ShyftLabs",
+   "adjacent": true,
+   "website": "https://shyftlabs.io",
+   "boards": [
+    [
+     "lever",
+     "shyftlabs"
+    ]
+   ]
+  },
+  {
+   "name": "Signal Space Lab",
+   "adjacent": true,
+   "website": "http://www.signalspacelab.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "SignalSpaceLab"
+    ]
+   ]
+  },
+  {
+   "name": "Silent Games",
+   "adjacent": false,
+   "website": "http://www.silentgames-studio.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "SilentGames"
+    ]
+   ]
+  },
+  {
+   "name": "Skeleton key",
+   "adjacent": true,
+   "website": "https://skeletonkey.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "skeletonkey"
+    ]
+   ]
+  },
+  {
+   "name": "Skillz Inc.",
+   "adjacent": true,
+   "website": "https://www.skillz.com",
+   "boards": [
+    [
+     "greenhouse",
+     "skillzinc"
+    ]
+   ]
+  },
+  {
+   "name": "Skydance",
+   "adjacent": true,
+   "website": "https://skydance.com/careers/",
+   "boards": [
+    [
+     "lever",
+     "skydance"
+    ]
+   ]
+  },
+  {
+   "name": "Skyrocket Ventures",
+   "adjacent": true,
+   "website": "https://www.skyrocketventures.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "skyrocketventures"
+    ]
+   ]
+  },
+  {
+   "name": "Sleeper",
+   "adjacent": true,
+   "website": "https://sleeper.com",
+   "boards": [
+    [
+     "ashby",
+     "sleeper"
+    ]
+   ]
+  },
+  {
+   "name": "Soft Suave Technologies",
+   "adjacent": true,
+   "website": "https://outscal.com/company/soft-suave-technologies-",
+   "boards": [
+    [
+     "smartrecruiters",
+     "softsuavetechnologies"
+    ]
+   ]
+  },
+  {
+   "name": "Sonar Source",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "sonarsource"
+    ]
+   ]
+  },
+  {
+   "name": "SonicWall",
+   "adjacent": true,
+   "website": "https://www.sonicwall.com",
+   "boards": [
+    [
+     "greenhouse",
+     "sonicwall"
+    ]
+   ]
+  },
+  {
+   "name": "Sony Music Entertainment",
+   "adjacent": true,
+   "website": "https://www.sonymusic.com",
+   "boards": [
+    [
+     "greenhouse",
+     "sonymusicentertainment"
+    ]
+   ]
+  },
+  {
+   "name": "Sony pictures animation",
+   "adjacent": true,
+   "website": "http://www.sonypicturesanimation.com",
+   "boards": [
+    [
+     "greenhouse",
+     "sonypicturesanimation"
+    ]
+   ]
+  },
+  {
+   "name": "Sorare",
+   "adjacent": true,
+   "website": "https://sorare.com",
+   "boards": [
+    [
+     "ashby",
+     "Sorare"
+    ]
+   ]
+  },
+  {
+   "name": "Sourcegraph Inc.",
+   "adjacent": true,
+   "website": "https://sourcegraph.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "sourcegraph91"
+    ]
+   ]
+  },
+  {
+   "name": "Speckle",
+   "adjacent": true,
+   "website": "https://outscal.com/company/speckle",
+   "boards": [
+    [
+     "ashby",
+     "speckle"
+    ]
+   ]
+  },
+  {
+   "name": "Spellbrush",
+   "adjacent": true,
+   "website": "https://outscal.com/company/spellbrush",
+   "boards": [
+    [
+     "ashby",
+     "spellbrush"
+    ]
+   ]
+  },
+  {
+   "name": "Sphere Entertainment",
+   "adjacent": true,
+   "website": "https://www.sphereentertainmentco.com",
+   "boards": [
+    [
+     "greenhouse",
+     "sphereentertainment"
+    ]
+   ]
+  },
+  {
+   "name": "Spliced Inc.",
+   "adjacent": true,
+   "website": "https://www.splicedinc.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "spliced"
+    ]
+   ]
+  },
+  {
+   "name": "Sporty",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "sporty"
+    ]
+   ]
+  },
+  {
+   "name": "Springer Nature",
+   "adjacent": true,
+   "website": "https://www.springernature.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "springernature"
+    ]
+   ]
+  },
+  {
+   "name": "Spyke Games",
+   "adjacent": false,
+   "website": "https://www.linkedin.com/company/spyke-games/about/",
+   "boards": [
+    [
+     "lever",
+     "spyke-games"
+    ]
+   ]
+  },
+  {
+   "name": "Star Marketing",
+   "adjacent": true,
+   "website": "https://www.star-marketing.co.uk",
+   "boards": [
+    [
+     "smartrecruiters",
+     "starmarketing"
+    ]
+   ]
+  },
+  {
+   "name": "Starkflow",
+   "adjacent": true,
+   "website": "https://starkflow.co",
+   "boards": [
+    [
+     "smartrecruiters",
+     "starkflow"
+    ]
+   ]
+  },
+  {
+   "name": "StartPlaying",
+   "adjacent": true,
+   "website": "https://startplaying.games/",
+   "boards": [
+    [
+     "ashby",
+     "startplaying"
+    ]
+   ]
+  },
+  {
+   "name": "Stoic Studios",
+   "adjacent": false,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "Stoic"
+    ]
+   ]
+  },
+  {
+   "name": "Story Ground",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "Storygrounds"
+    ]
+   ]
+  },
+  {
+   "name": "Striking Distance Studios",
+   "adjacent": false,
+   "website": "https://sds.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "pubgsanramon"
+    ]
+   ]
+  },
+  {
+   "name": "Sumo Digital",
+   "adjacent": false,
+   "website": "https://www.sumo-digital.com/",
+   "boards": [
+    [
+     "lever",
+     "sumo-digital"
+    ]
+   ]
+  },
+  {
+   "name": "Super Duper",
+   "adjacent": true,
+   "website": "https://jobs.polymer.co",
+   "boards": [
+    [
+     "ashby",
+     "superduper"
+    ]
+   ]
+  },
+  {
+   "name": "Sustainable Talent",
+   "adjacent": true,
+   "website": "https://sustainabletalent.com",
+   "boards": [
+    [
+     "greenhouse",
+     "sustainabletalent"
+    ]
+   ]
+  },
+  {
+   "name": "SymphonyAI",
+   "adjacent": true,
+   "website": "http://www.symphonyai.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "symphonyai"
+    ]
+   ]
+  },
+  {
+   "name": "Synergy Resource Solutions",
+   "adjacent": true,
+   "website": "http://synergyresource.co.in",
+   "boards": [
+    [
+     "smartrecruiters",
+     "synergyresourcesolutions"
+    ]
+   ]
+  },
+  {
+   "name": "T systems",
+   "adjacent": true,
+   "website": "https://careers.smartrecruiters.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "T-SystemsICTIndiaPvtLtd1"
+    ]
+   ]
+  },
+  {
+   "name": "T-Minus Zero Entertainment",
+   "adjacent": false,
+   "website": "https://t-minuszero.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "tminuszero"
+    ]
+   ]
+  },
+  {
+   "name": "Talent Socio",
+   "adjacent": true,
+   "website": "https://www.talentsocio.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "talentsocio"
+    ]
+   ]
+  },
+  {
+   "name": "TALENT Software Services",
+   "adjacent": true,
+   "website": "https://talentstaffingservices.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "talentsoftwareservices"
+    ]
+   ]
+  },
+  {
+   "name": "TalentXO",
+   "adjacent": true,
+   "website": "https://www.talentxo.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "talentxo"
+    ]
+   ]
+  },
+  {
+   "name": "Tapblaze",
+   "adjacent": false,
+   "website": "http://www.tapblaze.com",
+   "boards": [
+    [
+     "ashby",
+     "tapblaze"
+    ]
+   ]
+  },
+  {
+   "name": "Tatsu Works",
+   "adjacent": false,
+   "website": "https://tatsu.works",
+   "boards": [
+    [
+     "smartrecruiters",
+     "tatsuworks"
+    ]
+   ]
+  },
+  {
+   "name": "Team Pumpkin",
+   "adjacent": true,
+   "website": "https://www.teampumpkin.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "teampumpkin"
+    ]
+   ]
+  },
+  {
+   "name": "Techholding",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "techholding"
+    ]
+   ]
+  },
+  {
+   "name": "Techland",
+   "adjacent": false,
+   "website": "https://techland.net/job-offers",
+   "boards": [
+    [
+     "smartrecruiters",
+     "TechlandSA"
+    ]
+   ]
+  },
+  {
+   "name": "Technicolor Creative Studios",
+   "adjacent": true,
+   "website": "https://www.technicolorcreative.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "TechnicolorGroup"
+    ],
+    [
+     "smartrecruiters",
+     "TechnicolorCreativeStudios"
+    ]
+   ]
+  },
+  {
+   "name": "Technorizen Software Solution",
+   "adjacent": true,
+   "website": "https://careers.smartrecruiters.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "TechnorizenSoftwareSolution"
+    ]
+   ]
+  },
+  {
+   "name": "Techstar group",
+   "adjacent": true,
+   "website": "https://www.techstargroup.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "techstargroup"
+    ]
+   ]
+  },
+  {
+   "name": "Tempo",
+   "adjacent": true,
+   "website": "https://tempo.rippling-ats.com",
+   "boards": [
+    [
+     "ashby",
+     "tempo"
+    ],
+    [
+     "smartrecruiters",
+     "tempo"
+    ]
+   ]
+  },
+  {
+   "name": "That's No Moon",
+   "adjacent": false,
+   "website": "http://thatsnomoon.com",
+   "boards": [
+    [
+     "greenhouse",
+     "thatsnomoonentertainment"
+    ]
+   ]
+  },
+  {
+   "name": "The Believer Company",
+   "adjacent": false,
+   "website": "https://believer.gg/",
+   "boards": [
+    [
+     "ashby",
+     "believer"
+    ]
+   ]
+  },
+  {
+   "name": "The Game Company",
+   "adjacent": false,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "thatgamecompany"
+    ]
+   ]
+  },
+  {
+   "name": "The Mill",
+   "adjacent": true,
+   "website": "http://www.themill.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "TheMill2"
+    ]
+   ]
+  },
+  {
+   "name": "Think Academy U.S",
+   "adjacent": true,
+   "website": "https://www.thethinkacademy.com",
+   "boards": [
+    [
+     "greenhouse",
+     "thinkacademyus"
+    ]
+   ]
+  },
+  {
+   "name": "Thirdwavelabs",
+   "adjacent": true,
+   "website": "https://www.gridlogic.in",
+   "boards": [
+    [
+     "lever",
+     "thirdwavelabs"
+    ]
+   ]
+  },
+  {
+   "name": "Threat Tec",
+   "adjacent": true,
+   "website": "https://threattec.com",
+   "boards": [
+    [
+     "lever",
+     "threattec"
+    ]
+   ]
+  },
+  {
+   "name": "Three space lab",
+   "adjacent": true,
+   "website": "https://www.3spacelab.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "threespacelab"
+    ]
+   ]
+  },
+  {
+   "name": "Titmouse",
+   "adjacent": true,
+   "website": "http://www.titmouse.net",
+   "boards": [
+    [
+     "lever",
+     "titmouse"
+    ]
+   ]
+  },
+  {
+   "name": "Tonic DNA",
+   "adjacent": true,
+   "website": "http://www.tonicdna.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "TonicDNA1"
+    ]
+   ]
+  },
+  {
+   "name": "Toptal",
+   "adjacent": true,
+   "website": "https://www.toptal.com",
+   "boards": [
+    [
+     "lever",
+     "toptal"
+    ]
+   ]
+  },
+  {
+   "name": "Torn banner studios",
+   "adjacent": false,
+   "website": "http://www.tornbanner.com",
+   "boards": [
+    [
+     "greenhouse",
+     "tornbannerstudios"
+    ]
+   ]
+  },
+  {
+   "name": "Track VFX",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "trackvfx"
+    ]
+   ]
+  },
+  {
+   "name": "Trade Republic",
+   "adjacent": true,
+   "website": "https://traderepublic.com",
+   "boards": [
+    [
+     "greenhouse",
+     "traderepublic"
+    ]
+   ]
+  },
+  {
+   "name": "Trailer park group",
+   "adjacent": true,
+   "website": "http://www.trailerparkgroup.com",
+   "boards": [
+    [
+     "greenhouse",
+     "trailerpark"
+    ]
+   ]
+  },
+  {
+   "name": "Treasure",
+   "adjacent": true,
+   "website": "https://treasure.lol",
+   "boards": [
+    [
+     "ashby",
+     "Treasure"
+    ]
+   ]
+  },
+  {
+   "name": "Trilitech",
+   "adjacent": true,
+   "website": "https://www.trili.tech",
+   "boards": [
+    [
+     "ashby",
+     "trilitech"
+    ]
+   ]
+  },
+  {
+   "name": "Trove Brands",
+   "adjacent": true,
+   "website": "https://www.trovebrands.com",
+   "boards": [
+    [
+     "greenhouse",
+     "trovebrands"
+    ]
+   ]
+  },
+  {
+   "name": "Uber",
+   "adjacent": true,
+   "website": "https://www.uber.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "uber"
+    ]
+   ]
+  },
+  {
+   "name": "Ubisoft",
+   "adjacent": false,
+   "website": "https://www.ubisoft.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Ubisoft2"
+    ]
+   ]
+  },
+  {
+   "name": "Ultra",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "ultra"
+    ]
+   ]
+  },
+  {
+   "name": "Umanaia Interactive",
+   "adjacent": false,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "umanaiainteractive"
+    ]
+   ]
+  },
+  {
+   "name": "Unbroken Studios",
+   "adjacent": false,
+   "website": "https://www.unbrokenstudios.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "UnbrokenStudios"
+    ]
+   ]
+  },
+  {
+   "name": "Unchained Entertainment",
+   "adjacent": false,
+   "website": "https://www.unchained-entertainment.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "citystateentertainmentllc"
+    ]
+   ]
+  },
+  {
+   "name": "Undead Labs",
+   "adjacent": true,
+   "website": "http://undeadlabs.com",
+   "boards": [
+    [
+     "greenhouse",
+     "undeadlabsllc"
+    ]
+   ]
+  },
+  {
+   "name": "Unifynd",
+   "adjacent": true,
+   "website": "https://www.unifynd.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "unifynd"
+    ]
+   ]
+  },
+  {
+   "name": "Unispace",
+   "adjacent": true,
+   "website": "https://unispace.online",
+   "boards": [
+    [
+     "greenhouse",
+     "unispace"
+    ]
+   ]
+  },
+  {
+   "name": "Universe Group",
+   "adjacent": true,
+   "website": "https://universeapps.limited",
+   "boards": [
+    [
+     "ashby",
+     "universe-group"
+    ]
+   ]
+  },
+  {
+   "name": "Untold Tales",
+   "adjacent": true,
+   "website": "Untold-Tales",
+   "boards": [
+    [
+     "smartrecruiters",
+     "UntoldTalesSA"
+    ]
+   ]
+  },
+  {
+   "name": "Ursus, Inc.",
+   "adjacent": true,
+   "website": "https://www.ursusinc.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "ursusinc"
+    ]
+   ]
+  },
+  {
+   "name": "USE Insider",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "useinsider"
+    ]
+   ]
+  },
+  {
+   "name": "Ushur",
+   "adjacent": true,
+   "website": "https://ushur.ai",
+   "boards": [
+    [
+     "greenhouse",
+     "ushur"
+    ]
+   ]
+  },
+  {
+   "name": "Ustwo games",
+   "adjacent": false,
+   "website": "https://ustwogames.co.uk",
+   "boards": [
+    [
+     "greenhouse",
+     "ustwogames"
+    ]
+   ]
+  },
+  {
+   "name": "Valkyrie Entertainment",
+   "adjacent": false,
+   "website": "http://www.valkyrie-entertainment.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "ValkyrieEntertainment"
+    ]
+   ]
+  },
+  {
+   "name": "Valtech",
+   "adjacent": true,
+   "website": "https://www.valtech.com",
+   "boards": [
+    [
+     "greenhouse",
+     "valtech"
+    ]
+   ]
+  },
+  {
+   "name": "VaynerMedia",
+   "adjacent": true,
+   "website": "https://vaynermedia.com",
+   "boards": [
+    [
+     "greenhouse",
+     "vaynermedia"
+    ]
+   ]
+  },
+  {
+   "name": "Vector North",
+   "adjacent": true,
+   "website": "www.vectornorth.net",
+   "boards": [
+    [
+     "greenhouse",
+     "vectornorth"
+    ]
+   ]
+  },
+  {
+   "name": "Version 1",
+   "adjacent": true,
+   "website": "https://careers.smartrecruiters.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "Version1"
+    ]
+   ]
+  },
+  {
+   "name": "VGW",
+   "adjacent": true,
+   "website": "http://www.vgw.co",
+   "boards": [
+    [
+     "greenhouse",
+     "vgw"
+    ]
+   ]
+  },
+  {
+   "name": "Viacom 18",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "viacom18"
+    ]
+   ]
+  },
+  {
+   "name": "Viz Experts",
+   "adjacent": true,
+   "website": "https://outscal.com/company/vizexperts",
+   "boards": [
+    [
+     "smartrecruiters",
+     "vizexperts"
+    ]
+   ]
+  },
+  {
+   "name": "Voldex",
+   "adjacent": true,
+   "website": "https://outscal.com/company/voldex",
+   "boards": [
+    [
+     "ashby",
+     "Voldex"
+    ]
+   ]
+  },
+  {
+   "name": "Volka Games",
+   "adjacent": false,
+   "website": "https://volkagames.com",
+   "boards": [
+    [
+     "lever",
+     "volka"
+    ]
+   ]
+  },
+  {
+   "name": "Volly That",
+   "adjacent": true,
+   "website": "https://boards.greenhouse.io",
+   "boards": [
+    [
+     "greenhouse",
+     "volleythat"
+    ]
+   ]
+  },
+  {
+   "name": "Wargaming",
+   "adjacent": false,
+   "website": "http://www.wargaming.com",
+   "boards": [
+    [
+     "greenhouse",
+     "wargamingwelcometothejungle"
+    ],
+    [
+     "greenhouse",
+     "wargamingen"
+    ]
+   ]
+  },
+  {
+   "name": "WayForward Technologies",
+   "adjacent": false,
+   "website": "https://wayforward.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "WayForwardTechnologies"
+    ]
+   ]
+  },
+  {
+   "name": "WayUp",
+   "adjacent": true,
+   "website": "https://www.wayup.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "wayup"
+    ]
+   ]
+  },
+  {
+   "name": "WFC LA Inc",
+   "adjacent": true,
+   "website": "https://www.angelcity.com",
+   "boards": [
+    [
+     "greenhouse",
+     "wfclainc"
+    ]
+   ]
+  },
+  {
+   "name": "Whizz HR",
+   "adjacent": true,
+   "website": "http://whizzhr.com",
+   "boards": [
+    [
+     "smartrecruiters",
+     "whizzhr"
+    ]
+   ]
+  },
+  {
+   "name": "Wicked Workshop",
+   "adjacent": true,
+   "website": "https://wicked-witch.com.au/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "KeywordsAustralia"
+    ]
+   ]
+  },
+  {
+   "name": "WildBrain",
+   "adjacent": true,
+   "website": "https://www.wildbrain.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "WildBrain"
+    ]
+   ]
+  },
+  {
+   "name": "Wildlife Studios",
+   "adjacent": false,
+   "website": "https://www.wildlifestudios.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "wildlifestudios"
+    ]
+   ]
+  },
+  {
+   "name": "Wildlight",
+   "adjacent": true,
+   "website": "https://jobs.lever.co",
+   "boards": [
+    [
+     "lever",
+     "wildlight"
+    ]
+   ]
+  },
+  {
+   "name": "Windranger",
+   "adjacent": true,
+   "website": "https://jobs.ashbyhq.com",
+   "boards": [
+    [
+     "ashby",
+     "windranger"
+    ]
+   ]
+  },
+  {
+   "name": "Wizards of the Coast",
+   "adjacent": false,
+   "website": "https://company.wizards.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "wizardsofthecoast"
+    ]
+   ]
+  },
+  {
+   "name": "Wolfjaw studios -----",
+   "adjacent": false,
+   "website": "https://wolfjawstudios.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "wolfjawstudios"
+    ]
+   ]
+  },
+  {
+   "name": "WongDoody",
+   "adjacent": true,
+   "website": "https://www.wongdoody.com/",
+   "boards": [
+    [
+     "greenhouse",
+     "wongdoody"
+    ]
+   ]
+  },
+  {
+   "name": "World Makers",
+   "adjacent": false,
+   "website": "https://worldmakers.com",
+   "boards": [
+    [
+     "lever",
+     "worldmakers"
+    ]
+   ]
+  },
+  {
+   "name": "Worlds",
+   "adjacent": true,
+   "website": "http://www.worlds.org",
+   "boards": [
+    [
+     "ashby",
+     "Worlds"
+    ]
+   ]
+  },
+  {
+   "name": "Worlds Untold",
+   "adjacent": false,
+   "website": "http://www.worldsuntold.com",
+   "boards": [
+    [
+     "greenhouse",
+     "worldsuntold"
+    ]
+   ]
+  },
+  {
+   "name": "X games",
+   "adjacent": true,
+   "website": "http://www.xgames.com",
+   "boards": [
+    [
+     "greenhouse",
+     "xgames"
+    ]
+   ]
+  },
+  {
+   "name": "XBorg",
+   "adjacent": true,
+   "website": "https://www.xborg.com/",
+   "boards": [
+    [
+     "lever",
+     "swissborg"
+    ]
+   ]
+  },
+  {
+   "name": "Xsolla",
+   "adjacent": true,
+   "website": "http://www.xsolla.com",
+   "boards": [
+    [
+     "lever",
+     "xsolla"
+    ]
+   ]
+  },
+  {
+   "name": "Yellow 3D",
+   "adjacent": true,
+   "website": "https://jobs.ashbyhq.com/Yellow3d",
+   "boards": [
+    [
+     "ashby",
+     "Yellow3d"
+    ]
+   ]
+  },
+  {
+   "name": "Yggdrasil Gaming Ltd",
+   "adjacent": false,
+   "website": "http://yggdrasilgaming.com/",
+   "boards": [
+    [
+     "smartrecruiters",
+     "YggdrasilSandbox"
+    ]
+   ]
+  },
+  {
+   "name": "Yubo",
+   "adjacent": true,
+   "website": "https://www.welcometothejungle.com",
+   "boards": [
+    [
+     "ashby",
+     "yubo"
+    ]
+   ]
+  },
+  {
+   "name": "ZoomInfo",
+   "adjacent": true,
+   "website": "http://zoominfo.com",
+   "boards": [
+    [
+     "greenhouse",
+     "zoominfo"
+    ]
+   ]
+  },
+  {
+   "name": "Zuora",
+   "adjacent": true,
+   "website": "http://www.zuora.com",
+   "boards": [
+    [
+     "greenhouse",
+     "zuora"
+    ]
+   ]
+  }
+ ]
+}

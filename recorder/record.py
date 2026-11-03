@@ -142,6 +142,9 @@ def record_source(src, run_id, root, pacer):
            "url": redact(src["url"]), "at": now_iso()}
     if src.get("industry"):
         rec["industry"] = src["industry"]
+    if src.get("origin"):          # imported studio boards: lets export.mjs name and tag their jobs
+        rec["origin"] = src["origin"]
+        rec["adjacent"] = bool(src.get("adjacent"))
     if url is None:
         rec.update(skipped="missing credentials")
         return rec
