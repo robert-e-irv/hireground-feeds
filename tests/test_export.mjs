@@ -13,7 +13,7 @@ const data = path.join(tmp, "data"), site = path.join(tmp, "site"), run = "20261
 fs.mkdirSync(path.join(data, "index", "2026-11-02"), { recursive: true });
 fs.mkdirSync(path.join(data, "raw", run), { recursive: true });
 fs.mkdirSync(site, { recursive: true });
-fs.copyFileSync(path.join(ROOT, "site", "index.html"), path.join(site, "index.html"));
+for (const f of ["index.html", "relevance.js", "onet_dict.json"]) fs.copyFileSync(path.join(ROOT, "site", f), path.join(site, f));
 
 const day = 864e5, iso = ms => new Date(ms).toISOString();
 const long = "x".repeat(3000);
@@ -62,5 +62,11 @@ assert.ok(!byTitle["Hotel Night Manager"], "adjacent import drops roles that are
 assert.equal(out.feeds.find(f => f.id === "greenhouse:acmeco").count, 1);
 assert.equal(JSON.parse(log.trim().split("\n")[0]).droppedOffTopic, 1);
 assert.equal(byTitle["Game Designer"].gameStudio, true, "the app's own studio list still applies");
+// Relevance fields (site/relevance.js), computed per posting at export time.
+assert.equal(rn.oc[0], "29-1141.00", "a Registered Nurse posting is read as Registered Nurses");
+assert.equal(byTitle["Game Designer"].oc[0], "15-1255.01", "a studio's Game Designer is a Video Game Designer");
+assert.equal(byTitle["Game Designer"].dom, "games");
+assert.equal(pay.oc[0].slice(0, 7), "13-1141", "Payroll Specialist is its own occupation, games company or not");
+assert.ok(!("lv" in rn), "unmarked level (mid) is left out to keep jobs.json small");
 fs.rmSync(tmp, { recursive: true, force: true });
 console.log("ALL PASSED");

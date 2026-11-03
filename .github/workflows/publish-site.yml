@@ -38,7 +38,9 @@ jobs:
 
       # Same app-logic test the refresh relies on; a broken page never ships.
       - name: Test app logic
-        run: node tests/test_app_logic.mjs
+        run: |
+          node tests/test_app_logic.mjs
+          node tests/test_relevance.mjs
 
       # A refresh that started before this push checked out the OLD page and would redeploy it a few
       # minutes after us. Let it finish first, then publish on top (it waits at most ~20 minutes).

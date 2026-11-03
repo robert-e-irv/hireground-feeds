@@ -37,6 +37,14 @@ const ctx = vm.createContext({ console });
 vm.runInContext(m[1] + "\n;globalThis.__core = { normalizeText, isEmptyFeed: typeof isEmptyFeed === 'function' ? isEmptyFeed : null };", ctx);
 const { normalizeText } = ctx.__core;
 
+// ---- relevance fields (site/relevance.js): occupation, level, years asked, licences, remote limits, industry.
+// Computed here once per posting from the FULL description (the page only gets a trimmed one), so the browser
+// only has to read the person's resume.
+const relSrc = fs.readFileSync(path.join(SITE, "relevance.js"), "utf8");
+vm.runInContext(relSrc, ctx);
+const REL = ctx.HGRel;
+const DICT = JSON.parse(fs.readFileSync(path.join(SITE, "onet_dict.json"), "utf8"));
+
 // ---- find the newest run
 const idxFiles = fs.readdirSync(path.join(DATA, "index")).sort()
   .flatMap(d => fs.readdirSync(path.join(DATA, "index", d)).map(f => path.join(DATA, "index", d, f)))
@@ -98,6 +106,10 @@ for (const r of recs) {
           if (r.adjacent && !isGameRole(j)) { droppedOffTopic++; j.offTopic = true; continue; }
           j.company = r.name; j.studioKey = studioKeyOf(r.name); j.gameStudio = !r.adjacent;
         }
+        REL.enrichJob(j, DICT);
+        // Empty fields are dropped to keep jobs.json small, except oc: the page reads a missing oc as "not read yet".
+        if (!j.ocf) delete j.ocf; if (j.lv === 2) delete j.lv; if (j.yr == null) delete j.yr;
+        if (!j.cr.length) delete j.cr; if (!j.el.length) delete j.el; if (!j.dom) delete j.dom;
         if (j.description && j.description.length > descMax) j.description = j.description.slice(0, descMax);
         j.firstSeen = firstSeen[j.id] || (firstSeen[j.id] = now);
         // Employer boards: the verified company name (Lever and Ashby feeds only carry the slug) + its industry.

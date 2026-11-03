@@ -192,6 +192,22 @@
   .job-meta .co { color: var(--ink); font-weight: 600; }
   .job-meta a { color: inherit; text-decoration: none; } .job-meta a:hover { text-decoration: underline; }
   .job-why { margin: var(--space-2) 0 0; font-size: var(--step-0); }
+  .profile { margin: var(--space-3) 0 0; padding: var(--space-3) var(--space-4); background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-s); font-size: var(--step-n1); }
+  .pf-head { margin: 0 0 var(--space-2); color: var(--ink-mute); } .pf-head b { color: var(--ink); }
+  .pf-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-2); margin: var(--space-2) 0; }
+  .pf-k { min-width: 96px; color: var(--ink-mute); font-weight: 600; }
+  .pf-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pf-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 10px; border: 1px solid var(--line); border-radius: var(--radius-pill); background: var(--page); color: var(--ink); font: inherit; cursor: pointer; }
+  .pf-chip.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .pf-chip .x { opacity: .6; font-weight: 700; }
+  .pf-row select, .pf-row input[type=text] { margin: 0; width: auto; min-height: 32px; padding: 0 10px; font-size: var(--step-n1); }
+  .pf-row input[type=text] { flex: 1 1 180px; max-width: 280px; }
+  .pf-to { color: var(--ink-mute); }
+  .pf-none { color: var(--ink-mute); align-self: center; }
+  .pf-foot { margin: var(--space-2) 0 0; color: var(--ink-mute); }
+  .nfm { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: var(--space-2) 0 0; font-size: var(--step-n1); color: var(--ink-mute); }
+  .nfm[hidden] { display: none; }
+  .nfm button { min-height: 32px; padding: 0 10px; border-radius: var(--radius-pill); font-size: var(--step-n1); }
   .job-actions { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: var(--space-2) 0 0 calc(-1 * var(--space-1)); }
   a.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1); min-height: var(--tap); padding: 0 var(--space-4); border: 1px solid var(--line); border-radius: var(--radius-s); background: var(--card); color: var(--ink); font-weight: 600; font-size: var(--step-0); text-decoration: none; }
   a.btn:hover { border-color: var(--ink-mute); text-decoration: underline; text-underline-offset: 3px; }
@@ -362,7 +378,9 @@
 <div class="how" id="how" hidden>
   <p style="margin:0 0 8px"><strong>How it works</strong></p>
   <p style="margin:0 0 6px">Add your resume and where you live. Jobs you can actually take are ranked by how well they match and how recently they were posted.</p>
-  <p style="margin:0">Your resume is saved in this browser only. Only the job titles and the place you search for go to the job boards.</p>
+  <p style="margin:0 0 6px">Your resume is read in this browser and turned into a short profile: your field, your level and any licences. You can correct it. Jobs in other fields, at the wrong level, needing a licence you don't list, or not open where you live are hidden, and the page tells you how many and why.</p>
+  <p style="margin:0 0 6px">Your resume is saved in this browser only. Only the job titles and the place you search for go to the job boards.</p>
+  <p style="margin:0;font-size:var(--step-n1);color:var(--ink-mute)">Job fields come from the <a href="https://www.onetcenter.org/database.html" target="_blank" rel="noopener">O*NET 30.1 Database</a> by the U.S. Department of Labor, Employment and Training Administration, used under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Hire Ground modified it (normalized titles, added modern ones).</p>
 </div>
 <div class="wrap">
   <section class="search" aria-label="Your search">
@@ -377,9 +395,9 @@
           <option value="3">in the last 3 days</option>
           <option value="7">in the last 7 days</option>
           <option value="14">in the last 14 days</option>
-          <option value="30" selected>in the last 30 days</option>
+          <option value="30">in the last 30 days</option>
           <option value="90">in the last 90 days</option>
-          <option value="0">any time</option>
+          <option value="0" selected>any time</option>
         </select></label>
     </div>
     <p class="s-hint" id="loc-read"></p>
@@ -393,6 +411,16 @@
       <button type="button" class="ghost more-btn" id="more-btn-opts" aria-expanded="false" aria-controls="more-opts">More options<span class="chev" aria-hidden="true"></span></button>
     </div>
     <textarea id="resume-text" hidden aria-hidden="true" tabindex="-1"></textarea>
+    <div class="profile" id="profile" hidden>
+      <p class="pf-head"><b>We read your resume as</b> <span id="pf-note"></span></p>
+      <div class="pf-row"><span class="pf-k">Looking for</span><div class="pf-chips" id="pf-targets"></div>
+        <input id="pf-add" type="text" list="pf-occ" placeholder="Add a field, e.g. Producer" autocomplete="off" aria-label="Add a field you want jobs in"><datalist id="pf-occ"></datalist></div>
+      <div class="pf-row" id="pf-past-row" hidden><span class="pf-k">You also did</span><div class="pf-chips" id="pf-past"></div></div>
+      <div class="pf-row"><span class="pf-k">Level</span><select id="pf-lmin" aria-label="Lowest level to show"></select><span class="pf-to">to</span><select id="pf-lmax" aria-label="Highest level to show"></select></div>
+      <div class="pf-row"><span class="pf-k">Licences</span><div class="pf-chips" id="pf-creds"></div></div>
+      <label class="check" id="pf-dom-row" for="pf-dom" hidden><input id="pf-dom" type="checkbox"> Only jobs at <span id="pf-dom-name"></span> companies</label>
+      <p class="pf-foot"><span id="pf-hidden"></span> <button type="button" class="linkish" id="pf-reset" hidden>Reset to what the resume says</button></p>
+    </div>
     <div class="more-opts" id="more-opts" hidden>
       <div class="more-grid">
         <div class="field">
@@ -402,8 +430,11 @@
           <p class="hint">Matching is by place name, not distance. Remote jobs are kept only if they're open to your country or region.</p>
         </div>
         <div class="field">
-          <label for="recency"><span class="range-head"><span>Fit vs. freshness</span><span class="mono"><span id="rv">30</span>% freshness</span></span>
-            <input id="recency" type="range" min="0" max="100" value="30">
+          <label for="sort">Sort matches by
+            <select id="sort">
+              <option value="best" selected>Best match (newer first when close)</option>
+              <option value="newest">Newest first</option>
+            </select>
           </label>
           <label class="check" for="unspec"><input id="unspec" type="checkbox" checked> Include jobs that don't say where</label>
         </div>
@@ -593,6 +624,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="relevance.js"></script>
 <script>
 // <pure>
 const STOP = new Set(("a about above after again all also am an and any are as at be because been before being below " +
@@ -1598,14 +1630,47 @@ const state = { jobs: exampleJobs(), resume: "", limit: 100,
   // Hosted page: show a loading state until jobs.json arrives, instead of flashing the example jobs.
   loading: /^https?:$/.test(location.protocol) && !(window.claude && window.claude.use) };
 let dedupeCache = { src: null, out: [] };
-function uniqueJobs() { if (dedupeCache.src !== state.jobs) dedupeCache = { src: state.jobs, out: dedupeJobs(state.jobs).map(tagRole) }; return dedupeCache.out; }
+function uniqueJobs() {
+  if (dedupeCache.src !== state.jobs || dedupeCache.dict !== DICT) {
+    // Hosted listings arrive with their occupation already read (pipeline/export.mjs). Others are read here, once.
+    const out = dedupeJobs(state.jobs).map(tagRole);
+    if (DICT && window.HGRel) for (const j of out) if (!("oc" in j)) HGRel.enrichJob(j, DICT);
+    dedupeCache = { src: state.jobs, dict: DICT, out };
+  }
+  return dedupeCache.out;
+}
+// ---- relevance (site/relevance.js): the resume becomes a profile the person can correct; jobs are gated by it.
+let DICT = null, dictState = "";            // "", "loading", "ready", "failed"
+const EDITS_KEY = "hg-profile-edits";
+let pEdits = loadStore(EDITS_KEY) || {};
+let profCache = { key: "", base: null, prof: null };
+function loadDict() {
+  if (dictState || !window.HGRel) return;
+  dictState = "loading";
+  fetch("onet_dict.json").then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(d => { DICT = d; dictState = "ready"; fillOccList(); render(); })
+    .catch(() => { dictState = "failed"; render(); });
+}
+function profileNow() {
+  if (!DICT || !state.resume.trim()) return null;
+  const key = state.resume.length + "|" + state.resume.slice(0, 200) + "|" + JSON.stringify(pEdits);
+  if (profCache.key !== key) {
+    const base = profCache.base && profCache.resume === state.resume ? profCache.base : HGRel.profileFromResume(state.resume, DICT, new Date().getFullYear());
+    profCache = { key, resume: state.resume, base, prof: HGRel.applyEdits(base, pEdits) };
+  }
+  return profCache;
+}
+function saveEdits() { saveStore(EDITS_KEY, pEdits); render(); }
+const REL_LABEL = ["", "Good fit", "Strong fit"];
+const REL_WHY = ["", "Your field, but something isn't confirmed: a related field, the level, the location or the industry.",
+  "Your field at your level, somewhere you can work."];
 function loadStore(key) { try { return JSON.parse(localStorage.getItem(key) || "null"); } catch (_) { return null; } }
 function saveStore(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); return true; } catch (_) { return false; } }
 function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
 function safeUrl(u) { return /^https?:\/\//i.test(u || "") ? u : ""; }
 
 const SETTING_FIELDS = [
-  ["recency", "value"], ["max-age", "value"], ["filter", "value"], ["my-loc", "value"], ["nearby", "value"], ["radius", "value"],
+  ["sort", "value"], ["max-age", "value"], ["filter", "value"], ["my-loc", "value"], ["nearby", "value"], ["radius", "value"],
   ["arr-remote", "checked"], ["arr-hybrid", "checked"], ["arr-onsite", "checked"], ["unspec", "checked"], ["terms", "value"], ["industry", "value"], ["role", "value"], ["hide-evergreen", "checked"]
 ];
 function restore() {
@@ -1613,7 +1678,6 @@ function restore() {
   if (saved && Array.isArray(saved) && saved.length) state.jobs = saved;
   const s = loadStore("jf-settings");
   if (s) for (const [id, prop] of SETTING_FIELDS) if (s[id] != null) $(id)[prop] = s[id];
-  $("rv").textContent = $("recency").value;
   const r = loadStore("jf-resume");
   if (typeof r === "string" && r.trim()) { state.resume = r; $("resume-text").value = r; }
 }
@@ -1647,7 +1711,8 @@ function moreHtml(j, e, href, pay, hasResume, id) {
     row("Work style", esc(e.stated ? ARR_LABEL[e.arrangement] : "Not stated in the posting") + (e.fit ? ", " + esc(e.fit) : "")) +
     row("Source", j.example ? "Example listing" : esc(j.source + also)) +
     (pay ? row("Pay mentioned", esc(pay)) : "") +
-    (hasResume ? row("Fit", esc(FIT_LABEL[j.tier] + ". " + VERDICT_WHY[j.tier]) + (j.titleHits && j.titleHits.length ? " Shared: " + esc(j.titleHits.join(", ")) + "." : "")) : "") +
+    (hasResume && j.reason ? row("Fit", esc(REL_LABEL[j.tier] + ". " + j.reason + ". " + REL_WHY[j.tier])) : "") +
+    (hasResume && !j.reason ? row("Fit", esc(FIT_LABEL[j.tier] + ". " + VERDICT_WHY[j.tier]) + (j.titleHits && j.titleHits.length ? " Shared: " + esc(j.titleHits.join(", ")) + "." : "")) : "") +
     "</dl>" +
     ((j.matched || []).length ? '<div class="tags">' + j.matched.map(t => '<span class="tag">' + esc(t) + "</span>").join("") + "</div>" : "") +
     (d ? '<p class="desc">' + esc(d) + "</p>" : '<p class="desc none">This board did not share a description. Open the posting for the full details.</p>') +
@@ -1720,6 +1785,7 @@ function pipeAct(act, id, card) {
   else if (act === "hide") { put("hidden"); delete pipe.saved[id]; msg = "Hidden. Find it under Hidden"; undo = "unhide"; }
   else if (act === "unhide") { delete pipe.hidden[id]; msg = "Back in your feed"; }
   else if (act === "remove") { delete pipe.saved[id]; delete pipe.applied[id]; delete pipe.hidden[id]; msg = "Removed"; }
+  else if (act === "unnfm") { delete pipe.hidden[id]; if (undoEdits) { pEdits = undoEdits; undoEdits = null; saveStore(EDITS_KEY, pEdits); } msg = "Back in your feed"; }
   else return;
   saveStore(PIPE_KEY, pipe);
   const cards = [...document.querySelectorAll("#results .job")];
@@ -1769,11 +1835,40 @@ function actionsHtml(j, view, href, co) {
   const b = (act, label, cls, extra) => '<button type="button" class="' + cls + '" data-pipe="' + act + '"' + (extra || "") + ">" + label + "</button>";
   const open = href ? '<a class="btn ghost" href="' + esc(href) + '" target="_blank" rel="noopener">Open posting<span class="sr-only"> at ' + esc(co) + " (opens the employer's site)</span><span aria-hidden=\"true\"> ↗</span></a>" : "";
   let acts = "";
-  if (view === "foryou") acts = pipe.applied[j.id] ? "" : pipe.saved[j.id] ? b("unsave", "Saved", "btn-save", ' aria-pressed="true"') + b("hide", "Hide", "ghost") : b("save", "Save", "btn-save", ' aria-pressed="false"') + b("hide", "Hide", "ghost");
+  const hideBtn = j.reason ? b("nfm", "Not for me", "ghost", ' aria-expanded="false"') : b("hide", "Hide", "ghost");
+  if (view === "foryou") acts = pipe.applied[j.id] ? "" : pipe.saved[j.id] ? b("unsave", "Saved", "btn-save", ' aria-pressed="true"') + hideBtn : b("save", "Save", "btn-save", ' aria-pressed="false"') + hideBtn;
   else if (view === "saved") acts = b("applied", "Mark as applied", "btn-save") + b("unsave", "Remove", "ghost");
   else if (view === "applied") acts = b("back", "Move back to Saved", "btn-save") + b("remove", "Remove", "ghost");
   else if (view === "hidden") acts = b("unhide", "Unhide", "btn-save");
-  return '<div class="job-actions">' + acts + open + "</div>";
+  const nfm = view === "foryou" && j.reason ? '<div class="nfm" hidden><span>Why not?</span>' +
+    NFM.map(r => '<button type="button" class="ghost" data-nfm="' + r[0] + '">' + r[1] + "</button>").join("") + "</div>" : "";
+  return '<div class="job-actions">' + acts + open + "</div>" + nfm;
+}
+const NFM = [["field", "Wrong field"], ["level", "Wrong level"], ["location", "Can't work there"], ["stale", "Too old"], ["other", "Other"]];
+let undoEdits = null;
+// Hide the job, remember why (a label for the next relevance check), and adjust the profile when the reason says how.
+function notForMe(id, reason) {
+  const j = jobIndex.get(id), pc = profileNow();
+  if (!j || !pc) { pipeAct("hide", id, null); return; }
+  undoEdits = JSON.parse(JSON.stringify(pEdits));
+  const p = pc.prof, code = (j.oc || [])[0], lv = j.lv || 2;
+  let learned = "";
+  if (reason === "field") {
+    if (code && p.targets.indexOf(code) < 0) { pEdits.block = (pEdits.block || []).concat(code); learned = "Won't show " + HGRel.occName(code, DICT) + " jobs again"; }
+    else { pEdits.blockTitles = (pEdits.blockTitles || []).concat(HGRel.titleKeyOf(j.title)); learned = "Won't show \u201c" + j.title.replace(/\s[-–|(].*$/, "") + "\u201d jobs again"; }
+  } else if (reason === "level" && lv !== 2) {
+    if (lv > p.level) { pEdits.levelMax = Math.max(p.levelMin, lv - 1); learned = "Showing up to " + HGRel.LEVEL_NAMES[pEdits.levelMax] + " from now on"; }
+    else if (lv < p.level) { pEdits.levelMin = Math.min(p.levelMax, lv + 1); learned = "Showing " + HGRel.LEVEL_NAMES[pEdits.levelMin] + " and up from now on"; }
+  }
+  const fb = loadStore("hg-feedback") || [];
+  fb.push({ id, title: j.title, company: j.company, reason, oc: j.oc || [], lv, at: new Date().toISOString() });
+  saveStore("hg-feedback", fb.slice(-500));
+  saveStore(EDITS_KEY, pEdits);
+  pipe.hidden[id] = Object.assign({}, snapOf(j), { at: new Date().toISOString() });
+  delete pipe.saved[id];
+  saveStore(PIPE_KEY, pipe);
+  render();
+  showToast(learned ? "Hidden. " + learned : "Hidden. Find it under Hidden", "unnfm", id);
 }
 function cardHtml(j, e, hasResume, isNew, view) {
   e = e || { arrangement: "onsite", stated: false, fit: "" };
@@ -1788,7 +1883,7 @@ function cardHtml(j, e, hasResume, isNew, view) {
     : view === "applied" && pipe.applied[j.id] ? sinceText("Applied", pipe.applied[j.id].at)
     : view === "hidden" && pipe.hidden[j.id] ? sinceText("Hidden", pipe.hidden[j.id].at) : "";
   const top = [
-    hasResume && j.tier != null ? '<span class="verdict t' + j.tier + '" title="' + esc(VERDICT_WHY[j.tier]) + '">' + stepsSvg(j.tier + 1) + "<span>" + FIT_LABEL[j.tier] + "</span></span>" : "",
+    hasResume && j.tier != null ? '<span class="verdict t' + j.tier + '" title="' + esc((j.reason ? REL_WHY : VERDICT_WHY)[j.tier]) + '">' + stepsSvg(j.tier + 1) + "<span>" + (j.reason ? REL_LABEL : FIT_LABEL)[j.tier] + "</span></span>" : "",
     view === "foryou" && pipe.applied[j.id] ? '<span class="mark-applied">' + esc(sinceText("Applied", pipe.applied[j.id].at)) + "</span>" : "",
     status ? '<span class="mark-applied">' + esc(status) + "</span>" : "",
     isNew(j) ? '<span class="mark-new">New</span>' : "",
@@ -1802,7 +1897,7 @@ function cardHtml(j, e, hasResume, isNew, view) {
     e.stated ? "<span>" + esc(ARR_LABEL[e.arrangement]) + "</span>" : "",
     pay ? '<span title="Pay mentioned in the listing">' + esc(pay) + "</span>" : "",
     "<span>" + esc(agePhrase(j.ageDays)) + "</span>"].filter(Boolean).join("");
-  const why = [hasResume && j.tier > 0 && j.titleHits && j.titleHits.length ? "Matches: " + j.titleHits.slice(0, 3).join(", ") : "",
+  const why = [hasResume && j.reason ? j.reason : "", hasResume && !j.reason && j.tier > 0 && j.titleHits && j.titleHits.length ? "Matches: " + j.titleHits.slice(0, 3).join(", ") : "",
     !hasResume ? roleLabel(j) : "", !hasResume ? industryLabel(j) : "",
     e.fit && !warnFit ? e.fit : ""].filter(Boolean).join(" · ");
   const ja = /[぀-ヿ一-鿿]/.test(j.title) ? ' lang="ja"' : "";
@@ -1844,7 +1939,7 @@ function renderPipelineView(evals, hasResume, w, now) {
 }
 function render() {
   const now = Date.now();
-  const w = Number($("recency").value) / 100;
+  const w = 0.3;   // only for the keyword fallback while the title dictionary loads
   const maxAge = Number($("max-age").value);
   const q = $("filter").value.trim().toLowerCase();
 
@@ -1880,10 +1975,20 @@ function render() {
   const ageOf = j => Math.max(Math.floor((now - j.posted) / 86400000), 0);
   const hiddenByAge = maxAge ? pool.filter(j => ageOf(j) > maxAge).length : 0;
 
-  let list;
-  if (hasResume) {
+  let list, relHidden = null, pc = null;
+  if (hasResume) { loadDict(); pc = profileNow(); }
+  renderProfile(pc);
+  if (pc && pc.prof.targets.length) {
+    const inAge = pool.filter(j => !maxAge || ageOf(j) <= maxAge);
+    const r = HGRel.gateAndRank(inAge, pc.prof, { dict: DICT, now, mode: $("sort").value, userCountry: user && user.country,
+      evalOf: j => evals.get(j.id), keyOf: j => companyKey(j) + "|" + titleKey(j.title) });
+    list = r.list.map(j => Object.assign(j, { ageDays: ageOf(j), matched: [] }));
+    relHidden = r.hidden;
+    $("pf-hidden").textContent = Object.keys(relHidden).length ? "Hiding " + HGRel.describeHidden(relHidden).join(", ") + "." : "";
+    $("results-title").textContent = "Matches for you";
+  } else if (hasResume) {
     list = rankJobs(state.resume, pool, { recencyWeight: w, maxAgeDays: maxAge || null, now });
-    $("results-title").textContent = "Best matches";
+    $("results-title").textContent = dictState === "loading" ? "Best matches (reading your resume…)" : "Best matches";
   } else {
     list = pool.filter(j => !maxAge || ageOf(j) <= maxAge)
       .sort((a, b) => b.posted - a.posted)
@@ -1928,7 +2033,9 @@ function render() {
     if (hiddenByAge) acts.push(["age-all", "Show all dates"]);
     if (q || industry || role) acts.push(["clear", "Clear keywords, industry and role"]);
     if (hiddenByWhere) acts.push(["arr", "Turn on all work styles"], ["unspec", "Include jobs without a location"]);
-    const why = (q || industry || role) ? "No jobs match your keywords, industry or role filters."
+    const names = pc ? pc.prof.targets.map(c => HGRel.occName(c, DICT)).join(", ") : "";
+    const why = relHidden && !(q || industry || role) ? "None of today's listings are " + names + " roles you can take" + (hiddenByAge ? " in this time window" : "") + ". " + (coverageText || "") + " You can add fields or widen the level under \u201cWe read your resume as\u201d."
+      : (q || industry || role) ? "No jobs match your keywords, industry or role filters."
       : hiddenByAge ? "No jobs this recent match. Older ones are hidden."
       : hiddenByWhere ? "Nothing matches your location and work style." : "No jobs match these filters.";
     $("results").innerHTML = '<div class="empty"><p class="empty-h">No jobs here yet</p><p>' + why + '</p><div class="btn-row">' + acts.map(x => '<button type="button" class="ghost" data-act="' + x[0] + '">' + x[1] + "</button>").join("") + "</div></div>";
@@ -1936,8 +2043,9 @@ function render() {
   }
   // Honest floor: say so when nothing in the list clearly fits, instead of dressing up the least-bad job.
   const best = hasResume ? Math.max(...list.map(j => j.tier)) : 2;
+  const relBanner = relHidden && best < 2 ? '<div class="honest"><p><b>No strong matches yet.</b> These are close: a related field, or a level or location we couldn\'t confirm.</p></div>' : "";
   const firstRun = hasResume || exampleOnly ? "" : '<div class="first-run"><p><b>See which jobs fit you</b>Add your resume and Hire Ground ranks these by fit and says why. It stays in this browser.</p><label class="btn" for="resume-file">Add your resume</label></div>';
-  const banner = firstRun + (best === 2 ? "" : '<div class="honest"><p><b>' + (best === 0 ? "We don't have jobs like yours yet." : "No strong matches yet.") + "</b> " +
+  const banner = firstRun + relBanner + (best === 2 || relHidden ? "" : '<div class="honest"><p><b>' + (best === 0 ? "We don't have jobs like yours yet." : "No strong matches yet.") + "</b> " +
     (best === 0 ? "Nothing in today's listings clearly matches your resume. " + (coverageText ? coverageText + " " : "") + "The closest jobs are below, marked Long shot."
       : "The closest jobs are below, marked Stretch.") + "</p></div>");
   const moreBtn = list.length > shown.length ? '<button id="more-btn" type="button" class="ghost">Show 100 more</button>' : "";
@@ -2058,8 +2166,65 @@ $("resume-file").addEventListener("change", async e => {
 $("resume-clear").addEventListener("click", () => { $("resume-text").value = ""; $("resume-file").value = ""; setResume("", ""); });
 $("resume-text").addEventListener("input", e => { state.resume = e.target.value; clearTimeout(timer); timer = setTimeout(() => setResume(state.resume, ""), 300); });
 
+// ---- "We read your resume as": what the resume says, and the person's corrections on top
+function fillOccList() {
+  const dl = $("pf-occ"); if (!DICT || dl.childElementCount) return;
+  dl.innerHTML = Object.keys(DICT.occ).filter(c => !/All Other$/.test(DICT.occ[c][0])).map(c => '<option value="' + esc(DICT.occ[c][0]) + '">').join("");
+}
+function renderProfile(pc) {
+  const box = $("profile");
+  box.hidden = !pc;
+  if (!pc) return;
+  const p = pc.prof, base = pc.base, name = c => HGRel.occName(c, DICT);
+  $("pf-note").textContent = p.targets.length ? "Change anything that's wrong; results update as you go." : "We couldn't find a job title in it. Add the field you work in.";
+  $("pf-targets").innerHTML = p.targets.map(c => '<button type="button" class="pf-chip on" data-rm="' + esc(c) + '" aria-label="Remove ' + esc(name(c)) + '">' + esc(name(c)) + ' <span class="x" aria-hidden="true">\u00d7</span></button>').join("");
+  const past = base.past.filter(c => p.targets.indexOf(c) < 0).slice(0, 6);
+  $("pf-past-row").hidden = !past.length;
+  $("pf-past").innerHTML = past.map(c => '<button type="button" class="pf-chip" data-addc="' + esc(c) + '">+ ' + esc(name(c)) + "</button>").join("");
+  const L = HGRel.LEVEL_NAMES, opts = sel => L.map((n, i) => i ? '<option value="' + i + '"' + (i === sel ? " selected" : "") + ">" + n + "</option>" : "").join("");
+  $("pf-lmin").innerHTML = opts(p.levelMin); $("pf-lmax").innerHTML = opts(p.levelMax);
+  const held = HGRel.CREDENTIALS.filter(c => p.creds.indexOf(c.id) >= 0), other = HGRel.CREDENTIALS.filter(c => p.creds.indexOf(c.id) < 0);
+  $("pf-creds").innerHTML = held.map(c => '<button type="button" class="pf-chip on" data-cred="' + c.id + '" aria-label="Remove ' + esc(c.label) + '">' + esc(c.label) + ' <span class="x" aria-hidden="true">\u00d7</span></button>').join("") +
+    (held.length ? "" : '<span class="pf-none">None found. Jobs that require one are hidden.</span>') +
+    '<select id="pf-cred-add" aria-label="Add a licence you hold"><option value="">+ Add a licence</option>' + other.map(c => '<option value="' + c.id + '">' + esc(c.label) + "</option>").join("") + "</select>";
+  $("pf-dom-row").hidden = !base.domain;
+  $("pf-dom-name").textContent = base.domain === "games" ? "video game" : base.domain;
+  $("pf-dom").checked = !!p.onlyDomain;
+  $("pf-reset").hidden = !Object.keys(pEdits).length;
+}
+$("profile").addEventListener("click", e => {
+  const t = e.target.closest && e.target.closest("button"); if (!t) return;
+  const pc = profileNow(); if (!pc) return;
+  const without = (a, x) => (a || []).filter(y => y !== x);
+  if (t.dataset.rm) { const c = t.dataset.rm;
+    if (pc.base.targets.indexOf(c) >= 0) pEdits.remove = without(pEdits.remove, c).concat(c); else pEdits.add = without(pEdits.add, c); }
+  else if (t.dataset.addc) { const c = t.dataset.addc; pEdits.add = without(pEdits.add, c).concat(c); pEdits.remove = without(pEdits.remove, c); pEdits.block = without(pEdits.block, c); }
+  else if (t.dataset.cred) { const c = t.dataset.cred, on = pc.prof.creds.indexOf(c) >= 0;
+    if (on) { pEdits.creds = without(pEdits.creds, c); if (pc.base.creds.indexOf(c) >= 0) pEdits.noCreds = without(pEdits.noCreds, c).concat(c); }
+    else { pEdits.noCreds = without(pEdits.noCreds, c); if (pc.base.creds.indexOf(c) < 0) pEdits.creds = without(pEdits.creds, c).concat(c); } }
+  else if (t.id === "pf-reset") pEdits = {};
+  else return;
+  saveEdits();
+});
+$("pf-lmin").addEventListener("change", () => { pEdits.levelMin = Number($("pf-lmin").value); if (pEdits.levelMax && pEdits.levelMax < pEdits.levelMin) pEdits.levelMax = pEdits.levelMin; saveEdits(); });
+$("pf-lmax").addEventListener("change", () => { pEdits.levelMax = Number($("pf-lmax").value); if (pEdits.levelMin && pEdits.levelMin > pEdits.levelMax) pEdits.levelMin = pEdits.levelMax; saveEdits(); });
+$("pf-dom").addEventListener("change", () => { pEdits.onlyDomain = $("pf-dom").checked; saveEdits(); });
+$("pf-creds").addEventListener("change", e => {
+  const c = e.target.id === "pf-cred-add" && e.target.value; if (!c) return;
+  pEdits.noCreds = (pEdits.noCreds || []).filter(x => x !== c); pEdits.creds = (pEdits.creds || []).filter(x => x !== c).concat(c); saveEdits();
+});
+$("pf-add").addEventListener("change", () => {
+  const v = $("pf-add").value.trim(); if (!v || !DICT) return;
+  let code = Object.keys(DICT.occ).find(c => DICT.occ[c][0].toLowerCase() === v.toLowerCase());
+  if (!code) { const m = HGRel.matchTitle(v, DICT); code = m && m.code; }
+  if (!code) { setStatus("resume-status", "Couldn't find a field called \u201c" + v + "\u201d. Try a job title, like Producer or Store Manager.", true); return; }
+  pEdits.add = (pEdits.add || []).filter(c => c !== code).concat(code);
+  pEdits.remove = (pEdits.remove || []).filter(c => c !== code); pEdits.block = (pEdits.block || []).filter(c => c !== code);
+  $("pf-add").value = ""; saveEdits();
+});
+
 // ---- settings
-$("recency").addEventListener("input", () => { $("rv").textContent = $("recency").value; persistSettings(); renderSoon(); });
+$("sort").addEventListener("change", () => { persistSettings(); render(); });
 $("max-age").addEventListener("change", () => { persistSettings(); render(); });
 $("filter").addEventListener("input", () => { persistSettings(); renderSoon(); });
 $("industry").addEventListener("change", () => { persistSettings(); render(); });
@@ -2068,7 +2233,13 @@ $("hide-evergreen").addEventListener("change", () => { persistSettings(); render
 $("results").addEventListener("click", e => {
   const t = e.target; if (!t) return;
   if (t.id === "more-btn") { state.limit += 100; render(); return; }
+  const nb = t.closest && t.closest("[data-nfm]");
+  if (nb) { const c = nb.closest("[data-id]"); if (c) notForMe(c.dataset.id, nb.dataset.nfm); return; }
   const pb = t.closest && t.closest("[data-pipe]");
+  if (pb && pb.dataset.pipe === "nfm") {
+    const row = pb.closest(".job").querySelector(".nfm"), on = row.hidden;
+    row.hidden = !on; pb.setAttribute("aria-expanded", String(on)); if (on) row.querySelector("button").focus(); return;
+  }
   if (pb) { const c = pb.closest("[data-id]"); if (c) pipeAct(pb.dataset.pipe, c.dataset.id, c); return; }
   const vb = t.closest && t.closest("[data-view]");
   if (vb) { setView(vb.dataset.view); return; }
