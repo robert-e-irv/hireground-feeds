@@ -1,0 +1,42 @@
+name: Relevance lab data (temporary)
+# One-off: rebuild jobs.json with full descriptions from the body cache and commit it to the lab-data branch.
+on:
+  push:
+    branches: [lab-data]
+    paths: [".github/workflows/lab-data.yml", "lab/REQUEST"]
+permissions:
+  contents: write
+concurrency:
+  group: lab-data
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - name: Restore body cache (read only)
+        uses: actions/cache/restore@v6
+        with:
+          path: cache
+          key: never-matches-${{ github.run_id }}
+          restore-keys: bodies-
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      - name: Build full-description jobs.json
+        run: |
+          ls cache | wc -l
+          sed -i 's/^const DESC_MAX = 1500;/const DESC_MAX = 8000;/; s/^const DESC_MAX_EMPLOYER = 600;/const DESC_MAX_EMPLOYER = 8000;/' pipeline/export.mjs
+          cp data/first_seen.json.gz /tmp/fs.bak
+          node pipeline/export.mjs --data data --site site --cache cache
+          cp /tmp/fs.bak data/first_seen.json.gz
+          mkdir -p lab
+          gzip -9 -c site/jobs.json > lab/jobs_full.json.gz
+          ls -la lab
+      - name: Commit to lab-data
+        run: |
+          git config user.name  "hireground-bot"
+          git config user.email "hireground-bot@users.noreply.github.com"
+          git add -f lab/jobs_full.json.gz
+          git commit -m "lab: full-description jobs snapshot" || echo nothing
+          git push origin HEAD:lab-data
