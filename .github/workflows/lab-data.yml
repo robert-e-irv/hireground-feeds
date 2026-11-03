@@ -26,17 +26,32 @@ jobs:
       - name: Build full-description jobs.json
         run: |
           ls cache | wc -l
-          sed -i 's/^const DESC_MAX = 1500;/const DESC_MAX = 8000;/; s/^const DESC_MAX_EMPLOYER = 600;/const DESC_MAX_EMPLOYER = 8000;/' pipeline/export.mjs
+          sed -i 's/^const DESC_MAX = 1500;/const DESC_MAX = 8000;/; s/^const DESC_MAX_EMPLOYER = 600;/const DESC_MAX_EMPLOYER = 8000;/; s/if (r.adjacent \&\& !isGameRole(j))/if (false)/' pipeline/export.mjs
+          grep -c "if (false)" pipeline/export.mjs
           cp data/first_seen.json.gz /tmp/fs.bak
           node pipeline/export.mjs --data data --site site --cache cache
           cp /tmp/fs.bak data/first_seen.json.gz
           mkdir -p lab
           gzip -9 -c site/jobs.json > lab/jobs_full.json.gz
           ls -la lab
+      - name: Fetch O*NET occupation + title data
+        run: |
+          mkdir -p lab/onet
+          for v in 30_1 30_0 29_3 29_2 29_1 29_0; do
+            base="https://www.onetcenter.org/dl_files/database/db_${v}_text"
+            if curl -fsSL -o "lab/onet/Occupation Data.txt" "$base/Occupation%20Data.txt"; then
+              for f in "Alternate Titles" "Sample of Reported Titles" "Job Zones" "Technology Skills"; do
+                curl -fsSL -o "lab/onet/$f.txt" "$base/$(echo $f | sed 's/ /%20/g').txt" || echo "miss $f"
+              done
+              echo "$v" > lab/onet/VERSION; break
+            fi
+          done
+          ls -la lab/onet; cat lab/onet/VERSION
+          gzip -9 lab/onet/*.txt
       - name: Commit to lab-data
         run: |
           git config user.name  "hireground-bot"
           git config user.email "hireground-bot@users.noreply.github.com"
-          git add -f lab/jobs_full.json.gz
+          git add -f lab/jobs_full.json.gz lab/onet
           git commit -m "lab: full-description jobs snapshot" || echo nothing
           git push origin HEAD:lab-data
