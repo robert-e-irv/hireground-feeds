@@ -12,8 +12,8 @@ from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-SCHEDULE_MIN = 17          # cron "17 */6 * * *"
-SCHEDULE_EVERY_H = 6
+SCHEDULE_MIN = 17          # cron "17 * * * *" (hourly since the games tier; was every 6h)
+SCHEDULE_EVERY_H = 1
 
 
 def ts(run_id):
@@ -45,6 +45,8 @@ def load(root):
         with gzip.open(f, "rt", encoding="utf-8") as fh:
             for line in fh:
                 r = json.loads(line)
+                if r.get("carried"):   # not fetched this run (hourly tier): nothing was measured
+                    continue
                 by_src[r["source"]].append(r)
     for v in by_src.values():
         v.sort(key=lambda r: r["run"])
