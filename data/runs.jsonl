@@ -22,3 +22,4 @@
 {"run": "20261105T075607Z", "at": "2026-11-05T08:00:07+00:00", "wall_s": 239.5, "sources": 503, "attempted": 502, "ok": 501, "schema_errors": 0, "jobs": 34063, "bytes": 325527772, "carried": 0, "not_modified": 362}
 {"run": "20261105T162959Z", "at": "2026-11-05T16:33:58+00:00", "wall_s": 238.7, "sources": 503, "attempted": 502, "ok": 501, "schema_errors": 0, "jobs": 34044, "bytes": 334712534, "carried": 0, "not_modified": 346}
 {"run": "20261105T224107Z", "at": "2026-11-05T22:45:06+00:00", "wall_s": 239.1, "sources": 503, "attempted": 502, "ok": 501, "schema_errors": 0, "jobs": 34031, "bytes": 365271876, "carried": 0, "not_modified": 310}
+{"run": "20261106T032809Z", "at": "2026-11-06T03:30:48+00:00", "wall_s": 159.1, "sources": 503, "attempted": 400, "ok": 399, "schema_errors": 0, "jobs": 17845, "bytes": 104884278, "carried": 102, "not_modified": 359}
