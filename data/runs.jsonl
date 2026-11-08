@@ -30,3 +30,4 @@
 {"run": "20261107T130845Z", "at": "2026-11-07T13:12:44+00:00", "wall_s": 238.1, "sources": 503, "attempted": 502, "ok": 501, "schema_errors": 0, "jobs": 34182, "bytes": 279689490, "carried": 0, "not_modified": 392}
 {"run": "20261107T180355Z", "at": "2026-11-07T18:06:34+00:00", "wall_s": 159.0, "sources": 503, "attempted": 400, "ok": 399, "schema_errors": 0, "jobs": 17862, "bytes": 129809862, "carried": 102, "not_modified": 339}
 {"run": "20261107T215445Z", "at": "2026-11-07T21:58:42+00:00", "wall_s": 236.5, "sources": 503, "attempted": 502, "ok": 501, "schema_errors": 0, "jobs": 34159, "bytes": 177812168, "carried": 0, "not_modified": 448}
+{"run": "20261108T012800Z", "at": "2026-11-08T01:30:37+00:00", "wall_s": 157.3, "sources": 503, "attempted": 400, "ok": 399, "schema_errors": 0, "jobs": 17864, "bytes": 3659741, "carried": 102, "not_modified": 397}
