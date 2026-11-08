@@ -33,3 +33,4 @@
 {"run": "20261108T012800Z", "at": "2026-11-08T01:30:37+00:00", "wall_s": 157.3, "sources": 503, "attempted": 400, "ok": 399, "schema_errors": 0, "jobs": 17864, "bytes": 3659741, "carried": 102, "not_modified": 397}
 {"run": "20261108T090342Z", "at": "2026-11-08T09:07:38+00:00", "wall_s": 236.5, "sources": 503, "attempted": 502, "ok": 501, "schema_errors": 0, "jobs": 34143, "bytes": 99180756, "carried": 0, "not_modified": 474}
 {"run": "20261108T160016Z", "at": "2026-11-08T16:05:02+00:00", "wall_s": 285.4, "sources": 503, "attempted": 502, "ok": 501, "schema_errors": 0, "jobs": 34169, "bytes": 77957024, "carried": 0, "not_modified": 481}
+{"run": "20261108T203011Z", "at": "2026-11-08T20:32:50+00:00", "wall_s": 159.4, "sources": 503, "attempted": 400, "ok": 399, "schema_errors": 0, "jobs": 17860, "bytes": 52679399, "carried": 102, "not_modified": 392}
