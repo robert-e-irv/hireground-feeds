@@ -50,3 +50,4 @@
 {"run": "20261113T010804Z", "at": "2026-11-13T01:10:46+00:00", "wall_s": 161.6, "sources": 502, "attempted": 400, "ok": 398, "schema_errors": 0, "jobs": 17861, "bytes": 162665466, "carried": 101, "not_modified": 282}
 {"run": "20261113T080348Z", "at": "2026-11-13T08:07:45+00:00", "wall_s": 237.1, "sources": 502, "attempted": 501, "ok": 499, "schema_errors": 0, "jobs": 34155, "bytes": 306473302, "carried": 0, "not_modified": 388}
 {"run": "20261113T162905Z", "at": "2026-11-13T16:33:02+00:00", "wall_s": 237.6, "sources": 502, "attempted": 501, "ok": 499, "schema_errors": 0, "jobs": 34153, "bytes": 319631356, "carried": 0, "not_modified": 363}
+{"run": "20261113T224046Z", "at": "2026-11-13T22:44:43+00:00", "wall_s": 237.1, "sources": 502, "attempted": 501, "ok": 499, "schema_errors": 0, "jobs": 34138, "bytes": 329892988, "carried": 0, "not_modified": 339}
