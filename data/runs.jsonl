@@ -52,3 +52,4 @@
 {"run": "20261113T162905Z", "at": "2026-11-13T16:33:02+00:00", "wall_s": 237.6, "sources": 502, "attempted": 501, "ok": 499, "schema_errors": 0, "jobs": 34153, "bytes": 319631356, "carried": 0, "not_modified": 363}
 {"run": "20261113T224046Z", "at": "2026-11-13T22:44:43+00:00", "wall_s": 237.1, "sources": 502, "attempted": 501, "ok": 499, "schema_errors": 0, "jobs": 34138, "bytes": 329892988, "carried": 0, "not_modified": 339}
 {"run": "20261114T032104Z", "at": "2026-11-14T03:23:43+00:00", "wall_s": 159.1, "sources": 502, "attempted": 400, "ok": 398, "schema_errors": 0, "jobs": 17857, "bytes": 93352354, "carried": 101, "not_modified": 363}
+{"run": "20261114T113233Z", "at": "2026-11-14T11:36:31+00:00", "wall_s": 237.2, "sources": 502, "attempted": 501, "ok": 499, "schema_errors": 0, "jobs": 34120, "bytes": 324340004, "carried": 0, "not_modified": 381}
