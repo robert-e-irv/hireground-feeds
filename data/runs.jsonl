@@ -61,3 +61,4 @@
 {"run": "20261115T225225Z", "at": "2026-11-15T22:55:04+00:00", "wall_s": 158.7, "sources": 502, "attempted": 400, "ok": 398, "schema_errors": 0, "jobs": 17829, "bytes": 122097529, "carried": 101, "not_modified": 341}
 {"run": "20261116T024700Z", "at": "2026-11-16T02:50:57+00:00", "wall_s": 237.1, "sources": 502, "attempted": 501, "ok": 499, "schema_errors": 0, "jobs": 34057, "bytes": 248748105, "carried": 0, "not_modified": 417}
 {"run": "20261116T112918Z", "at": "2026-11-16T11:33:16+00:00", "wall_s": 238.2, "sources": 502, "attempted": 501, "ok": 499, "schema_errors": 0, "jobs": 34060, "bytes": 287909033, "carried": 0, "not_modified": 386}
+{"run": "20261116T221002Z", "at": "2026-11-16T22:14:01+00:00", "wall_s": 238.8, "sources": 502, "attempted": 501, "ok": 499, "schema_errors": 0, "jobs": 34056, "bytes": 359324998, "carried": 0, "not_modified": 302}
