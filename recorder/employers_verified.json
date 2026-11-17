@@ -1,11 +1,11 @@
 {
- "verified_at": "2026-11-10T02:14:43+00:00",
+ "verified_at": "2026-11-17T04:36:12+00:00",
  "kept": [
   {
    "ats": "greenhouse",
    "slug": "oscar",
    "status": 200,
-   "jobs": 199,
+   "jobs": 181,
    "board_name": "Oscar Health",
    "name": "Oscar Health",
    "industry": "health"
@@ -14,7 +14,7 @@
    "ats": "greenhouse",
    "slug": "zocdoc",
    "status": 200,
-   "jobs": 63,
+   "jobs": 67,
    "board_name": "Zocdoc",
    "name": "Zocdoc",
    "industry": "health"
@@ -23,7 +23,7 @@
    "ats": "ashby",
    "slug": "hims-and-hers",
    "status": 200,
-   "jobs": 148,
+   "jobs": 141,
    "name": "Hims & Hers",
    "industry": "health"
   },
@@ -31,7 +31,7 @@
    "ats": "greenhouse",
    "slug": "flatironhealth",
    "status": 200,
-   "jobs": 24,
+   "jobs": 23,
    "board_name": "Flatiron Health",
    "name": "Flatiron Health",
    "industry": "health"
@@ -40,7 +40,7 @@
    "ats": "greenhouse",
    "slug": "mavenclinic",
    "status": 200,
-   "jobs": 31,
+   "jobs": 30,
    "board_name": "Maven Clinic",
    "name": "Maven Clinic",
    "industry": "health"
@@ -49,7 +49,7 @@
    "ats": "greenhouse",
    "slug": "komodohealth",
    "status": 200,
-   "jobs": 18,
+   "jobs": 16,
    "board_name": "Komodo Health",
    "name": "Komodo Health",
    "industry": "health"
@@ -58,7 +58,7 @@
    "ats": "lever",
    "slug": "lyrahealth",
    "status": 200,
-   "jobs": 479,
+   "jobs": 480,
    "name": "Lyra Health",
    "industry": "health"
   },
@@ -66,7 +66,7 @@
    "ats": "greenhouse",
    "slug": "talkspace",
    "status": 200,
-   "jobs": 20,
+   "jobs": 19,
    "board_name": "Talkspace",
    "name": "Talkspace",
    "industry": "health"
@@ -75,7 +75,7 @@
    "ats": "greenhouse",
    "slug": "swordhealth",
    "status": 200,
-   "jobs": 66,
+   "jobs": 48,
    "board_name": "Sword",
    "name": "Sword Health",
    "industry": "health"
@@ -84,7 +84,7 @@
    "ats": "greenhouse",
    "slug": "garnerhealth",
    "status": 200,
-   "jobs": 62,
+   "jobs": 56,
    "board_name": "Garner Health",
    "name": "Garner Health",
    "industry": "health"
@@ -93,7 +93,7 @@
    "ats": "greenhouse",
    "slug": "honor",
    "status": 200,
-   "jobs": 15,
+   "jobs": 17,
    "board_name": "Honor",
    "name": "Honor",
    "industry": "health"
@@ -111,7 +111,7 @@
    "ats": "lever",
    "slug": "getmaple",
    "status": 200,
-   "jobs": 13,
+   "jobs": 11,
    "name": "Maple",
    "industry": "health"
   },
@@ -119,7 +119,7 @@
    "ats": "greenhouse",
    "slug": "affirm",
    "status": 200,
-   "jobs": 221,
+   "jobs": 211,
    "board_name": "Affirm",
    "name": "Affirm",
    "industry": "finance"
@@ -128,7 +128,7 @@
    "ats": "greenhouse",
    "slug": "chime",
    "status": 200,
-   "jobs": 66,
+   "jobs": 74,
    "board_name": "Chime Financial, Inc",
    "name": "Chime",
    "industry": "finance"
@@ -137,7 +137,7 @@
    "ats": "greenhouse",
    "slug": "brex",
    "status": 200,
-   "jobs": 267,
+   "jobs": 277,
    "board_name": "Brex",
    "name": "Brex",
    "industry": "finance"
@@ -146,7 +146,7 @@
    "ats": "ashby",
    "slug": "ramp",
    "status": 200,
-   "jobs": 172,
+   "jobs": 179,
    "name": "Ramp",
    "industry": "finance"
   },
@@ -172,7 +172,7 @@
    "ats": "greenhouse",
    "slug": "carta",
    "status": 200,
-   "jobs": 78,
+   "jobs": 77,
    "board_name": "Carta",
    "name": "Carta",
    "industry": "finance"
@@ -181,7 +181,7 @@
    "ats": "greenhouse",
    "slug": "robinhood",
    "status": 200,
-   "jobs": 153,
+   "jobs": 166,
    "board_name": "Robinhood",
    "name": "Robinhood",
    "industry": "finance"
@@ -190,7 +190,7 @@
    "ats": "greenhouse",
    "slug": "coinbase",
    "status": 200,
-   "jobs": 285,
+   "jobs": 261,
    "board_name": "Coinbase",
    "name": "Coinbase",
    "industry": "finance"
@@ -199,7 +199,7 @@
    "ats": "ashby",
    "slug": "kraken.com",
    "status": 200,
-   "jobs": 89,
+   "jobs": 95,
    "name": "Kraken",
    "industry": "finance"
   },
@@ -215,7 +215,7 @@
    "ats": "greenhouse",
    "slug": "monzo",
    "status": 200,
-   "jobs": 68,
+   "jobs": 60,
    "board_name": "Monzo",
    "name": "Monzo",
    "industry": "finance"
@@ -224,7 +224,7 @@
    "ats": "greenhouse",
    "slug": "stripe",
    "status": 200,
-   "jobs": 772,
+   "jobs": 789,
    "board_name": "Stripe",
    "name": "Stripe",
    "industry": "finance"
@@ -233,7 +233,7 @@
    "ats": "greenhouse",
    "slug": "gusto",
    "status": 200,
-   "jobs": 80,
+   "jobs": 78,
    "board_name": "Gusto, Inc.",
    "name": "Gusto",
    "industry": "finance"
@@ -242,7 +242,7 @@
    "ats": "greenhouse",
    "slug": "toast",
    "status": 200,
-   "jobs": 335,
+   "jobs": 332,
    "board_name": "Toast",
    "name": "Toast",
    "industry": "finance"
@@ -251,7 +251,7 @@
    "ats": "greenhouse",
    "slug": "sofi",
    "status": 200,
-   "jobs": 48,
+   "jobs": 50,
    "board_name": "SoFi",
    "name": "SoFi",
    "industry": "finance"
@@ -260,7 +260,7 @@
    "ats": "greenhouse",
    "slug": "tripactions",
    "status": 200,
-   "jobs": 229,
+   "jobs": 233,
    "board_name": "Navan",
    "name": "Navan",
    "industry": "finance"
@@ -269,7 +269,7 @@
    "ats": "greenhouse",
    "slug": "glossier",
    "status": 200,
-   "jobs": 22,
+   "jobs": 20,
    "board_name": "Glossier",
    "name": "Glossier",
    "industry": "retail"
@@ -287,7 +287,7 @@
    "ats": "greenhouse",
    "slug": "sweetgreen",
    "status": 200,
-   "jobs": 73,
+   "jobs": 75,
    "board_name": " sweetgreen",
    "name": "Sweetgreen",
    "industry": "retail"
@@ -296,7 +296,7 @@
    "ats": "greenhouse",
    "slug": "bombas",
    "status": 200,
-   "jobs": 7,
+   "jobs": 8,
    "board_name": "Bombas",
    "name": "Bombas",
    "industry": "retail"
@@ -305,7 +305,7 @@
    "ats": "greenhouse",
    "slug": "peloton",
    "status": 200,
-   "jobs": 43,
+   "jobs": 36,
    "board_name": "Peloton",
    "name": "Peloton",
    "industry": "retail"
@@ -314,7 +314,7 @@
    "ats": "greenhouse",
    "slug": "instacart",
    "status": 200,
-   "jobs": 90,
+   "jobs": 83,
    "board_name": "Instacart",
    "name": "Instacart",
    "industry": "retail"
@@ -323,25 +323,16 @@
    "ats": "greenhouse",
    "slug": "faire",
    "status": 200,
-   "jobs": 68,
+   "jobs": 70,
    "board_name": "Faire",
    "name": "Faire",
    "industry": "retail"
   },
   {
    "ats": "greenhouse",
-   "slug": "parachutehome",
-   "status": 200,
-   "jobs": 2,
-   "board_name": "Parachute Home",
-   "name": "Parachute Home",
-   "industry": "retail"
-  },
-  {
-   "ats": "greenhouse",
    "slug": "mejuri",
    "status": 200,
-   "jobs": 188,
+   "jobs": 190,
    "board_name": "Mejuri",
    "name": "Mejuri",
    "industry": "retail"
@@ -350,7 +341,7 @@
    "ats": "greenhouse",
    "slug": "quince",
    "status": 200,
-   "jobs": 152,
+   "jobs": 155,
    "board_name": "Quince",
    "name": "Quince",
    "industry": "retail"
@@ -359,7 +350,7 @@
    "ats": "greenhouse",
    "slug": "thrivemarket",
    "status": 200,
-   "jobs": 17,
+   "jobs": 20,
    "board_name": "Thrive Market",
    "name": "Thrive Market",
    "industry": "retail"
@@ -368,7 +359,7 @@
    "ats": "greenhouse",
    "slug": "grovecollaborative",
    "status": 200,
-   "jobs": 6,
+   "jobs": 5,
    "board_name": "Grove Collaborative",
    "name": "Grove Collaborative",
    "industry": "retail"
@@ -377,7 +368,7 @@
    "ats": "ashby",
    "slug": "hopper",
    "status": 200,
-   "jobs": 21,
+   "jobs": 17,
    "name": "Hopper",
    "industry": "retail"
   },
@@ -385,7 +376,7 @@
    "ats": "greenhouse",
    "slug": "airbnb",
    "status": 200,
-   "jobs": 205,
+   "jobs": 209,
    "board_name": "Airbnb",
    "name": "Airbnb",
    "industry": "retail"
@@ -394,7 +385,7 @@
    "ats": "greenhouse",
    "slug": "doordashusa",
    "status": 200,
-   "jobs": 436,
+   "jobs": 426,
    "board_name": "DoorDash USA",
    "name": "DoorDash",
    "industry": "retail"
@@ -403,7 +394,7 @@
    "ats": "greenhouse",
    "slug": "lyft",
    "status": 200,
-   "jobs": 156,
+   "jobs": 144,
    "board_name": "Lyft",
    "name": "Lyft",
    "industry": "retail"
@@ -412,7 +403,7 @@
    "ats": "greenhouse",
    "slug": "coursera",
    "status": 200,
-   "jobs": 40,
+   "jobs": 38,
    "board_name": "Coursera",
    "name": "Coursera",
    "industry": "education"
@@ -430,7 +421,7 @@
    "ats": "greenhouse",
    "slug": "duolingo",
    "status": 200,
-   "jobs": 61,
+   "jobs": 59,
    "board_name": "Duolingo",
    "name": "Duolingo",
    "industry": "education"
@@ -439,7 +430,7 @@
    "ats": "greenhouse",
    "slug": "newsela",
    "status": 200,
-   "jobs": 11,
+   "jobs": 10,
    "board_name": "Newsela",
    "name": "Newsela",
    "industry": "education"
@@ -466,7 +457,7 @@
    "ats": "greenhouse",
    "slug": "springboard",
    "status": 200,
-   "jobs": 4,
+   "jobs": 7,
    "board_name": "Springboard Roles",
    "name": "Springboard",
    "industry": "education"
@@ -475,7 +466,7 @@
    "ats": "greenhouse",
    "slug": "wikimedia",
    "status": 200,
-   "jobs": 16,
+   "jobs": 15,
    "board_name": "Wikimedia Foundation",
    "name": "Wikimedia Foundation",
    "industry": "nonprofit"
@@ -484,7 +475,7 @@
    "ats": "greenhouse",
    "slug": "mozilla",
    "status": 200,
-   "jobs": 110,
+   "jobs": 112,
    "board_name": "Mozilla",
    "name": "Mozilla",
    "industry": "nonprofit"
@@ -502,7 +493,7 @@
    "ats": "greenhouse",
    "slug": "propublica",
    "status": 200,
-   "jobs": 4,
+   "jobs": 5,
    "board_name": "ProPublica",
    "name": "ProPublica",
    "industry": "nonprofit"
@@ -511,7 +502,7 @@
    "ats": "greenhouse",
    "slug": "givedirectly",
    "status": 200,
-   "jobs": 32,
+   "jobs": 29,
    "board_name": "GiveDirectly",
    "name": "GiveDirectly",
    "industry": "nonprofit"
@@ -520,7 +511,7 @@
    "ats": "greenhouse",
    "slug": "thenewyorktimes",
    "status": 200,
-   "jobs": 173,
+   "jobs": 160,
    "board_name": "The New York Times",
    "name": "The New York Times",
    "industry": "marketing"
@@ -529,16 +520,25 @@
    "ats": "greenhouse",
    "slug": "voxmedia",
    "status": 200,
-   "jobs": 20,
+   "jobs": 22,
    "board_name": "Vox Media Group",
    "name": "Vox Media",
+   "industry": "marketing"
+  },
+  {
+   "ats": "greenhouse",
+   "slug": "buzzfeed",
+   "status": 200,
+   "jobs": 4,
+   "board_name": "Employment Opportunities at BuzzFeed, Inc.",
+   "name": "BuzzFeed",
    "industry": "marketing"
   },
   {
    "ats": "lever",
    "slug": "spotify",
    "status": 200,
-   "jobs": 85,
+   "jobs": 88,
    "name": "Spotify",
    "industry": "marketing"
   },
@@ -546,7 +546,7 @@
    "ats": "greenhouse",
    "slug": "figma",
    "status": 200,
-   "jobs": 145,
+   "jobs": 140,
    "board_name": "Figma",
    "name": "Figma",
    "industry": "design"
@@ -555,7 +555,7 @@
    "ats": "greenhouse",
    "slug": "squarespace",
    "status": 200,
-   "jobs": 21,
+   "jobs": 17,
    "board_name": "Squarespace",
    "name": "Squarespace",
    "industry": "design"
@@ -564,7 +564,7 @@
    "ats": "greenhouse",
    "slug": "gitlab",
    "status": 200,
-   "jobs": 252,
+   "jobs": 253,
    "board_name": "GitLab",
    "name": "GitLab",
    "industry": "software"
@@ -573,7 +573,7 @@
    "ats": "greenhouse",
    "slug": "databricks",
    "status": 200,
-   "jobs": 915,
+   "jobs": 892,
    "board_name": "Databricks",
    "name": "Databricks",
    "industry": "data"
@@ -582,7 +582,7 @@
    "ats": "greenhouse",
    "slug": "dropbox",
    "status": 200,
-   "jobs": 33,
+   "jobs": 41,
    "board_name": "Dropbox",
    "name": "Dropbox",
    "industry": "software"
@@ -591,7 +591,7 @@
    "ats": "greenhouse",
    "slug": "pinterest",
    "status": 200,
-   "jobs": 170,
+   "jobs": 167,
    "board_name": "Pinterest",
    "name": "Pinterest",
    "industry": "software"
@@ -600,7 +600,7 @@
    "ats": "greenhouse",
    "slug": "reddit",
    "status": 200,
-   "jobs": 157,
+   "jobs": 148,
    "board_name": "Reddit",
    "name": "Reddit",
    "industry": "software"
@@ -609,7 +609,7 @@
    "ats": "greenhouse",
    "slug": "cloudflare",
    "status": 200,
-   "jobs": 465,
+   "jobs": 471,
    "board_name": "Cloudflare",
    "name": "Cloudflare",
    "industry": "software"
@@ -618,7 +618,7 @@
    "ats": "greenhouse",
    "slug": "datadog",
    "status": 200,
-   "jobs": 400,
+   "jobs": 382,
    "board_name": "Datadog",
    "name": "Datadog",
    "industry": "software"
@@ -627,7 +627,7 @@
    "ats": "greenhouse",
    "slug": "elastic",
    "status": 200,
-   "jobs": 423,
+   "jobs": 391,
    "board_name": "Elastic",
    "name": "Elastic",
    "industry": "software"
@@ -636,7 +636,7 @@
    "ats": "greenhouse",
    "slug": "mongodb",
    "status": 200,
-   "jobs": 374,
+   "jobs": 400,
    "board_name": "MongoDB",
    "name": "MongoDB",
    "industry": "software"
@@ -645,7 +645,7 @@
    "ats": "greenhouse",
    "slug": "okta",
    "status": 200,
-   "jobs": 380,
+   "jobs": 357,
    "board_name": "Okta",
    "name": "Okta",
    "industry": "software"
@@ -654,7 +654,7 @@
    "ats": "greenhouse",
    "slug": "asana",
    "status": 200,
-   "jobs": 112,
+   "jobs": 113,
    "board_name": "Asana",
    "name": "Asana",
    "industry": "software"
@@ -663,7 +663,7 @@
    "ats": "greenhouse",
    "slug": "twilio",
    "status": 200,
-   "jobs": 129,
+   "jobs": 111,
    "board_name": "Twilio",
    "name": "Twilio",
    "industry": "software"
@@ -672,7 +672,7 @@
    "ats": "greenhouse",
    "slug": "samsara",
    "status": 200,
-   "jobs": 314,
+   "jobs": 315,
    "board_name": "Samsara",
    "name": "Samsara",
    "industry": "software"
@@ -681,7 +681,7 @@
    "ats": "greenhouse",
    "slug": "airtable",
    "status": 200,
-   "jobs": 6,
+   "jobs": 9,
    "board_name": "Airtable",
    "name": "Airtable",
    "industry": "software"
@@ -699,7 +699,7 @@
    "ats": "greenhouse",
    "slug": "anthropic",
    "status": 200,
-   "jobs": 673,
+   "jobs": 661,
    "board_name": "Anthropic",
    "name": "Anthropic",
    "industry": "data"
@@ -708,7 +708,7 @@
    "ats": "greenhouse",
    "slug": "scaleai",
    "status": 200,
-   "jobs": 170,
+   "jobs": 169,
    "board_name": "Scale AI",
    "name": "Scale AI",
    "industry": "data"
@@ -717,7 +717,7 @@
    "ats": "ashby",
    "slug": "openai",
    "status": 200,
-   "jobs": 824,
+   "jobs": 841,
    "name": "OpenAI",
    "industry": "data"
   },
@@ -725,7 +725,7 @@
    "ats": "ashby",
    "slug": "notion",
    "status": 200,
-   "jobs": 153,
+   "jobs": 164,
    "name": "Notion",
    "industry": "software"
   },
@@ -733,7 +733,7 @@
    "ats": "ashby",
    "slug": "linear",
    "status": 200,
-   "jobs": 32,
+   "jobs": 33,
    "name": "Linear",
    "industry": "software"
   },
@@ -741,7 +741,7 @@
    "ats": "ashby",
    "slug": "vanta",
    "status": 200,
-   "jobs": 81,
+   "jobs": 80,
    "name": "Vanta",
    "industry": "software"
   },
@@ -765,7 +765,7 @@
    "ats": "lever",
    "slug": "palantir",
    "status": 200,
-   "jobs": 304,
+   "jobs": 303,
    "name": "Palantir",
    "industry": "data"
   },
@@ -773,7 +773,7 @@
    "ats": "ashby",
    "slug": "1password",
    "status": 200,
-   "jobs": 79,
+   "jobs": 80,
    "name": "1Password",
    "industry": "software"
   },
@@ -781,7 +781,7 @@
    "ats": "greenhouse",
    "slug": "hootsuite",
    "status": 200,
-   "jobs": 9,
+   "jobs": 13,
    "board_name": "Hootsuite",
    "name": "Hootsuite",
    "industry": "marketing"
@@ -790,7 +790,7 @@
    "ats": "greenhouse",
    "slug": "hubspotjobs",
    "status": 200,
-   "jobs": 127,
+   "jobs": 139,
    "board_name": "HubSpot",
    "name": "HubSpot",
    "industry": "marketing"
@@ -799,7 +799,7 @@
    "ats": "greenhouse",
    "slug": "gongio",
    "status": 200,
-   "jobs": 86,
+   "jobs": 89,
    "board_name": "Gong.io",
    "name": "Gong",
    "industry": "sales"
@@ -808,7 +808,7 @@
    "ats": "lever",
    "slug": "outreach",
    "status": 200,
-   "jobs": 16,
+   "jobs": 14,
    "name": "Outreach",
    "industry": "sales"
   },
@@ -816,7 +816,7 @@
    "ats": "greenhouse",
    "slug": "attentive",
    "status": 200,
-   "jobs": 27,
+   "jobs": 31,
    "board_name": "Attentive",
    "name": "Attentive",
    "industry": "marketing"
@@ -825,7 +825,7 @@
    "ats": "greenhouse",
    "slug": "lattice",
    "status": 200,
-   "jobs": 6,
+   "jobs": 4,
    "board_name": "Lattice",
    "name": "Lattice",
    "industry": "people"
@@ -834,7 +834,7 @@
    "ats": "greenhouse",
    "slug": "flexport",
    "status": 200,
-   "jobs": 186,
+   "jobs": 203,
    "board_name": "Flexport",
    "name": "Flexport",
    "industry": "ops"
@@ -1189,6 +1189,15 @@
   },
   {
    "ats": "greenhouse",
+   "slug": "parachutehome",
+   "status": 200,
+   "jobs": 0,
+   "reason": "no open jobs",
+   "name": "Parachute Home",
+   "industry": "retail"
+  },
+  {
+   "ats": "greenhouse",
    "slug": "rothys",
    "status": 404,
    "reason": "HTTP 404",
@@ -1390,14 +1399,6 @@
    "industry": "nonprofit"
   },
   {
-   "ats": "greenhouse",
-   "slug": "buzzfeed",
-   "status": 404,
-   "reason": "HTTP 404",
-   "name": "BuzzFeed",
-   "industry": "marketing"
-  },
-  {
    "ats": "lever",
    "slug": "canva",
    "status": 404,
@@ -1507,7 +1508,7 @@
    "ats": "greenhouse",
    "slug": "intercom",
    "status": 200,
-   "jobs": 107,
+   "jobs": 115,
    "board_name": "Fin",
    "reason": "board name 'Fin' doesn't match 'Intercom'",
    "name": "Intercom",
