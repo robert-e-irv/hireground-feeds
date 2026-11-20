@@ -71,3 +71,4 @@
 {"run": "20261119T033325Z", "at": "2026-11-19T03:37:22+00:00", "wall_s": 237.8, "sources": 498, "attempted": 497, "ok": 495, "schema_errors": 0, "jobs": 34128, "bytes": 341457904, "carried": 0, "not_modified": 356}
 {"run": "20261119T131641Z", "at": "2026-11-19T13:20:39+00:00", "wall_s": 238.5, "sources": 498, "attempted": 497, "ok": 495, "schema_errors": 0, "jobs": 34114, "bytes": 308429284, "carried": 0, "not_modified": 372}
 {"run": "20261119T214033Z", "at": "2026-11-19T21:44:30+00:00", "wall_s": 237.5, "sources": 498, "attempted": 497, "ok": 494, "schema_errors": 0, "jobs": 34047, "bytes": 363057480, "carried": 0, "not_modified": 313}
+{"run": "20261120T032230Z", "at": "2026-11-20T03:26:28+00:00", "wall_s": 237.5, "sources": 498, "attempted": 497, "ok": 494, "schema_errors": 0, "jobs": 34078, "bytes": 296626307, "carried": 0, "not_modified": 378}
