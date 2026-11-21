@@ -75,3 +75,4 @@
 {"run": "20261120T125811Z", "at": "2026-11-20T13:02:08+00:00", "wall_s": 237.5, "sources": 498, "attempted": 497, "ok": 494, "schema_errors": 0, "jobs": 34127, "bytes": 280221925, "carried": 0, "not_modified": 390}
 {"run": "20261120T211012Z", "at": "2026-11-20T21:14:22+00:00", "wall_s": 250.2, "sources": 498, "attempted": 497, "ok": 494, "schema_errors": 0, "jobs": 34225, "bytes": 359522732, "carried": 0, "not_modified": 326}
 {"run": "20261121T022101Z", "at": "2026-11-21T02:23:40+00:00", "wall_s": 158.7, "sources": 498, "attempted": 396, "ok": 393, "schema_errors": 0, "jobs": 17806, "bytes": 104081206, "carried": 101, "not_modified": 345}
+{"run": "20261121T111124Z", "at": "2026-11-21T11:15:21+00:00", "wall_s": 237.0, "sources": 498, "attempted": 497, "ok": 494, "schema_errors": 0, "jobs": 34178, "bytes": 272724511, "carried": 0, "not_modified": 414}
